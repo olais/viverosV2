@@ -1,0 +1,101 @@
+<?php  print_r($this->clientes);?>
+<div class="row">
+  <div class="col-md-8">
+<form  name="clientesG" id="clientesG" method="POST" class="form-inline">
+      <div class="form-group">
+      <label for="tip">Tipo Cliente:</label>
+      <select class="form-control" id="tipo" name="tipo">
+        <option>Seleccionar...</option>
+        <option value="1">Admin</option>
+        <option value="2">Usuario</option>
+      </select>
+      </div>
+   <div class="form-group">
+      <label for="estatus">Estatus:</label>
+      <select class="form-control" id="estatus" name="estatus">
+        <option>Seleccionar...</option>
+        <option value='10'>Activo</option>
+        <option value="20">Inactivo</option>
+    </select>
+      </div>
+  <div class="form-group">
+    <label for="nombre">Nombre</label>
+    <input type="nombre" class="form-control" id="nombre" name="nombre" required value="<?php echo $this->clientes[0]['Nombre'];?>">
+   </div>
+  <div class="form-group">
+    <label for="rfc">RFC</label>
+    <input type="text" class="form-control" id="rfc" name="rfc" required value="<?php echo $this->clientes[0]['RFC'];?>">
+  </div>
+   <div class="form-group">
+    <label for="tel1">Teléfono 1</label>
+    <input type="text" class="form-control" id="tel1" name="tel1" value="<?php echo $this->clientes[0]['Telefono1'];?>">
+  </div>
+ 
+    <div class="form-group">
+    <label for="tel2">Teléfono 2</label>
+    <input type="text" class="form-control" id="tel2" name="tel2" value="<?php echo $this->clientes[0]['Telefono2'];?>">
+  </div>
+  <div class="form-group">
+    <label for="fax">Fax</label>
+    <input type="text" class="form-control" id="fax" name="fax" value="<?php echo $this->clientes[0]['Fax'];?>">
+  </div>
+
+  <div class="form-group">
+    <label for="correo">Correo</label>
+    <input type="email" class="form-control" id="correo" name="correo" value="<?php echo $this->clientes[0]['Correo'];?>">
+  </div>
+  <div class="form-group">
+    <label for="web">Web</label>
+    <input type="text" class="form-control" id="web" name="web" value="<?php echo $this->clientes[0]['Web'];?>">
+  </div>
+  <button type="submit" class="btn btn-primary">Guardar Clientes</button>
+  </form>
+   <button type="submit" class="btn btn-primary">Nuevo</button>
+  </div>
+ </div> 
+<div class="row">
+  <div class="col-md-6" id="contac">     
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Id_Contacto</th>
+        <th>Nombre</th>
+        <th>Apelidos</th>
+        <th>Puesto</th>
+        <th>Telefono1</th>
+        <th>Extensión1</th>
+        <th>Telefono2</th>
+        <th>Extensión2</th>
+        <th>Celular</th>
+        <th>Correo</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <?php  
+      foreach ($this->id_cliente as $registros) {
+      	//$registros['Id_contacto']
+     echo "<tr><td>".$registros['Id_contacto']."</td><td>".$registros['Nombre']."</td><td>".$registros['Apellidos']."</td><td>".$registros['Puesto']."</td><td>".$registros['Telefono1']."</td><td>".$registros['Extension1']."</td><td>".$registros['Telefono2']."</td><td>".$registros['Extension2']."</td><td>".$registros['Celular']."</td><td>".$registros['Correo']."</td>  </tr>";
+      }
+
+
+      ?>
+    
+     
+    </tbody>
+  </table>
+<div class="row">
+  <div class="col-md-6" style="background-color: red;">
+  	<table id="gridClientes"></table>
+      <div id="pgridClientes"></div>
+  </div>
+ 
+</div>
+
+
+
+  </div>
+  <div class="col-md-6" id="direcc">
+  	
+  </div>
+</div>

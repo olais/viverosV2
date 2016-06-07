@@ -1,0 +1,79 @@
+<?php echo $this->doctype() ?>
+	<head>
+	<?php 
+    $this->headMeta()->prependHttpEquiv('Content-Type', 'text/html; charset=utf-8');
+    $this->headLink()->appendStylesheet($this->baseUrl('css/bootstrap/bootstrap.min.css'));
+    $this->headLink()->appendStylesheet($this->baseUrl('css/jquery-ui.css'));
+    $this->headLink()->appendStylesheet($this->baseUrl('css/estilo.css'));
+    $this->headLink()->appendStylesheet($this->baseUrl('css/estilos_txt.css'));
+    $this->headLink()->appendStylesheet($this->baseUrl('css/theme.blue.css'));
+    $this->headLink()->appendStylesheet($this->baseUrl('css/ui.jqgrid.css'));
+    $this->headLink()->appendStylesheet($this->baseUrl('css/jquery-ui-1.10.4.custom.min.css'));
+    $this->headScript()->prependFile($this->baseUrl('js/jquery-1.12.3.min.js'), 'text/javascript');
+    $this->headScript()->appendFile($this->baseUrl('js/jquery-ui-custom.min.js'), 'text/javascript');
+    $this->headScript()->appendFile($this->baseUrl('js/bootstrap/bootstrap.min.js'), 'text/javascript');
+    $this->headScript()->appendFile($this->baseUrl('js/script.js'), 'text/javascript');
+    $this->headScript()->appendFile($this->baseUrl('js/grid.js'), 'text/javascript');
+    $this->headScript()->appendFile($this->baseUrl('js/grid.locale-en.js'), 'text/javascript');
+    $this->headScript()->appendFile($this->baseUrl('js/jquery.jqGrid.min.js'), 'text/javascript');
+    $this->headTitle()->append('Miapp/Suajes');
+
+
+            echo $this->headMeta();
+            echo $this->headTitle(); 
+            echo $this->headLink();
+            echo $this->headScript();
+	?>
+            <script>
+                var path = "<?php echo $this->baseUrl(); ?>";//por si queremos la url base en js
+             </script>
+	</head>
+	<body>		
+           <header>
+    <div id="div-img-head">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="sombra-nav">
+                        <nav class="navbar navbar-inverse">
+                            <div class="container-fluid">
+                                <div class="navbar-header hidden-xs hidden-sm">
+                                     <a class="navbar-brand" href="#"><img id="logo_viveros" src="images/header/logo_viveros.png"/></a>
+                                </div>
+                                <ul class="nav navbar-nav navbar-right">
+                                <li class="active"><a href="index">Inicio</a></li>
+                                    <li class="active"><a href="#">Catalogos</a></li>
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Clientes <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                          <li><a href="consultas">Consultas</a></li>
+                                          <li><a href="altas">Altas</a></li>
+                                       </ul>
+                                    </li>
+                                    <li><a href="#">Producción</a></li>
+                                    <li><a href="#">Reportes</a></li>
+                                    <li><a href="#">Login</a></li>
+                                    <!--<li><a href="#">Logout</a></li>-->
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+            <div class="contenido">
+                <?= $this->layout()->content; ?>
+
+            </div>
+
+            <!--footer-->
+
+    <!--div id="footer">
+      <div id="textFooter">Copyright 2013 - Todos los derechos reservados
+    </div>
+    </div-->
+   
+	</body>
+</html>
