@@ -13,7 +13,10 @@
         $this->headScript()->appendFile($this->baseUrl('js/jquery-ui-custom.min.js'), 'text/javascript');
         $this->headScript()->appendFile($this->baseUrl('js/bootstrap/bootstrap.min.js'), 'text/javascript');
         $this->headScript()->appendFile($this->baseUrl('js/script.js'), 'text/javascript');
+        $this->headScript()->appendFile($this->baseUrl('js/guardarClientes.js'), 'text/javascript');
         $this->headScript()->appendFile($this->baseUrl('js/grid.js'), 'text/javascript');
+        $this->headScript()->appendFile($this->baseUrl('js/gridContactos.js'), 'text/javascript');
+         $this->headScript()->appendFile($this->baseUrl('js/gridDirecciones.js'), 'text/javascript');
         $this->headScript()->appendFile($this->baseUrl('js/grid.locale-en.js'), 'text/javascript');
         $this->headScript()->appendFile($this->baseUrl('js/jquery.jqGrid.min.js'), 'text/javascript');
         $this->headTitle()->append('Miapp/Suajes');
@@ -47,7 +50,19 @@
                                         <div class="collapse navbar-collapse" id="Navbar_top">
                                             <ul class="nav navbar-nav navbar-right nav_top navbar-nav_top">
                                                 <li class="active"><a href="index">Inicio</a></li>
-                                                <li><a href="#">Catalogos</a></li>
+                                                  <li class="dropdown">
+                                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Catalogos <span class="caret"></span></a>
+                                                    <ul class="dropdown-menu">
+                                                        Clientes
+                                                      
+                                                        <li><a href="consultas">Consultas</a></li>
+                                                        <li><a href="altas">Altas</a></li>
+                                                        Maquinas
+                                                       
+                                                        <li><a href="consultas">Consultas</a></li>
+                                                        <li><a href="altas">Altas</a></li>
+                                                   </ul>
+                                                </li>
                                                 <li class="dropdown">
                                                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Clientes <span class="caret"></span></a>
                                                     <ul class="dropdown-menu">

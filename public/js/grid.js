@@ -1,6 +1,7 @@
 $(document).ready(function(){
 var id;
 var id_cliente;
+$("#fornuevocontacto").hide();
 $("#gridClientes").jqGrid({
    	url:'index/consultar',
 	datatype: "json",
@@ -16,7 +17,7 @@ $("#gridClientes").jqGrid({
       {name:'Correo',index:'Correo', width:280, sortable:false,editable:true},
       {name:'Web',index:'Web', width:170, sortable:false,editable:true}
    	],
-   	rowNum:20,
+   	rowNum:5000,
    	rowList:[10,20,30,40,50],
    	pager: '#pgridClientes',
    	sortname: 'id_cliente',
@@ -36,14 +37,13 @@ $("#gridClientes").jqGrid({
              var s = $("#gridClientes").jqGrid('getGridParam','selrow');
              valores = s.toString().split(",");
               id=$("#gridClientes").jqGrid('getRowData',s).Id_cliente;
+              sessionStorage.setItem("id_cliente",id);
+
                 window.location="editar?id="+id;
            
           },
 
-
-
-
-});
+  });
    $("#gridClientes").jqGrid('navGrid',"#pgridClientes",{edit:false,add:false,del:false});
 
   
@@ -55,6 +55,57 @@ $("#gridClientes").jqGrid({
     $("#gs_id_estatus").hide();
                        
     });
+
+  //controles de grid clientes
+
+  $("#nuevoCliente").click(function(){
+   //sección de cliente
+
+comprobarContactos= sessionStorage.getItem("comprobarContactos");
+alert("nuevo contacto? o nuevo cliente? numero de contactos:::" +comprobarContactos);
+   $("#nombre").val("");
+    $("#rfc").val("");
+     $("#tel1").val("");
+      $("#tel2").val("");
+       $("#fax").val("");
+        $("#correo").val("");
+         $("#web").val("");
+          $("#fornuevocontacto").show();
+          $("#tipo").focus();
+          $('#tipo').prop('selectedIndex',0);
+          $('#estatus').prop('selectedIndex',0);
+
+     
+          //this.disabled = 'false';
+         // $("#guardarConta").attr("disabled",true);
+          
+    //sección de contactos
+                $("#nombreC").val("");
+                $("#apellidosC").val("");
+                $("#puestoC").val("");
+                $("#tel1C").val("");
+                $("#exten1").val("");
+                $("#tel2C").val("");
+                $("#exten2").val("");
+                $("#celular").val("");
+                $("#correoC").val("");
+                $("#fechaN").val("");
+                $("#face").val("");
+                $("#tw").val("");
+                $("#sky").val("");
+
+
+  });
+  
+  $("#cancelaCliente").click(function(){
+     document.getElementById("clientesG").reset();
+    $("#fornuevocontacto").hide();
+    // $("#guardarConta,#nuevoCliente").attr("disabled",false);
+     
+  });
+
+
+
 
 
 })
