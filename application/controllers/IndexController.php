@@ -34,6 +34,21 @@ class IndexController extends Zend_Controller_Action
       
     }
 
+    public function contactosAction(){
+
+        $this->_helper->layout->disableLayout();
+        $this->_helper->viewRenderer->setNoRender();
+        $response=new stdClass();
+        $con=new Application_Model_Logica();
+        $datos=  $con->consultarContactos();
+         
+
+
+
+
+    }
+
+
 
     
    

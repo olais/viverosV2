@@ -1,21 +1,24 @@
-<?php  print_r($this->clientes);?>
+<?php  //print_r($this->clientes);
+ 
+?>
+<?php  //echo $idCliente=$this->clientes[0]['Id_cliente'];?>
 <div class="row">
   <div class="col-md-8">
 <form  name="clientesG" id="clientesG" method="POST" class="form-inline">
       <div class="form-group">
       <label for="tip">Tipo Cliente:</label>
-      <select class="form-control" id="tipo" name="tipo">
+      <select class="form-control" id="tipo" name="tipo" required>
         <option>Seleccionar...</option>
-        <option value="1">Admin</option>
-        <option value="2">Usuario</option>
+        <option value="1" <?php echo $selected=($this->clientes[0]['Id_tipocliente']==1)? 'selected':''; ?>>Admin</option>
+        <option value="2" <?php echo $selected=($this->clientes[0]['Id_tipocliente']==2)? 'selected':''; ?>>Usuario</option>
       </select>
       </div>
    <div class="form-group">
       <label for="estatus">Estatus:</label>
-      <select class="form-control" id="estatus" name="estatus">
+      <select class="form-control" id="estatus" name="estatus" required>
         <option>Seleccionar...</option>
-        <option value='10'>Activo</option>
-        <option value="20">Inactivo</option>
+        <option value='10' <?php echo $selected=($this->clientes[0]['Id_estatus']==10)? 'selected':''; ?>>Activo</option>
+        <option value="20" <?php echo $selected=($this->clientes[0]['Id_estatus']==20)? 'selected':''; ?>>Inactivo</option>
     </select>
       </div>
   <div class="form-group">
@@ -49,53 +52,97 @@
     <input type="text" class="form-control" id="web" name="web" value="<?php echo $this->clientes[0]['Web'];?>">
   </div>
   <button type="submit" class="btn btn-primary">Guardar Clientes</button>
+  <input  type="button" id="nuevoCliente" class="btn btn-primary" value="Nuevo">
+   <input  type="button" id="cancelaCliente" class="btn btn-primary" value="Cancelar">
   </form>
-   <button type="submit" class="btn btn-primary">Nuevo</button>
+ 
   </div>
  </div> 
-<div class="row">
-  <div class="col-md-6" id="contac">     
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>Id_Contacto</th>
-        <th>Nombre</th>
-        <th>Apelidos</th>
-        <th>Puesto</th>
-        <th>Telefono1</th>
-        <th>Extensión1</th>
-        <th>Telefono2</th>
-        <th>Extensión2</th>
-        <th>Celular</th>
-        <th>Correo</th>
-      </tr>
-    </thead>
-    <tbody>
-      
-      <?php  
-      foreach ($this->id_cliente as $registros) {
-      	//$registros['Id_contacto']
-     echo "<tr><td>".$registros['Id_contacto']."</td><td>".$registros['Nombre']."</td><td>".$registros['Apellidos']."</td><td>".$registros['Puesto']."</td><td>".$registros['Telefono1']."</td><td>".$registros['Extension1']."</td><td>".$registros['Telefono2']."</td><td>".$registros['Extension2']."</td><td>".$registros['Celular']."</td><td>".$registros['Correo']."</td>  </tr>";
-      }
+ <div id="fornuevocontacto">
+     <form  name="contactosG" id="contactosG" method="POST" class="form-inline">
+  <input type="hidden" name="idC" id='idC'></input>
 
-
-      ?>
-    
+          <div class="form-group">
+      <label for="tipC">Tipo Contacto:</label>
+      <select class="form-control" id="tipoContacto" name="tipoContacto">
+        <option>Seleccionar...</option>
+        <option value="10">Comercial</option>
+        </select>
+       </div>
+           <div class="form-group">
+      <label for="estatus">Estatus:</label>
+      <select class="form-control" id="estatusC" name="estatusC">
+        <option>Seleccionar...</option>
+        <option value='10'>Activo</option>
+        <option value="20">Inactivo</option>
      
-    </tbody>
-  </table>
-<div class="row">
-  <div class="col-md-6" style="background-color: red;">
-  	<table id="gridClientes"></table>
-      <div id="pgridClientes"></div>
+      </select>
+      </div>
+  <div class="form-group">
+    <label for="nombre">Nombre</label>
+    <input type="text" class="form-control" id="nombreC" name="nombreC" required>
+   </div>
+  <div class="form-group">
+    <label for="apellidos">Apellidos</label>
+    <input type="text" class="form-control" id="apellidosC" name="apellidosC" required>
+  </div>
+   <div class="form-group">
+    <label for="puesto">Puesto</label>
+    <input type="text" class="form-control" id="puestoC" name="puestoC">
   </div>
  
-</div>
-
-
-
+    <div class="form-group">
+    <label for="tel1">Teléfono 1</label>
+    <input type="text" class="form-control" id="tel1C" name="tel1C">
   </div>
-  <div class="col-md-6" id="direcc">
-  	
+  <div class="form-group">
+    <label for="exten1">Extensión 1</label>
+    <input type="text" class="form-control" id="exten1" name="exten1">
+  </div>
+
+  <div class="form-group">
+    <label for="tel2">Teléfono 2</label>
+    <input type="text" class="form-control" id="tel2C" name="tel2C">
+  </div>
+   <div class="form-group">
+    <label for="exten2">Extensión 2</label>
+    <input type="text" class="form-control" id="exten2" name="exten2">
+  </div>
+   <div class="form-group">
+    <label for="celular">Celular</label>
+    <input type="text" class="form-control" id="celular" name="celular">
+  </div>
+   <div class="form-group">
+    <label for="correo">Correo</label>
+    <input type="text" class="form-control" id="correoC" name="correoC">
+  </div>
+   <div class="form-group">
+    <label for="fechaN">Fecha de Nacimiento</label>
+    <input type="date" class="form-control" id="fechaN" name="fechaN">
+  </div>
+   <div class="form-group">
+    <label for="face">Facebook</label>
+    <input type="text" class="form-control" id="face" name="face">
+  </div>
+   <div class="form-group">
+    <label for="tw">Twitter</label>
+    <input type="text" class="form-control" id="tw" name="tw">
+  </div>
+  <div class="form-group">
+    <label for="syk">Skype</label>
+    <input type="text" class="form-control" id="sky" name="sky">
+  </div>
+  <button type="submit" class="btn btn-primary" id="guardarConta">Guardar Contactos</button>
+  </form>
+ </div>
+  <div class="col-md-12">
+	<table id="gridContactos"></table>
+    <div id="pgridContactos"></div>
+  </div>
+ 
+
+  <div class="col-md-12">
+  	<table id="gridDirecciones"></table>
+    <div id="pgridDirecciones"></div>
   </div>
 </div>
