@@ -104,8 +104,9 @@ alert("nuevo contacto? o nuevo cliente? numero de contactos:::" +comprobarContac
      
   });
 
+  //para mostrar el tiempo
 
-
+ 
 
 
 })

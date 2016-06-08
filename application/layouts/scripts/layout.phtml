@@ -29,8 +29,25 @@
     <script>
         var path = "<?php echo $this->baseUrl(); ?>";//por si queremos la url base en js
     </script>
+    <script language="JavaScript"> 
+        function mueveReloj(){ 
+            momentoActual = new Date();
+            hora = momentoActual.getHours();
+            minuto = momentoActual.getMinutes();
+            segundo = momentoActual.getSeconds();
+             if(segundo<10){
+               segundo="0"+segundo;
+                }
+             if(minuto<10){
+               minuto="0"+minuto;
+                 }
+            horaImprimible = hora + " : " + minuto + " : " + segundo;
+            $("#hora").html(horaImprimible);
+        } 
+       setInterval (function() {mueveReloj();}, 500); 
+</script> 
     </head>
-    <body>		
+    <body onload="mueveReloj()">		
         <header>
             <div id="div-img-head">
                 <div class="container">
@@ -129,8 +146,8 @@
                     <div class="col-xs-12">
                         <div id="notificaciones" class="col-xs-8 col-sm-3">Error de consutla</div>
                         <div id="usr" class="col-xs-4 col-sm-3">Usuario</div>
-                        <div id="fecha" class="col-sm-2 hidden-xs">Fecha</div>
-                        <div id="hora" class="col-sm-2 hidden-xs">Hora</div>
+                        <div id="fecha" class="col-sm-2 hidden-xs"><?php echo date("d-m-Y"); ?></div>
+                        <div id="hora" class="col-sm-2 hidden-xs"></div>
                         <div class="col-sm-2 hidden-xs">Version. 160602</div>
                     </div>
                 </div>
