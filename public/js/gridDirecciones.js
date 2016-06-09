@@ -37,7 +37,8 @@ $("#gridDirecciones").jqGrid({
              var s = $("#gridDirecciones").jqGrid('getGridParam','selrow');
              valores = s.toString().split(",");
               id=$("#gridDirecciones").jqGrid('getRowData',s).Id_cliente;
-              
+              $("#formDirecciones").show();
+               $("#fornuevocontacto").hide();
            
           },
 
