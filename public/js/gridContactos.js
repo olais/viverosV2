@@ -1,7 +1,7 @@
 $(document).ready(function(){
 var id;
 var id_cliente;
- idCli = sessionStorage.getItem("id_cliente");
+ idCli = sessionStorage.getItem("id");
 
 //comprobar si el cliente ya tiene contactos
 var comprobar="id="+idCli;
@@ -90,6 +90,8 @@ $("#gridContactos").jqGrid({
                 $("#face").val(Facebook);
                 $("#tw").val(Twitter);
                 $("#sky").val(Skype);
+
+                 $("#formDirecciones").hide();
 
 
 

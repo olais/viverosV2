@@ -1,7 +1,7 @@
 $(document).ready(function(){
 var id;
 var id_cliente;
- idCli = sessionStorage.getItem("id_cliente");
+ idCli = sessionStorage.getItem("id");
 $("#gridDirecciones").jqGrid({
     url:'editar/direcciones?id='+idCli,
   datatype: "json",
@@ -37,7 +37,8 @@ $("#gridDirecciones").jqGrid({
              var s = $("#gridDirecciones").jqGrid('getGridParam','selrow');
              valores = s.toString().split(",");
               id=$("#gridDirecciones").jqGrid('getRowData',s).Id_cliente;
-              
+              $("#formDirecciones").show();
+               $("#fornuevocontacto").hide();
            
           },
 
