@@ -91,6 +91,8 @@ $("#gridContactos").jqGrid({
                 $("#tw").val(Twitter);
                 $("#sky").val(Skype);
 
+                 $("#formDirecciones").hide();
+
 
 
              
