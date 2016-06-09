@@ -2,6 +2,7 @@ $(document).ready(function(){
 var id;
 var id_cliente;
 $("#fornuevocontacto").hide();
+$("#formDirecciones").hide();
 $("#gridClientes").jqGrid({
    	url:'index/consultar',
 	datatype: "json",
@@ -62,7 +63,7 @@ $("#gridClientes").jqGrid({
    //sección de cliente
 
 comprobarContactos= sessionStorage.getItem("comprobarContactos");
-alert("nuevo contacto? o nuevo cliente? numero de contactos:::" +comprobarContactos);
+//alert("nuevo contacto? o nuevo cliente? numero de contactos:::" +comprobarContactos);
    $("#nombre").val("");
     $("#rfc").val("");
      $("#tel1").val("");
@@ -70,12 +71,16 @@ alert("nuevo contacto? o nuevo cliente? numero de contactos:::" +comprobarContac
        $("#fax").val("");
         $("#correo").val("");
          $("#web").val("");
-          $("#fornuevocontacto").show();
+          //$("#fornuevocontacto").show();
           $("#tipo").focus();
           $('#tipo').prop('selectedIndex',0);
           $('#estatus').prop('selectedIndex',0);
+           $("#fornuevocontacto").hide();
+           $("#formDirecciones").hide();
 
-     
+     });
+
+   $("#nuevoContacto").click(function(){
           //this.disabled = 'false';
          // $("#guardarConta").attr("disabled",true);
           
@@ -93,13 +98,28 @@ alert("nuevo contacto? o nuevo cliente? numero de contactos:::" +comprobarContac
                 $("#face").val("");
                 $("#tw").val("");
                 $("#sky").val("");
+                $("#fornuevocontacto").show();
+                $("#formDirecciones").hide();
+                //mostrar form de direcciones
+                //$("#formDirecciones").show();
+
+                document.getElementById("clientesG").reset();
 
 
   });
+
+   $("#nuevaDireccion").click(function(){
+
+    $("#formDirecciones").show();
+    $("#fornuevocontacto").hide();
+    document.getElementById("clientesG").reset();
+
+   });
   
   $("#cancelaCliente").click(function(){
      document.getElementById("clientesG").reset();
     $("#fornuevocontacto").hide();
+    $("#formDirecciones").hide();
     // $("#guardarConta,#nuevoCliente").attr("disabled",false);
      
   });
