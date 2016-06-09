@@ -29,8 +29,16 @@ $(document).ready(function(){
 
      	$("#contactosG").submit(function(){
      		var contactos=$(this).serialize();
-     		
-     		$.post("editar/guardarcontactos",contactos,
+     		var identificadorContactos=$("#identificadorContactos").val();
+
+     			if(identificadorContactos==1){
+     				urlGuardar="editar/actualizarcontactos";
+
+     			}else{
+
+     				urlGuardar="editar/guardarcontactos";
+     			}
+           	$.post(urlGuardar,contactos,
 				function(data){
 				//$("#ui-accordion-accordion-header-2").trigger('click');
 					//window.location='altas.php';
