@@ -132,8 +132,58 @@ class EditarController extends Zend_Controller_Action
 
 
 
+    }
+
+    public function actualizarcontactosAction(){
+        $this->_helper->layout->disableLayout();
+           $this->_helper->viewRenderer->setNoRender();
+
+            $idc=$_REQUEST['idC'];
+            $tipo=$_REQUEST['tipoContacto'];
+            $estatus=$_REQUEST['estatusC'];
+            $nombre=$_REQUEST['nombreC'];
+            $apellidos=$_REQUEST['apellidosC'];
+            $puesto=$_REQUEST['puestoC'];
+            $tel1=$_REQUEST['tel1C'];
+            $exten1=$_REQUEST['exten1'];
+            $tel2=$_REQUEST['tel2C'];
+            $exten2=$_REQUEST['exten2'];
+            $celular=$_REQUEST['celular'];
+            $correoC=$_REQUEST['correoC'];
+            $fechaN=$_REQUEST['fechaN'];
+            $face=$_REQUEST['face'];
+            $tw=$_REQUEST['tw'];
+            $sky=$_REQUEST['sky'];
 
 
+            $contactos=array(
+             
+              "Id_cliente"=>$idc,
+              "Id_tipocontacto"=>$tipo,
+              "Id_estatus"=>$estatus,
+              "Nombre"=>$nombre,
+              "Apellidos"=>$apellidos,
+              "Puesto"=>$puesto,
+              "Telefono1"=>$tel1,
+              "Extension1"=>$exten1,
+              "Telefono2"=>$tel2,
+              "Extension2"=>$exten2,
+              "Celular"=>$celular,
+              "Correo"=>$correoC,
+              "Fec_Nac"=>$fechaN,
+              "Facebook"=>$face,
+              "Twitter"=>$tw,
+              "Skype"=>$sky
+
+              );
+
+
+      $con=new Application_Model_Contactos();
+      $datos=  $con->actualizaContacto($contactos);
+      $response=new stdClass();
+      $response->id=$datos;
+      echo "hola";
+      echo json_encode($response);
 
 
     }
