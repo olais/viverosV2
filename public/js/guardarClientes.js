@@ -29,10 +29,13 @@ $(document).ready(function(){
 
      	$("#contactosG").submit(function(){
      		var contactos=$(this).serialize();
-     			$.post("guardarContactos.php",contactos,
+     		
+     		$.post("editar/guardarcontactos",contactos,
 				function(data){
-				$("#ui-accordion-accordion-header-2").trigger('click');
+				//$("#ui-accordion-accordion-header-2").trigger('click');
 					//window.location='altas.php';
+					// idCliente = sessionStorage.getItem("id_cliente");
+					 window.location="editar?id="+idCliente;
 				},'json'
 
 		       );

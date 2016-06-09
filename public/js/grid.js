@@ -103,6 +103,8 @@ comprobarContactos= sessionStorage.getItem("comprobarContactos");
                 //mostrar form de direcciones
                 //$("#formDirecciones").show();
 
+                document.getElementById("clientesG").reset();
+
 
   });
 
@@ -110,6 +112,7 @@ comprobarContactos= sessionStorage.getItem("comprobarContactos");
 
     $("#formDirecciones").show();
     $("#fornuevocontacto").hide();
+    document.getElementById("clientesG").reset();
 
    });
   

@@ -1,7 +1,7 @@
 $(document).ready(function(){
 var id;
 var id_cliente;
- idCli = sessionStorage.getItem("id_cliente");
+ idCli = sessionStorage.getItem("id");
 $("#gridDirecciones").jqGrid({
     url:'editar/direcciones?id='+idCli,
   datatype: "json",
