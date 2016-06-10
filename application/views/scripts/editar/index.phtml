@@ -76,7 +76,8 @@
  <div id="fornuevocontacto">
      <form  name="contactosG" id="contactosG" method="POST" class="form-inline">
   <input type="hidden" name="idC" id='idC'></input>
-  <input type="text" id='identificadorContactos'>
+  <input type="hidden" id='identificadorContactos'>
+  <input type="hidden" name="idContacto" id="idContacto">
 
           <div class="form-group">
       <label for="tipC">Tipo Contacto:</label>
@@ -155,7 +156,8 @@
 
   <form  name="contactosD" id="contactosD" method="POST" class="form-inline">
   <input type="hidden" name="idClienteDir" id='idClienteDir'></input>
-
+  <input type="hidden" name="Id_direccion" id='Id_direccion'></input>
+   <input type="hidden" id='identificadorDirecciones'>
           <div class="form-group">
       <label for="tipD">Tipo Dirección:</label>
       <select class="form-control" id="tipoDireccion" name="tipoDireccion">
@@ -205,7 +207,7 @@
   <textarea class="form-control" rows="5" id="nota" name="nota"></textarea>
 </div>
  
-  <button type="submit" class="btn btn-primary">Guardar Contactos</button>
+  <button type="submit" class="btn btn-primary" id="guardaDir">Guardar Dirección</button>
   </form>
 
  </div>
