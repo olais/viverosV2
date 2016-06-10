@@ -83,7 +83,8 @@ comprobarContactos= sessionStorage.getItem("comprobarContactos");
    $("#nuevoContacto").click(function(){
           //this.disabled = 'false';
          // $("#guardarConta").attr("disabled",true);
-          
+                $("#guardarConta").html("Guardar Contactos");
+                $("#guardaDir").html("Guardar Dirección");
     //sección de contactos
                 $("#nombreC").val("");
                 $("#apellidosC").val("");
@@ -120,8 +121,10 @@ comprobarContactos= sessionStorage.getItem("comprobarContactos");
      document.getElementById("clientesG").reset();
     $("#fornuevocontacto").hide();
     $("#formDirecciones").hide();
-    // $("#guardarConta,#nuevoCliente").attr("disabled",false);
      
+   $("#guardarConta").html("Guardar Contactos");
+   $("#guardaDir").html("Guardar Dirección");
+    
   });
 
   //para mostrar el tiempo
