@@ -82,7 +82,7 @@ $("#gridContactos").jqGrid({
 
                             //validacion de tipo
                             if(tipo==10){
-                              $('#tipoContacto option:eq(1)').prop('selected', true)
+                              $('#tipoContacto option:eq(1)').prop('selected', true);
                               }
                             if(Id_estatus==10){
                                $('#estatusC option:eq(1)').prop('selected', true);

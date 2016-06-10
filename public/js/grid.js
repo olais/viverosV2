@@ -103,6 +103,8 @@ comprobarContactos= sessionStorage.getItem("comprobarContactos");
                 $("#formDirecciones").hide();
                 //mostrar form de direcciones
                 //$("#formDirecciones").show();
+              $('#tipoContacto option:eq(0)').prop('selected', true);
+              $('#estatusC option:eq(0)').prop('selected', true);
 
                 document.getElementById("clientesG").reset();
 
@@ -113,7 +115,18 @@ comprobarContactos= sessionStorage.getItem("comprobarContactos");
 
     $("#formDirecciones").show();
     $("#fornuevocontacto").hide();
-    document.getElementById("clientesG").reset();
+   
+                    $("#Id_direccion").val("");
+                     $("#calle").val("");
+                      $("#colonia").val("");
+                       $("#ciudad").val("");
+                        $("#muni").val("");
+                         $("#estado").val("");
+                          $("#cp").val("");
+                           $("#nota").val("");
+
+                           $('#tipoDireccion option:eq(0)').prop('selected', true);
+                            $('#estatusD option:eq(0)').prop('selected', true);
 
    });
   
