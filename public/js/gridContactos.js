@@ -24,10 +24,11 @@ $.post("editar/contactos",comprobar,
 $("#gridContactos").jqGrid({
     url:'editar/contactos?id='+idCli,
   datatype: "json",
-   colNames:['id', 'Nombre', 'Apellidos','Puesto','Teléfono1','Extension1','Telefono2','Extension2','Celular','Correo','Fecha de Nac','Facebook','Twitter','Skype'],
+   colNames:['id','idTipo','Id_estatus','Nombre', 'Apellidos','Puesto','Teléfono1','Extension1','Telefono2','Extension2','Celular','Correo','Fecha de Nac','Facebook','Twitter','Skype'],
     colModel:[
       {name:'Id_contacto',index:'Id_contacto', width:55},
-      
+      {name:'Id_tipocontacto',index:'Id_tipocontacto', width:55,hidden:true},
+      {name:'Id_estatus',index:'Id_estatus', width:55,hidden:true},
       {name:'Nombre',index:'Nombre', width:280,editable:true},
       {name:'Apellidos',index:'Apellidos', width:200, align:"left",editable:true},
       {name:'Puesto',index:'Puesto', width:170, align:"left",editable:true},    
@@ -63,6 +64,8 @@ $("#gridContactos").jqGrid({
              valores = s.toString().split(",");
              $("#"+s).dblclick(function(){
               Id_contacto=$("#gridContactos").jqGrid('getRowData',s).Id_contacto;
+               tipo=$("#gridContactos").jqGrid('getRowData',s).Id_tipocontacto;
+               Id_estatus=$("#gridContactos").jqGrid('getRowData',s).Id_estatus;
                Nombre=$("#gridContactos").jqGrid('getRowData',s).Nombre;
                 Apellidos=$("#gridContactos").jqGrid('getRowData',s).Apellidos;
                  Puesto=$("#gridContactos").jqGrid('getRowData',s).Puesto;
@@ -76,7 +79,19 @@ $("#gridContactos").jqGrid({
                           Facebook=$("#gridContactos").jqGrid('getRowData',s).Facebook;
                            Twitter=$("#gridContactos").jqGrid('getRowData',s).Twitter;
                             Skype=$("#gridContactos").jqGrid('getRowData',s).Skype;
+
+                            //validacion de tipo
+                            if(tipo==10){
+                              $('#tipoContacto option:eq(1)').prop('selected', true)
+                              }
+                            if(Id_estatus==10){
+                               $('#estatusC option:eq(1)').prop('selected', true);
+                             }else{
+                              $('#estatusC option:eq(2)').prop('selected', true);
+                             }
+
                 $("#fornuevocontacto").show();
+                $("#idContacto").val(Id_contacto);
                 $("#nombreC").val(Nombre);
                 $("#apellidosC").val(Apellidos);
                 $("#puestoC").val(Puesto);

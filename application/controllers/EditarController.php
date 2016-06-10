@@ -124,7 +124,7 @@ class EditarController extends Zend_Controller_Action
 
 
       $con=new Application_Model_Contactos();
-      $datos=  $con->nuevoCliente($contactos);
+      $datos=  $con->nuevoContacto($contactos);
       $response=new stdClass();
       $response->id=$datos;
 
@@ -135,11 +135,12 @@ class EditarController extends Zend_Controller_Action
     }
 
     public function actualizarcontactosAction(){
-        $this->_helper->layout->disableLayout();
+           $this->_helper->layout->disableLayout();
            $this->_helper->viewRenderer->setNoRender();
 
             $idc=$_REQUEST['idC'];
             $tipo=$_REQUEST['tipoContacto'];
+            $Id_contacto=$_REQUEST['idContacto'];
             $estatus=$_REQUEST['estatusC'];
             $nombre=$_REQUEST['nombreC'];
             $apellidos=$_REQUEST['apellidosC'];
@@ -179,15 +180,91 @@ class EditarController extends Zend_Controller_Action
 
 
       $con=new Application_Model_Contactos();
-      $datos=  $con->actualizaContacto($contactos);
+      $datos=  $con->actualizaContacto($contactos,$Id_contacto);
       $response=new stdClass();
       $response->id=$datos;
-      echo "hola";
+     
       echo json_encode($response);
 
 
     }
-   
+
+    function guardardireccionAction(){
+       $this->_helper->layout->disableLayout();
+       $this->_helper->viewRenderer->setNoRender();
+
+
+        $idD=$_REQUEST['idClienteDir'];
+        $tipo=$_REQUEST['tipoDireccion'];
+        $estatus=$_REQUEST['estatusD'];
+        $calle=$_REQUEST['calle'];
+        $colonia=$_REQUEST['colonia'];
+        $ciudad=$_REQUEST['ciudad'];
+        $muni=$_REQUEST['muni'];
+        $estado=$_REQUEST['estado'];
+        $cp=$_REQUEST['cp'];
+        $nota=$_REQUEST['nota'];
+
+         $direcciones=array(
+          "Id_direccion"=>"",
+          "Id_cliente"=>$idD,
+          "Id_tipodireccion"=>$tipo,
+          "Id_estatus"=>$estatus,
+          "Calle"=>$calle,
+          "Colonia"=>$colonia,
+          "Ciudad"=>$ciudad,
+          "Municipio"=>$muni,
+          "Estado"=>$estado,
+          "CP"=>$cp,
+          "Nota"=>$nota);
+
+          
+      $con=new Application_Model_Direcciones();
+      $datos=  $con->guardarDirecciones($direcciones);
+      $response=new stdClass();
+      $response->id=$datos;
+     
+      echo json_encode($response);
+        
+
+    }
+   function actualizardireccionesAction(){
+
+    $this->_helper->layout->disableLayout();
+       $this->_helper->viewRenderer->setNoRender();
+
+
+        $idD=$_REQUEST['idClienteDir'];
+        $Id_direccion=$_REQUEST['Id_direccion'];//falta
+        $tipo=$_REQUEST['tipoDireccion'];
+        $estatus=$_REQUEST['estatusD'];
+        $calle=$_REQUEST['calle'];
+        $colonia=$_REQUEST['colonia'];
+        $ciudad=$_REQUEST['ciudad'];
+        $muni=$_REQUEST['muni'];
+        $estado=$_REQUEST['estado'];
+        $cp=$_REQUEST['cp'];
+        $nota=$_REQUEST['nota'];
+
+         $direcciones=array(
+          "Id_cliente"=>$idD,
+          "Id_tipodireccion"=>$tipo,
+          "Id_estatus"=>$estatus,
+          "Calle"=>$calle,
+          "Colonia"=>$colonia,
+          "Ciudad"=>$ciudad,
+          "Municipio"=>$muni,
+          "Estado"=>$estado,
+          "CP"=>$cp,
+          "Nota"=>$nota);
+      $con=new Application_Model_Direcciones();
+      $datos=  $con->actualizaDirecciones($direcciones,$Id_direccion);
+      $response=new stdClass();
+      $response->id=$datos;
+    
+      echo json_encode($response);
+        
+   }
 }
 
 

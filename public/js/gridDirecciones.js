@@ -36,9 +36,32 @@ $("#gridDirecciones").jqGrid({
          
              var s = $("#gridDirecciones").jqGrid('getGridParam','selrow');
              valores = s.toString().split(",");
-              id=$("#gridDirecciones").jqGrid('getRowData',s).Id_cliente;
-              $("#formDirecciones").show();
+              Id_direccion=$("#gridDirecciones").jqGrid('getRowData',s).Id_direccion;
+               Calle=$("#gridDirecciones").jqGrid('getRowData',s).Calle;
+                Colonia=$("#gridDirecciones").jqGrid('getRowData',s).Colonia;
+                 Ciudad=$("#gridDirecciones").jqGrid('getRowData',s).Ciudad;
+                  Municipio=$("#gridDirecciones").jqGrid('getRowData',s).Municipio;
+                   Estado=$("#gridDirecciones").jqGrid('getRowData',s).Estado;
+                    CP=$("#gridDirecciones").jqGrid('getRowData',s).CP;
+                     Nota=$("#gridDirecciones").jqGrid('getRowData',s).Nota;
+                    $("#Id_direccion").val(Id_direccion);
+                     $("#calle").val(Calle);
+                      $("#colonia").val(Colonia);
+                       $("#ciudad").val(Ciudad);
+                        $("#muni").val(Municipio);
+                         $("#estado").val(Estado);
+                          $("#cp").val(CP);
+                           $("#nota").val(Nota);
+             
+               $("#formDirecciones").show();
                $("#fornuevocontacto").hide();
+               $("#guardaDir").html("Actualizar");
+               $("#identificadorDirecciones").val(1);
+
+
+
+
+
            
           },
 

@@ -40,9 +40,7 @@ $(document).ready(function(){
      			}
            	$.post(urlGuardar,contactos,
 				function(data){
-				//$("#ui-accordion-accordion-header-2").trigger('click');
-					//window.location='altas.php';
-					// idCliente = sessionStorage.getItem("id_cliente");
+				
 					 window.location="editar?id="+idCliente;
 				},'json'
 
@@ -53,11 +51,17 @@ $(document).ready(function(){
      	});
 
      		$("#contactosD").submit(function(){
-     		var contactos=$(this).serialize();
-     			$.post("guardarDirecciones.php",contactos,
+     		var direcciones=$(this).serialize();
+     		if(identificadorDirecciones==1){
+     				urlGuardar="editar/actualizardirecciones";
+
+     			}else{
+
+     				urlGuardar="editar/actualizardirecciones";
+     			}
+     			$.post(urlGuardar,direcciones,
 				function(data){
-					$("#ui-accordion-accordion-header-0").trigger('click');
-					//window.location='altas.php';
+					window.location="editar?id="+idCliente;
 				},'json'
 
 		       );
