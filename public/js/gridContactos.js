@@ -92,6 +92,10 @@ $("#gridContactos").jqGrid({
                 $("#sky").val(Skype);
 
                  $("#formDirecciones").hide();
+                 $("#guardarConta").html("Actualizar");
+
+                 $("#identificadorContactos").val(1);
+
 
 
 
