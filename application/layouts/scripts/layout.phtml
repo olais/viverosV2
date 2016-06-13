@@ -28,7 +28,21 @@
     <script>
         var path = "<?php echo $this->baseUrl(); ?>";//por si queremos la url base en js
     </script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+
+          errores=sessionStorage.getItem("id");
+    if(errores!=""){
+
+        $("#notificaciones").html("Consulta exitosa");
+
+    }else{
+          $("#notificaciones").html("A ocurrido error");
+    }
+  })
+    </script>
     <script language="JavaScript"> 
+    
         function mueveReloj(){ 
             momentoActual = new Date();
             hora = momentoActual.getHours();
@@ -69,23 +83,11 @@
                                                   <li class="dropdown">
                                                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Catalogos <span class="caret"></span></a>
                                                     <ul class="dropdown-menu">
-                                                        Clientes
-                                                      
-                                                        <li><a href="consultas">Consultas</a></li>
-                                                        <li><a href="altas">Altas</a></li>
-                                                        Maquinas
-                                                       
-                                                        <li><a href="consultas">Consultas</a></li>
-                                                        <li><a href="altas">Altas</a></li>
+                                                       <li><a href="consultas">Clientes</a></li>
+                                                        <li><a href="maquinas">Maquinas</a></li>
                                                    </ul>
                                                 </li>
-                                                <li class="dropdown">
-                                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Clientes <span class="caret"></span></a>
-                                                    <ul class="dropdown-menu">
-                                                        <li><a href="consultas">Consultas</a></li>
-                                                        <li><a href="altas">Altas</a></li>
-                                                   </ul>
-                                                </li>
+                                                
                                                 <li><a href="#">Producción</a></li>
                                                 <li><a href="#">Reportes</a></li>
                                                 <li><a href="#">Login</a></li>

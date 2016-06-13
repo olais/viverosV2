@@ -57,7 +57,7 @@ $(document).ready(function(){
 
      			}else{
 
-     				urlGuardar="editar/actualizardirecciones";
+     				urlGuardar="editar/guardardireccion";
      			}
      			$.post(urlGuardar,direcciones,
 				function(data){
