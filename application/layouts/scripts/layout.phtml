@@ -117,7 +117,7 @@
                                             <span class="icon-bar"></span>
                                             <span class="icon-bar"></span> 
                                         </button>
-                                        <a class="navbar-brand" href="#">Barra de acciones</a>
+                                        <!--<a class="navbar-brand" href="#">Barra de acciones</a>-->
                                     </div>
                                     <div class="collapse navbar-collapse" id="myNavbar">
                                         <ul class="nav navbar-nav">
@@ -134,10 +134,10 @@
                                                </ul>
                                             </li>
                                         </ul>
-                                        <ul class="nav navbar-nav navbar-right">
+<!--                                        <ul class="nav navbar-nav navbar-right">
                                             <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                                             <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                                        </ul>
+                                        </ul>-->
                                     </div>
                                 </div>
                             </nav>
@@ -158,7 +158,9 @@
                 </div>
                 <div class="container">
                     <div class="row">
-                        <?= $this->layout()->content; ?>
+                        <div class="col-xs-12">
+                            <?= $this->layout()->content; ?>
+                        </div>
                     </div>
                 </div>
             </div>
