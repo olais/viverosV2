@@ -6,24 +6,25 @@ class Application_Model_Sesion extends Zend_Db_Table_Abstract
     const CREDENTIAL_INVALID = "Password incorrecto";
     const IDENTITY_AMBIGUOUS = "Indentidad de usuario es ambigua";
     const UNCATEGORIZED = "Error por razones desconocidas";
+   
     
     function login($user, $pass){
         $dbAdapter = Zend_Db_Table_Abstract::getDefaultAdapter();
         $authAdapter = new Zend_Auth_Adapter_DbTable($dbAdapter);
         $authAdapter
-            ->setTableName('Usuarios')
+            ->setTableName('usuarios')
             ->setIdentityColumn('Usuario')
             ->setCredentialColumn('Password')
             ->setIdentity($user)
             ->setCredential($pass)
-            ->setCredentialTreatment('? AND Activo = 1');
+            ->setCredentialTreatment('? AND Id_estatus = 10');
         $result = Zend_Auth::getInstance()->authenticate($authAdapter);
         if ($result->isValid()) {
-//            // los datos del usuario son correctos
+           // los datos del usuario son correctos
             $storage = Zend_Auth::getInstance()->getStorage();
             $bddResultRow = $authAdapter->getResultRowObject(); 
             $storage->write($bddResultRow);
-//            $this->_redirect("index/vista");
+          // $this->_redirect("index");
         } else {
             switch ($result->getCode()) {
                 case Zend_Auth_Result::FAILURE_IDENTITY_NOT_FOUND:
