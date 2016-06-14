@@ -1,0 +1,76 @@
+<?php echo $this->doctype() ?>
+<head>
+    <?php 
+        $this->headMeta()->prependHttpEquiv('Content-Type', 'text/html; charset=utf-8');
+        $this->headLink()->appendStylesheet($this->baseUrl('css/bootstrap/bootstrap.min.css'));
+        $this->headLink()->appendStylesheet($this->baseUrl('css/jquery-ui.css'));
+        $this->headLink()->appendStylesheet($this->baseUrl('css/estilo.css'));
+        $this->headLink()->appendStylesheet($this->baseUrl('css/estilos_txt.css'));
+        $this->headLink()->appendStylesheet($this->baseUrl('css/jquery-ui-1.10.4.custom.min.css'));
+        $this->headScript()->prependFile($this->baseUrl('js/jquery-1.12.3.min.js'), 'text/javascript');
+        $this->headScript()->appendFile($this->baseUrl('js/jquery-ui-custom.min.js'), 'text/javascript');
+        $this->headScript()->appendFile($this->baseUrl('js/bootstrap/bootstrap.min.js'), 'text/javascript');
+        $this->headScript()->appendFile($this->baseUrl('js/script.js'), 'text/javascript');
+       
+        $this->headTitle()->append('Miapp/Suajes');
+        echo $this->headMeta();
+        echo $this->headTitle(); 
+        echo $this->headLink();
+        echo $this->headScript();
+    ?>
+    <script>
+        var path = "<?php echo $this->baseUrl(); ?>";//por si queremos la url base en js
+    </script>
+   
+   
+    </head>
+    <body>		
+        <header>
+            <div id="div-img-head">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="sombra-nav">
+                                <nav class="navbar navbar-inverse navbar_top navbar-inverse_top">
+                                    <div class="container-fluid">
+                                        <div class="navbar-header">
+                                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#Navbar_top">
+                                                <span class="icon-bar"></span>
+                                                <span class="icon-bar"></span>
+                                                <span class="icon-bar"></span> 
+                                            </button>
+                                            <a class="navbar-brand navbar-brand_top hidden-xs hidden-sm" href="#"></a>
+                                        </div>
+                                        <div class="collapse navbar-collapse" id="Navbar_top">
+                                            <ul class="nav navbar-nav navbar-right nav_top navbar-nav_top">
+                                              
+                                                <li><a href="#" >Viveros</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+                <div class="container">
+                    <div class="row">
+                        <?= $this->layout()->content; ?>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                      wwffffwfw
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
