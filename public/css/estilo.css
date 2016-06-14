@@ -21,6 +21,7 @@ header
     background-image: url(../images/header/img_header_r1.png);
     background-repeat: no-repeat;
     background-position: center;
+    height: 100px;
 }
 
 .nav_top>li>a
@@ -67,7 +68,6 @@ header
 
 .sombra-nav
 {
-
     background: rgba(4,114,199,0.4);
     padding: 16px 0 1px 0;
     margin: 10px 0;
@@ -137,6 +137,38 @@ footer
 .ui-jqgrid, .ui-jqgrid-view, .ui-state-default, .ui-jqgrid-bdiv, .ui-jqgrid-hbox, .ui-jqgrid-htable, #gridClientes
 {
     width: 100% !important;
+}
+
+#divlogin
+{
+    /*text-align: center;*/
+    margin: 0 auto;
+    padding: 30px;
+    background: white;
+    margin-top: 100px;
+    border-radius: 9px;
+    border: 1px solid #0c7bcd;
+}
+
+#logoLogin
+{
+    margin: auto;
+}
+
+input[type=text], input[type=password]
+{
+  margin: 5px;
+  padding: 0 10px;
+  /*width: 200px;*/
+  height: 34px;
+  color: #404040;
+  background: white;
+  border: 1px solid;
+  border-color: #c4c4c4 #d1d1d1 #d4d4d4;
+  border-radius: 2px;
+  outline: 5px solid #eff4f7;
+  -moz-outline-radius: 3px; 
+  
 }
 
 @media (max-width: 767px)
@@ -2396,7 +2428,7 @@ width: 400px;
 
 	height: auto !important;
 }*/
-#hasLogin {
+/*#hasLogin {
   position: relative;
   text-align: center;
   margin: 0 auto;
@@ -2406,29 +2438,4 @@ width: 400px;
   margin-top: 200px;
   border-radius: 9px;
   
-  }
-
-
-
-input[type=text], input[type=password] {
-  margin: 5px;
-  padding: 0 10px;
-  width: 200px;
-  height: 34px;
-  color: #404040;
-  background: white;
-  border: 1px solid;
-  border-color: #c4c4c4 #d1d1d1 #d4d4d4;
-  border-radius: 2px;
-  outline: 5px solid #eff4f7;
-  -moz-outline-radius: 3px; 
-  
-}
-#logoLogin{
-
-	width: 300px;
-	margin: auto;
-}
-
-
-
+  }*/
