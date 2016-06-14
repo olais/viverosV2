@@ -120,6 +120,17 @@
                                         <!--<a class="navbar-brand" href="#">Barra de acciones</a>-->
                                     </div>
                                     <div class="collapse navbar-collapse" id="myNavbar">
+
+                                        <!--div class="btn-group">
+                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                            Nuevo<span class="caret"></span></button>
+                                            <ul class="dropdown-menu" role="menu">
+                                              <li class="btn btn-default"><a href="#" id="nuevoCliente" >Cliente</a></li>
+                                              <li class="btn btn-success"><a href="#" id="nuevoContacto">Contacto</a></li>
+                                              <li class="btn btn-info"><a href="#" id="nuevaDireccion">Dirección</a></li>
+                                               <li class="btn btn-warning"><a href="#" id="nuevaMaquina">Máquina</a></li>
+                                            </ul-->
+ 
                                         <ul class="nav navbar-nav">
                                             <li><a href="#">Page 1</a></li>
                                             <li><a href="#">Page 2</a></li>
@@ -133,6 +144,7 @@
                                                     <li><a href="#" id="nuevaMaquina">Máquina</a></li>
                                                </ul>
                                             </li>
+
                                         </ul>
 <!--                                        <ul class="nav navbar-nav navbar-right">
                                             <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -141,19 +153,7 @@
                                     </div>
                                 </div>
                             </nav>
-
-            <div id='barraMenu'>
-                <ul id='menu'>
-                    <?php 
-                    $crearmenu = new Zend_Session_Namespace('crearmenu'); 
-                    $m=$crearmenu->menu;
-                    foreach ($m as $valores){
-                        echo $valores['html'];
-                    }?>
-                    <?php //echo $this->partial('menu.phtml'); ?>
-                </ul>
-            </div>
-                        </div>
+                       </div>
                     </div>
                 </div>
                 <div class="container">
