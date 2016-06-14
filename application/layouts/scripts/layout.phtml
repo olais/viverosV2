@@ -1,64 +1,67 @@
 <?php echo $this->doctype() ?>
-<head>
-    <?php 
-        $this->headMeta()->prependHttpEquiv('Content-Type', 'text/html; charset=utf-8');
-        $this->headLink()->appendStylesheet($this->baseUrl('css/bootstrap/bootstrap.min.css'));
-        $this->headLink()->appendStylesheet($this->baseUrl('css/jquery-ui.css'));
-        $this->headLink()->appendStylesheet($this->baseUrl('css/estilo.css'));
-        $this->headLink()->appendStylesheet($this->baseUrl('css/estilos_txt.css'));
-        $this->headLink()->appendStylesheet($this->baseUrl('css/theme.blue.css'));
-        $this->headLink()->appendStylesheet($this->baseUrl('css/ui.jqgrid.css'));
-        $this->headLink()->appendStylesheet($this->baseUrl('css/jquery-ui-1.10.4.custom.min.css'));
-        $this->headScript()->prependFile($this->baseUrl('js/jquery-1.12.3.min.js'), 'text/javascript');
-        $this->headScript()->appendFile($this->baseUrl('js/jquery-ui-custom.min.js'), 'text/javascript');
-        $this->headScript()->appendFile($this->baseUrl('js/bootstrap/bootstrap.min.js'), 'text/javascript');
-        $this->headScript()->appendFile($this->baseUrl('js/script.js'), 'text/javascript');
-        $this->headScript()->appendFile($this->baseUrl('js/guardarClientes.js'), 'text/javascript');
-        $this->headScript()->appendFile($this->baseUrl('js/grid.js'), 'text/javascript');
-        $this->headScript()->appendFile($this->baseUrl('js/gridContactos.js'), 'text/javascript');
-         $this->headScript()->appendFile($this->baseUrl('js/gridDirecciones.js'), 'text/javascript');
-        $this->headScript()->appendFile($this->baseUrl('js/grid.locale-en.js'), 'text/javascript');
-        $this->headScript()->appendFile($this->baseUrl('js/jquery.jqGrid.min.js'), 'text/javascript');
-        $this->headTitle()->append('Miapp/Suajes');
-        echo $this->headMeta();
-        echo $this->headTitle(); 
-        echo $this->headLink();
-        echo $this->headScript();
-    ?>
-    <script>
-        var path = "<?php echo $this->baseUrl(); ?>";//por si queremos la url base en js
-    </script>
-    <script type="text/javascript">
-    $(document).ready(function(){
-
-          errores=sessionStorage.getItem("id");
-    if(errores!=""){
-
-        $("#notificaciones").html("Consulta exitosa");
-
-    }else{
-          $("#notificaciones").html("A ocurrido error");
-    }
-  })
-    </script>
-    <script language="JavaScript"> 
-    
-        function mueveReloj(){ 
-            momentoActual = new Date();
-            hora = momentoActual.getHours();
-            minuto = momentoActual.getMinutes();
-            segundo = momentoActual.getSeconds();
-             if(segundo<10){
-               segundo="0"+segundo;
+    <head>
+        <?php 
+            $this->headMeta()->prependHttpEquiv('Content-Type', 'text/html; charset=utf-8');
+            $this->headLink()->appendStylesheet($this->baseUrl('css/bootstrap/bootstrap.min.css'));
+            $this->headLink()->appendStylesheet($this->baseUrl('css/jquery-ui.css'));
+            $this->headLink()->appendStylesheet($this->baseUrl('css/estilo.css'));
+            $this->headLink()->appendStylesheet($this->baseUrl('css/estilos_txt.css'));
+            $this->headLink()->appendStylesheet($this->baseUrl('css/theme.blue.css'));
+            $this->headLink()->appendStylesheet($this->baseUrl('css/ui.jqgrid.css'));
+            $this->headLink()->appendStylesheet($this->baseUrl('css/jquery-ui-1.10.4.custom.min.css'));
+            $this->headScript()->prependFile($this->baseUrl('js/jquery-1.12.3.min.js'), 'text/javascript');
+            $this->headScript()->appendFile($this->baseUrl('js/jquery-ui-custom.min.js'), 'text/javascript');
+            $this->headScript()->appendFile($this->baseUrl('js/bootstrap/bootstrap.min.js'), 'text/javascript');
+            $this->headScript()->appendFile($this->baseUrl('js/script.js'), 'text/javascript');
+            $this->headScript()->appendFile($this->baseUrl('js/guardarClientes.js'), 'text/javascript');
+            $this->headScript()->appendFile($this->baseUrl('js/grid.js'), 'text/javascript');
+            $this->headScript()->appendFile($this->baseUrl('js/gridContactos.js'), 'text/javascript');
+             $this->headScript()->appendFile($this->baseUrl('js/gridDirecciones.js'), 'text/javascript');
+            $this->headScript()->appendFile($this->baseUrl('js/grid.locale-en.js'), 'text/javascript');
+            $this->headScript()->appendFile($this->baseUrl('js/jquery.jqGrid.min.js'), 'text/javascript');
+            $this->headTitle()->append('Miapp/Suajes');
+            echo $this->headMeta();
+            echo $this->headTitle(); 
+            echo $this->headLink();
+            echo $this->headScript();
+        ?>
+        <script>
+            var path = "<?php echo $this->baseUrl(); ?>";//por si queremos la url base en js
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function()
+            {
+                errores=sessionStorage.getItem("id");
+                if(errores!="")
+                {
+                    $("#notificaciones").html("Consulta exitosa");
                 }
-             if(minuto<10){
-               minuto="0"+minuto;
-                 }
-            horaImprimible = hora + " : " + minuto + " : " + segundo;
-            $("#hora").html(horaImprimible);
-        } 
-       setInterval (function() {mueveReloj();}, 500); 
-</script> 
+                else
+                {
+                    $("#notificaciones").html("A ocurrido error");
+                }
+            })
+        </script>
+        <script language="JavaScript"> 
+            function mueveReloj()
+            { 
+                momentoActual = new Date();
+                hora = momentoActual.getHours();
+                minuto = momentoActual.getMinutes();
+                segundo = momentoActual.getSeconds();
+                if(segundo<10)
+                {
+                    segundo="0"+segundo;
+                }
+                if(minuto<10)
+                {
+                    minuto="0"+minuto;
+                }
+                horaImprimible = hora + " : " + minuto + " : " + segundo;
+                $("#hora").html(horaImprimible);
+            } 
+           setInterval (function() {mueveReloj();}, 500); 
+        </script> 
     </head>
     <body onload="mueveReloj()">		
         <header>
