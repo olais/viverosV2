@@ -143,6 +143,18 @@
                                     </div>
                                 </div>
                             </nav>
+
+            <div id='barraMenu'>
+                <ul id='menu'>
+                    <?php 
+                    $crearmenu = new Zend_Session_Namespace('crearmenu'); 
+                    $m=$crearmenu->menu;
+                    foreach ($m as $valores){
+                        echo $valores['html'];
+                    }?>
+                    <?php //echo $this->partial('menu.phtml'); ?>
+                </ul>
+            </div>
                         </div>
                     </div>
                 </div>
