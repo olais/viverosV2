@@ -82,18 +82,47 @@
                                         </div>
                                         <div class="collapse navbar-collapse" id="Navbar_top">
                                             <ul class="nav navbar-nav navbar-right nav_top navbar-nav_top">
-                                                <li class="active"><a href="index">Inicio</a></li>
-                                                <li class="dropdown">
-                                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Catalogos <span class="caret"></span></a>
-                                                    <ul class="dropdown-menu">
-                                                       <li><a href="consultas">Clientes</a></li>
-                                                        <li><a href="maquinas">Maquinas</a></li>
-                                                   </ul>
-                                                </li>
-                                                <li><a href="#">Producción</a></li>
-                                                <li><a href="#">Reportes</a></li>
-                                                <li><a href="#" id="salir">Salir</a></li>
-                                                <!--<li><a href="#">Logout</a></li>-->
+                                                <!--formar el menu -->
+                                        <!--li class='active'><a href='index' >Inicio</a>   </li-->  
+                                       <?php 
+                                            $crearmenu = new Zend_Session_Namespace('crearmenu'); 
+                                            $m=$crearmenu->menu;
+                                            $armarMenu = new Application_Model_Menu_Constructor();
+                                             //echo $armarMenu->getinicio();
+
+                                            foreach ($m as $key => $valor){
+                                         if($valor['mnuCatalogos']==1){
+                                            echo   $armarMenu->getcatalogos($valor['mnuCatalogoclientes']);
+
+                                             }
+                                           if($valor['mnuPlaneacion']==1){
+                                            echo $armarMenu->getplaneacion();
+
+                                            }
+                                             if($valor['mnuProduccion']==1){
+            echo $armarMenu->getproduccion($valor['mnuDiseno'],$valor['mnuCorte'],$valor['mnuDoblado'],$valor['mnuArmado'],$valor['mnuAhulado'],$valor['mnuRouter']);
+
+                                            }
+                                             if($valor['mnuEntregas']==1){
+                                            echo $armarMenu->getentregas();
+
+                                            }
+                                             if($valor['mnuUsuarios']==1){
+                                            echo $armarMenu->getusuarios();
+
+                                            }
+                                              if($valor['mnuMonitor']==1){
+                                            echo $armarMenu->getmonitor();
+
+                                            }
+                                            
+                                            //echo $armarMenu->getsalir();
+
+                                            }?>
+                                            <li>
+                                             <a href='login/salir'>Salir</a></li>
+
+                                                <!--fin de menu-->
                                             </ul>
                                         </div>
                                     </div>
@@ -121,20 +150,8 @@
                                     </div>
                                     <div class="collapse navbar-collapse" id="myNavbar">
 
-                                        <!--div class="btn-group">
-                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                                            Nuevo<span class="caret"></span></button>
-                                            <ul class="dropdown-menu" role="menu">
-                                              <li class="btn btn-default"><a href="#" id="nuevoCliente" >Cliente</a></li>
-                                              <li class="btn btn-success"><a href="#" id="nuevoContacto">Contacto</a></li>
-                                              <li class="btn btn-info"><a href="#" id="nuevaDireccion">Dirección</a></li>
-                                               <li class="btn btn-warning"><a href="#" id="nuevaMaquina">Máquina</a></li>
-                                            </ul-->
- 
                                         <ul class="nav navbar-nav">
-                                            <li><a href="#">Page 1</a></li>
-                                            <li><a href="#">Page 2</a></li>
-                                            <li><a href="#">Page 3</a></li>
+                                            
                                             <li class="dropdown">
                                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Nuevo <span class="caret"></span></a>
                                                 <ul class="dropdown-menu">
@@ -146,10 +163,7 @@
                                             </li>
 
                                         </ul>
-<!--                                        <ul class="nav navbar-nav navbar-right">
-                                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                                            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                                        </ul>-->
+
                                     </div>
                                 </div>
                             </nav>
@@ -170,7 +184,11 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <div id="notificaciones" class="col-xs-8 col-sm-3">Error de consutla</div>
-                        <div id="usr" class="col-xs-4 col-sm-3">Usuario</div>
+                <?php
+                $this->datosUsuario = Zend_Auth::getInstance()->getStorage()->read();
+                    $usuario=$personadid= $this->datosUsuario->Usuario;
+                ?>
+                        <div id="usr" class="col-xs-4 col-sm-3"><?php echo $usuario; ?></div>
                         <div id="fecha" class="col-sm-2 hidden-xs"><?php echo date("d-m-Y"); ?></div>
                         <div id="hora" class="col-sm-2 hidden-xs"></div>
                         <div class="col-sm-2 hidden-xs">Version. 160602</div>
