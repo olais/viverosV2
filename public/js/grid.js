@@ -26,7 +26,7 @@ $("#gridClientes").jqGrid({
     sortorder: "desc",
     multiselect:false,
     width:'1200',
-    height:'230',
+    height:'360',
 
     editurl: "index/consultar", //aqui la url de la actualización
    
@@ -140,7 +140,11 @@ comprobarContactos= sessionStorage.getItem("comprobarContactos");
     
   });
 
-  //para mostrar el tiempo
+  $("#clickM").click(function(){
+
+    $("#clienteM").val($("#nombre").val());
+
+  });
 
  
 
