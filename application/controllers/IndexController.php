@@ -5,22 +5,19 @@ class IndexController extends Zend_Controller_Action
 
     public function init()
     {
-        
+        $auth = Zend_Auth::getInstance(); 
+        if (!$auth->hasIdentity()) { 
+        $this->_redirect('login'); 
+        } 
     }
 
     public function indexAction()
     {
-          
-        //$this->_helper->layout->disableLayout();
-        //$this->_helper->viewRenderer->setNoRender();
+       
 
     }
     public function altasAction(){
         
-        //$this->_helper->layout->disableLayout();
-        //$this->_helper->viewRenderer->setNoRender();
-      
-         
     }
     
     public function consultarAction(){
