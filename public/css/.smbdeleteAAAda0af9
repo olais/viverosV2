@@ -173,11 +173,6 @@ input[type=text], input[type=password]
   
 }
 
-.color-red
-{
-    color: red;
-}
-
 @media (max-width: 767px)
 {
 /*    header

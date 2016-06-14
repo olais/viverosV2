@@ -13,9 +13,9 @@ class IndexController extends Zend_Controller_Action
 
     public function indexAction()
     {
-       $model = new Application_Model_DbTable_Menu();
-       $crearmenu  = new Zend_Session_Namespace('crearmenu');
-       $crearmenu->menu = $model->llenarMenu();
+//       $model = new Application_Model_DbTable_Menu();
+//       $crearmenu  = new Zend_Session_Namespace('crearmenu');
+//       $crearmenu->menu = $model->llenarMenu();
 
     }
     public function altasAction(){
