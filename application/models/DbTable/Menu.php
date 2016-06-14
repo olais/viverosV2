@@ -2,8 +2,8 @@
 
 class Application_Model_DbTable_Menu extends Zend_Db_Table_Abstract
 {
-    protected $_name = 'Menu';
-    protected $_primary='personaid';
+    protected $_name = 'permisos_tipousuario';
+    protected $_primary='Id_tipousuario';
     protected $model;
     protected $menu = [];
     protected $orden;
@@ -23,14 +23,22 @@ class Application_Model_DbTable_Menu extends Zend_Db_Table_Abstract
     }
     
     public function Buscar(){
-        $select = $this->select()->where('PersonaID=?',$this->datosUsuario->personaid);
+        $select = $this->select()->where('Id_tipousuario=?',$this->datosUsuario->Id_tipousuario);
         $this->sql=$this->fetchAll($select)->toArray();
     }
 
     public function llenarMenu(){
         $this->Buscar();
-        foreach ($this->sql as $row){
-            switch ($row['moduloid']){
+         foreach ($this->sql as $key=> $value){
+            switch ($key){
+              case 'mnuCatalogos': 
+               $this->menu[$this->orden]['html']= $this->model->getcatalogos();
+               $this->menu[$this->orden]['ordenamiento']=1;
+               break;
+
+            }
+
+            /*switch ($row['moduloid']){
                 case 15:
                    $this->menu[$this->orden]['html']= $this->model->getcatalogos();
                    $this->menu[$this->orden]['ordenamiento']=1;
@@ -106,9 +114,9 @@ class Application_Model_DbTable_Menu extends Zend_Db_Table_Abstract
                 case 14:
                    $this->menu[$this->orden]['html']= $this->model->getatnclientes();
                     $this->menu[$this->orden]['ordenamiento']=21;
-                   break;
-            }
-            $this->orden++;
+                   break;*/
+           // }
+           // $this->orden++;
         }
         if($this->produccion){
             $this->menu[$this->orden]['html'] = $this->model->getproduccion();
