@@ -141,7 +141,6 @@ footer
 
 #divlogin
 {
-    /*text-align: center;*/
     margin: 0 auto;
     padding: 30px;
     background: white;
@@ -159,7 +158,6 @@ input[type=text], input[type=password]
 {
   margin: 5px;
   padding: 0 10px;
-  /*width: 200px;*/
   height: 34px;
   color: #404040;
   background: white;
