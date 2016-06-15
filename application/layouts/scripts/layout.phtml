@@ -1,7 +1,8 @@
 <?php echo $this->doctype() ?>
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <?php 
-            $this->headMeta()->prependHttpEquiv('Content-Type', 'text/html; charset=utf-8');
             $this->headLink()->appendStylesheet($this->baseUrl('css/bootstrap/bootstrap.min.css'));
             $this->headLink()->appendStylesheet($this->baseUrl('css/jquery-ui.css'));
             $this->headLink()->appendStylesheet($this->baseUrl('css/estilo.css'));
@@ -25,43 +26,6 @@
             echo $this->headLink();
             echo $this->headScript();
         ?>
-        <script>
-            var path = "<?php echo $this->baseUrl(); ?>";//por si queremos la url base en js
-        </script>
-        <script type="text/javascript">
-            $(document).ready(function()
-            {
-                errores=sessionStorage.getItem("id");
-                if(errores!="")
-                {
-                    $("#notificaciones").html("Consulta exitosa");
-                }
-                else
-                {
-                    $("#notificaciones").html("A ocurrido error");
-                }
-            })
-        </script>
-        <script language="JavaScript"> 
-            function mueveReloj()
-            { 
-                momentoActual = new Date();
-                hora = momentoActual.getHours();
-                minuto = momentoActual.getMinutes();
-                segundo = momentoActual.getSeconds();
-                if(segundo<10)
-                {
-                    segundo="0"+segundo;
-                }
-                if(minuto<10)
-                {
-                    minuto="0"+minuto;
-                }
-                horaImprimible = hora + " : " + minuto + " : " + segundo;
-                $("#hora").html(horaImprimible);
-            } 
-           setInterval (function() {mueveReloj();}, 500); 
-        </script> 
     </head>
     <body onload="mueveReloj()">		
         <header>
@@ -90,7 +54,6 @@
                                                         <li><a href="maquinas">Maquinas</a></li>
                                                    </ul>
                                                 </li>
-                                                
                                                 <li><a href="#">Producción</a></li>
                                                 <li><a href="#">Reportes</a></li>
                                                 <li><a href="#" id="salir">Salir</a></li>
@@ -118,28 +81,27 @@
                                             <span class="icon-bar"></span>
                                             <span class="icon-bar"></span> 
                                         </button>
-                                        <a class="navbar-brand" href="#">Barra de acciones</a>
+                                        <!--<a class="navbar-brand" href="#">Barra de acciones</a>-->
                                     </div>
                                     <div class="collapse navbar-collapse" id="myNavbar">
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                                            Nuevo<span class="caret"></span></button>
-                                            <ul class="dropdown-menu" role="menu">
-                                              <li class="btn btn-default"><a href="#" id="nuevoCliente" >Cliente</a></li>
-                                              <li class="btn btn-success"><a href="#" id="nuevoContacto">Contacto</a></li>
-                                              <li class="btn btn-info"><a href="#" id="nuevaDireccion">Dirección</a></li>
-                                               <li class="btn btn-warning"><a href="#" id="nuevaMaquina">Máquina</a></li>
-                                            </ul>
-                                          </div>
                                         <ul class="nav navbar-nav">
                                             <li><a href="#">Page 1</a></li>
-                                            <li><a href="#">Page 2</a></li> 
-                                            <li><a href="#">Page 3</a></li> 
+                                            <li><a href="#">Page 2</a></li>
+                                            <li><a href="#">Page 3</a></li>
+                                            <li class="dropdown">
+                                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Nuevo <span class="caret"></span></a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="#" id="nuevoCliente" >Cliente</a></li>
+                                                    <li><a href="#" id="nuevoContacto">Contacto</a></li>
+                                                    <li><a href="#" id="nuevaDireccion">Dirección</a></li>
+                                                    <li><a href="#" id="nuevaMaquina">Máquina</a></li>
+                                               </ul>
+                                            </li>
                                         </ul>
-                                        <ul class="nav navbar-nav navbar-right">
+<!--                                        <ul class="nav navbar-nav navbar-right">
                                             <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                                             <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                                        </ul>
+                                        </ul>-->
                                     </div>
                                 </div>
                             </nav>
@@ -169,8 +131,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
-                        <div id="notificaciones" class="col-xs-8 col-sm-3">Error de consutla</div>
-                        <div id="usr" class="col-xs-4 col-sm-3">Usuario</div>
+                        <div id="notificaciones" class="col-xs-8 col-sm-3"></div>
+                        <div id="usr" class="col-xs-4 col-sm-3"></div>
                         <div id="fecha" class="col-sm-2 hidden-xs"><?php echo date("d-m-Y"); ?></div>
                         <div id="hora" class="col-sm-2 hidden-xs"></div>
                         <div class="col-sm-2 hidden-xs">Version. 160602</div>
