@@ -22,4 +22,6 @@ $(document).ready(function()
     {
         window.location='login/salir';
     });
+
+    
 });
