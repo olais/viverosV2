@@ -155,13 +155,25 @@
                                             <li class="dropdown">
                                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Nuevo <span class="caret"></span></a>
                                                 <ul class="dropdown-menu">
-                                                    <li><a href="#" id="nuevoCliente" >Cliente</a></li>
+                                                    <?php  
+                                                 
+                                                   if($_SERVER['REQUEST_URI']=="/viverosV2/public/consultas"){
+                                                    echo " <li><a href='#'' id='nuevoCliente' >Cliente</a></li>";
+                                                   }else{ ?>
+
+                                                   
+                                                    <li><a href="#" id="nuevoCliente">Cliente</a></li>
                                                     <li><a href="#" id="nuevoContacto">Contacto</a></li>
                                                     <li><a href="#" id="nuevaDireccion">Dirección</a></li>
                                                     <li><a href="#" id="nuevaMaquina">Máquina</a></li>
+
+                                                   <?php  }?>
+
+
                                                </ul>
                                             </li>
-
+                                             <li><a href="#" id="guardaCliente">Guardar</a></li>
+                                             <li><a href="#" id="cancelaClienteUno">Cancelar</a></li>
                                         </ul>
 
                                     </div>

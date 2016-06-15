@@ -3,6 +3,8 @@ var id;
 var id_cliente;
 $("#fornuevocontacto").hide();
 $("#formDirecciones").hide();
+$("#formClientes").hide();
+$("#gCliente").hide();
 $("#gridClientes").jqGrid({
    	url:'index/consultar',
 	datatype: "json",
@@ -25,7 +27,7 @@ $("#gridClientes").jqGrid({
     viewrecords: true,
     sortorder: "desc",
     multiselect:false,
-    width:'1200',
+    width:'1140',
     height:'360',
 
     editurl: "index/consultar", //aqui la url de la actualización
@@ -145,6 +147,12 @@ comprobarContactos= sessionStorage.getItem("comprobarContactos");
     $("#clienteM").val($("#nombre").val());
 
   });
+
+  $("#nuevoCliente").click(function(){
+
+    $("#formClientes").show();
+  });
+
 
  
 
