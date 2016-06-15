@@ -9,10 +9,11 @@ $(document).ready(function(){
 				function(data){
 					 
 					sessionStorage.setItem("id",data.id);
-					
 					  idCliente = sessionStorage.getItem("id");
-					  alert("listo");
-					   window.location="editar?id="+idCliente;
+					 $("#notificaciones").html("Cliente guardado con éxito")
+						var url      = window.location.href; 
+					    window.location=url+"?id="+idCliente;
+					    location.reload();
      				
 				},'json'
 
@@ -69,9 +70,16 @@ $(document).ready(function(){
 			return false;
 
      	});
+     		$("#guardaCliente").click(function(){
+			    $("#gCliente").trigger("click");
+     		});
 
+     		$("#cancelaClienteUno").click(function(){
 
+     			 $("#formClientes").hide();
 
+     		});
+     			
      	
 
 
