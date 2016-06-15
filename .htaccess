@@ -1,6 +1,5 @@
 AddDefaultCharset utf-8
 php_value default_charset "utf-8"
-
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule !\.(js|ico|gif|jpg|png|css)$ index.php

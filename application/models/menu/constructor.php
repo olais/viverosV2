@@ -34,12 +34,15 @@ class Application_Model_Menu_Constructor {
             $this->catalogos.=" <li><a href='consultas'>Clientes</a></li>";
                                     }
                                            
-            $this->catalogos.="<!--li><a href='maquinas'>Maquinas</a></li--></ul>  </li> "; 
+            $this->catalogos.="<li><a hrfe='#'>Usuarios</a></li></ul>  </li> "; 
         return $this->catalogos;
     }
          
      function getplaneacion(){
-            $this->planeacion="<li><a hrfe='#'>Planeacion</a></li>"; 
+            $this->planeacion="<li class='dropdown'>
+                                <a class='dropdown-toggle' data-toggle='dropdown' href='#'>Planeación<span class='caret'></span></a>
+                                  <ul class='dropdown-menu'>
+                            <li><a href='consultas'>Ordenes</a></li></ul></li>"; 
                                  
                                 
         return $this->planeacion;
