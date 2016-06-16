@@ -89,29 +89,33 @@
                                             $m=$crearmenu->menu;
                                             $armarMenu = new Application_Model_Menu_Constructor();
                                              //echo $armarMenu->getinicio();
-
-                                            foreach ($m as $key => $valor){
-                                         if($valor['mnuCatalogos']==1){
-                                            echo   $armarMenu->getcatalogos($valor['mnuCatalogoclientes']);
+                                           
+                                            foreach ($m as $valor){
+                                                   /* foreach ($valor as $key => $value) {
+                                                       // echo $valor[$key];
+                                                    }*/
+                                                   
+                                         if(@$valor['mnuCatalogos']==1){
+                                            echo   $armarMenu->getcatalogos(@$valor['mnuCatalogoClientes']);
 
                                              }
-                                           if($valor['mnuPlaneacion']==1){
+                                           if(@$valor['mnuPlaneacion']==1){
                                             echo $armarMenu->getplaneacion();
 
                                             }
-                                             if($valor['mnuProduccion']==1){
+                                             if(@$valor['mnuProduccion']==1){
             echo $armarMenu->getproduccion($valor['mnuDiseno'],$valor['mnuCorte'],$valor['mnuDoblado'],$valor['mnuArmado'],$valor['mnuAhulado'],$valor['mnuRouter']);
 
                                             }
-                                             if($valor['mnuEntregas']==1){
+                                             if(@$valor['mnuEntregas']==1){
                                             echo $armarMenu->getentregas();
 
                                             }
-                                             if($valor['mnuUsuarios']==1){
+                                             if(@$valor['mnuCatalogoUsuarios']==1){
                                            // echo $armarMenu->getusuarios();
 
                                             }
-                                              if($valor['mnuMonitor']==1){
+                                              if(@$valor['mnuMonitor']==1){
                                             echo $armarMenu->getmonitor();
 
                                             }
@@ -133,6 +137,7 @@
                 </div>
             </div>
         </header>
+   
         <section>
             <div id="contenidobody">
                 <div class="container">
@@ -156,18 +161,25 @@
                                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Nuevo <span class="caret"></span></a>
                                                 <ul class="dropdown-menu">
                                                     <?php  
-                                                 
-                                                   if($_SERVER['REQUEST_URI']=="/viverosV2/public/consultas"){
+                                                
+                                                   foreach ($valor as $key => $value) {
+                                                    $domain = strstr($key, '_A');
+                                                    if($valor[$key]==1 && $domain!=""){
+
+                                                     echo "<li><a href='#'>$key</a></li>";
+                                                        
+                                                       }
+                                                    }
+                                                    
+                                                 /* if(@$valor['frmClientes_A']==1 && $valor['mnuCatalogoClientes']==1){
                                                     echo " <li><a href='#'' id='nuevoCliente' >Cliente</a></li>";
-                                                   }else{ ?>
-
-                                                   
-                                                    <li><a href="#" id="nuevoCliente">Cliente</a></li>
-                                                    <li><a href="#" id="nuevoContacto">Contacto</a></li>
+                                                   }else{ */?>
+                                                    
+                                                    <!--li><a href="#" id="nuevoContacto">Contacto</a></li>
                                                     <li><a href="#" id="nuevaDireccion">Dirección</a></li>
-                                                    <li><a href="#" id="nuevaMaquina">Máquina</a></li>
+                                                    <li><a href="#" id="nuevaMaquina">Máquina</a></li-->
 
-                                                   <?php  }?>
+                                                   <?php // }?>
 
 
                                                </ul>
