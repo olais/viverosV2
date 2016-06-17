@@ -40,9 +40,9 @@ class Application_Model_Menu_Constructor {
          
      function getplaneacion(){
             $this->planeacion="<li class='dropdown'>
-                                <a class='dropdown-toggle' data-toggle='dropdown' href='#'>Planeación<span class='caret'></span></a>
+                                <a class='dropdown-toggle' data-toggle='dropdown' href='planeacion'>Planeación<span class='caret'></span></a>
                                   <ul class='dropdown-menu'>
-                            <li><a href='consultas'>Ordenes</a></li></ul></li>"; 
+                            <li><a href='planeacion/ordenes'>Ordenes</a></li></ul></li>"; 
                                  
                                 
         return $this->planeacion;
