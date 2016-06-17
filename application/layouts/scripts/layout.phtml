@@ -85,11 +85,12 @@
                                                 <!--formar el menu -->
                                         <!--li class='active'><a href='index' >Inicio</a>   </li-->  
                                        <?php 
+
                                             $crearmenu = new Zend_Session_Namespace('crearmenu'); 
                                             $m=$crearmenu->menu;
                                             $armarMenu = new Application_Model_Menu_Constructor();
                                              //echo $armarMenu->getinicio();
-                                           
+                                         
                                             foreach ($m as $valor){
                                                    /* foreach ($valor as $key => $value) {
                                                        // echo $valor[$key];
@@ -157,23 +158,56 @@
 
                                         <ul class="nav navbar-nav">
                                             
-                                            <li class="dropdown">
-                                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Nuevo <span class="caret"></span></a>
+                                            <li class="dropdown" id="nuevo">
+                                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" >Nuevo <span class="caret"></span></a>
                                                 <ul class="dropdown-menu">
                                                     <?php  
                                                 
-                                                   foreach ($valor as $key => $value) {
+                                   /* foreach ($valor as $key => $value) {
                                                     $domain = strstr($key, '_A');
                                                     if($valor[$key]==1 && $domain!=""){
 
                                                      echo "<li><a href='#'>$key</a></li>";
                                                         
                                                        }
-                                                    }
-                                                    
-                                                 /* if(@$valor['frmClientes_A']==1 && $valor['mnuCatalogoClientes']==1){
-                                                    echo " <li><a href='#'' id='nuevoCliente' >Cliente</a></li>";
-                                                   }else{ */?>
+                                                    }*/
+                  
+                   switch ($_SERVER['REQUEST_URI']) {
+                            case '/viverosV2/public/consultas':
+                             if(@$valor['frmClientes_A']==1 && $valor['mnuCatalogoClientes']==1){
+                    echo " <li><a href='#'' id='nuevoCliente' >Cliente</a></li>";
+                    echo "<script>  sessionStorage.setItem('botonForm','gCliente');</script>";
+                     }
+                             break;
+                             
+                            default:
+                     if(@$valor['frmContactos_A']==1 && $valor['mnuCatalogoContactos']==1){
+                    echo " <li><a href='#'' id='nuevoContacto' >Contacto</a></li>";
+                     }
+                      if(@$valor['frmDirecciones_A']==1 && $valor['mnuCatalogoDirecciones']==1){
+                    echo " <li><a href='#'' id='nuevaDireccion' >Direcciones</a></li>";
+                     }
+                     //validar el modo edición
+                      if(@$valor['frmDirecciones_C']==1 && $valor['mnuCatalogoDirecciones']==1){
+                    echo "<script>  sessionStorage.setItem('accionCambiosDir',1);</script>";
+                     }
+
+
+                }
+
+
+
+                    
+                    
+
+
+                
+                   
+                                
+
+                                             ?>
+
+
                                                     
                                                     <!--li><a href="#" id="nuevoContacto">Contacto</a></li>
                                                     <li><a href="#" id="nuevaDireccion">Dirección</a></li>
@@ -181,10 +215,11 @@
 
                                                    <?php // }?>
 
-
+                                                  
                                                </ul>
                                             </li>
                                              <li><a href="#" id="guardaCliente">Guardar</a></li>
+                                              <li><a href="#" id="guardaCliente">Actualizar</a></li>
                                              <li><a href="#" id="cancelaClienteUno">Cancelar</a></li>
                                         </ul>
 
@@ -197,6 +232,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-12">
+                        <?php //print_r($m);?>
+
                             <?= $this->layout()->content; ?>
                         </div>
                     </div>

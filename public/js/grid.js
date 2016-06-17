@@ -5,6 +5,9 @@ $("#fornuevocontacto").hide();
 $("#formDirecciones").hide();
 $("#formClientes").hide();
 $("#gCliente").hide();
+$("#guardarConta").hide();
+$("#guardaDir").hide();
+
 $("#gridClientes").jqGrid({
    	url:'index/consultar',
 	datatype: "json",
@@ -108,6 +111,10 @@ comprobarContactos= sessionStorage.getItem("comprobarContactos");
               $('#tipoContacto option:eq(0)').prop('selected', true);
               $('#estatusC option:eq(0)').prop('selected', true);
 
+              //seaemos la variable para que cambie el boton
+              sessionStorage.setItem("botonForm",'guardarConta');
+               $("#nuevo").disabled = true;
+
                 document.getElementById("clientesG").reset();
 
 
@@ -126,7 +133,7 @@ comprobarContactos= sessionStorage.getItem("comprobarContactos");
                          $("#estado").val("");
                           $("#cp").val("");
                            $("#nota").val("");
-
+                           sessionStorage.setItem("botonForm",'guardaDir');
                            $('#tipoDireccion option:eq(0)').prop('selected', true);
                             $('#estatusD option:eq(0)').prop('selected', true);
 

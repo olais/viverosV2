@@ -71,7 +71,11 @@ $(document).ready(function(){
 
      	});
      		$("#guardaCliente").click(function(){
-			    $("#gCliente").trigger("click");
+
+     			//guardarConta
+     			//guardaDir
+     			 boton = sessionStorage.getItem("botonForm");
+			    $("#"+boton).trigger("click");
      		});
 
      		$("#cancelaClienteUno").click(function(){
