@@ -7,6 +7,21 @@ $("#formClientes").hide();
 $("#gCliente").hide();
 $("#guardarConta").hide();
 $("#guardaDir").hide();
+accionCambiosDir= sessionStorage.getItem("accionCambiosDir");
+if(accionCambiosDir==1){
+ // alert("hola");
+  $("#selecCon").removeClass("active");
+  $("#selecDir").addClass("active");
+
+}
+$("#selecCon").click(function(){
+ 
+  sessionStorage.setItem('accionCambiosDir',0);
+$("#selecDir").removeClass("active");
+ $("#selecCon").addClass("active");
+
+
+});
 
 $("#gridClientes").jqGrid({
    	url:'index/consultar',

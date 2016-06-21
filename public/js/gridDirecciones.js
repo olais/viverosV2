@@ -72,12 +72,14 @@ $("#gridDirecciones").jqGrid({
                              }else{
                               $('#estatusD option:eq(2)').prop('selected', true);
                              }
+                              sessionStorage.setItem("botonForm",'guardaDir');
                              accionCambiosDir= sessionStorage.getItem("accionCambiosDir");
                           if(accionCambiosDir==1){
                $("#formDirecciones").show();
                $("#fornuevocontacto").hide();
                $("#guardaDir").html("Actualizar");
                $("#identificadorDirecciones").val(1);
+               $("#identificadorContactos").val(0);
 
              }
 

@@ -105,7 +105,7 @@ $("#gridContactos").jqGrid({
                 $("#face").val(Facebook);
                 $("#tw").val(Twitter);
                 $("#sky").val(Skype);
-
+                sessionStorage.setItem("botonForm",'guardarConta');
                  $("#formDirecciones").hide();
                  $("#guardarConta").html("Actualizar");
 
