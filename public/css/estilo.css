@@ -16,6 +16,22 @@ header
     z-index: 1;
 }
 
+.affix
+{
+    position: fixed;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    margin: 0 auto;
+    /*float: left;*/
+    z-index: 2;
+}
+
+.affix + .container-fluid
+{
+    /*padding-top: 70px;*/
+}
+
 #div-img-head
 {
     background-image: url(../images/header/img_header_r1.png);
@@ -108,6 +124,17 @@ body
     height: 100%;
 }
 
+.contenidodelbody
+{
+    margin-bottom: 50px;
+}
+
+#contenidobody, .contenidodelbody, input, select, .contenidodelbody li 
+{
+    font-family: Arial !important;
+    font-size: 10.5px !important;
+}
+
 footer
 {
     background-color: rgba(8,119,204,1);
@@ -121,11 +148,12 @@ footer
     border-top: 1px solid #000;
 }
 
-.ui-jqgrid/*, .ui-jqgrid-view, .ui-state-default, .ui-jqgrid-bdiv, .ui-jqgrid-hbox, .ui-jqgrid-htable, #gridClientes*/
+.ui-jqgrid
 {
     clear: left;
     margin: 10px 0;
-    /*width: 100% !important;*/
+    width: 100% !important;
+    overflow: scroll;
 }
 
 .class-clear
@@ -152,19 +180,23 @@ footer
     margin: auto;
 }
 
-input[type=text], input[type=password]
+.control-label
 {
-  margin: 5px;
-  padding: 0 10px;
-  height: 34px;
-  color: #404040;
-  background: white;
-  border: 1px solid;
-  border-color: #c4c4c4 #d1d1d1 #d4d4d4;
-  border-radius: 2px;
-  outline: 5px solid #eff4f7;
-  -moz-outline-radius: 3px; 
-  
+    text-align: right;
+}
+
+input[type=text], input[type=password], input[type=email], input[type=nombre], input[type=date], select
+{
+    margin: 5px;
+    padding: 0 5px;
+    height: 25px !important;
+    color: #404040;
+    background: white;
+    border: 1px solid;
+    border-color: #c4c4c4 #d1d1d1 #d4d4d4;
+    border-radius: 2px;
+    /*outline: 5px solid #eff4f7;*/
+    -moz-outline-radius: 3px; 
 }
 
 .color-red
@@ -175,7 +207,6 @@ input[type=text], input[type=password]
 #fornuevocontacto, #formDirecciones
 {
     clear: left;
-    /*margin: 20px 0;*/
     padding: 40px 0;
 }
 
