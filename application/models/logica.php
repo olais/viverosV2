@@ -223,8 +223,9 @@ class Application_Model_Logica extends Zend_Db_Table_Abstract
                     ->from ('clientes')
                     ->where("Id_cliente=$id_cliente");
                         $sql = $db->query($select);
-                        $rows = $sql->fetchAll();
-                       return $rows;
+                      return  $rows = $sql->fetchAll();
+                      
+                      
 
     }
 
@@ -236,8 +237,85 @@ class Application_Model_Logica extends Zend_Db_Table_Abstract
                     ->where("Id_cliente=$id_cliente");
                         $sql = $db->query($select);
                         $rows = $sql->fetchAll();
-                       return $rows; 
+                       echo json_encode($rows);
 
     }
+   public function consultarDireccionesFiltros($_search,$calle,$colonia,$ciudad,$municipio,$estado,$cp,$nota){
+
+          if($_search=="true"){
+            $response=new stdClass();
+         $db = Zend_Db_Table_Abstract::getDefaultAdapter();
+          $select = $db->select()
+                    ->from ('Direcciones');
+                        $sql = $db->query($select);
+                        $rows = $sql->fetchAll();
+                        $count= count($rows);
+                        if($count>0){
+                
+                        $page=$_REQUEST['page'];
+                        $limit=$_REQUEST['rows'];
+                        $sidx = $_REQUEST['sidx']; 
+                        $sord = $_REQUEST['sord']; 
+                           $select = $db->select()
+                                    ->from ('Direcciones');
+                        $sql = $db->query($select);
+                        $rows = $sql->fetchAll();
+                        $count= count($rows);
+                        if( $count >0 ) {
+
+                                $total_pages = ceil($count/$limit);
+
+                        } else {
+
+                                $total_pages = 0;
+
+                                }
+
+                    if ($page > $total_pages) $page=$total_pages;
+                        $start = $limit*$page - $limit;
+
+                        
+                          if(isset($calle) && $calle !=""){
+                      $select = $db->select() ->from ('Direcciones')->where('Calle like ?', '%'.$calle.'%');
+                        }
+                          if(isset($colonia) && $colonia !=""){
+                      $select = $db->select() ->from ('Direcciones')->where('Colonia like ?', '%'.$colonia.'%');
+                        }
+                         if(isset($ciudad) && $ciudad !=""){
+                      $select = $db->select() ->from ('Direcciones')->where('Ciudad like ?','%'.$ciudad.'%');
+                        }
+                          if(isset($municipio) && $municipio !=""){
+                      $select = $db->select() ->from ('Direcciones')->where('Municipio like ?','%'.$municipio.'%');
+                        }
+                         if(isset($estado) && $estado !=""){
+                      $select = $db->select() ->from ('Direcciones')->where('Estado like ?','%'.$estado.'%');
+                        }
+                         if(isset($cp) && $cp !=""){
+                      $select = $db->select() ->from ('Direcciones')->where('CP like ?','%'.$cp.'%');
+                        }
+                        if(isset($nota) && $nota !=""){
+                      $select = $db->select() ->from ('Direcciones')->where('Nota like ?','%'.$nota.'%');
+                        }
+                        
+                       $sql = $db->query($select);
+                       $rows2 = $sql->fetchAll();
+
+                       $response->rows= $rows2;
+                       $response->page = $page;
+                       $response->total = $total_pages;
+                       $response->records = $count;
+                       echo json_encode($response);
+
+
+                        }
+                       
+        }
+
+
+    }
+
+
+
+
 }
 
