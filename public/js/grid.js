@@ -7,6 +7,21 @@ $("#formClientes").hide();
 $("#gCliente").hide();
 $("#guardarConta").hide();
 $("#guardaDir").hide();
+accionCambiosDir= sessionStorage.getItem("accionCambiosDir");
+if(accionCambiosDir==1){
+ // alert("hola");
+  $("#selecCon").removeClass("active");
+  $("#selecDir").addClass("active");
+
+}
+$("#selecCon").click(function(){
+ 
+  sessionStorage.setItem('accionCambiosDir',0);
+$("#selecDir").removeClass("active");
+ $("#selecCon").addClass("active");
+
+
+});
 
 $("#gridClientes").jqGrid({
    	url:'index/consultar',
@@ -52,15 +67,13 @@ $("#gridClientes").jqGrid({
   });
    $("#gridClientes").jqGrid('navGrid',"#pgridClientes",{edit:false,add:false,del:false});
 
-  
-  $("#buscar").click( function() {
-    $('#gridClientes').jqGrid('filterToolbar', { searchOnEnter: false, enableClear: false });
+   $('#gridClientes').jqGrid('filterToolbar', { searchOnEnter: false, enableClear:true});
+ 
     $(".ui-search-oper").hide();
     $(".clearsearchclass").hide(); 
     $("#gs_id_cliente").hide();
-    $("#gs_id_estatus").hide();
-                       
-    });
+    $("#gs_Id_cliente").hide();
+  
 
   //controles de grid clientes
 

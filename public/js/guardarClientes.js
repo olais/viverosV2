@@ -53,6 +53,7 @@ $(document).ready(function(){
 
      		$("#contactosD").submit(function(){
      		var direcciones=$(this).serialize();
+     	     identificadorDirecciones=$("#identificadorDirecciones").val();
      		if(identificadorDirecciones==1){
      				urlGuardar="editar/actualizardirecciones";
 
@@ -75,6 +76,7 @@ $(document).ready(function(){
      			//guardarConta
      			//guardaDir
      			 boton = sessionStorage.getItem("botonForm");
+     			
 			    $("#"+boton).trigger("click");
      		});
 

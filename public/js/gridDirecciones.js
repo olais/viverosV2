@@ -3,7 +3,7 @@ var id;
 var id_cliente;
  idCli = sessionStorage.getItem("id");
 $("#gridDirecciones").jqGrid({
-    url:'editar/direcciones?id='+idCli,
+    url:'index/direcciones?id='+idCli,
   datatype: "json",
     colNames:['id','Id_tipodireccion','Id_estatus', 'Calle', 'Colonia','Ciudad','Municipio','Estado','CP','Nota'],
     colModel:[
@@ -29,7 +29,7 @@ $("#gridDirecciones").jqGrid({
     width:'1200',
     height:'230',
 
-    editurl: "editar/direcciones", //aqui la url de la actualización
+    editurl: "index/direcciones", //aqui la url de la actualización
    
     caption: "Direcciones",
 
@@ -72,14 +72,16 @@ $("#gridDirecciones").jqGrid({
                              }else{
                               $('#estatusD option:eq(2)').prop('selected', true);
                              }
+                              sessionStorage.setItem("botonForm",'guardaDir');
                              accionCambiosDir= sessionStorage.getItem("accionCambiosDir");
-                          if(accionCambiosDir==1){
+                         // if(accionCambiosDir==1){
                $("#formDirecciones").show();
                $("#fornuevocontacto").hide();
                $("#guardaDir").html("Actualizar");
                $("#identificadorDirecciones").val(1);
+               $("#identificadorContactos").val(0);
 
-             }
+           //  }
 
 
 
@@ -90,7 +92,7 @@ $("#gridDirecciones").jqGrid({
 
   });
    $("#gridDirecciones").jqGrid('navGrid',"#pgridDirecciones",{edit:false,add:false,del:false});
-
+   $("#gridDirecciones").jqGrid('filterToolbar', { searchOnEnter: false, enableClear:true});
   
   
 
