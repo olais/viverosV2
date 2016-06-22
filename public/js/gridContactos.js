@@ -22,7 +22,7 @@ $.post("editar/contactos",comprobar,
 
 
 $("#gridContactos").jqGrid({
-    url:'editar/contactos?id='+idCli,
+    url:'index/contactos?id='+idCli,
   datatype: "json",
    colNames:['id','idTipo','Id_estatus','Nombre', 'Apellidos','Puesto','Teléfono1','Extension1','Telefono2','Extension2','Celular','Correo','Fecha de Nac','Facebook','Twitter','Skype'],
     colModel:[
@@ -53,7 +53,7 @@ $("#gridContactos").jqGrid({
     width:'1200',
     height:'230',
 
-    editurl: "editar/contactos", //aqui la url de la actualización
+    editurl: "index/contactos", //aqui la url de la actualización
    
     caption: "Contactos",
 
@@ -122,6 +122,7 @@ $("#gridContactos").jqGrid({
 
   });
    $("#gridContactos").jqGrid('navGrid',"#pgridContactos",{edit:false,add:true,del:false});
+   $("#gridContactos").jqGrid('filterToolbar', { searchOnEnter: false, enableClear:true});
 
   
   
