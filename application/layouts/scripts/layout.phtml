@@ -167,16 +167,16 @@
                                                         
                                                             }
                                                         }*/
-                                                        switch ($_SERVER['REQUEST_URI'])
+                                                       /* switch ($_SERVER['REQUEST_URI'])
                                                         {
-                                                            case '/viverosV2/public/consultas':
+                                                            case '/viverosV2/public/consultas':*/
                                                             if(@$valor['frmClientes_A']==1 && $valor['mnuCatalogoClientes']==1)
                                                             {
                                                                 echo " <li><a href='#'' id='nuevoCliente' >Cliente</a></li>";
                                                                 echo "<script>  sessionStorage.setItem('botonForm','gCliente');</script>";
                                                             }
-                                                            break;         
-                                                            default:
+                                                           // break;         
+                                                            //default:
                                                             if(@$valor['frmContactos_A']==1 && $valor['mnuCatalogoContactos']==1)
                                                             {
                                                                 echo " <li><a href='#'' id='nuevoContacto' >Contacto</a></li>";
@@ -190,7 +190,7 @@
                                                             {
                                                                 echo "<script>  sessionStorage.setItem('accionCambiosDir',1);</script>";
                                                             }
-                                                        }
+                                                       // }
                                                     ?>
                                                     <!--li><a href="#" id="nuevoContacto">Contacto</a></li>
                                                     <li><a href="#" id="nuevaDireccion">Dirección</a></li>
@@ -199,7 +199,7 @@
                                                </ul>
                                             </li>
                                             <li><a href="#" id="guardaCliente">Guardar</a></li>
-                                            <li><a href="#" id="guardaCliente">Actualizar</a></li>
+                                            <!--li><a href="#" id="guardaCliente">Actualizar</a></li-->
                                             <li><a href="#" id="cancelaClienteUno">Cancelar</a></li>
                                         </ul>
                                     </div>
