@@ -4,6 +4,7 @@
 ?>
 <script type="text/javascript">
     sessionStorage.setItem("id",<?php echo $this->clientes[0]['Id_cliente']?>);
+      sessionStorage.setItem('accionCambiosDir',0);
 </script>
 <form  name="clientesG" id="clientesG" class="form-inline" method="POST">
     <div class="form-group col-sm-4">
@@ -251,8 +252,8 @@
 <br/>
 <br/>
 <ul class="nav nav-tabs class-clear">
-    <li class="active" id="selecCon"><a data-toggle="tab" href="#home">Contactos</a></li>
-    <li id='selecDir'><a data-toggle="tab" href="#menu1" >Direcciones</a></li>
+    <li class="active"><a data-toggle="tab" href="#home">Contactos</a></li>
+    <li ><a data-toggle="tab" href="#menu1" >Direcciones</a></li>
     <li><a data-toggle="tab" href="#menu2" id='clickM'>Máquinas</a></li>
 </ul>
 <div class="tab-content">

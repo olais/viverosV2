@@ -67,15 +67,13 @@ $("#gridClientes").jqGrid({
   });
    $("#gridClientes").jqGrid('navGrid',"#pgridClientes",{edit:false,add:false,del:false});
 
-  
-  $("#buscar").click( function() {
-    $('#gridClientes').jqGrid('filterToolbar', { searchOnEnter: false, enableClear: false });
+   $('#gridClientes').jqGrid('filterToolbar', { searchOnEnter: false, enableClear:true});
+ 
     $(".ui-search-oper").hide();
     $(".clearsearchclass").hide(); 
     $("#gs_id_cliente").hide();
-    $("#gs_id_estatus").hide();
-                       
-    });
+    $("#gs_Id_cliente").hide();
+  
 
   //controles de grid clientes
 
