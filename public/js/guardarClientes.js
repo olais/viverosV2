@@ -97,6 +97,7 @@ $(document).ready(function(){
                      $("#formMaquinas").hide();
                      $("#formDirecciones").hide();
                      $("#fornuevocontacto").hide();
+                     $("#guardaCliente").html("Guardar");
 
      		});
 

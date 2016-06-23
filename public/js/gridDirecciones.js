@@ -80,6 +80,7 @@ $("#gridDirecciones").jqGrid({
                $("#guardaDir").html("Actualizar");
                $("#identificadorDirecciones").val(1);
                $("#identificadorContactos").val(0);
+               $("#guardaCliente").html("Actualizar");
 
            //  }
 

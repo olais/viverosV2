@@ -5,9 +5,10 @@ var id_cliente;
 $("#gridMaquinas").jqGrid({
     url:'index/maquinas?id='+idCli,
   datatype: "json",
-    colNames:['Descripcion','PerfEnPegue','DescPerfEnPegue', 'Rama', 'MedidaRama','Pinza','MedidaPinza','Perforaciones','Centerline','MedidaCenterline','Desbarbe','Compensacion','NumPiezasCompensacion'],
+    colNames:['id','Descripcion','PerfEnPegue','DescPerfEnPegue', 'Rama', 'MedidaRama','Pinza','MedidaPinza','Perforaciones','Centerline','MedidaCenterline','Desbarbe','Compensacion','NumPiezasCompensacion'],
     colModel:[
-      {name:'Descripcion',index:'Descripcion', width:300},
+      {name:'Id_MaquinaC',index:'Id_MaquinaC', width:50},
+      {name:'Descripcion',index:'Descripcion', width:300,editable:true},
       {name:'PerfEnPegue',index:'PerfEnPegue', width:50,editable:true},
       {name:'DescPerfEnPegue',index:'DescPerfEnPegue', width:200, align:"left",editable:true},
       {name:'Rama',index:'Rama', width:170, align:"left",editable:true},    
@@ -41,17 +42,7 @@ $("#gridMaquinas").jqGrid({
          
              var s = $("#gridDirecciones").jqGrid('getGridParam','selrow');
              valores = s.toString().split(",");
-              Id_direccion=$("#gridDirecciones").jqGrid('getRowData',s).Id_direccion;
-              Id_tipodireccion=$("#gridDirecciones").jqGrid('getRowData',s).Id_tipodireccion;
-              Id_estatus=$("#gridDirecciones").jqGrid('getRowData',s).Id_estatus;
-               Calle=$("#gridDirecciones").jqGrid('getRowData',s).Calle;
-                Colonia=$("#gridDirecciones").jqGrid('getRowData',s).Colonia;
-                 Ciudad=$("#gridDirecciones").jqGrid('getRowData',s).Ciudad;
-                  Municipio=$("#gridDirecciones").jqGrid('getRowData',s).Municipio;
-                   Estado=$("#gridDirecciones").jqGrid('getRowData',s).Estado;
-                    CP=$("#gridDirecciones").jqGrid('getRowData',s).CP;
-                 
-                          
+              $("#guardaCliente").html("Actualizar");
 
            
           },
@@ -62,7 +53,7 @@ $("#gridMaquinas").jqGrid({
   
   $(".ui-search-oper").hide();
   $(".clearsearchclass").hide();
-  $("#gs_Id_direccion").hide();
+  $("#gs_Id_MaquinaC").hide();
     
 
 })
