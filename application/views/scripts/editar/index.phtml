@@ -6,248 +6,250 @@
     sessionStorage.setItem("id",<?php echo $this->clientes[0]['Id_cliente']?>);
       sessionStorage.setItem('accionCambiosDir',0);
 </script>
-<form  name="clientesG" id="clientesG" class="form-inline" method="POST">
-    <div class="form-group col-sm-4">
-        <label class="control-label col-md-5" for="tip">Tipo Cliente:</label>
-        <div class="col-md-7">
-            <select id="tipo" class="form-control" name="tipo" required>
-                <option>Seleccionar...</option>
-                <option value="1" <?php echo $selected=(@$this->clientes[0]['Id_tipocliente']==1)? 'selected':''; ?>>Admin</option>
-                <option value="2" <?php echo $selected=(@$this->clientes[0]['Id_tipocliente']==2)? 'selected':''; ?>>Usuario</option>
-            </select>
-        </div>
-    </div>
-    <div class="form-group col-sm-4">
-        <label class="control-label col-md-5" for="estatus">Estatus:</label>
-        <div class="col-md-7">
-            <select id="estatus" class="form-control" name="estatus" required>
-                <option>Seleccionar...</option>
-                <option value='10' <?php echo $selected=(@$this->clientes[0]['Id_estatus']==10)? 'selected':''; ?>>Activo</option>
-                <option value="20" <?php echo $selected=(@$this->clientes[0]['Id_estatus']==20)? 'selected':''; ?>>Inactivo</option>
-            </select>
-        </div>
-    </div>
-    <div class="form-group col-sm-4">
-        <label class="control-label col-md-5" for="nombre">Nombre</label>
-        <div class="col-md-7">
-            <input id="nombre" class="form-control" name="nombre" type="nombre" value="<?php echo @$this->clientes[0]['Nombre'];?>" required>
-        </div>
-    </div>
-    <div class="form-group col-sm-4">
-        <label class="control-label col-md-5" for="rfc">RFC</label>
-        <div class="col-md-7">
-            <input id="rfc" class="form-control" name="rfc" type="text" value="<?php echo @$this->clientes[0]['RFC'];?>" required>
-        </div>
-    </div>
-    <div class="form-group col-sm-4">
-        <label class="control-label col-md-5" for="tel1">Teléfono 1</label>
-        <div class="col-md-7">
-            <input id="tel1" class="form-control" name="tel1" type="text" value="<?php echo @$this->clientes[0]['Telefono1'];?>">
-        </div>
-    </div>
-    <div class="form-group col-sm-4">
-        <label class="control-label col-md-5" for="tel2">Teléfono 2</label>
-        <div class="col-md-7">
-            <input id="tel2" class="form-control" name="tel2" type="text" value="<?php echo @$this->clientes[0]['Telefono2'];?>">
-        </div>
-    </div>
-    <div class="form-group col-sm-4">
-        <label class="control-label col-md-5" for="fax">Fax</label>
-        <div class="col-md-7">
-            <input id="fax" class="form-control" name="fax" type="text" value="<?php echo @$this->clientes[0]['Fax'];?>">
-        </div>
-    </div>
-    <div class="form-group col-sm-4">
-        <label class="control-label col-md-5" for="correo">Correo</label>
-        <div class="col-md-7">
-            <input id="correo" class="form-control" name="correo" type="email" value="<?php echo @$this->clientes[0]['Correo'];?>">
-        </div>
-    </div>
-    <div class="form-group col-sm-4">
-        <label class="control-label col-md-5" for="web">Web</label>
-        <div class="col-md-7">
-            <input id="web" class="form-control" name="web" type="text" value="<?php echo @$this->clientes[0]['Web'];?>">
-        </div>
-    </div>
-    <br/>
-    <!--button class="btn btn-primary" type="submit">Guardar Clientes</button>
-    <button id="cancelaCliente" class="btn btn-primary">Cancelar</button-->
-</form>
-<div id="fornuevocontacto">
-    <form  name="contactosG" id="contactosG" method="POST" class="form-inline">
-        <input type="hidden" name="idC" id='idC'/>
-        <input type="hidden" id='identificadorContactos'/>
-        <input type="hidden" name="idContacto" id="idContacto"/>
-        <div class="form-group col-sm-4">
-            <label class="control-label col-md-5" for="tipC">Tipo Contacto:</label>
+<div class="col-xs-12">
+    <form  name="clientesG" id="clientesG" class="form-inline" method="POST">
+        <div class="form-group col-sm-4 col-lg-3">
+            <label class="control-label col-md-5" for="tip">Tipo Cliente:</label>
             <div class="col-md-7">
-                <select class="form-control" id="tipoContacto" name="tipoContacto">
+                <select id="tipo" class="form-control" name="tipo" required>
                     <option>Seleccionar...</option>
-                    <option value="10">Comercial</option>
+                    <option value="1" <?php echo $selected=(@$this->clientes[0]['Id_tipocliente']==1)? 'selected':''; ?>>Admin</option>
+                    <option value="2" <?php echo $selected=(@$this->clientes[0]['Id_tipocliente']==2)? 'selected':''; ?>>Usuario</option>
                 </select>
             </div>
         </div>
-        <div class="form-group col-sm-4">
+        <div class="form-group col-sm-4 col-lg-3">
             <label class="control-label col-md-5" for="estatus">Estatus:</label>
             <div class="col-md-7">
-                <select class="form-control" id="estatusC" name="estatusC">
+                <select id="estatus" class="form-control" name="estatus" required>
                     <option>Seleccionar...</option>
-                    <option value='10'>Activo</option>
-                    <option value="20">Inactivo</option>
+                    <option value='10' <?php echo $selected=(@$this->clientes[0]['Id_estatus']==10)? 'selected':''; ?>>Activo</option>
+                    <option value="20" <?php echo $selected=(@$this->clientes[0]['Id_estatus']==20)? 'selected':''; ?>>Inactivo</option>
                 </select>
             </div>
         </div>
-        <div class="form-group col-sm-4">
+        <div class="form-group col-sm-4 col-lg-3">
             <label class="control-label col-md-5" for="nombre">Nombre</label>
             <div class="col-md-7">
-                <input type="text" class="form-control" id="nombreC" name="nombreC" required>
+                <input id="nombre" class="form-control" name="nombre" type="nombre" value="<?php echo @$this->clientes[0]['Nombre'];?>" required>
             </div>
         </div>
-        <div class="form-group col-sm-4">
-            <label class="control-label col-md-5" for="apellidos">Apellidos</label>
+        <div class="form-group col-sm-4 col-lg-3">
+            <label class="control-label col-md-5" for="rfc">RFC</label>
             <div class="col-md-7">
-                <input type="text" class="form-control" id="apellidosC" name="apellidosC" required>
+                <input id="rfc" class="form-control" name="rfc" type="text" value="<?php echo @$this->clientes[0]['RFC'];?>" required>
             </div>
         </div>
-        <div class="form-group col-sm-4">
-            <label class="control-label col-md-5" for="puesto">Puesto</label>
-            <div class="col-md-7">
-                <input type="text" class="form-control" id="puestoC" name="puestoC">
-            </div>
-        </div>
-        <div class="form-group col-sm-4">
+        <div class="form-group col-sm-4 col-lg-3">
             <label class="control-label col-md-5" for="tel1">Teléfono 1</label>
             <div class="col-md-7">
-                <input type="text" class="form-control" id="tel1C" name="tel1C">
+                <input id="tel1" class="form-control" name="tel1" type="text" value="<?php echo @$this->clientes[0]['Telefono1'];?>">
             </div>
         </div>
-        <div class="form-group col-sm-4">
-            <label class="control-label col-md-5" for="exten1">Extensión 1</label>
-            <div class="col-md-7">
-                <input type="text" class="form-control" id="exten1" name="exten1">
-            </div>
-        </div>
-        <div class="form-group col-sm-4">
+        <div class="form-group col-sm-4 col-lg-3">
             <label class="control-label col-md-5" for="tel2">Teléfono 2</label>
             <div class="col-md-7">
-                <input type="text" class="form-control" id="tel2C" name="tel2C">
+                <input id="tel2" class="form-control" name="tel2" type="text" value="<?php echo @$this->clientes[0]['Telefono2'];?>">
             </div>
         </div>
-        <div class="form-group col-sm-4">
-            <label class="control-label col-md-5" for="exten2">Extensión 2</label>
+        <div class="form-group col-sm-4 col-lg-3">
+            <label class="control-label col-md-5" for="fax">Fax</label>
             <div class="col-md-7">
-                <input type="text" class="form-control" id="exten2" name="exten2">
+                <input id="fax" class="form-control" name="fax" type="text" value="<?php echo @$this->clientes[0]['Fax'];?>">
             </div>
         </div>
-        <div class="form-group col-sm-4">
-            <label class="control-label col-md-5" for="celular">Celular</label>
-            <div class="col-md-7">
-                <input type="text" class="form-control" id="celular" name="celular">
-            </div>
-        </div>
-        <div class="form-group col-sm-4">
+        <div class="form-group col-sm-4 col-lg-3">
             <label class="control-label col-md-5" for="correo">Correo</label>
             <div class="col-md-7">
-                <input type="text" class="form-control" id="correoC" name="correoC">
+                <input id="correo" class="form-control" name="correo" type="email" value="<?php echo @$this->clientes[0]['Correo'];?>">
             </div>
         </div>
-        <div class="form-group col-sm-4">
-            <label class="control-label col-md-5" for="face">Facebook</label>
+        <div class="form-group col-sm-4 col-lg-3">
+            <label class="control-label col-md-5" for="web">Web</label>
             <div class="col-md-7">
-                <input type="text" class="form-control" id="face" name="face">
+                <input id="web" class="form-control" name="web" type="text" value="<?php echo @$this->clientes[0]['Web'];?>">
             </div>
         </div>
-        <div class="form-group col-sm-4">
-            <label class="control-label col-md-5" for="tw">Twitter</label>
-            <div class="col-md-7">
-                <input type="text" class="form-control" id="tw" name="tw">
-            </div>
-        </div>
-        <div class="form-group col-sm-4">
-            <label class="control-label col-md-5" for="syk">Skype</label>
-            <div class="col-md-7">
-                <input type="text" class="form-control" id="sky" name="sky">
-            </div>
-        </div>
-        <div class="form-group col-sm-4">
-            <label class="control-label col-md-5" for="fechaN">Fecha de Nacimiento</label>
-            <div class="col-md-7">
-                <input type="date" class="form-control" id="fechaN" name="fechaN">
-            </div>
-        </div>
-        <button type="submit" class="btn btn-primary" id="guardarConta">Guardar Contactos</button>
+        <br/>
+        <!--button class="btn btn-primary" type="submit">Guardar Clientes</button>
+        <button id="cancelaCliente" class="btn btn-primary">Cancelar</button-->
     </form>
-</div>
-<div id="formDirecciones">
-    <form  name="contactosD" id="contactosD" method="POST" class="form-inline">
-        <input type="hidden" name="idClienteDir" id='idClienteDir'></input>
-        <input type="hidden" name="Id_direccion" id='Id_direccion'></input>
-        <input type="hidden" id='identificadorDirecciones'>
-        <div class="form-group col-sm-4">
-            <label class="control-label col-md-5" for="tipD">Tipo Dirección:</label>
-            <div class="col-md-7">
-                <select class="form-control" id="tipoDireccion" name="tipoDireccion">
-                    <option>Seleccionar...</option>
-                    <option value="10">Comercial</option>
-                    <option value="11">Fiscal</option>
-                    <option value="12">Entrega</option>
-                </select>
+    <div id="fornuevocontacto">
+        <form  name="contactosG" id="contactosG" method="POST" class="form-inline">
+            <input type="hidden" name="idC" id='idC'/>
+            <input type="hidden" id='identificadorContactos'/>
+            <input type="hidden" name="idContacto" id="idContacto"/>
+            <div class="form-group col-sm-4 col-lg-3">
+                <label class="control-label col-md-5" for="tipC">Tipo Contacto:</label>
+                <div class="col-md-7">
+                    <select class="form-control" id="tipoContacto" name="tipoContacto">
+                        <option>Seleccionar...</option>
+                        <option value="10">Comercial</option>
+                    </select>
+                </div>
             </div>
-        </div>
-        <div class="form-group col-sm-4">
-            <label class="control-label col-md-5" for="estatus">Estatus:</label>
-            <div class="col-md-7">
-                <select class="form-control" id="estatusD" name="estatusD">
-                    <option>Seleccionar...</option>
-                    <option value='10'>Activo</option>
-                    <option value="20">Inactivo</option>
-                </select>
+            <div class="form-group col-sm-4 col-lg-3">
+                <label class="control-label col-md-5" for="estatus">Estatus:</label>
+                <div class="col-md-7">
+                    <select class="form-control" id="estatusC" name="estatusC">
+                        <option>Seleccionar...</option>
+                        <option value='10'>Activo</option>
+                        <option value="20">Inactivo</option>
+                    </select>
+                </div>
             </div>
-        </div>
-        <div class="form-group col-sm-4">
-            <label class="control-label col-md-5" for="calle">Calle</label>
-            <div class="col-md-7">
-                <input type="text" class="form-control" id="calle" name="calle" required>
+            <div class="form-group col-sm-4 col-lg-3">
+                <label class="control-label col-md-5" for="nombre">Nombre</label>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" id="nombreC" name="nombreC" required>
+                </div>
             </div>
-        </div>
-        <div class="form-group col-sm-4">
-            <label class="control-label col-md-5" for="colonia">Colonia</label>
-            <div class="col-md-7">
-                <input type="text" class="form-control" id="colonia" name="colonia" required>
+            <div class="form-group col-sm-4 col-lg-3">
+                <label class="control-label col-md-5" for="apellidos">Apellidos</label>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" id="apellidosC" name="apellidosC" required>
+                </div>
             </div>
-        </div>
-        <div class="form-group col-sm-4">
-            <label class="control-label col-md-5" for="ciudad">Ciudad</label>
-            <div class="col-md-7">
-                <input type="text" class="form-control" id="ciudad" name="ciudad">
+            <div class="form-group col-sm-4 col-lg-3">
+                <label class="control-label col-md-5" for="puesto">Puesto</label>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" id="puestoC" name="puestoC">
+                </div>
             </div>
-        </div>
-        <div class="form-group col-sm-4">
-            <label class="control-label col-md-5" for="muni">Municipio</label>
-            <div class="col-md-7">
-                <input type="text" class="form-control" id="muni" name="muni">
+            <div class="form-group col-sm-4 col-lg-3">
+                <label class="control-label col-md-5" for="tel1">Teléfono 1</label>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" id="tel1C" name="tel1C">
+                </div>
             </div>
-        </div>
-        <div class="form-group col-sm-4">
-            <label class="control-label col-md-5" for="estado">Estado</label>
-            <div class="col-md-7">
-                <input type="text" class="form-control" id="estado" name="estado">
+            <div class="form-group col-sm-4 col-lg-3">
+                <label class="control-label col-md-5" for="exten1">Extensión 1</label>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" id="exten1" name="exten1">
+                </div>
             </div>
-        </div>
-        <div class="form-group col-sm-4">
-            <label class="control-label col-md-5" for="cp">CP</label>
-            <div class="col-md-7">
-                <input type="text" class="form-control" id="cp" name="cp">
+            <div class="form-group col-sm-4 col-lg-3">
+                <label class="control-label col-md-5" for="tel2">Teléfono 2</label>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" id="tel2C" name="tel2C">
+                </div>
             </div>
-        </div>
-        <div class="form-group col-sm-4">
-            <label class="control-label col-md-5" for="nota">Nota:</label>
-            <div class="col-md-7">
-                <textarea class="form-control" rows="5" id="nota" name="nota"></textarea>
+            <div class="form-group col-sm-4 col-lg-3">
+                <label class="control-label col-md-5" for="exten2">Extensión 2</label>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" id="exten2" name="exten2">
+                </div>
             </div>
-        </div>
-        <button type="submit" class="btn btn-primary" id="guardaDir">Guardar Dirección</button>
-    </form>
+            <div class="form-group col-sm-4 col-lg-3">
+                <label class="control-label col-md-5" for="celular">Celular</label>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" id="celular" name="celular">
+                </div>
+            </div>
+            <div class="form-group col-sm-4 col-lg-3">
+                <label class="control-label col-md-5" for="correo">Correo</label>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" id="correoC" name="correoC">
+                </div>
+            </div>
+            <div class="form-group col-sm-4 col-lg-3">
+                <label class="control-label col-md-5" for="face">Facebook</label>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" id="face" name="face">
+                </div>
+            </div>
+            <div class="form-group col-sm-4 col-lg-3">
+                <label class="control-label col-md-5" for="tw">Twitter</label>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" id="tw" name="tw">
+                </div>
+            </div>
+            <div class="form-group col-sm-4 col-lg-3">
+                <label class="control-label col-md-5" for="syk">Skype</label>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" id="sky" name="sky">
+                </div>
+            </div>
+            <div class="form-group col-sm-4 col-lg-3">
+                <label class="control-label col-md-5" for="fechaN">Fecha de Nacimiento</label>
+                <div class="col-md-7">
+                    <input type="date" class="form-control" id="fechaN" name="fechaN">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary" id="guardarConta">Guardar Contactos</button>
+        </form>
+    </div>
+    <div id="formDirecciones">
+        <form  name="contactosD" id="contactosD" method="POST" class="form-inline">
+            <input type="hidden" name="idClienteDir" id='idClienteDir'></input>
+            <input type="hidden" name="Id_direccion" id='Id_direccion'></input>
+            <input type="hidden" id='identificadorDirecciones'>
+            <div class="form-group col-sm-4 col-lg-3">
+                <label class="control-label col-md-5" for="tipD">Tipo Dirección:</label>
+                <div class="col-md-7">
+                    <select class="form-control" id="tipoDireccion" name="tipoDireccion">
+                        <option>Seleccionar...</option>
+                        <option value="10">Comercial</option>
+                        <option value="11">Fiscal</option>
+                        <option value="12">Entrega</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group col-sm-4 col-lg-3">
+                <label class="control-label col-md-5" for="estatus">Estatus:</label>
+                <div class="col-md-7">
+                    <select class="form-control" id="estatusD" name="estatusD">
+                        <option>Seleccionar...</option>
+                        <option value='10'>Activo</option>
+                        <option value="20">Inactivo</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group col-sm-4 col-lg-3">
+                <label class="control-label col-md-5" for="calle">Calle</label>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" id="calle" name="calle" required>
+                </div>
+            </div>
+            <div class="form-group col-sm-4 col-lg-3">
+                <label class="control-label col-md-5" for="colonia">Colonia</label>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" id="colonia" name="colonia" required>
+                </div>
+            </div>
+            <div class="form-group col-sm-4 col-lg-3">
+                <label class="control-label col-md-5" for="ciudad">Ciudad</label>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" id="ciudad" name="ciudad">
+                </div>
+            </div>
+            <div class="form-group col-sm-4 col-lg-3">
+                <label class="control-label col-md-5" for="muni">Municipio</label>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" id="muni" name="muni">
+                </div>
+            </div>
+            <div class="form-group col-sm-4 col-lg-3">
+                <label class="control-label col-md-5" for="estado">Estado</label>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" id="estado" name="estado">
+                </div>
+            </div>
+            <div class="form-group col-sm-4 col-lg-3">
+                <label class="control-label col-md-5" for="cp">CP</label>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" id="cp" name="cp">
+                </div>
+            </div>
+            <div class="form-group col-sm-4 col-lg-3">
+                <label class="control-label col-md-5" for="nota">Nota:</label>
+                <div class="col-md-7">
+                    <textarea class="form-control" rows="5" id="nota" name="nota"></textarea>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary" id="guardaDir">Guardar Dirección</button>
+        </form>
+    </div>
 </div>
 <br/>
 <br/>

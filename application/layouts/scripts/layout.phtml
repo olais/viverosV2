@@ -78,52 +78,50 @@
                                                 <span class="icon-bar"></span>
                                                 <span class="icon-bar"></span> 
                                             </button>
-                                            <a class="navbar-brand navbar-brand_top hidden-xs hidden-sm" href="#"><img id="logo_viveros" src="images/header/logo_viveros.png"/></a>
+                                            <a class="navbar-brand navbar-brand_top hidden-xs hidden-sm hidden-md" href="#"><img id="logo_viveros" src="images/header/logo_viveros.png"/></a>
                                         </div>
                                         <div class="collapse navbar-collapse" id="Navbar_top">
                                             <ul class="nav navbar-nav navbar-right nav_top navbar-nav_top">
-                                                <!--formar el menu -->
-                                        <!--li class='active'><a href='index' >Inicio</a>   </li-->  
-                                       <?php 
-
-                                            $crearmenu = new Zend_Session_Namespace('crearmenu'); 
-                                            $m=$crearmenu->menu;
-                                            $armarMenu = new Application_Model_Menu_Constructor();
-                                             //echo $armarMenu->getinicio();
-                                         
-                                            foreach ($m as $valor){
-                                                   /* foreach ($valor as $key => $value) {
+                                            <!--formar el menu -->
+                                            <!--li class='active'><a href='index' >Inicio</a>   </li-->  
+                                            <?php
+                                                $crearmenu = new Zend_Session_Namespace('crearmenu'); 
+                                                $m=$crearmenu->menu;
+                                                $armarMenu = new Application_Model_Menu_Constructor();
+                                                //echo $armarMenu->getinicio();
+                                                foreach ($m as $valor)
+                                                {
+                                                    /* foreach ($valor as $key => $value)
+                                                    * {
                                                        // echo $valor[$key];
                                                     }*/
-                                                   
-                                         if(@$valor['mnuCatalogos']==1){
-                                            echo   $armarMenu->getcatalogos(@$valor['mnuCatalogoClientes']);
-
-                                             }
-                                           if(@$valor['mnuPlaneacion']==1){
-                                            echo $armarMenu->getplaneacion();
-
-                                            }
-                                             if(@$valor['mnuProduccion']==1){
-            echo $armarMenu->getproduccion($valor['mnuDiseno'],$valor['mnuCorte'],$valor['mnuDoblado'],$valor['mnuArmado'],$valor['mnuAhulado'],$valor['mnuRouter']);
-
-                                            }
-                                             if(@$valor['mnuEntregas']==1){
-                                            echo $armarMenu->getentregas();
-
-                                            }
-                                             if(@$valor['mnuCatalogoUsuarios']==1){
-                                           // echo $armarMenu->getusuarios();
-
-                                            }
-                                              if(@$valor['mnuMonitor']==1){
-                                            echo $armarMenu->getmonitor();
-
-                                            }
-                                            
-                                            //echo $armarMenu->getsalir();
-
-                                            }?>
+                                                    if(@$valor['mnuCatalogos']==1)
+                                                    {
+                                                        echo   $armarMenu->getcatalogos(@$valor['mnuCatalogoClientes']);
+                                                    }
+                                                    if(@$valor['mnuPlaneacion']==1)
+                                                    {
+                                                        echo $armarMenu->getplaneacion();
+                                                    }
+                                                    if(@$valor['mnuProduccion']==1)
+                                                    {
+                                                        echo $armarMenu->getproduccion($valor['mnuDiseno'],$valor['mnuCorte'],$valor['mnuDoblado'],$valor['mnuArmado'],$valor['mnuAhulado'],$valor['mnuRouter']);
+                                                    }
+                                                    if(@$valor['mnuEntregas']==1)
+                                                    {
+                                                        echo $armarMenu->getentregas();
+                                                    }
+                                                    if(@$valor['mnuCatalogoUsuarios']==1)
+                                                    {
+                                                        // echo $armarMenu->getusuarios();
+                                                    }
+                                                    if(@$valor['mnuMonitor']==1)
+                                                    {
+                                                        echo $armarMenu->getmonitor();
+                                                    }
+                                                    //echo $armarMenu->getsalir();
+                                                }
+                                            ?>
                                             <li>
                                              <a href='login/salir'>Salir</a></li>
 
@@ -138,13 +136,12 @@
                 </div>
             </div>
         </header>
-   
         <section>
             <div id="contenidobody">
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-12">
-                            <nav class="navbar navbar-inverse">
+                            <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="30">
                                 <div class="container-fluid">
                                     <div class="navbar-header">
                                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -161,79 +158,60 @@
                                             <li class="dropdown" id="nuevo">
                                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" >Nuevo <span class="caret"></span></a>
                                                 <ul class="dropdown-menu">
-                                                    <?php  
-                                                
-                                   /* foreach ($valor as $key => $value) {
-                                                    $domain = strstr($key, '_A');
-                                                    if($valor[$key]==1 && $domain!=""){
+                                                    <?php
+                                                        /* foreach ($valor as $key => $value) {
+                                                        $domain = strstr($key, '_A');
+                                                        if($valor[$key]==1 && $domain!=""){
 
-                                                     echo "<li><a href='#'>$key</a></li>";
+                                                        echo "<li><a href='#'>$key</a></li>";
                                                         
-                                                       }
-                                                    }*/
-                  
-                   switch ($_SERVER['REQUEST_URI']) {
-                            case '/viverosV2/public/consultas':
-                             if(@$valor['frmClientes_A']==1 && $valor['mnuCatalogoClientes']==1){
-                    echo " <li><a href='#'' id='nuevoCliente' >Cliente</a></li>";
-                    echo "<script>  sessionStorage.setItem('botonForm','gCliente');</script>";
-                     }
-                             break;
-                             
-                            default:
-                     if(@$valor['frmContactos_A']==1 && $valor['mnuCatalogoContactos']==1){
-                    echo " <li><a href='#'' id='nuevoContacto' >Contacto</a></li>";
-                     }
-                      if(@$valor['frmDirecciones_A']==1 && $valor['mnuCatalogoDirecciones']==1){
-                    echo " <li><a href='#'' id='nuevaDireccion' >Direcciones</a></li>";
-                     }
-                     //validar el modo edición
-                      if(@$valor['frmDirecciones_C']==1 && $valor['mnuCatalogoDirecciones']==1){
-                    echo "<script>  sessionStorage.setItem('accionCambiosDir',1);</script>";
-                     }
-
-
-                }
-
-
-
-                    
-                    
-
-
-                
-                   
-                                
-
-                                             ?>
-
-
-                                                    
+                                                            }
+                                                        }*/
+                                                       /* switch ($_SERVER['REQUEST_URI'])
+                                                        {
+                                                            case '/viverosV2/public/consultas':*/
+                                                            if(@$valor['frmClientes_A']==1 && $valor['mnuCatalogoClientes']==1)
+                                                            {
+                                                                echo " <li><a href='#'' id='nuevoCliente' >Cliente</a></li>";
+                                                                echo "<script>  sessionStorage.setItem('botonForm','gCliente');</script>";
+                                                            }
+                                                           // break;         
+                                                            //default:
+                                                            if(@$valor['frmContactos_A']==1 && $valor['mnuCatalogoContactos']==1)
+                                                            {
+                                                                echo " <li><a href='#'' id='nuevoContacto' >Contacto</a></li>";
+                                                            }
+                                                            if(@$valor['frmDirecciones_A']==1 && $valor['mnuCatalogoDirecciones']==1)
+                                                            {
+                                                                echo " <li><a href='#'' id='nuevaDireccion' >Direcciones</a></li>";
+                                                            }
+                                                            //validar el modo edición
+                                                            if(@$valor['frmDirecciones_C']==1 && $valor['mnuCatalogoDirecciones']==1)
+                                                            {
+                                                                echo "<script>  sessionStorage.setItem('accionCambiosDir',1);</script>";
+                                                            }
+                                                       // }
+                                                    ?>
                                                     <!--li><a href="#" id="nuevoContacto">Contacto</a></li>
                                                     <li><a href="#" id="nuevaDireccion">Dirección</a></li>
                                                     <li><a href="#" id="nuevaMaquina">Máquina</a></li-->
-
                                                    <?php // }?>
-
-                                                  
                                                </ul>
                                             </li>
-                                             <li><a href="#" id="guardaCliente">Guardar</a></li>
-                                              <li><a href="#" id="guardaCliente">Actualizar</a></li>
-                                             <li><a href="#" id="cancelaClienteUno">Cancelar</a></li>
+                                            <li><a href="#" id="guardaCliente">Guardar</a></li>
+                                            <!--li><a href="#" id="guardaCliente">Actualizar</a></li-->
+                                            <li><a href="#" id="cancelaClienteUno">Cancelar</a></li>
                                         </ul>
-
                                     </div>
                                 </div>
                             </nav>
                        </div>
                     </div>
                 </div>
-                <div class="container">
+                <div class="container contenidodelbody">
                     <div class="row">
                         <div class="col-xs-12">
-                        <?php //print_r($m);?>
-
+                            <?php //print_r($m);?>
                             <?= $this->layout()->content; ?>
                         </div>
                     </div>
@@ -245,10 +223,10 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <div id="notificaciones" class="col-xs-8 col-sm-3">Error de consutla</div>
-                <?php
-                $this->datosUsuario = Zend_Auth::getInstance()->getStorage()->read();
-                    $usuario=$personadid= $this->datosUsuario->Usuario;
-                ?>
+                        <?php
+                            $this->datosUsuario = Zend_Auth::getInstance()->getStorage()->read();
+                            $usuario=$personadid= $this->datosUsuario->Usuario;
+                        ?>
                         <div id="usr" class="col-xs-4 col-sm-3"><?php echo $usuario; ?></div>
                         <div id="fecha" class="col-sm-2 hidden-xs"><?php echo date("d-m-Y"); ?></div>
                         <div id="hora" class="col-sm-2 hidden-xs"></div>

@@ -94,6 +94,9 @@ $("#gridDirecciones").jqGrid({
    $("#gridDirecciones").jqGrid('navGrid',"#pgridDirecciones",{edit:false,add:false,del:false});
    $("#gridDirecciones").jqGrid('filterToolbar', { searchOnEnter: false, enableClear:true});
   
-  
+  $(".ui-search-oper").hide();
+  $(".clearsearchclass").hide();
+  $("#gs_Id_direccion").hide();
+    
 
 })

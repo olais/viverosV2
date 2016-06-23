@@ -123,7 +123,10 @@ $("#gridContactos").jqGrid({
   });
    $("#gridContactos").jqGrid('navGrid',"#pgridContactos",{edit:false,add:true,del:false});
    $("#gridContactos").jqGrid('filterToolbar', { searchOnEnter: false, enableClear:true});
-
+   $(".ui-search-oper").hide();
+    $(".clearsearchclass").hide();
+    $("#gs_Id_contacto").hide();
+    
   
   
 

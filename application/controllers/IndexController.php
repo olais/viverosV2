@@ -13,6 +13,8 @@ class IndexController extends Zend_Controller_Action
 
     public function indexAction()
     {
+
+      //$this->_helper->layout->setLayout('login');  
       $model = new Application_Model_DbTable_Menu();
       $crearmenu  = new Zend_Session_Namespace('crearmenu');
       $crearmenu->menu = $model->Buscar();
@@ -95,11 +97,30 @@ class IndexController extends Zend_Controller_Action
 
       $this->_helper->layout->disableLayout();
       $this->_helper->viewRenderer->setNoRender();
+       $_search=$_REQUEST['_search'];
+        if($_search=="true"){
+
+                $calle=(isset($_REQUEST['Calle'])) ? $_REQUEST['Calle'] : '';
+                $colonia=(isset($_REQUEST['Colonia'])) ? $_REQUEST['Colonia'] : '';
+                $ciudad=(isset($_REQUEST['Ciudad'])) ? $_REQUEST['Ciudad'] : '';
+                $municipio=(isset($_REQUEST['Municipio'])) ? $_REQUEST['Municipio'] : '';
+                $estado=(isset( $_REQUEST['Estado'])) ?  $_REQUEST['Estado'] : '';
+                $cp=(isset( $_REQUEST['CP'])) ?  $_REQUEST['CP'] : '';
+                $nota=(isset($_REQUEST['Nota'])) ? $_REQUEST['Nota'] : '';
+
+
+             $con=new Application_Model_Logica();
+             $datos=  $con->consultarDireccionesFiltros($_search,$calle,$colonia,$ciudad,$municipio,$estado,$cp,$nota);
+             return $datos;
+       
+        }else{
+
       $id_cliente=$_REQUEST['id'];
       $con=new Application_Model_Logica();
       $datos=  $con->consultarDirecciones($id_cliente);
+        return $datos;
        
-       echo json_encode($datos);   
+       }
     }
 
 
