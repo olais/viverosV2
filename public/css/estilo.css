@@ -16,20 +16,20 @@ header
     z-index: 99;
 }
 
-.affix
+#botonesaccion
 {
-    position: fixed;
     top: 100px;
-    left: 0;
+    position: fixed;
     width: 100%;
-    margin: 0 auto;
-    /*float: left;*/
     z-index: 98;
 }
 
-.affix + .container-fluid
+#botonesaccion .navbar
 {
-    /*padding-top: 70px;*/
+    position: relative;
+    min-height: 30px;
+    margin-bottom: 0px;
+    border: 0px solid transparent;
 }
 
 #div-img-head
@@ -38,11 +38,6 @@ header
     background-repeat: no-repeat;
     background-position: center;
     height: 100px;
-}
-
-.nav_top>li>a
-{
-    padding: 0 15px;
 }
 
 .navbar_top
@@ -118,7 +113,7 @@ body
 
 #contenidobody
 {
-    margin-top: 100px;
+    margin-top: 135px;
     padding-top: 20px;
     margin-bottom: 0;
     height: 100%;
@@ -195,7 +190,6 @@ input[type=text], input[type=password], input[type=email], input[type=nombre], i
     border: 1px solid;
     border-color: #c4c4c4 #d1d1d1 #d4d4d4;
     border-radius: 2px;
-    /*outline: 5px solid #eff4f7;*/
     -moz-outline-radius: 3px; 
 }
 
@@ -212,19 +206,21 @@ input[type=text], input[type=password], input[type=email], input[type=nombre], i
 
 @media (max-width: 767px)
 {
-/*    header
+    #botonesaccion .navbar-toggle
     {
-        height: 200px;
+        margin-top: 0px;
+        margin-bottom: 0px;
     }
-    
-    #contenidobody
-    {
-        padding-top: 200px;
-    }*/
 }
 
 @media (min-width: 768px)
 {
+    #botonesaccion .navbar-nav>li>a
+    {
+        padding-top: 4px;
+        padding-bottom: 4px;
+    }
+    
     .navbar-nav>li>a {
         padding-top: 10px;
         padding-bottom: 10px;
