@@ -15,7 +15,15 @@ class EditarController extends Zend_Controller_Action
         $id_cliente=$_REQUEST['id'];
         $con=new Application_Model_Logica();
         $clientes=  $con->consultarCliente($id_cliente);
-        $this->view->clientes=$clientes; 
+        $this->view->clientes=$clientes;
+        $datos=  $con->consultatTiposContactos();
+        $this->view->datos=$datos; 
+
+        $tiposDir=  $con->consultatTiposDirecciones();
+        $this->view->tiposDir= $tiposDir; 
+
+        $tiposMaq=  $con->consultaTiposMaquinas();
+        $this->view->tiposMaq= $tiposMaq; 
 
                  
     }

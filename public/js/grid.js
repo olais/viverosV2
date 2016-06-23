@@ -4,6 +4,7 @@ var id_cliente;
 $("#fornuevocontacto").hide();
 $("#formDirecciones").hide();
 $("#formClientes").hide();
+ $("#formMaquinas").hide();
 $("#gCliente").hide();
 $("#guardarConta").hide();
 $("#guardaDir").hide();
@@ -149,6 +150,12 @@ comprobarContactos= sessionStorage.getItem("comprobarContactos");
                            sessionStorage.setItem("botonForm",'guardaDir');
                            $('#tipoDireccion option:eq(0)').prop('selected', true);
                             $('#estatusD option:eq(0)').prop('selected', true);
+
+   });
+
+   $("#nuevaMaquina").click(function(){
+
+      $("#formMaquinas").show();
 
    });
   
