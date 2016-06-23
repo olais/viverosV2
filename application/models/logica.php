@@ -106,7 +106,8 @@ class Application_Model_Logica extends Zend_Db_Table_Abstract
      $response=new stdClass();
          $db = Zend_Db_Table_Abstract::getDefaultAdapter();
           $select = $db->select()
-                    ->from ('clientes');
+                    ->from ('clientes')
+                    ->where('Id_estatus = ?',10);
                         $sql = $db->query($select);
                         $rows = $sql->fetchAll();
 
@@ -313,6 +314,45 @@ class Application_Model_Logica extends Zend_Db_Table_Abstract
 
 
     }
+ public function consultatTiposClientes(){
+
+                       $db = Zend_Db_Table_Abstract::getDefaultAdapter();
+                      $select = $db->select()
+                                ->from ('tipos_clientes')
+                                ->where('Id_estatus =?',10);
+                       $sql = $db->query($select);
+                      return  $rows = $sql->fetchAll();
+                      
+  }
+
+  public function consultatTiposContactos(){
+
+        $db = Zend_Db_Table_Abstract::getDefaultAdapter();
+                      $select = $db->select()
+                                ->from ('tipos_contactos')
+                                ->where('Id_estatus =?',10);
+                       $sql = $db->query($select);
+                      return  $rows = $sql->fetchAll();
+  }
+  public function consultatTiposDirecciones(){
+       $db = Zend_Db_Table_Abstract::getDefaultAdapter();
+                      $select = $db->select()
+                                ->from ('tipos_direccion')
+                                ->where('Id_estatus =?',10);
+                       $sql = $db->query($select);
+                      return  $rows = $sql->fetchAll();
+
+  }
+
+  public function consultaTiposMaquinas(){
+     $db = Zend_Db_Table_Abstract::getDefaultAdapter();
+                      $select = $db->select()
+                                ->from ('maquinasclientes')
+                                ->where('Id_estatus =?',10);
+                       $sql = $db->query($select);
+                      return  $rows = $sql->fetchAll();
+
+  }
 
 
 

@@ -13,8 +13,9 @@
             <div class="col-md-7">
                 <select id="tipo" class="form-control" name="tipo" required>
                     <option>Seleccionar...</option>
-                    <option value="1" <?php echo $selected=(@$this->clientes[0]['Id_tipocliente']==1)? 'selected':''; ?>>Admin</option>
-                    <option value="2" <?php echo $selected=(@$this->clientes[0]['Id_tipocliente']==2)? 'selected':''; ?>>Usuario</option>
+                     <option value="10" <?php echo $selected=(@$this->clientes[0]['Id_tipocliente']==10)? 'selected':''; ?>>Crédito</option>
+                    <option value="11" <?php echo $selected=(@$this->clientes[0]['Id_tipocliente']==11)? 'selected':''; ?>>Contado</option>
+                     <option value="12" <?php echo $selected=(@$this->clientes[0]['Id_tipocliente']==12)? 'selected':''; ?>>Suspendido</option>
                 </select>
             </div>
         </div>
@@ -23,8 +24,8 @@
             <div class="col-md-7">
                 <select id="estatus" class="form-control" name="estatus" required>
                     <option>Seleccionar...</option>
-                    <option value='10' <?php echo $selected=(@$this->clientes[0]['Id_estatus']==10)? 'selected':''; ?>>Activo</option>
-                    <option value="20" <?php echo $selected=(@$this->clientes[0]['Id_estatus']==20)? 'selected':''; ?>>Inactivo</option>
+                    <option value='10' <?php echo $selected=(@$this->clientes[0]['Id_estatus']==10)? 'selected':''; ?>>ACTIVO</option>
+                    <option value="20" <?php echo $selected=(@$this->clientes[0]['Id_estatus']==20)? 'selected':''; ?>>INACTIVO</option>
                 </select>
             </div>
         </div>
@@ -84,7 +85,14 @@
                 <div class="col-md-7">
                     <select class="form-control" id="tipoContacto" name="tipoContacto">
                         <option>Seleccionar...</option>
-                        <option value="10">Comercial</option>
+                  <?php 
+                    foreach ($this->datos as $option) {
+                      echo " <option value='".$option['Id_tipocontacto']."'>".$option['Descripcion']."</option>";
+                    }
+
+
+
+                  ?>
                     </select>
                 </div>
             </div>
@@ -93,8 +101,8 @@
                 <div class="col-md-7">
                     <select class="form-control" id="estatusC" name="estatusC">
                         <option>Seleccionar...</option>
-                        <option value='10'>Activo</option>
-                        <option value="20">Inactivo</option>
+                        <option value='10'>ACTIVO</option>
+                        <option value="20">INACTIVO</option>
                     </select>
                 </div>
             </div>
@@ -188,10 +196,15 @@
                 <label class="control-label col-md-5" for="tipD">Tipo Dirección:</label>
                 <div class="col-md-7">
                     <select class="form-control" id="tipoDireccion" name="tipoDireccion">
-                        <option>Seleccionar...</option>
-                        <option value="10">Comercial</option>
-                        <option value="11">Fiscal</option>
-                        <option value="12">Entrega</option>
+                           <option>Seleccionar...</option>
+                  <?php 
+                    foreach ($this->tiposDir as $option) {
+                      echo " <option value='".$option['Id_tipodireccion']."'>".$option['Descripcion']."</option>";
+                    }
+
+
+
+                  ?>
                     </select>
                 </div>
             </div>
@@ -200,8 +213,8 @@
                 <div class="col-md-7">
                     <select class="form-control" id="estatusD" name="estatusD">
                         <option>Seleccionar...</option>
-                        <option value='10'>Activo</option>
-                        <option value="20">Inactivo</option>
+                        <option value='10'>ACTIVO</option>
+                        <option value="20">INACTIVO</option>
                     </select>
                 </div>
             </div>
@@ -250,6 +263,33 @@
             <button type="submit" class="btn btn-primary" id="guardaDir">Guardar Dirección</button>
         </form>
     </div>
+    <div id='formMaquinas'>
+
+        <form class="form-inline" role="form" method='POST' name='guardaMaquinas' id='guardaMaquinas'>
+            <div class="form-group">
+                <!--label for="cliente">Cliente</label>
+                <input type='text' class="form-control" id="clienteM" name='clienteM'-->
+            </div>
+            <div class="form-group">
+                <label for="maq">Máquina</label>
+                <select class="form-control" id="maq" name='maq'>
+                         <option>Seleccionar...</option>
+                  <?php 
+                    foreach ($this->tiposMaq as $key =>$option) {
+                      echo " <option>".$key."</option>";
+                    }
+
+
+
+                  ?>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-default">Guardar</button>
+        </form>
+
+    </div>
+
+
 </div>
 <br/>
 <br/>
@@ -258,6 +298,9 @@
     <li ><a data-toggle="tab" href="#menu1" >Direcciones</a></li>
     <li><a data-toggle="tab" href="#menu2" id='clickM'>Máquinas</a></li>
 </ul>
+
+
+
 <div class="tab-content">
     <div id="home" class="tab-pane fade in active">
         <div class="col-md-12">
@@ -272,22 +315,10 @@
         </div>
     </div>
     <div id="menu2" class="tab-pane fade">
-        <h3>Máquinas</h3>
-        <form class="form-inline" role="form" method='POST' name='guardaMaquinas' id='guardaMaquinas'>
-            <div class="form-group">
-                <label for="cliente">Cliente</label>
-                <input type='text' class="form-control" id="clienteM" name='clienteM'>
-            </div>
-            <div class="form-group">
-                <label for="maq">Máquina</label>
-                <select class="form-control" id="maq" name='maq'>
-                    <option>Seleccionar...</option>
-                    <option></option>
-                    <option></option>
-                    <option></option>
-                </select>
-            </div>
-            <button type="submit" class="btn btn-default">Guardar</button>
-        </form>
+         <div class="col-md-12">
+         grid de maquinas
+            <table id="gridDirecciones"></table>
+            <div id="pgridDirecciones"></div>
+        </div>
     </div>
 </div>

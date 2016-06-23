@@ -10,7 +10,10 @@ class ConsultasController extends Zend_Controller_Action
 
     public function indexAction()
     {
-        // action body
+         $con=new Application_Model_Logica();
+         $datos=  $con->consultatTiposClientes();
+
+         $this->view->datos=$datos;
     }
 
    
