@@ -264,20 +264,130 @@
         </form>
     </div>
     <div id='formMaquinas'>
-
-        <form class="form-inline" role="form" method='POST' name='guardaMaquinas' id='guardaMaquinas'>
+            <form  name="clienteMaquina" id="clienteMaquina" method="POST" class="form-inline">
+            <input type="hidden" name="idCM" id='idCM'/>
+            <input type="hidden" id='identificadorMaquinas'/>
+            <div class="form-group col-sm-4 col-lg-3">
+                <label class="control-label col-md-5" for="descM">Descripcion</label>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" id="descripcionM" name="descripcionM" required>
+                </div>
+            </div>
+            <div class="form-group col-sm-4 col-lg-3">
+                <label class="control-label col-md-5" for="perf">PerfEnPegue</label>
+                <div class="col-md-7">
+                    <select  class="form-control" id="PerfEnPegue" name="PerfEnPegue">
+                        <option>Seleccionar...</option>
+                        <option>SI</option>
+                        <option>NO</option>
+                   </select>
+                </div>
+            </div>
+            <div class="form-group col-sm-4 col-lg-3">
+                <label class="control-label col-md-5" for="descPegue">DescPerfEnPegue</label>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" id="DescPerfEnPegue" name="DescPerfEnPegue">
+                </div>
+            </div>
+            <div class="form-group col-sm-4 col-lg-3">
+                <label class="control-label col-md-5" for="rama">Rama</label>
+                <div class="col-md-7">
+                    <select  class="form-control" id="rama" name="rama">
+                   <option>Seleccionar...</option>
+                        <option>SI</option>
+                        <option>NO</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group col-sm-4 col-lg-3">
+                <label class="control-label col-md-5" for="medRama">MedidaRama</label>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" id="MedidaRama" name="MedidaRama">
+                </div>
+            </div>
+            <div class="form-group col-sm-4 col-lg-3">
+                <label class="control-label col-md-5" for="pinza">Pinza</label>
+                <div class="col-md-7">
+                    <select  class="form-control" id="pinza" name="pinza">
+                   <option>Seleccionar...</option>
+                        <option>SI</option>
+                        <option>NO</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group col-sm-4 col-lg-3">
+                <label class="control-label col-md-5" for="medPinza">MedidaPinza</label>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" id="MedidaPinza" name="MedidaPinza">
+                </div>
+            </div>
+            <div class="form-group col-sm-4 col-lg-3">
+                <label class="control-label col-md-5" for="perfo">Perforaciones</label>
+                <div class="col-md-7">
+                     <select  class="form-control" id="perforaciones" name="perforaciones">
+                   <option>Seleccionar...</option>
+                        <option>SI</option>
+                        <option>NO</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group col-sm-4 col-lg-3">
+                <label class="control-label col-md-5" for="centerline">Centerline</label>
+                <div class="col-md-7">
+                      <select  class="form-control" id="centerline" name="centerline">
+                   <option>Seleccionar...</option>
+                        <option>SI</option>
+                        <option>NO</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group col-sm-4 col-lg-3">
+                <label class="control-label col-md-5" for="medcenterline">MedidaCenterline</label>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" id="MedidaCenterline" name="MedidaCenterline">
+                </div>
+            </div>
+            <div class="form-group col-sm-4 col-lg-3">
+                <label class="control-label col-md-5" for="desb">Desbarbe</label>
+                <div class="col-md-7">
+                   <select  class="form-control" id="desbarde" name="desbarde">
+                   <option>Seleccionar...</option>
+                        <option>SI</option>
+                        <option>NO</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group col-sm-4 col-lg-3">
+                <label class="control-label col-md-5" for="Compensacion">Compensacion</label>
+                <div class="col-md-7">
+                    <select  class="form-control" id="compensacion" name="compensacion">
+                   <option>Seleccionar...</option>
+                        <option>SI</option>
+                        <option>NO</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group col-sm-4 col-lg-3">
+                <label class="control-label col-md-5" for="NumPiezasCompensacion">NumPiezas</label>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" id="NumPiezasCompensacion" name="NumPiezasCompensacion">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary" id="guardaMaquina">Guardar Maquina</button>
+        </form>
+        <!--form class="form-inline" role="form" method='POST' name='guardaMaquinas' id='guardaMaquinas'>
             <div class="form-group">
                 <!--label for="cliente">Cliente</label>
                 <input type='text' class="form-control" id="clienteM" name='clienteM'-->
-            </div>
+            <!--/div>
             <div class="form-group">
                 <label for="maq">Máquina</label>
                 <select class="form-control" id="maq" name='maq'>
                          <option>Seleccionar...</option>
                   <?php 
-                    foreach ($this->tiposMaq as $key =>$option) {
-                      echo " <option>".$key."</option>";
-                    }
+                    //foreach ($this->tiposMaq as $key =>$option) {
+                      //echo " <option>".$key."</option>";
+                   // }
 
 
 
@@ -285,7 +395,7 @@
                 </select>
             </div>
             <button type="submit" class="btn btn-default">Guardar</button>
-        </form>
+        </form-->
 
     </div>
 
@@ -316,9 +426,8 @@
     </div>
     <div id="menu2" class="tab-pane fade">
          <div class="col-md-12">
-         grid de maquinas
-            <table id="gridDirecciones"></table>
-            <div id="pgridDirecciones"></div>
+            <table id="gridMaquinas"></table>
+            <div id="pgridMaquinas"></div>
         </div>
     </div>
 </div>

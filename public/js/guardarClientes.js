@@ -2,6 +2,7 @@ $(document).ready(function(){
 	$("#ui-accordion-accordion-header-0").trigger('click');
 		 idCliente = sessionStorage.getItem("id");
      	 $("#idC").val(idCliente);
+           $("#idCM").val(idCliente);
      	 $("#idClienteDir").val(idCliente);
 		$("#clientesG").submit(function(){
 			var clientes=$(this).serialize();
@@ -83,8 +84,33 @@ $(document).ready(function(){
      		$("#cancelaClienteUno").click(function(){
 
      			 $("#formClientes").hide();
+                      document.getElementById("clientesG").reset();
+                      document.getElementById("contactosG").reset();
+                      document.getElementById("contactosD").reset();
+                      document.getElementById("clienteMaquina").reset();
+                     $("#formMaquinas").hide();
+                     $("#formDirecciones").hide();
+                     $("#fornuevocontacto").hide();
 
      		});
+
+
+               $("#clienteMaquina").submit(function(){
+
+                    var datos=$(this).serialize();
+
+                    $.post("editar/guardarmaquinas",datos,
+
+                         function(data){
+                           window.location="editar?id="+idCliente;
+
+                         },'json'
+
+                         );
+
+                    
+                    return false;
+               });
      			
      	
 
