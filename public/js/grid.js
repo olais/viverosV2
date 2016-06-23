@@ -133,6 +133,8 @@ comprobarContactos= sessionStorage.getItem("comprobarContactos");
                $("#nuevo").disabled = true;
 
                 document.getElementById("clientesG").reset();
+                $("#guardaCliente").html("Guardar");
+                $("#menuContacto").trigger("click");
 
 
   });
@@ -153,6 +155,8 @@ comprobarContactos= sessionStorage.getItem("comprobarContactos");
                            sessionStorage.setItem("botonForm",'guardaDir');
                            $('#tipoDireccion option:eq(0)').prop('selected', true);
                             $('#estatusD option:eq(0)').prop('selected', true);
+                            $("#guardaCliente").html("Guardar");
+                            $("#menuDir").trigger("click");
 
    });
 
@@ -161,6 +165,8 @@ comprobarContactos= sessionStorage.getItem("comprobarContactos");
        $("#formDirecciones").hide();
       $("#formMaquinas").show();
       sessionStorage.setItem("botonForm",'guardaMaquina');
+      $("#guardaCliente").html("Guardar");
+      $("#clickM").trigger("click");
 
    });
   
