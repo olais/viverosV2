@@ -1,3 +1,8 @@
+<style type="text/css">
+    #nuevoCliente{
+        display: none;
+    }
+</style> 
 <?php
     //print_r($this->clientes);
     //echo $idCliente=$this->clientes[0]['Id_cliente'];
@@ -75,6 +80,7 @@
         <!--button class="btn btn-primary" type="submit">Guardar Clientes</button>
         <button id="cancelaCliente" class="btn btn-primary">Cancelar</button-->
     </form>
+
     <div id="fornuevocontacto">
         <form  name="contactosG" id="contactosG" method="POST" class="form-inline">
             <input type="hidden" name="idC" id='idC'/>
@@ -403,6 +409,7 @@
 </div>
 <br/>
 <br/>
+
 <ul class="nav nav-tabs class-clear">
     <li class="active"><a data-toggle="tab" href="#home">Contactos</a></li>
     <li ><a data-toggle="tab" href="#menu1" >Direcciones</a></li>
