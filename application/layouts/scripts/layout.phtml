@@ -136,79 +136,83 @@
                 </div>
             </div>
         </header>
+        <section id="botonesaccion">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <nav class="navbar navbar-inverse">
+                            <div class="container-fluid">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span> 
+                                    </button>
+                                    <!--<a class="navbar-brand" href="#">Barra de acciones</a>-->
+                                </div>
+                                <div class="collapse navbar-collapse" id="myNavbar">
+
+                                    <ul class="nav navbar-nav">
+
+                                        <li class="dropdown" id="nuevo">
+                                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" >Nuevo <span class="caret"></span></a>
+                                            <ul class="dropdown-menu">
+                                                <?php
+                                                    /* foreach ($valor as $key => $value) {
+                                                    $domain = strstr($key, '_A');
+                                                    if($valor[$key]==1 && $domain!=""){
+
+                                                    echo "<li><a href='#'>$key</a></li>";
+
+                                                        }
+                                                    }*/
+                                                   /* switch ($_SERVER['REQUEST_URI'])
+                                                    {
+                                                        case '/viverosV2/public/consultas':*/
+                                                        if(@$valor['frmClientes_A']==1 && $valor['mnuCatalogoClientes']==1)
+                                                        {
+
+                                                            echo " <li><a href='#'' id='nuevoCliente' >Cliente</a></li>";
+                                                            echo "<script>  sessionStorage.setItem('botonForm','gCliente');</script>";
+                                                        }
+                                                       // break;         
+                                                        //default:
+                                                        if(@$valor['frmContactos_A']==1 && $valor['mnuCatalogoContactos']==1)
+                                                        {
+                                                            echo " <li><a href='#'' id='nuevoContacto' >Contacto</a></li>";
+                                                        }
+                                                        if(@$valor['frmDirecciones_A']==1 && $valor['mnuCatalogoDirecciones']==1)
+                                                        {
+                                                            echo " <li><a href='#'' id='nuevaDireccion' >Direcciones</a></li>";
+                                                        }
+                                                        //validar el modo edición
+                                                        if(@$valor['frmDirecciones_C']==1 && $valor['mnuCatalogoDirecciones']==1)
+                                                        {
+                                                            echo "<script>  sessionStorage.setItem('accionCambiosDir',1);</script>";
+                                                        }
+                                                   // }
+                                                ?>
+                                                <li><a href="#" id="nuevaMaquina">Máquina</a></li>
+                                                <!--li><a href="#" id="nuevoContacto">Contacto</a></li>
+                                                <li><a href="#" id="nuevaDireccion">Dirección</a></li>
+                                                <li><a href="#" id="nuevaMaquina">Máquina</a></li-->
+                                               <?php // }?>
+                                           </ul>
+                                        </li>
+                                        <li><a href="#" id="guardaCliente">Guardar</a></li>
+                                        <!--li><a href="#" id="guardaCliente">Actualizar</a></li-->
+                                        <li><a href="#" id="cancelaClienteUno">Cancelar</a></li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </nav>
+                   </div>
+                </div>
+            </div>
+        </section>
         <section>
             <div id="contenidobody">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="30">
-                                <div class="container-fluid">
-                                    <div class="navbar-header">
-                                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span> 
-                                        </button>
-                                        <!--<a class="navbar-brand" href="#">Barra de acciones</a>-->
-                                    </div>
-                                    <div class="collapse navbar-collapse" id="myNavbar">
-
-                                        <ul class="nav navbar-nav">
-                                            
-                                            <li class="dropdown" id="nuevo">
-                                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" >Nuevo <span class="caret"></span></a>
-                                                <ul class="dropdown-menu">
-                                                    <?php
-                                                        /* foreach ($valor as $key => $value) {
-                                                        $domain = strstr($key, '_A');
-                                                        if($valor[$key]==1 && $domain!=""){
-
-                                                        echo "<li><a href='#'>$key</a></li>";
-                                                        
-                                                            }
-                                                        }*/
-                                                       /* switch ($_SERVER['REQUEST_URI'])
-                                                        {
-                                                            case '/viverosV2/public/consultas':*/
-                                                            if(@$valor['frmClientes_A']==1 && $valor['mnuCatalogoClientes']==1)
-                                                            {
-                                                                echo " <li><a href='#'' id='nuevoCliente' >Cliente</a></li>";
-                                                                echo "<script>  sessionStorage.setItem('botonForm','gCliente');</script>";
-                                                            }
-                                                           // break;         
-                                                            //default:
-                                                            if(@$valor['frmContactos_A']==1 && $valor['mnuCatalogoContactos']==1)
-                                                            {
-                                                                echo " <li><a href='#'' id='nuevoContacto' >Contacto</a></li>";
-                                                            }
-                                                            if(@$valor['frmDirecciones_A']==1 && $valor['mnuCatalogoDirecciones']==1)
-                                                            {
-                                                                echo " <li><a href='#'' id='nuevaDireccion' >Direcciones</a></li>";
-                                                            }
-                                                            //validar el modo edición
-                                                            if(@$valor['frmDirecciones_C']==1 && $valor['mnuCatalogoDirecciones']==1)
-                                                            {
-                                                                echo "<script>  sessionStorage.setItem('accionCambiosDir',1);</script>";
-                                                            }
-                                                       // }
-                                                    ?>
-                                                    <li><a href="#" id="nuevaMaquina">Máquina</a></li>
-                                                    <!--li><a href="#" id="nuevoContacto">Contacto</a></li>
-                                                    <li><a href="#" id="nuevaDireccion">Dirección</a></li>
-                                                    <li><a href="#" id="nuevaMaquina">Máquina</a></li-->
-                                                   <?php // }?>
-                                               </ul>
-                                            </li>
-                                            <li><a href="#" id="guardaCliente">Guardar</a></li>
-                                            <!--li><a href="#" id="guardaCliente">Actualizar</a></li-->
-                                            <li><a href="#" id="cancelaClienteUno">Cancelar</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </nav>
-                       </div>
-                    </div>
-                </div>
                 <div class="container contenidodelbody">
                     <div class="row">
                         <div class="col-xs-12">
