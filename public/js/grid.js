@@ -8,6 +8,7 @@ $("#formClientes").hide();
 $("#gCliente").hide();
 $("#guardarConta").hide();
 $("#guardaDir").hide();
+$("#guardaMaquina").hide();
 accionCambiosDir= sessionStorage.getItem("accionCambiosDir");
 if(accionCambiosDir==1){
  // alert("hola");
@@ -27,10 +28,11 @@ $("#selecDir").removeClass("active");
 $("#gridClientes").jqGrid({
    	url:'index/consultar',
 	datatype: "json",
-   	colNames:['id','Estatus', 'Nombre', 'RFC','Teléfono 1','Teléfono 2','Fax','Correo','web'],
+   	colNames:['id','Id_estatus','Estatus', 'Nombre', 'RFC','Teléfono 1','Teléfono 2','Fax','Correo','web'],
    	colModel:[
    		{name:'Id_cliente',index:'Id_cliente', width:55},
-   		{name:'Id_estatus',index:'Id_estatus', width:90, editable:true},
+      {name:'Id_estatus',index:'Id_estatus', width:280,editable:true,hidden:true},
+   		{name:'estatus',index:'estatus', width:90, editable:true},
    		{name:'Nombre',index:'Nombre', width:280,editable:true},
    		{name:'RFC',index:'RFC', width:200, align:"left",editable:true},
    		{name:'Telefono1',index:'Telefono1', width:170, align:"left",editable:true},		
@@ -120,6 +122,7 @@ comprobarContactos= sessionStorage.getItem("comprobarContactos");
                 $("#sky").val("");
                 $("#fornuevocontacto").show();
                 $("#formDirecciones").hide();
+                $("#formMaquinas").hide();
                 //mostrar form de direcciones
                 //$("#formDirecciones").show();
               $('#tipoContacto option:eq(0)').prop('selected', true);
@@ -138,7 +141,7 @@ comprobarContactos= sessionStorage.getItem("comprobarContactos");
 
     $("#formDirecciones").show();
     $("#fornuevocontacto").hide();
-   
+    $("#formMaquinas").hide();
                     $("#Id_direccion").val("");
                      $("#calle").val("");
                       $("#colonia").val("");
@@ -154,8 +157,10 @@ comprobarContactos= sessionStorage.getItem("comprobarContactos");
    });
 
    $("#nuevaMaquina").click(function(){
-
+       $("#fornuevocontacto").hide();
+       $("#formDirecciones").hide();
       $("#formMaquinas").show();
+      sessionStorage.setItem("botonForm",'guardaMaquina');
 
    });
   
@@ -178,6 +183,7 @@ comprobarContactos= sessionStorage.getItem("comprobarContactos");
   $("#nuevoCliente").click(function(){
 
     $("#formClientes").show();
+    $("#formMaquinas").hide();
   });
 
 

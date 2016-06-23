@@ -31,7 +31,7 @@ class IndexController extends Zend_Controller_Action
         $_search=$_REQUEST['_search'];
         if($_search=="true"){
  
-         $estatus=(isset($_REQUEST['Id_estatus']))? $_REQUEST['Id_estatus'] : '';
+         $estatus=(isset($_REQUEST['estatus']))? $_REQUEST['estatus'] : '';
          $nombre=(isset($_REQUEST['Nombre']))? $_REQUEST['Nombre'] : '';
          $rfc=(isset($_REQUEST['RFC']))? $_REQUEST['RFC'] : '';
          $tel1=(isset($_REQUEST['Telefono1']))? $_REQUEST['Telefono1'] : '';
@@ -121,6 +121,17 @@ class IndexController extends Zend_Controller_Action
         return $datos;
        
        }
+    }
+
+    public function maquinasAction(){
+       $this->_helper->layout->disableLayout();
+       $this->_helper->viewRenderer->setNoRender();
+
+      $id_cliente=$_REQUEST['id'];
+      $con=new Application_Model_Logica();
+      $datos=  $con->consultarMaquinas($id_cliente);
+      return $datos;
+
     }
 
 
