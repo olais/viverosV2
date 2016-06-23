@@ -42,8 +42,10 @@ $(document).ready(function(){
      			}
            	$.post(urlGuardar,contactos,
 				function(data){
-				
-					 window.location="editar?id="+idCliente;
+				      $("#gridContactos").trigger("reloadGrid");
+                       document.getElementById("contactosG").reset();
+                         $("#fornuevocontacto").hide();
+					 //window.location="editar?id="+idCliente;
 				},'json'
 
 		       );
@@ -64,7 +66,10 @@ $(document).ready(function(){
      			}
      			$.post(urlGuardar,direcciones,
 				function(data){
-					window.location="editar?id="+idCliente;
+                          $("#gridDirecciones").trigger("reloadGrid");
+                       document.getElementById("contactosD").reset();
+                         $("#formDirecciones").hide();
+					//window.location="editar?id="+idCliente;
 				},'json'
 
 		       );
@@ -79,6 +84,7 @@ $(document).ready(function(){
      			 boton = sessionStorage.getItem("botonForm");
      			
 			    $("#"+boton).trigger("click");
+                   return false;
      		});
 
      		$("#cancelaClienteUno").click(function(){
@@ -102,7 +108,10 @@ $(document).ready(function(){
                     $.post("editar/guardarmaquinas",datos,
 
                          function(data){
-                           window.location="editar?id="+idCliente;
+               $("#gridMaquinas").trigger("reloadGrid");
+               document.getElementById("clienteMaquina").reset();
+               $("#clienteMaquina").hide();
+                           //window.location="editar?id="+idCliente;
 
                          },'json'
 
