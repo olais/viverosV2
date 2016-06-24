@@ -54,6 +54,25 @@ $("#gridMaquinas").jqGrid({
   $(".ui-search-oper").hide();
   $(".clearsearchclass").hide();
   $("#gs_Id_MaquinaC").hide();
+
+    $("#btnNuevoMaquina").click(function(){
+       $("#formMaquinas").show();
+       $( "#dialog-maquinas" ).dialog({
+                      modal: true,
+                      width: '1200',
+                      buttons: {
+                        Guardar: function() {
+                      $("#guardaMaquina").trigger("click");
+                     // $( this ).dialog( "close" );
+                     },
+                       Cancelar: function() {
+                      $("#cancelaClienteUno").trigger("click");
+                          $( this ).dialog( "close" );
+                      }
+                }
+              });
+
+   });
     
 
 })
