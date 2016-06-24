@@ -1,4 +1,8 @@
- 
+<style type="text/css">
+    #nuevaDireccion,#nuevoContacto,#nuevaMaquina{
+        display: none;
+    }
+</style> 
 <div id='formClientes'>
     <form  name="clientesG" id="clientesG" class="form-inline" method="POST">
         <div class="form-group col-sm-4">
@@ -10,8 +14,6 @@
                     foreach ($this->datos as $option) {
                       echo " <option value='".$option['Id_tipocliente']."'>".$option['Descripcion']."</option>";
                     }
-
-
 
                   ?>
                 </select>

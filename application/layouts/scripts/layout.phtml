@@ -16,7 +16,8 @@
             $this->headScript()->appendFile($this->baseUrl('js/guardarClientes.js'), 'text/javascript');
             $this->headScript()->appendFile($this->baseUrl('js/grid.js'), 'text/javascript');
             $this->headScript()->appendFile($this->baseUrl('js/gridContactos.js'), 'text/javascript');
-             $this->headScript()->appendFile($this->baseUrl('js/gridDirecciones.js'), 'text/javascript');
+            $this->headScript()->appendFile($this->baseUrl('js/gridDirecciones.js'), 'text/javascript');
+            $this->headScript()->appendFile($this->baseUrl('js/gridMaquinas.js'), 'text/javascript');
             $this->headScript()->appendFile($this->baseUrl('js/grid.locale-en.js'), 'text/javascript');
             $this->headScript()->appendFile($this->baseUrl('js/jquery.jqGrid.min.js'), 'text/javascript');
             $this->headTitle()->append('Miapp/Suajes');
@@ -78,7 +79,7 @@
                                                 <span class="icon-bar"></span>
                                                 <span class="icon-bar"></span> 
                                             </button>
-                                            <a class="navbar-brand navbar-brand_top hidden-xs hidden-sm hidden-md" href="#"><img id="logo_viveros" src="images/header/logo_viveros.png"/></a>
+                                            <a class="navbar-brand navbar-brand_top hidden-xs hidden-sm hidden-md" href="<?php echo $this->baseUrl(); ?>"><img id="logo_viveros" src="<?php echo $this->baseUrl(); ?>/images/header/logo_viveros.png"/></a>
                                         </div>
                                         <div class="collapse navbar-collapse" id="Navbar_top">
                                             <ul class="nav navbar-nav navbar-right nav_top navbar-nav_top">

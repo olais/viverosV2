@@ -263,7 +263,7 @@ class EditarController extends Zend_Controller_Action
     }
    function actualizardireccionesAction(){
 
-    $this->_helper->layout->disableLayout();
+       $this->_helper->layout->disableLayout();
        $this->_helper->viewRenderer->setNoRender();
 
 
@@ -298,6 +298,42 @@ class EditarController extends Zend_Controller_Action
       echo json_encode($response);
         
    }
+
+   public function guardarmaquinasAction(){
+       $this->_helper->layout->disableLayout();
+       $this->_helper->viewRenderer->setNoRender();
+
+               $maquinas=array(
+                'Id_MaquinaC'=>'',
+                'Id_Cliente'=>$_REQUEST['idCM'],
+                'Descripcion'=>$_REQUEST['descripcionM'],
+                'PerfEnPegue'=>$_REQUEST['PerfEnPegue'],
+                'DescPerfEnPegue'=>$_REQUEST['DescPerfEnPegue'],
+                'Rama'=>$_REQUEST['rama'],
+                'MedidaRama'=>$_REQUEST['MedidaRama'],
+                'Pinza'=>$_REQUEST['pinza'],
+                'Id_estatus'=>10,
+                'MedidaPinza'=>$_REQUEST['MedidaPinza'],
+                'Perforaciones'=>$_REQUEST['perforaciones'],
+                'Centerline'=>$_REQUEST['centerline'],
+                'MedidaCenterline'=>$_REQUEST['MedidaCenterline'],
+                'Desbarbe'=>$_REQUEST['desbarde'],
+                'Compensacion'=>$_REQUEST['compensacion'],
+                'NumPiezasCompensacion'=>$_REQUEST['NumPiezasCompensacion']
+
+                );
+
+        $con=new Application_Model_Maquinas();
+        $datos=  $con->guardarMaquinas($maquinas);
+        $response=new stdClass();
+        $response->id=$datos;
+
+           echo json_encode($response);
+
+
+   }
+
+
 }
 
 

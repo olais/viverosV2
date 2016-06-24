@@ -107,7 +107,8 @@ $("#gridContactos").jqGrid({
                 $("#sky").val(Skype);
                 sessionStorage.setItem("botonForm",'guardarConta');
                  $("#formDirecciones").hide();
-                 $("#guardarConta").html("Actualizar");
+                // $("#guardarConta").html("Actualizar");
+                  $("#guardaCliente").html("Actualizar");
 
                  $("#identificadorContactos").val(1);
 

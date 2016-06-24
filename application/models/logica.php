@@ -33,7 +33,7 @@ class Application_Model_Logica extends Zend_Db_Table_Abstract
             $response=new stdClass();
          $db = Zend_Db_Table_Abstract::getDefaultAdapter();
           $select = $db->select()
-                    ->from ('clientes');
+                    ->from ('v_clientes');
                         $sql = $db->query($select);
                         $rows = $sql->fetchAll();
                         $count= count($rows);
@@ -62,28 +62,28 @@ class Application_Model_Logica extends Zend_Db_Table_Abstract
                         $start = $limit*$page - $limit;
 
                         if(isset($Id_estatus) && $Id_estatus !=""){
-                      $select = $db->select() ->from ('clientes')->where('Id_estatus = ?',$Id_estatus);
+                      $select = $db->select() ->from ('v_clientes')->where('estatus like ?','%'.$Id_estatus.'%');
                         }
                           if(isset($Nombre) && $Nombre !=""){
-                      $select = $db->select() ->from ('clientes')->where('Nombre like ?', '%'.$Nombre.'%');
+                      $select = $db->select() ->from ('v_clientes')->where('Nombre like ?', '%'.$Nombre.'%');
                         }
                          if(isset($RFC) && $RFC !=""){
-                      $select = $db->select() ->from ('clientes')->where('RFC like ?','%'.$RFC.'%');
+                      $select = $db->select() ->from ('v_clientes')->where('RFC like ?','%'.$RFC.'%');
                         }
                           if(isset($Telefono1) && $Telefono1 !=""){
-                      $select = $db->select() ->from ('clientes')->where('Telefono1 like ?','%'.$Telefono1.'%');
+                      $select = $db->select() ->from ('v_clientes')->where('Telefono1 like ?','%'.$Telefono1.'%');
                         }
                          if(isset($Telefono2) && $Telefono2 !=""){
-                      $select = $db->select() ->from ('clientes')->where('Telefono2 like ?','%'.$Telefono2.'%');
+                      $select = $db->select() ->from ('v_clientes')->where('Telefono2 like ?','%'.$Telefono2.'%');
                         }
                          if(isset($Fax) && $Fax !=""){
-                      $select = $db->select() ->from ('clientes')->where('Fax like ?','%'.$Fax.'%');
+                      $select = $db->select() ->from ('v_clientes')->where('Fax like ?','%'.$Fax.'%');
                         }
                          if(isset($Correo) && $Correo !=""){
-                      $select = $db->select() ->from ('clientes')->where('Correo like ?','%'.$Correo.'%');
+                      $select = $db->select() ->from ('v_clientes')->where('Correo like ?','%'.$Correo.'%');
                         }
                           if(isset($Web) && $Web !=""){
-                      $select = $db->select() ->from ('clientes')->where('Web like ?','%'.$Web.'%');
+                      $select = $db->select() ->from ('v_clientes')->where('Web like ?','%'.$Web.'%');
                         }
                        $sql = $db->query($select);
                        $rows2 = $sql->fetchAll();
@@ -106,7 +106,7 @@ class Application_Model_Logica extends Zend_Db_Table_Abstract
      $response=new stdClass();
          $db = Zend_Db_Table_Abstract::getDefaultAdapter();
           $select = $db->select()
-                    ->from ('clientes')
+                    ->from ('v_clientes')
                     ->where('Id_estatus = ?',10);
                         $sql = $db->query($select);
                         $rows = $sql->fetchAll();
@@ -354,6 +354,17 @@ class Application_Model_Logica extends Zend_Db_Table_Abstract
 
   }
 
+  public function consultarMaquinas($id_cliente){
+
+       $db = Zend_Db_Table_Abstract::getDefaultAdapter();
+          $select = $db->select()
+                    ->from ('maquinasclientes')
+                    ->where("Id_cliente=$id_cliente");
+                        $sql = $db->query($select);
+                        $rows = $sql->fetchAll();
+                       
+                       echo json_encode($rows);
+  }
 
 
 

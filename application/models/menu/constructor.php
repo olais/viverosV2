@@ -31,7 +31,7 @@ class Application_Model_Menu_Constructor {
                                 <a class='dropdown-toggle' data-toggle='dropdown' href='#'>Catalogos <span class='caret'></span></a>
                                  <ul class='dropdown-menu'>";
                  if($subpermiso==1){
-            $this->catalogos.=" <li><a href='consultas'>Clientes</a></li>";
+            $this->catalogos.=" <li><a href='".$this->baseUrl."/consultas'>Clientes</a></li>";
                                     }
                                            
             $this->catalogos.="<li><a hrfe='#'>Usuarios</a></li></ul>  </li> "; 
@@ -40,9 +40,9 @@ class Application_Model_Menu_Constructor {
          
      function getplaneacion(){
             $this->planeacion="<li class='dropdown'>
-                                <a class='dropdown-toggle' data-toggle='dropdown' href='planeacion'>Planeación<span class='caret'></span></a>
+                                <a class='dropdown-toggle' data-toggle='dropdown' href='".$this->baseUrl."/planeacion'>Planeación<span class='caret'></span></a>
                                   <ul class='dropdown-menu'>
-                            <li><a href='planeacion/ordenes'>Ordenes</a></li></ul></li>"; 
+                            <li><a href='".$this->baseUrl."/planeacion/ordenes'>Ordenes</a></li></ul></li>"; 
                                  
                                 
         return $this->planeacion;
@@ -52,25 +52,25 @@ class Application_Model_Menu_Constructor {
                                 <a class='dropdown-toggle' data-toggle='dropdown' href='#'>Produccion<span class='caret'></span></a>
                                  <ul class='dropdown-menu'>";
         if($diseno==1){
-            $this->produccion.=" <li><a href='consultas'>Diseño</a></li>";
+            $this->produccion.=" <li><a href='".$this->baseUrl."/consultas'>Diseño</a></li>";
         }
         if($corte==1){
-            $this->produccion.=" <li><a href='consultas'>Corte</a></li>";
+            $this->produccion.=" <li><a href='".$this->baseUrl."/consultas'>Corte</a></li>";
         }
         if($doblado==1){
-            $this->produccion.=" <li><a href='consultas'>Doblado</a></li>";
+            $this->produccion.=" <li><a href='".$this->baseUrl."/consultas'>Doblado</a></li>";
         }
         if($armado==1){
-            $this->produccion.=" <li><a href='consultas'>Armado</a></li>";
+            $this->produccion.=" <li><a href='".$this->baseUrl."/consultas'>Armado</a></li>";
         }
         if($aulado==1){
-            $this->produccion.=" <li><a href='consultas'>Aulado</a></li>";
+            $this->produccion.=" <li><a href='".$this->baseUrl."/consultas'>Aulado</a></li>";
         }      
         if($router==1){
-            $this->produccion.=" <li><a href='consultas'>Router</a></li>"; 
+            $this->produccion.=" <li><a href='".$this->baseUrl."/consultas'>Router</a></li>"; 
         }
                                             
-            $this->produccion.="<!--li><a href='maquinas'>Maquinas</a></li--></ul>  </li> "; 
+            $this->produccion.="<!--li><a href='".$this->baseUrl."/maquinas'>Maquinas</a></li--></ul>  </li> "; 
         return $this->produccion;
     }
     function getentregas(){
