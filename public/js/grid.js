@@ -11,7 +11,7 @@ $("#gCliente").hide();
 $("#guardarConta").hide();
 $("#guardaDir").hide();
 $("#guardaMaquina").hide();
-$("#guardaCliente").hide();
+//$("#guardaCliente").hide();
 accionCambiosDir= sessionStorage.getItem("accionCambiosDir");
 if(accionCambiosDir==1){
  // alert("hola");
