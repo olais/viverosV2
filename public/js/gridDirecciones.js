@@ -98,6 +98,26 @@ $("#gridDirecciones").jqGrid({
   $(".ui-search-oper").hide();
   $(".clearsearchclass").hide();
   $("#gs_Id_direccion").hide();
+
+      $("#btnNuevoDireccion").click(function(){
+       $("#formDirecciones").show();
+       $( "#dialog-direcciones" ).dialog({
+                      modal: true,
+                      width: '1200',
+                      buttons: {
+                        Guardar: function() {
+                      $("#guardaDir").trigger("click");
+                     // $( this ).dialog( "close" );
+                     },
+                       Cancelar: function() {
+                      $("#cancelaClienteUno").trigger("click");
+                          $( this ).dialog( "close" );
+                      }
+                }
+              });
+
+   });
+    
     
 
 })

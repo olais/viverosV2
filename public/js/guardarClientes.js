@@ -44,6 +44,7 @@ $(document).ready(function(){
 				function(data){
 				      $("#gridContactos").trigger("reloadGrid");
                        document.getElementById("contactosG").reset();
+                        $( "#dialog-contacto" ).dialog("close");
                          $("#fornuevocontacto").hide();
 					 //window.location="editar?id="+idCliente;
 				},'json'
@@ -66,8 +67,9 @@ $(document).ready(function(){
      			}
      			$.post(urlGuardar,direcciones,
 				function(data){
-                          $("#gridDirecciones").trigger("reloadGrid");
+                    $("#gridDirecciones").trigger("reloadGrid");
                        document.getElementById("contactosD").reset();
+                       $( "#dialog-direcciones" ).dialog("close");
                          $("#formDirecciones").hide();
 					//window.location="editar?id="+idCliente;
 				},'json'
@@ -111,6 +113,7 @@ $(document).ready(function(){
                          function(data){
                $("#gridMaquinas").trigger("reloadGrid");
                document.getElementById("clienteMaquina").reset();
+                $( "#dialog-maquinas" ).dialog("close");
                $("#clienteMaquina").hide();
                            //window.location="editar?id="+idCliente;
 

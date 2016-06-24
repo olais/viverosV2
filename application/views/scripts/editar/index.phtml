@@ -11,6 +11,13 @@
     sessionStorage.setItem("id",<?php echo $this->clientes[0]['Id_cliente']?>);
       sessionStorage.setItem('accionCambiosDir',0);
 </script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#nuevo").hide();
+      
+
+    });
+</script>
 <div class="col-xs-12">
     <form  name="clientesG" id="clientesG" class="form-inline" method="POST">
         <div class="form-group col-sm-4 col-lg-3">
@@ -80,7 +87,7 @@
         <!--button class="btn btn-primary" type="submit">Guardar Clientes</button>
         <button id="cancelaCliente" class="btn btn-primary">Cancelar</button-->
     </form>
-
+<div id="dialog-contacto" title="Nuevo Contacto :: <?php echo @$this->clientes[0]['Nombre'];?>">
     <div id="fornuevocontacto">
         <form  name="contactosG" id="contactosG" method="POST" class="form-inline">
             <input type="hidden" name="idC" id='idC'/>
@@ -193,6 +200,8 @@
             <button type="submit" class="btn btn-primary" id="guardarConta">Guardar Contactos</button>
         </form>
     </div>
+      </div>
+<div id="dialog-direcciones" title="Nueva Dirección :: <?php echo @$this->clientes[0]['Nombre'];?>">
     <div id="formDirecciones">
         <form  name="contactosD" id="contactosD" method="POST" class="form-inline">
             <input type="hidden" name="idClienteDir" id='idClienteDir'></input>
@@ -269,6 +278,8 @@
             <button type="submit" class="btn btn-primary" id="guardaDir">Guardar Dirección</button>
         </form>
     </div>
+</div>
+<div id="dialog-maquinas" title="Nueva Máquina :: <?php echo @$this->clientes[0]['Nombre'];?>">
     <div id='formMaquinas'>
             <form  name="clienteMaquina" id="clienteMaquina" method="POST" class="form-inline">
             <input type="hidden" name="idCM" id='idCM'/>
@@ -404,6 +415,7 @@
         </form-->
 
     </div>
+</div>
 
 
 </div>
@@ -416,23 +428,24 @@
     <li ><a data-toggle="tab" href="#menu2" id='clickM'>Máquinas</a></li>
 </ul>
 
-
-
 <div class="tab-content">
     <div id="home" class="tab-pane fade in active">
-        <div class="col-md-12">
-            <table id="gridContactos"></table>
+        <div class="col-md-12"><br>
+           <button type="button" class="btn btn-success" id="btnNuevoContacto">+</button>
+        <table id="gridContactos"></table>
             <div id="pgridContactos"></div>
         </div>
     </div>
     <div id="menu1" class="tab-pane fade">
-        <div class="col-md-12">
+        <div class="col-md-12"><br>
+             <button type="button" class="btn btn-success" id="btnNuevoDireccion">+</button>
             <table id="gridDirecciones"></table>
             <div id="pgridDirecciones"></div>
         </div>
     </div>
     <div id="menu2" class="tab-pane fade">
-         <div class="col-md-12">
+         <div class="col-md-12"><br>
+         <button type="button" class="btn btn-success" id="btnNuevoMaquina">+</button>
             <table id="gridMaquinas"></table>
             <div id="pgridMaquinas"></div>
         </div>

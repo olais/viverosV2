@@ -5,7 +5,7 @@ var id_cliente;
 
 //comprobar si el cliente ya tiene contactos
 var comprobar="id="+idCli;
-$.post("editar/contactos",comprobar,
+$.post("index/contactos",comprobar,
     function(data){
         if(data==""){
           sessionStorage.setItem("comprobarContactos",0);
@@ -62,7 +62,7 @@ $("#gridContactos").jqGrid({
          
              var s = $("#gridContactos").jqGrid('getGridParam','selrow');
              valores = s.toString().split(",");
-             $("#"+s).dblclick(function(){
+          // $("#"+s).dblclick(function(){
               Id_contacto=$("#gridContactos").jqGrid('getRowData',s).Id_contacto;
                tipo=$("#gridContactos").jqGrid('getRowData',s).Id_tipocontacto;
                Id_estatus=$("#gridContactos").jqGrid('getRowData',s).Id_estatus;
@@ -111,13 +111,9 @@ $("#gridContactos").jqGrid({
                   $("#guardaCliente").html("Actualizar");
 
                  $("#identificadorContactos").val(1);
-
-
-
-
-             
-                
-              });
+                 //$('#dialog-contacto').attr('title', 'your new title');
+              
+           // });
            
           },
 
@@ -125,8 +121,27 @@ $("#gridContactos").jqGrid({
    $("#gridContactos").jqGrid('navGrid',"#pgridContactos",{edit:false,add:true,del:false});
    $("#gridContactos").jqGrid('filterToolbar', { searchOnEnter: false, enableClear:true});
    $(".ui-search-oper").hide();
-    $(".clearsearchclass").hide();
-    $("#gs_Id_contacto").hide();
+   $(".clearsearchclass").hide();
+   $("#gs_Id_contacto").hide();
+
+       $("#btnNuevoContacto").click(function(){
+       $("#fornuevocontacto").show();
+       $( "#dialog-contacto" ).dialog({
+                      modal: true,
+                      width: '1200',
+                      buttons: {
+                        Guardar: function() {
+                      $("#guardarConta").trigger("click");
+                     // $( this ).dialog( "close" );
+                     },
+                       Cancelar: function() {
+                         $("#cancelaClienteUno").trigger("click");
+                          $( this ).dialog( "close" );
+                      }
+                }
+              });
+
+   });
     
   
   
