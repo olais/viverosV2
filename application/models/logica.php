@@ -107,7 +107,8 @@ class Application_Model_Logica extends Zend_Db_Table_Abstract
          $db = Zend_Db_Table_Abstract::getDefaultAdapter();
           $select = $db->select()
                     ->from ('v_clientes')
-                    ->where('Id_estatus = ?',10);
+                    ->where('Id_estatus = ?',10)
+                    ->order('Id_cliente DESC');
                         $sql = $db->query($select);
                         $rows = $sql->fetchAll();
 
