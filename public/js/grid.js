@@ -1,6 +1,8 @@
 $(document).ready(function(){
 var id;
 var id_cliente;
+$("#clientesG input").attr("disabled", true);
+$("#clientesG select").attr("disabled", true);
 $("#fornuevocontacto").hide();
 $("#formDirecciones").hide();
 $("#formClientes").hide();
@@ -9,6 +11,7 @@ $("#gCliente").hide();
 $("#guardarConta").hide();
 $("#guardaDir").hide();
 $("#guardaMaquina").hide();
+//$("#guardaCliente").hide();
 accionCambiosDir= sessionStorage.getItem("accionCambiosDir");
 if(accionCambiosDir==1){
  // alert("hola");
