@@ -91,6 +91,8 @@ $("#gridContactos").jqGrid({
                              }
 
                 $("#fornuevocontacto").show();
+                $("#btnNuevoContacto").trigger("click");
+
                 $("#idContacto").val(Id_contacto);
                 $("#nombreC").val(Nombre);
                 $("#apellidosC").val(Apellidos);
@@ -111,7 +113,11 @@ $("#gridContactos").jqGrid({
                   $("#guardaCliente").html("Actualizar");
 
                  $("#identificadorContactos").val(1);
-                 //$('#dialog-contacto').attr('title', 'your new title');
+                 //deshabilitar inputs para editar
+                  $("#btnEditarContacto").show();
+               $("#fornuevocontacto input").attr("disabled", true);
+               $("#fornuevocontacto select").attr("disabled", true);
+                
               
            // });
            
@@ -136,6 +142,10 @@ $("#gridContactos").jqGrid({
                      },
                        Cancelar: function() {
                          $("#cancelaClienteUno").trigger("click");
+                          $("#gridContactos").trigger("reloadGrid");
+                      $("#fornuevocontacto input").attr("disabled", false);
+                      $("#fornuevocontacto select").attr("disabled", false);
+                      $("#btnEditarContacto").hide();
                           $( this ).dialog( "close" );
                       }
                 }

@@ -18,6 +18,54 @@
 
     });
 </script>
+<script>
+$(function(){
+$(".checkbox-group li").bind("click", function(){
+
+if($(this).hasClass("checkbox-group-active"))
+{
+$(this).removeClass("checkbox-group-active");
+$(this).attr("value", "off");
+
+}
+else
+{
+$(this).addClass("checkbox-group-active");
+$(this).attr("value", "on");
+
+}
+
+$("#checkbox-value").html("");
+$(".checkbox-group li").each(function(){
+//$("#checkbox-value").append($(this).text() + ":" + $(this).attr("value") + "");
+if($(this).attr("value")=='on'){
+   if($(".checkbox-group li").attr("id")=="btnEditarContacto"){
+    alert("hola");
+
+   }
+$("#formDirecciones input").attr("disabled", false);
+$("#formDirecciones select").attr("disabled", false);
+$("#fornuevocontacto input").attr("disabled", false);
+$("#fornuevocontacto select").attr("disabled", false);
+$("#formMaquinas input").attr("disabled", false);
+$("#formMaquinas select").attr("disabled", false);
+   
+               
+}else{
+   $("#formDirecciones input").attr("disabled", true);
+   $("#formDirecciones select").attr("disabled", true);
+    $("#fornuevocontacto input").attr("disabled", true);
+    $("#fornuevocontacto select").attr("disabled", true);
+    $("#formMaquinas input").attr("disabled", true);
+    $("#formMaquinas select").attr("disabled", true);
+   
+  
+}
+
+});
+});
+});
+</script>
 <div class="col-xs-12">
     <form  name="clientesG" id="clientesG" class="form-inline" method="POST">
         <div class="form-group col-sm-4 col-lg-3">
@@ -89,6 +137,9 @@
     </form>
 <div id="dialog-contacto" title="Nuevo Contacto :: <?php echo @$this->clientes[0]['Nombre'];?>">
     <div id="fornuevocontacto">
+        <ul class="checkbox-group" id="btnEditarContacto">
+                <li value="off"><span class="glyphicon glyphicon-pencil"></span>Editar</li>
+             </ul>
         <form  name="contactosG" id="contactosG" method="POST" class="form-inline">
             <input type="hidden" name="idC" id='idC'/>
             <input type="hidden" id='identificadorContactos'/>
@@ -203,6 +254,10 @@
       </div>
 <div id="dialog-direcciones" title="Nueva Dirección :: <?php echo @$this->clientes[0]['Nombre'];?>">
     <div id="formDirecciones">
+           
+            <ul class="checkbox-group" id="btnEditarDireccion">
+                <li value="off"><span class="glyphicon glyphicon-pencil"></span>Editar</li>
+             </ul>
         <form  name="contactosD" id="contactosD" method="POST" class="form-inline">
             <input type="hidden" name="idClienteDir" id='idClienteDir'></input>
             <input type="hidden" name="Id_direccion" id='Id_direccion'></input>
@@ -281,6 +336,9 @@
 </div>
 <div id="dialog-maquinas" title="Nueva Máquina :: <?php echo @$this->clientes[0]['Nombre'];?>">
     <div id='formMaquinas'>
+      <ul class="checkbox-group" id="btnEditarMaquina">
+                <li value="off"><span class="glyphicon glyphicon-pencil"></span>Editar</li>
+             </ul>
             <form  name="clienteMaquina" id="clienteMaquina" method="POST" class="form-inline">
             <input type="hidden" name="idCM" id='idCM'/>
             <input type="hidden" id='identificadorMaquinas'/>
@@ -293,11 +351,10 @@
             <div class="form-group col-sm-4 col-lg-3">
                 <label class="control-label col-md-5" for="perf">PerfEnPegue</label>
                 <div class="col-md-7">
-                    <select  class="form-control" id="PerfEnPegue" name="PerfEnPegue">
-                        <option>Seleccionar...</option>
-                        <option>SI</option>
-                        <option>NO</option>
-                   </select>
+            SI<input type="radio" class="form-control" id="PerfEnPegue" name="PerfEnPegue" value='SI' required>
+             NO<input type="radio" class="form-control" id="PerfEnPegue" name="PerfEnPegue" value='NO' required> 
+              
+                    
                 </div>
             </div>
             <div class="form-group col-sm-4 col-lg-3">
@@ -309,11 +366,9 @@
             <div class="form-group col-sm-4 col-lg-3">
                 <label class="control-label col-md-5" for="rama">Rama</label>
                 <div class="col-md-7">
-                    <select  class="form-control" id="rama" name="rama">
-                   <option>Seleccionar...</option>
-                        <option>SI</option>
-                        <option>NO</option>
-                    </select>
+                 SI<input type="radio" class="form-control" id="rama" name="rama" value='SI' required>
+             NO<input type="radio" class="form-control" id="rama" name="rama" value='NO' required> 
+              
                 </div>
             </div>
             <div class="form-group col-sm-4 col-lg-3">
@@ -325,11 +380,9 @@
             <div class="form-group col-sm-4 col-lg-3">
                 <label class="control-label col-md-5" for="pinza">Pinza</label>
                 <div class="col-md-7">
-                    <select  class="form-control" id="pinza" name="pinza">
-                   <option>Seleccionar...</option>
-                        <option>SI</option>
-                        <option>NO</option>
-                    </select>
+                SI<input type="radio" class="form-control" id="pinza" name="pinza" value='SI' required>
+             NO<input type="radio" class="form-control" id="pinza" name="pinza" value='NO' required> 
+              
                 </div>
             </div>
             <div class="form-group col-sm-4 col-lg-3">
@@ -341,18 +394,16 @@
             <div class="form-group col-sm-4 col-lg-3">
                 <label class="control-label col-md-5" for="perfo">Perforaciones</label>
                 <div class="col-md-7">
-                     <select  class="form-control" id="perforaciones" name="perforaciones">
-                   <option>Seleccionar...</option>
-                        <option>SI</option>
-                        <option>NO</option>
-                    </select>
+             SI<input type="radio" class="form-control" id="perforaciones" name="perforaciones" value='SI' required>
+             NO<input type="radio" class="form-control" id="perforaciones" name="perforaciones" value='NO' required> 
+               
                 </div>
             </div>
             <div class="form-group col-sm-4 col-lg-3">
                 <label class="control-label col-md-5" for="centerline">Centerline</label>
                 <div class="col-md-7">
-                <input type="radio" class="form-control" id="centerline" name="centerline">
-                    
+                SI<input type="radio" class="form-control" id="centerline" name="centerline" value='SI' required>
+                 NO<input type="radio" class="form-control" id="centerline" name="centerline" value='NO' required>   
                 </div>
             </div>
             <div class="form-group col-sm-4 col-lg-3">
@@ -364,21 +415,18 @@
             <div class="form-group col-sm-4 col-lg-3">
                 <label class="control-label col-md-5" for="desb">Desbarbe</label>
                 <div class="col-md-7">
-                   <select  class="form-control" id="desbarde" name="desbarde">
-                   <option>Seleccionar...</option>
-                        <option>SI</option>
-                        <option>NO</option>
-                    </select>
+                 SI<input type="radio" class="form-control" id="desbarde" name="desbarde" value='SI' required>
+                 NO<input type="radio" class="form-control" id="desbarde" name="desbarde" value='NO' required> 
+                  
                 </div>
             </div>
             <div class="form-group col-sm-4 col-lg-3">
                 <label class="control-label col-md-5" for="Compensacion">Compensacion</label>
                 <div class="col-md-7">
-                    <select  class="form-control" id="compensacion" name="compensacion">
-                   <option>Seleccionar...</option>
-                        <option>SI</option>
-                        <option>NO</option>
-                    </select>
+                SI<input type="radio" class="form-control" id="compensacion" name="compensacion" value='SI' required>
+                 NO<input type="radio" class="form-control" id="compensacion" name="compensacion" value='NO' required> 
+                  
+                    
                 </div>
             </div>
             <div class="form-group col-sm-4 col-lg-3">
@@ -436,6 +484,7 @@
     <div id="menu1" class="tab-pane fade">
         <div class="col-md-12"><br>
              <button type="button" class="btn btn-success" id="btnNuevoDireccion">+</button>
+
             <table id="gridDirecciones"></table>
             <div id="pgridDirecciones"></div>
         </div>
