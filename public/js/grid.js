@@ -11,6 +11,9 @@ $("#gCliente").hide();
 $("#guardarConta").hide();
 $("#guardaDir").hide();
 $("#guardaMaquina").hide();
+$("#btnEditarDireccion").hide();
+$("#btnEditarContacto").hide();
+$("#btnEditarMaquina").hide();
 //$("#guardaCliente").hide();
 accionCambiosDir= sessionStorage.getItem("accionCambiosDir");
 if(accionCambiosDir==1){
@@ -163,15 +166,7 @@ comprobarContactos= sessionStorage.getItem("comprobarContactos");
 
    });
 
-   $("#nuevaMaquina").click(function(){
-       $("#fornuevocontacto").hide();
-       $("#formDirecciones").hide();
-      $("#formMaquinas").show();
-      sessionStorage.setItem("botonForm",'guardaMaquina');
-      $("#guardaCliente").html("Guardar");
-      $("#clickM").trigger("click");
-
-   });
+  
   
   $("#cancelaCliente").click(function(){
      document.getElementById("clientesG").reset();

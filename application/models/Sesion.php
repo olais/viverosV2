@@ -17,7 +17,7 @@ class Application_Model_Sesion extends Zend_Db_Table_Abstract
             ->setCredentialColumn('Password')
             ->setIdentity($user)
             ->setCredential($pass)
-            ->setCredentialTreatment('? AND Id_estatus = 1');
+            ->setCredentialTreatment('? AND Id_estatus = 10');
         $result = Zend_Auth::getInstance()->authenticate($authAdapter);
         if ($result->isValid())
         {
