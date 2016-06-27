@@ -209,7 +209,57 @@ input[type=text], input[type=password], input[type=email], input[type=nombre], i
     clear: left;
     padding: 40px 0;
 }
+#btnEditarDireccion,#btnEditarContacto,#btnEditarMaquina{
 
+    float:right !important;
+    margin-top: -30px;
+}
+
+ .checkbox-group li
+ {
+  float: left;
+  display: inline;
+  list-style: none;  
+  border-left: 1px solid #DBE1EB;
+  border-bottom: 1px solid #DBE1EB;
+  border-top: 1px solid #DBE1EB;
+  font-size: 18px;
+  font-family: Arial, Verdana;
+  padding-left: 7px;
+  padding-right: 7px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background: #454F6F;
+  background: linear-gradient(top, #454F6F, #5D6684); 
+  background: -moz-linear-gradient(top, #454F6F, #5D6684); 
+  background: -webkit-linear-gradient(top, #454F6F, #5D6684); 
+  background: -o-linear-gradient(top, #454F6F, #5D6684); 
+  color: #FFFFFF;
+ }
+ 
+ .checkbox-group li:first-child
+ {
+ border-radius: 4px 0px 0px 4px;
+ }
+ 
+ .checkbox-group li:last-child
+ {
+ border-radius: 0px 4px 4px 0px;
+ }
+ 
+ .checkbox-group:hover
+ {
+ cursor: pointer;
+ }
+ 
+ .checkbox-group-active
+ {
+ background: #8A92AA !important;
+ background: linear-gradient(top, #8A92AA, #A1A7BC) !important; 
+ background: -moz-linear-gradient(top, #8A92AA, #A1A7BC) !important; 
+ background: -webkit-linear-gradient(top, #8A92AA, #A1A7BC) !important; 
+ background: -o-linear-gradient(top, #8A92AA, #A1A7BC) !important; 
+ }
 @media (max-width: 767px)
 {
 /*    header
@@ -235,6 +285,7 @@ input[type=text], input[type=password], input[type=email], input[type=nombre], i
         margin-bottom: 8px !important;
     }
 }
+
 
 /*---------*/
 /*CSS ISAAC*/

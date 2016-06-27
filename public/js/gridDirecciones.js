@@ -75,12 +75,20 @@ $("#gridDirecciones").jqGrid({
                               sessionStorage.setItem("botonForm",'guardaDir');
                              accionCambiosDir= sessionStorage.getItem("accionCambiosDir");
                          // if(accionCambiosDir==1){
-               $("#formDirecciones").show();
+              // $("#formDirecciones").show();
+              //abrir modal para actualizar
+              $("#btnEditarDireccion").show();
+               $("#btnNuevoDireccion").trigger("click");
                $("#fornuevocontacto").hide();
                $("#guardaDir").html("Actualizar");
                $("#identificadorDirecciones").val(1);
                $("#identificadorContactos").val(0);
                $("#guardaCliente").html("Actualizar");
+
+               //deshabilitar inputs para editar
+               $("#formDirecciones input").attr("disabled", true);
+               $("#formDirecciones select").attr("disabled", true);
+               
 
            //  }
 
@@ -106,11 +114,20 @@ $("#gridDirecciones").jqGrid({
                       width: '1200',
                       buttons: {
                         Guardar: function() {
-                      $("#guardaDir").trigger("click");
+                     $("#btnEditarDireccion").trigger("click");
+                     $("#guardaDir").trigger("click");
+
                      // $( this ).dialog( "close" );
                      },
                        Cancelar: function() {
                       $("#cancelaClienteUno").trigger("click");
+                      $("#gridDirecciones").trigger("reloadGrid");
+                      $("#formDirecciones input").attr("disabled", false);
+                      $("#formDirecciones select").attr("disabled", false);
+                      $("#btnEditarDireccion").hide();
+                      
+
+                       //window.location="editar?id="+sessionStorage.getItem("id");
                           $( this ).dialog( "close" );
                       }
                 }
