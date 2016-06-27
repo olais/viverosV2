@@ -215,51 +215,124 @@ input[type=text], input[type=password], input[type=email], input[type=nombre], i
     margin-top: -30px;
 }
 
- .checkbox-group li
- {
-  float: left;
-  display: inline;
-  list-style: none;  
-  border-left: 1px solid #DBE1EB;
-  border-bottom: 1px solid #DBE1EB;
-  border-top: 1px solid #DBE1EB;
-  font-size: 18px;
-  font-family: Arial, Verdana;
-  padding-left: 7px;
-  padding-right: 7px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  background: #454F6F;
-  background: linear-gradient(top, #454F6F, #5D6684); 
-  background: -moz-linear-gradient(top, #454F6F, #5D6684); 
-  background: -webkit-linear-gradient(top, #454F6F, #5D6684); 
-  background: -o-linear-gradient(top, #454F6F, #5D6684); 
-  color: #FFFFFF;
- }
+.checkbox-group li
+{
+    float: left;
+    display: inline;
+    list-style: none;  
+    border-left: 1px solid #DBE1EB;
+    border-bottom: 1px solid #DBE1EB;
+    border-top: 1px solid #DBE1EB;
+    font-size: 18px;
+    font-family: Arial, Verdana;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background: #454F6F;
+    background: linear-gradient(top, #454F6F, #5D6684); 
+    background: -moz-linear-gradient(top, #454F6F, #5D6684); 
+    background: -webkit-linear-gradient(top, #454F6F, #5D6684); 
+    background: -o-linear-gradient(top, #454F6F, #5D6684); 
+    color: #FFFFFF;
+}
+
+.checkbox-group li:first-child
+{
+    border-radius: 4px 0px 0px 4px;
+}
+
+.checkbox-group li:last-child
+{
+    border-radius: 0px 4px 4px 0px;
+}
+
+.checkbox-group:hover
+{
+    cursor: pointer;
+}
+
+.checkbox-group-active
+{
+    background: #8A92AA !important;
+    background: linear-gradient(top, #8A92AA, #A1A7BC) !important; 
+    background: -moz-linear-gradient(top, #8A92AA, #A1A7BC) !important; 
+    background: -webkit-linear-gradient(top, #8A92AA, #A1A7BC) !important; 
+    background: -o-linear-gradient(top, #8A92AA, #A1A7BC) !important; 
+}
  
- .checkbox-group li:first-child
- {
- border-radius: 4px 0px 0px 4px;
- }
- 
- .checkbox-group li:last-child
- {
- border-radius: 0px 4px 4px 0px;
- }
- 
- .checkbox-group:hover
- {
- cursor: pointer;
- }
- 
- .checkbox-group-active
- {
- background: #8A92AA !important;
- background: linear-gradient(top, #8A92AA, #A1A7BC) !important; 
- background: -moz-linear-gradient(top, #8A92AA, #A1A7BC) !important; 
- background: -webkit-linear-gradient(top, #8A92AA, #A1A7BC) !important; 
- background: -o-linear-gradient(top, #8A92AA, #A1A7BC) !important; 
- }
+ #op table
+{
+    padding: 0;
+}
+
+#op table th
+{
+    border: 1px solido #878787;
+    border-radius: 10px 10px 0px 0px;
+    text-align: center;
+    background-color: #878787;
+    color: white;
+}
+
+#op table tbody
+{
+    background-color: white;
+}
+
+.td_right
+{
+    text-align: right;
+}
+
+.td_center
+{
+    text-align: center;
+}
+
+.textarea
+{
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    /*height: 25px !important;*/
+    color: black !important;
+    background: white !important;
+    border: 1px solid !important;
+    border-color: #c4c4c4 #d1d1d1 #d4d4d4 !important;
+    border-radius: 2px !important;
+    outline: 0 !important; 
+    -moz-outline-radius: 3px !important;
+}
+
+#op table select
+{
+    width: 100% !important;
+}
+
+.op_input
+{
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    height: 25px !important;
+    color: black !important;
+    background: transparent !important;
+    border: 1px solid !important;
+    border-color: #c4c4c4 #d1d1d1 #d4d4d4 !important;
+    border-radius: 2px !important;
+    outline: 0 !important; 
+    -moz-outline-radius: 3px !important;
+}
+
+.observaciones
+{
+    clear: left;
+    display: block;
+    margin-bottom:50px;
+    padding: 0;
+}
+
 @media (max-width: 767px)
 {
 /*    header

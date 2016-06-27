@@ -1,84 +1,99 @@
 <style type="text/css">
-    #nuevaDireccion,#nuevoContacto,#nuevaMaquina{
+    #nuevaDireccion,#nuevoContacto,#nuevaMaquina
+    {
         display: none;
+    }
+    
+    .titulo_form
+    {
+        color: #fff;
+        background-color: #337ab7;
+        border-radius: 10px 10px 0px 0px;
+        padding: 3px;
+    }
+    
+    .titulo_form h3
+    {
+        margin: 0 0 0 8px;
+    }
+    
+    .contenido_from
+    {
+        background: #f2f2f2;
+        margin-bottom: 30px;
+        padding: 8px 0;
+        text-align: right;
+    }
+    .ui-widget-header
+    {
+        border: 1px solid #337ab7 !important;
+        background: #337ab7 !important;
+        color: #fff;
     }
 </style> 
 <script type="text/javascript">
-    $(document).ready(function(){
+    $(document).ready(function()
+    {
         $("#clientesG input").attr("disabled", false);
         $("#clientesG select").attr("disabled", false);
-
     });
 </script>
 <div id='formClientes'>
     <form  name="clientesG" id="clientesG" class="form-inline" method="POST">
-        <div class="form-group col-sm-4">
-            <label class="control-label col-sm-5" for="tip">Tipo Cliente:</label>
-            <div class="col-sm-7">
-                <select id="tipo" class="form-control" name="tipo" required>
-                    <option>Seleccionar...</option>
-                  <?php 
-                    foreach ($this->datos as $option) {
-                      echo " <option value='".$option['Id_tipocliente']."'>".$option['Descripcion']."</option>";
-                    }
-
-                  ?>
-                </select>
+        <div class="cos-sm-12">
+            <div class="titulo_form">
+                <h3>Cliente</h3>
             </div>
         </div>
-        <div class="form-group col-sm-4">
-            <label class="control-label col-md-5" for="estatus">Estatus:</label>
-            <div class="col-md-7">
-                <select id="estatus" class="form-control" name="estatus" required>
-                    <option>Seleccionar...</option>
-                    <option value='10' <?php echo $selected=(@$this->clientes[0]['Id_estatus']==10)? 'selected':''; ?>>ACTIVO</option>
-                    <option value="20" <?php echo $selected=(@$this->clientes[0]['Id_estatus']==20)? 'selected':''; ?>>INACTIVO</option>
-                </select>
-            </div>
-        </div>
-        <div class="form-group col-sm-4">
-            <label class="control-label col-md-5" for="nombre">Nombre</label>
-            <div class="col-md-7">
-                <input id="nombre" class="form-control" name="nombre" type="nombre" value="<?php echo @$this->clientes[0]['Nombre'];?>" required>
-            </div>
-        </div>
-        <div class="form-group col-sm-4">
-            <label class="control-label col-md-5" for="rfc">RFC</label>
-            <div class="col-md-7">
+        <div class="col-sm-12 contenido_from">
+            <div class="form-group col-sm-6">
+                <div class="col-sm-6">
+                    <label class="control-label" for="tip">Tipo Cliente:</label>
+                    <select id="tipo" class="form-control" name="tipo" required>
+                        <option>Seleccionar...</option>
+                        <?php 
+                          foreach ($this->datos as $option)
+                          {
+                              echo " <option value='".$option['Id_tipocliente']."'>".$option['Descripcion']."</option>";
+                          }
+                        ?>
+                    </select>
+                    <br/>
+                    <label class="control-label" for="estatus">Estatus:</label>
+                    <select id="estatus" class="form-control" name="estatus" required>
+                        <option>Seleccionar...</option>
+                        <option value='10' <?php echo $selected=(@$this->clientes[0]['Id_estatus']==10)? 'selected':''; ?>>ACTIVO</option>
+                        <option value="20" <?php echo $selected=(@$this->clientes[0]['Id_estatus']==20)? 'selected':''; ?>>INACTIVO</option>
+                    </select>
+                </div>
+                <div class="col-sm-6">
+                    <label class="control-label" for="nombre">Nombre</label>
+                    <input id="nombre" class="form-control" name="nombre" type="nombre" value="<?php echo @$this->clientes[0]['Nombre'];?>" required>
+                    <br/>
+                    <label class="control-label" for="rfc">RFC</label>
                 <input id="rfc" class="form-control" name="rfc" type="text" value="<?php echo @$this->clientes[0]['RFC'];?>" required>
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <div class="col-sm-6">
+                    <label class="control-label" for="tel1">Teléfono 1</label>
+                    <input id="tel1" class="form-control" name="tel1" type="text" value="<?php echo @$this->clientes[0]['Telefono1'];?>">
+                    <br/>
+                    <label class="control-label" for="tel2">Teléfono 2</label>
+                    <input id="tel2" class="form-control" name="tel2" type="text" value="<?php echo @$this->clientes[0]['Telefono2'];?>">
+                    <br/>
+                    <label class="control-label" for="fax">Fax</label>
+                    <input id="fax" class="form-control" name="fax" type="text" value="<?php echo @$this->clientes[0]['Fax'];?>">
+                </div>
+                <div class="col-sm-6">
+                    <label class="control-label" for="correo">Correo</label>
+                    <input id="correo" class="form-control" name="correo" type="email" value="<?php echo @$this->clientes[0]['Correo'];?>">
+                    <br/>
+                    <label class="control-label" for="web">Web</label>
+                    <input id="web" class="form-control" name="web" type="text" value="<?php echo @$this->clientes[0]['Web'];?>">
+                </div>
             </div>
         </div>
-        <div class="form-group col-sm-4">
-            <label class="control-label col-md-5" for="tel1">Teléfono 1</label>
-            <div class="col-md-7">
-                <input id="tel1" class="form-control" name="tel1" type="text" value="<?php echo @$this->clientes[0]['Telefono1'];?>">
-            </div>
-        </div>
-        <div class="form-group col-sm-4">
-            <label class="control-label col-md-5" for="tel2">Teléfono 2</label>
-            <div class="col-md-7">
-                <input id="tel2" class="form-control" name="tel2" type="text" value="<?php echo @$this->clientes[0]['Telefono2'];?>">
-            </div>
-        </div>
-        <div class="form-group col-sm-4">
-            <label class="control-label col-md-5" for="fax">Fax</label>
-            <div class="col-md-7">
-                <input id="fax" class="form-control" name="fax" type="text" value="<?php echo @$this->clientes[0]['Fax'];?>">
-            </div>
-        </div>
-        <div class="form-group col-sm-4">
-            <label class="control-label col-md-5" for="correo">Correo</label>
-            <div class="col-md-7">
-                <input id="correo" class="form-control" name="correo" type="email" value="<?php echo @$this->clientes[0]['Correo'];?>">
-            </div>
-        </div>
-        <div class="form-group col-sm-4">
-            <label class="control-label col-md-5" for="web">Web</label>
-            <div class="col-md-7">
-                <input id="web" class="form-control" name="web" type="text" value="<?php echo @$this->clientes[0]['Web'];?>">
-            </div>
-        </div>
-        <br/>
         <button class="btn btn-primary" type="submit" id='gCliente' >Guardar Clientes</button>
     </form>
 </div>
