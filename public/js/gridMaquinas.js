@@ -57,13 +57,74 @@ $("#gridMaquinas").jqGrid({
      Desbarbe=$("#gridMaquinas").jqGrid('getRowData',s).Desbarbe;
    Compensacion=$("#gridMaquinas").jqGrid('getRowData',s).Compensacion;
       NumPiezasCompensacion=$("#gridMaquinas").jqGrid('getRowData',s).NumPiezasCompensacion;
+      $("#idM").val(Id_MaquinaC);
+      $("#descripcionM").val(Descripcion);
+  
+      if(PerfEnPegue=="SI"){
+        $("#PerfEnPegueS").attr('checked', 'checked');
+      }
+      if(PerfEnPegue=="NO"){
+        $("#PerfEnPegueN").attr('checked', 'checked');
+      }
 
+      $("#DescPerfEnPegue").val(DescPerfEnPegue);
 
+      if(Rama=="SI"){
+          $("#ramaS").attr('checked', 'checked');
 
+      }
+      if(Rama=="NO"){
+          $("#ramaN").attr('checked', 'checked');
 
+      }
+      $("#MedidaRama").val(MedidaRama);
+      if(Pinza=="SI"){
 
+         $("#pinzaS").attr('checked', 'checked');
+      }
+      if(Pinza=="NO"){
 
+         $("#pinzaN").attr('checked', 'checked');
+      }
+      $("#MedidaPinza").val(MedidaPinza);
 
+      if(Perforaciones=="SI"){
+
+         $("#perforacionesS").attr('checked', 'checked');
+        
+      }
+      if(Perforaciones=="NO"){
+        
+         $("#perforacionesN").attr('checked', 'checked');
+        
+      }
+      if(Centerline=="SI"){
+         $("#centerlineS").attr('checked', 'checked');
+
+      }
+      if(Centerline=="NO"){
+         $("#centerlineN").attr('checked', 'checked');
+
+      }
+      $("#MedidaCenterline").val(MedidaCenterline);
+
+      if(Desbarbe=="SI"){
+         $("#desbardeS").attr('checked', 'checked');
+
+      }
+       if(Desbarbe=="NO"){
+         $("#desbardeN").attr('checked', 'checked');
+        
+      }
+      if(Compensacion=="SI"){
+         $("#compensacionS").attr('checked', 'checked');
+
+      }
+       if(Compensacion=="NO"){
+         $("#compensacionN").attr('checked', 'checked');
+
+      }
+      $("#NumPiezasCompensacion").val(NumPiezasCompensacion);
 
               $("#guardaCliente").html("Actualizar");
               $("#btnEditarMaquina").show();
@@ -96,17 +157,8 @@ $("#gridMaquinas").jqGrid({
                      // $( this ).dialog( "close" );
                      },
                        Cancelar: function() {
-
-
-
-
-
-
-
-
-
-
-
+                       $("#identificadorMaquinas").val(0);
+                       $("#clienteMaquina input:radio").removeAttr("checked");
                       $("#cancelaClienteUno").trigger("click");
                       $("#gridMaquinas").trigger("reloadGrid");
                       $("#formMaquinas input").attr("disabled", false);
