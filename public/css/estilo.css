@@ -366,9 +366,19 @@ input[type=text], input[type=password], input[type=email], input[type=nombre], i
     color: #fff;
 }
 
+#contactosG
+{
+    text-align: right;
+}
+
 @media (max-width: 998px)
 {
     .contenido_from
+    {
+        text-align: left;
+    }
+    
+    #contactosG
     {
         text-align: left;
     }
