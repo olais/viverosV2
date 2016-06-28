@@ -146,7 +146,7 @@ comprobarContactos= sessionStorage.getItem("comprobarContactos");
   });
 
    $("#nuevaDireccion").click(function(){
-
+     
     $("#formDirecciones").show();
     $("#fornuevocontacto").hide();
     $("#formMaquinas").hide();

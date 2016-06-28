@@ -10,9 +10,9 @@ class Application_Model_Maquinas extends Zend_Db_Table_Abstract
 
    }
 
-    function actualizaMaquinas($datos,$Id_maquina){
+    function actualizarMaquinas($datos,$Id_maquina){
     
-    $where = "Id_direccion =$Id_direccion";
+    $where = "Id_MaquinaC=$Id_maquina";
     return $this->update($datos, $where);
 
    }

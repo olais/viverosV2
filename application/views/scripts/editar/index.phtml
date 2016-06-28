@@ -49,6 +49,8 @@ $("#fornuevocontacto input").attr("disabled", false);
 $("#fornuevocontacto select").attr("disabled", false);
 $("#formMaquinas input").attr("disabled", false);
 $("#formMaquinas select").attr("disabled", false);
+      $("#nota").attr("disabled", false);
+
    
                
 }else{
@@ -58,6 +60,7 @@ $("#formMaquinas select").attr("disabled", false);
     $("#fornuevocontacto select").attr("disabled", true);
     $("#formMaquinas input").attr("disabled", true);
     $("#formMaquinas select").attr("disabled", true);
+      $("#nota").attr("disabled", true);
    
   
 }
@@ -261,7 +264,7 @@ $("#formMaquinas select").attr("disabled", false);
                 <li value="off"><span class="glyphicon glyphicon-pencil"></span>Editar</li>
              </ul>
             <form  name="clienteMaquina" id="clienteMaquina" method="POST" class="form-inline">
-            <input type="hidden" name="idCM" id='idCM'/>
+            <input type="hidden" name="idM" id='idM'/>
             <input type="hidden" id='identificadorMaquinas'/>
             <div class="form-group col-sm-3">
                 <label class="control-label" for="descM">Descripcion</label>
@@ -275,33 +278,33 @@ $("#formMaquinas select").attr("disabled", false);
             </div>
             <div class="form-group col-sm-3">
                 <label class="control-label" for="perf">PerfEnPegue</label>
-                <label><input id="PerfEnPegue" class="form-control" type="radio" name="PerfEnPegue" value="si" required> Si</label>
-                <label><input id="PerfEnPegue" class="form-control" type="radio" name="PerfEnPegue" value="no" required> No</label>
+                <label><input id="PerfEnPegueS" class="form-control" type="radio" name="PerfEnPegue" value="si" required> Si</label>
+                <label><input id="PerfEnPegueN" class="form-control" type="radio" name="PerfEnPegue" value="no" required> No</label>
                 <br/>
                 <label class="control-label" for="rama">Rama</label>
-                <label><input id="rama" class="form-control" type="radio" name="rama" value="si" required> Si</label>
-                <label><input id="rama" class="form-control" type="radio" name="rama" value="no" required> No</label>
+                <label><input id="ramaS" class="form-control" type="radio" name="rama" value="si" required> Si</label>
+                <label><input id="ramaN" class="form-control" type="radio" name="rama" value="no" required> No</label>
                 <br/>
                 <label class="control-label" for="pinza">Pinza</label> 
-                <label><input id="pinza" class="form-control" type="radio" name="pinza" value="si" required> Si</label>
-                <label><input id="pinza" class="form-control" type="radio" name="pinza" value="no" required> No</label>
+                <label><input id="pinzaS" class="form-control" type="radio" name="pinza" value="si" required> Si</label>
+                <label><input id="pinzaN" class="form-control" type="radio" name="pinza" value="no" required> No</label>
                 <br/>
                 <label class="control-label" for="perfo">Perforaciones</label>
-                <label><input id="perforaciones" class="form-control" type="radio" name="perforaciones" value="si" required> Si</label>
-                <label><input id="perforaciones" class="form-control" type="radio" name="perforaciones" value="no" required> No</label>
+                <label><input id="perforacionesS" class="form-control" type="radio" name="perforaciones" value="si" required> Si</label>
+                <label><input id="perforacionesN" class="form-control" type="radio" name="perforaciones" value="no" required> No</label>
             </div>
             <div class="form-group col-sm-3">
                 <label class="control-label" for="centerline">Centerline</label>
-                <label><input id="centerline" class="form-control" type="radio" name="centerline" value="si" required> Si</label>
-                <label><input id="centerline" class="form-control" type="radio" name="centerline" value="no" required> No</label>
+                <label><input id="centerlineS" class="form-control" type="radio" name="centerline" value="si" required> Si</label>
+                <label><input id="centerlineN" class="form-control" type="radio" name="centerline" value="no" required> No</label>
                 <br/>
                 <label class="control-label" for="desb">Desbarbe</label>
-                <label><input id="desbarde" class="form-control" type="radio" name="desbarde" value="si" required> Si</label>
-                <label><input id="desbarde" class="form-control" type="radio" name="desbarde" value="no" required> No</label>
+                <label><input id="desbardeS" class="form-control" type="radio" name="desbarde" value="si" required> Si</label>
+                <label><input id="desbardeN" class="form-control" type="radio" name="desbarde" value="no" required> No</label>
                 <br/>
                 <label class="control-label" for="Compensacion">Compensacion</label>
-                <label><input id="compensacion" class="form-control" type="radio" name="compensacion" value="si" required> Si</label>
-                <label><input id="compensacion" class="form-control" type="radio" name="compensacion" value="no" required> No</label>
+                <label><input id="compensacionS" class="form-control" type="radio" name="compensacion" value="si" required> Si</label>
+                <label><input id="compensacionN" class="form-control" type="radio" name="compensacion" value="no" required> No</label>
             </div>
             <div class="form-group col-sm-3">
                 <label class="control-label" for="medRama">MedidaRama</label>
