@@ -1,116 +1,46 @@
-<style>
-    table
-    {
-        padding: 0;
-    }
-    
-    th
-    {
-        border: 1px solido #878787;
-        border-radius: 10px 10px 0px 0px;
-        text-align: center;
-        background-color: #878787;
-        color: white;
-    }
-    
-    tbody
-    {
-        background-color: white;
-    }
-    
-    .td_right
-    {
-        text-align: right;
-    }
-    
-    .td_center
-    {
-        text-align: center;
-    }
-    
-    .textarea
-    {
-        margin: 0 !important;
-        padding: 0 !important;
-        width: 100% !important;
-        /*height: 25px !important;*/
-        color: black !important;
-        background: white !important;
-        border: 1px solid !important;
-        border-color: #c4c4c4 #d1d1d1 #d4d4d4 !important;
-        border-radius: 2px !important;
-        outline: 0 !important; 
-        -moz-outline-radius: 3px !important;
-    }
-    
-    select, option
-    {
-        width: 100%;
-    }
-    
-    .op_input
-    {
-        margin: 0 !important;
-        padding: 0 !important;
-        width: 100% !important;
-        height: 25px !important;
-        color: black !important;
-        background: transparent !important;
-        border: 1px solid !important;
-        border-color: #c4c4c4 #d1d1d1 #d4d4d4 !important;
-        border-radius: 2px !important;
-        outline: 0 !important; 
-        -moz-outline-radius: 3px !important;
-    }
-    
-    .observaciones
-    {
-        clear: left;
-        display: block;
-        margin-bottom:50px;
-        padding: 0;
-    }
-</style>
 <form id="op" class="form-inline" name="op" method="POST">
+    <!--Clinete-->
     <table class="table table-striped">
         <tbody>
             <tr>
                 <td class="td_right">Cliente:</td>
                 <td>
-                    <select id="op_cliente" class="form-control">
+                    <select id="op_suajes_cliente" class="form-control">
                         <option>Seleccionar ...</option>
                     </select>
                 </td>
                 <td class="td_right">fecha:</td>
-                <td><input id="op_fecha" class="form-control op_input" type="text"/></td>
+                <td><input id="op_suajes_fecha" class="form-control op_input" type="text"/></td>
                 <td class="td_right">OP:</td>
-                <td><input id="op_op" class="form-control op_input" type="text"/></td>
+                <td><input id="op_suajes_op" class="form-control op_input" type="text"/></td>
             </tr>
             <tr>
                 <td class="td_right">Elaboración de:</td>
                 <td>
-                    <select id="op_elaboracion" class="form-control">
+                    <select id="op_suajes_elaboracion" class="form-control">
                         <option>Seleccionar ...</option>
                     </select>
                 </td>
                 <td class="td_right">Desarrollo con:</td>
                 <td>
-                    <select id="op_desarrollo_select" class="form-control">
+                    <select id="op_suajes_desarrollo_1" class="form-control">
                         <option>Seleccionar ...</option>
                     </select>
                 </td>
-                <td colspan="2"><input id="op_desarrollo" class="form-control op_input" type="text"/></td>
+                <td colspan="2"><input id="op_suajes_desarrollo_2" class="form-control op_input" type="text"/></td>
             </tr>
             <tr>
                 <td class="td_right">Nombre suaje:</td>
-                <td colspan="5"><input id="nom_suaje" class="form-control op_input" type="text"/></td>
+                <td colspan="5"><input id="op_suajes_nom_suaje" class="form-control op_input" type="text"/></td>
             </tr>
         </tbody>
     </table>
+    <!--Cliente-->
+    <!--Indicaciones elaboracios suajes-->
     <table class="table table-striped">
         <thead>
             <tr>
-                <th colspan="7">Indicaciones elaboración suajes</th>
+                <th colspan="7">INDICACIONES ELABORACION SUAJE</th>
             </tr>
         </thead>
         <tbody>
@@ -125,16 +55,16 @@
                 <td class="td_right">Pref.en pegue:</td>
                 <td>
                     <div class="radio">
-                        <label><input id="enpegue_si" class="form-control" type="radio" name="enpegue" value="si" checked> Si</label>
-                        <label><input id="enpegue_no" class="form-control" type="radio" name="enpegue" value="no"> No</label> 
+                        <label><input id="op_suajes_enpegue_si" class="form-control" type="radio" name="enpegue" value="si" checked> Si</label>
+                        <label><input id="op_suajes_enpegue_no" class="form-control" type="radio" name="enpegue" value="no"> No</label> 
                     </div>
                 </td>
-                <td colspan="2"><input id="" class="form-control op_input" type="text"/></td>
+                <td colspan="2"><input id="op_suajes_enpegue" class="form-control op_input" type="text"/></td>
             </tr>
             <tr>
                 <td class="td_right">Madera:</td>
                 <td>
-                    <select id="op_madera" class="form-control">
+                    <select id="op_suajes_madera" class="form-control">
                         <option>Seleccionar ...</option>
                     </select>
                 </td>
@@ -142,31 +72,43 @@
                 <td class="td_right">Rama</td>
                 <td>
                     <div class="radio">
-                        <label><input id="rama_si" class="form-control" type="radio" name="rama" value="si" checked> Si</label>
-                        <label><input id="rama_no" class="form-control" type="radio" name="rama" value="no"> No</label>
+                        <label><input id="op_suajes_rama_si" class="form-control" type="radio" name="rama" value="si" checked> Si</label>
+                        <label><input id="op_suajes_rama_no" class="form-control" type="radio" name="rama" value="no"> No</label>
                     </div>
                 </td>
-                <td><input id="" class="form-control op_input" type="text"/></td>
-                <td><input id="" class="form-control op_input" type="text"/></td>
+                <td><input id="op_suajes_rama_1" class="form-control op_input" type="text"/></td>
+                <td><input id="op_suajes_rama_2" class="form-control op_input" type="text"/></td>
             </tr>
             <tr>
                 <td class="td_right">Fte de suaje:</td>
-                <td><input id="" class="form-control op_input" type="text"/></td>
+                <td>
+                    <select id="op_suajes_fte_suaje" class="form-control">
+                        <option>Seleccionar ...</option>
+                    </select>
+                </td>
                 <td class="td_center">Puntos</td>
                 <td class="td_right">Pinza</td>
                 <td>
                     <div class="radio">
-                        <label><input id="pinza_si" class="form-control" type="radio" name="pinza" value="si" checked> Si</label>
-                        <label><input id="pinza_no" class="form-control" type="radio" name="pinza" value="no"> No</label>
+                        <label><input id="op_suajes_pinza_si" class="form-control" type="radio" name="pinza" value="si" checked> Si</label>
+                        <label><input id="op_suajes_pinza_no" class="form-control" type="radio" name="pinza" value="no"> No</label>
                     </div>
                 </td>
-                <td><input id="" class="form-control op_input" type="text"/></td>
-                <td><input id="" class="form-control op_input" type="text"/></td>
+                <td><input id="op_suajes_pinza_1" class="form-control op_input" type="text"/></td>
+                <td><input id="op_suajes_pinza_2" class="form-control op_input" type="text"/></td>
             </tr>
             <tr>
                 <td class="td_right">Corte:</td>
-                <td><input id="" class="form-control op_input" type="text"/></td>
-                <td><input id="" class="form-control op_input" type="text"/></td>
+                <td>
+                    <select id="op_suajes_corte_1" class="form-control">
+                        <option>Seleccionar ...</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="op_suajes_corte_2" class="form-control">
+                        <option>Seleccionar ...</option>
+                    </select>
+                </td>
                 <td class="td_right">Perforaciones</td>
                 <td>
                     <div class="radio">
@@ -174,57 +116,94 @@
                         <label><input id="perforaciones_no" class="form-control" type="radio" name="perforaciones" value="no"> No</label>
                     </div>
                 </td>
-                <td><input id="" class="form-control op_input" type="text"/></td>
-                <td><input id="" class="form-control op_input" type="text"/></td>
+                <td><input id="op_suajes_perforaciones_1" class="form-control op_input" type="text"/></td>
+                <td><input id="op_suajes_perforaciones_2" class="form-control op_input" type="text"/></td>
             </tr>
             <tr>
                 <td class="td_right">Doblez:</td>
-                <td><input id="" class="form-control op_input" type="text"/></td>
-                <td><input id="" class="form-control op_input" type="text"/></td>
+                <td>
+                    <select id="op_suajes_dobles_1" class="form-control">
+                        <option>Seleccionar ...</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="op_suajes_dobles_2" class="form-control">
+                        <option>Seleccionar ...</option>
+                    </select>
+                </td>
                 <td class="td_right">Centerline</td>
                 <td>
                     <div class="radio">
-                        <label><input id="centerline_si" class="form-control" type="radio" name="centerline" value="si" checked> Si</label>
-                        <label><input id="centerline_no" class="form-control" type="radio" name="centerline" value="no"> No</label>
+                        <label><input id="op_suajes_centerline_si" class="form-control" type="radio" name="centerline" value="si" checked> Si</label>
+                        <label><input id="op_suajes_centerline_no" class="form-control" type="radio" name="centerline" value="no"> No</label>
                     </div>
                 </td>
-                <td><input id="" class="form-control op_input" type="text"/></td>
-                <td><input id="" class="form-control op_input" type="text"/></td>
+                <td><input id="op_suajes_centerline_1" class="form-control op_input" type="text"/></td>
+                <td><input id="op_suajes_centerline_2" class="form-control op_input" type="text"/></td>
             </tr>
             <tr>
                 <td class="td_right">Perforado:</td>
-                <td><input id="" class="form-control op_input" type="text"/></td>
-                <td><input id="" class="form-control op_input" type="text"/></td>
+                <td>
+                    <select id="op_suajes_perforado_1" class="form-control">
+                        <option>Seleccionar ...</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="op_suajes_perforado_2" class="form-control">
+                        <option>Seleccionar ...</option>
+                    </select>
+                </td>
                 <td class="td_right">Desbarbes</td>
                 <td>
                     <div class="radio">
-                        <label><input id="desbarbes_si" class="form-control" type="radio" name="desbarbes" value="si" checked> Si</label>
-                        <label><input id="desbarbes_no" class="form-control" type="radio" name="desbarbes" value="no"> No</label>
+                        <label><input id="op_suajes_desbarbes_si" class="form-control" type="radio" name="desbarbes" value="si" checked> Si</label>
+                        <label><input id="op_suajes_desbarbes_no" class="form-control" type="radio" name="desbarbes" value="no"> No</label>
                     </div>
                 </td>
-                <td><input id="" class="form-control op_input" type="text"/></td>
-                <td><input id="" class="form-control op_input" type="text"/></td>
+                <td><input id="op_suajes_desbarbes_1" class="form-control op_input" type="text"/></td>
+                <td><input id="op_suajes_desbarbes_2" class="form-control op_input" type="text"/></td>
             </tr>
             <tr>
                 <td class="td_right">Precorte:</td>
-                <td><input id="" class="form-control op_input" type="text"/></td>
-                <td><input id="" class="form-control op_input" type="text"/></td>
+                <td>
+                    <select id="op_suajes_precorte_1" class="form-control">
+                        <option>Seleccionar ...</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="op_suajes_precorte _2" class="form-control">
+                        <option>Seleccionar ...</option>
+                    </select>
+                </td>
                 <td class="td_right">Compensación</td>
                 <td>
                     <div class="radio">
-                        <label><input id="compensación_si" class="form-control" type="radio" name="compensación" value="si" checked> Si</label>
-                        <label><input id="compensación_no" class="form-control" type="radio" name="compensación" value="no"> No</label>
+                        <label><input id="op_suajes_compensación_si" class="form-control" type="radio" name="compensación" value="si" checked> Si</label>
+                        <label><input id="op_suajes_compensación_no" class="form-control" type="radio" name="compensación" value="no"> No</label>
                     </div>
                 </td>
-                <td><input id="" class="form-control op_input" type="text"/></td>
-                <td><input id="" class="form-control op_input" type="text"/></td>
+                <td><input id="op_suajes_compensación_1" class="form-control op_input" type="text"/></td>
+                <td><input id="op_suajes_compensación_2" class="form-control op_input" type="text"/></td>
             </tr>
             <tr>
-                <td class="td_right">Compensación</td>
-                <td><input id="" class="form-control op_input" type="text"/></td>
-                <td><input id="" class="form-control op_input" type="text"/></td>
+                <td class="td_right">Sacabocados</td>
+                <td>
+                    <select id="op_suajes_precorte _2" class="form-control">
+                        <option>Seleccionar ...</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="op_suajes_precorte3 _2" class="form-control">
+                        <option>Seleccionar ...</option>
+                    </select>
+                </td>
                 <td class="td_right">Calibre:</td>
-                <td colspan="3"><input id="" class="form-control op_input" type="text"/></td>
+                <td>
+                    <select id="op_suajes_calibre _1" class="form-control">
+                        <option>Seleccionar ...</option>
+                    </select>
+                </td>
+                <td colspan="2"><input id="op_suajes_calibre_2" class="form-control op_input" type="text"/></td>
             </tr>
             <tr>
                 <td class="td_right">Tipo de corte:</td>
@@ -234,12 +213,13 @@
             </tr>
         </tbody>
     </table>
-    <div class="col-xs-12 observaciones">Observaciones: <textarea class="form-control textarea" rows="1" id="observaciones_1" name="observaciones_1"></textarea></div>
-    
+    <div class="col-xs-12 observaciones">Observaciones: <textarea id="observaciones_1" class="form-control textarea" name="observaciones_1" rows="1"></textarea></div>
+    <!--Indicaciones elaboracios suajes-->
+    <!--Indicaciones elaboracion de trablas limpiadoras-->
     <table class="table table-striped">
         <thead>
             <tr>
-                <th colspan="7">Indicaciones elaboración de tablas limpiadoras</th>
+                <th colspan="7">INDICACIONES ELABORACION DE TABLAS LIMPIADORAS</th>
             </tr>
         </thead>
         <tbody>
@@ -248,43 +228,248 @@
             </tr>
             <tr>
                 <td class="td_right">Madera:</td>
-                <td><input id="" class="form-control op_input" type="text"/></td>
-                <td><input id="" class="form-control op_input" type="text"/></td>
+                <td>
+                    <select id="op_tablimp_madera_1" class="form-control">
+                        <option>Seleccionar ...</option>
+                    </select>
+                </td>
+                <td><input id="op_tablimp_madera_2" class="form-control op_input" type="text"/></td>
                 <td class="td_right">Fte. Tabla:</td>
-                <td><input id="" class="form-control op_input" type="text"/></td>
-                <td colspan="2"><input id="" class="form-control op_input" type="text"/></td>
+                <td>
+                    <label><input id="op_tablimp_ftetab_si" class="form-control" type="radio" name="compensación" value="si" checked> Si</label>
+                    <label><input id="op_tablimp_ftetab_no" class="form-control" type="radio" name="compensación" value="no"> No</label>
+                </td>
+                <td colspan="2"><input id="op_tablimp_ftetab" class="form-control op_input" type="text"/></td>
             </tr>
             <tr>
-                <td class="td_right">Madera:</td>
-                <td><input id="" class="form-control op_input" type="text"/></td>
-                <td><input id="" class="form-control op_input" type="text"/></td>
+                <td class="td_right">Tipo:</td>
+                <td>
+                    <select id="op_tablimp_madera_1" class="form-control">
+                        <option>Seleccionar ...</option>
+                    </select>
+                </td>
+                <td><input id="op_tablimp_madera_2" class="form-control op_input" type="text"/></td>
                 <td class="td_right">Rama</td>
-                <td><input id="" class="form-control op_input" type="text"/></td>
-                <td colspan="2"><input id="" class="form-control op_input" type="text"/></td>
+                <td>
+                    <label><input id="op_tablimp_rama_si" class="form-control" type="radio" name="compensación" value="si" checked> Si</label>
+                    <label><input id="op_tablimp_rama_no" class="form-control" type="radio" name="compensación" value="no"> No</label>
+                </td>
+                <td colspan="2"><input id="op_tablimp_rama" class="form-control op_input" type="text"/></td>
             </tr>
             <tr>
                 <td class="td_center" colspan="7">Tabla Macho</td>
             </tr>
             <tr>
                 <td class="td_right">Fte de suaje:</td>
-                <td><input id="" class="form-control op_input" type="text"/></td>
-                <td><input id="" class="form-control op_input" type="text"/></td>
+                <td>
+                    <select id="op_tablimp_ftesuaje_1" class="form-control">
+                        <option>Seleccionar ...</option>
+                    </select>
+                </td>
+                <td><input id="op_tablimp_ftesuaje_2" class="form-control op_input" type="text"/></td>
                 <td class="td_right">Pinza</td>
-                <td><input id="" class="form-control op_input" type="text"/></td>
-                <td><input id="" class="form-control op_input" type="text"/></td>
-                <td><input id="" class="form-control op_input" type="text"/></td>
+                <td>
+                    <label><input id="op_tablimp_pinza_si" class="form-control" type="radio" name="compensación" value="si" checked> Si</label>
+                    <label><input id="op_tablimp_pinza_no" class="form-control" type="radio" name="compensación" value="no"> No</label>
+                </td>
+                <td><input id="op_tablimp_pinza_1" class="form-control op_input" type="text"/></td>
+                <td><input id="op_tablimp_pinza_2" class="form-control op_input" type="text"/></td>
             </tr>
             <tr>
                 <td class="td_right">Corte:</td>
-                <td><input id="" class="form-control op_input" type="text"/></td>
-                <td><input id="" class="form-control op_input" type="text"/></td>
+                <td>
+                    <select id="op_tablimp_corte_1" class="form-control">
+                        <option>Seleccionar ...</option>
+                    </select>
+                </td>
+                <td><input id="op_tablimp_corte_2" class="form-control op_input" type="text"/></td>
                 <td class="td_right">Perforaciones</td>
-                <td><input id="" class="form-control op_input" type="text"/></td>
-                <td><input id="" class="form-control op_input" type="text"/></td>
-                <td><input id="" class="form-control op_input" type="text"/></td>
+                <td>
+                    <label><input id="op_tablimp_perforaciones_si" class="form-control" type="radio" name="compensación" value="si" checked> Si</label>
+                    <label><input id="op_tablimp_perforaciones_no" class="form-control" type="radio" name="compensación" value="no"> No</label>
+                </td>
+                <td><input id="op_tablimp_perforaciones_1" class="form-control op_input" type="text"/></td>
+                <td><input id="op_tablimp_perforaciones_2" class="form-control op_input" type="text"/></td>
             </tr>
         </tbody>
     </table>
-    <div class="col-xs-12 observaciones">Observaciones: <textarea class="form-control textarea" rows="1" id="observaciones_2" name="observaciones_2"></textarea></div>
-    
+    <div class="col-xs-12 observaciones">Observaciones: <textarea id="observaciones_2" class="form-control textarea" name="observaciones_2" rows="1"></textarea></div>
+    <!--Indicaciones elaboracion de trablas limpiadoras-->
+    <!--INDICACIONES ELABORACION DE  PERTINAX-->
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th colspan="5">INDICACIONES ELABORACION DE  PERTINAX</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="td_right">Materia:</td>
+                <td>
+                    <select id="op_pertinax_materia" class="form-control">
+                        <option>Seleccionar ...</option>
+                    </select>
+                </td>
+                <td class="td_right">Calibre</td>
+                <td colspan="2">
+                    <select id="op_pertinax_calibre" class="form-control">
+                        <option>Seleccionar ...</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_right">Ancho hilo:</td>
+                <td>
+                    <select id="op_pertinax_anchohilo_1" class="form-control">
+                        <option>Seleccionar ...</option>
+                    </select>
+                </td>
+                <td><input id="op_pertinax_anchohilo" class="form-control op_input" type="text"/></td>
+                <td class="td_right">Piezas:</td>
+                <td>
+                    <select id="op_pertinax_piezas_1" class="form-control">
+                        <option>Seleccionar ...</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_right">Ancho contrahilo:</td>
+                <td>
+                    <select id="op_pertinax_materia" class="form-control">
+                        <option>Seleccionar ...</option>
+                    </select>
+                </td>
+                <td colspan="3"><input id="op_pertinax_materia1" class="form-control op_input" type="text"/></td>
+            </tr>
+            <tr>
+                <td class="td_right">Profundidad:</td>
+                <td>
+                    <select id="op_pertinax_materia" class="form-control">
+                        <option>Seleccionar ...</option>
+                    </select>
+                </td>
+                <td colspan="3"><input id="op_pertinax_materia1" class="form-control op_input" type="text"/></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="col-xs-12 observaciones">Observaciones: <textarea id="observaciones_3" class="form-control textarea" name="observaciones_3" rows="1"></textarea></div>
+    <!--INDICACIONES ELABORACION DE  PERTINAX-->
+    <!--INDICACIONES ELABORACION DE  LAMINAS RAYADAS-->
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th colspan="5">INDICACIONES ELABORACION DE  LAMINAS RAYADAS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="td_right">Lámina:</td>
+                <td colspan="4">
+                    <select id="op_lamrayadas_lam" class="form-control">
+                        <option>Seleccionar ...</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_right">Ancho hilo:</td>
+                <td>
+                    <select id="op_lamrayadas_anchohilo_1" class="form-control">
+                        <option>Seleccionar ...</option>
+                    </select>
+                </td>
+                <td><input id="op_lamrayadas_anchohilo" class="form-control op_input" type="text"/></td>
+                <td class="td_right">No. cajas:</td>
+                <td>
+                    <select id="op_lamrayadas_piezas_1" class="form-control">
+                        <option>Seleccionar ...</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_right">Ancho contrahilo:</td>
+                <td>
+                    <select id="op_lamrayadas_materia" class="form-control">
+                        <option>Seleccionar ...</option>
+                    </select>
+                </td>
+                <td colspan="3"><input id="op_lamrayadas_materia1" class="form-control op_input" type="text"/></td>
+            </tr>
+            <tr>
+                <td class="td_right">Profundidad:</td>
+                <td>
+                    <select id="op_lamrayadas_materia" class="form-control">
+                        <option>Seleccionar ...</option>
+                    </select>
+                </td>
+                <td colspan="3"><input id="op_lamrayadas_materia1" class="form-control op_input" type="text"/></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="col-xs-12 observaciones">Observaciones: <textarea id="observaciones_4" class="form-control textarea" name="observaciones_5" rows="1"></textarea></div>
+    <!--INDICACIONES ELABORACION DE  LAMINAS RAYADAS-->
+    <!--Seccion 6-->
+    <table class="table table-striped">
+        <tbody>
+            <tr>
+                <td class="td_right">Diseño</td>
+                <td><input id="op_diseno" class="form-control op_input" type="text"/></td>
+                <td class="td_right">Calado</td>
+                <td><input id="op_calado" class="form-control op_input" type="text"/></td>
+                <td class="td_right">Armado</td>
+                <td><input id="op_armado" class="form-control op_input" type="text"/></td>
+            </tr>
+            <tr>
+                <td class="td_right">Supervisó</td>
+                <td><input id="op_superviso" class="form-control op_input" type="text"/></td>
+                <td class="td_right">Fecha entrega</td>
+                <td><input id="op_fecha_entrega" class="form-control op_input" type="text"/></td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td>Suaje: Nivel Complejidad</td>
+                <td colspan="5">
+                   <select id="op_complejidad" class="form-control">
+                       <option>Seleccionar ...</option>
+                        <option>Bajo</option>
+                        <option>Medio</option>
+                        <option>Alto</option>
+                    </select> 
+                </td>
+            </tr>
+            <tr>
+                <td class="td_right">Tiempo:</td>
+                <td><input id="op_tiempo" class="form-control op_input" type="text"/></td>
+                <td class="td_right">Inicio:</td>
+                <td><input id="op_inicio" class="form-control op_input" type="text"/></td>
+                <td class="td_right">Termino:</td>
+                <td><input id="op_termino" class="form-control op_input" type="text"/></td>
+            </tr>
+        </tbody>
+    </table>
+    <!--Seccion 6-->
+    <br/>
+    <!--Seccion 7-->
+    <table class="table table-striped">
+        <tbody>
+            <tr>
+                <td class="td_center">PLOTERS / MUESTRA DE COLOR</td>
+                <td class="td_center">MUESTRA FISICA</td>
+                <td class="td_center">POSITIVO / NEGATIVO</td>
+                <td class="td_center">VINIL / TIMPANO</td>
+                <td class="td_center">HEMBRA Y MACHO</td>
+                <td class="td_center">CONTRAS</td>
+                <td class="td_center">OTRO MATERIAL</td>
+            </tr>
+            <tr>
+                <td><input id="op_ploters_muestradecolor" class="form-control op_input" type="text"/></td>
+                <td><input id="op_muestrafisica" class="form-control op_input" type="text"/></td>
+                <td><input id="op_positivonegativo" class="form-control op_input" type="text"/></td>
+                <td><input id="op_vinil" class="form-control op_input" type="text"/></td>
+                <td><input id="op_hembramacho" class="form-control op_input" type="text"/></td>
+                <td><input id="op_contras" class="form-control op_input" type="text"/></td>
+                <td><input id="op_otromaterial" class="form-control op_input" type="text"/></td>
+            </tr>
+        </tbody>
+    </table>
+    <!--Seccion 7-->
 </form>
