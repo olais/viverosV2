@@ -107,7 +107,7 @@ class Application_Model_Logica extends Zend_Db_Table_Abstract
          $db = Zend_Db_Table_Abstract::getDefaultAdapter();
           $select = $db->select()
                     ->from ('v_clientes')
-                    ->where('Id_estatus = ?',10)
+//                    ->where('Id_estatus = ?',10)
                     ->order('Id_cliente DESC');
                         $sql = $db->query($select);
                         $rows = $sql->fetchAll();
@@ -338,7 +338,7 @@ class Application_Model_Logica extends Zend_Db_Table_Abstract
   public function consultatTiposDirecciones(){
        $db = Zend_Db_Table_Abstract::getDefaultAdapter();
                       $select = $db->select()
-                                ->from ('tipos_direccion')
+                                ->from ('tipos_direcciones')
                                 ->where('Id_estatus =?',10);
                        $sql = $db->query($select);
                       return  $rows = $sql->fetchAll();
@@ -348,7 +348,7 @@ class Application_Model_Logica extends Zend_Db_Table_Abstract
   public function consultaTiposMaquinas(){
      $db = Zend_Db_Table_Abstract::getDefaultAdapter();
                       $select = $db->select()
-                                ->from ('maquinasclientes')
+                                ->from ('maquinas_clientes')
                                 ->where('Id_estatus =?',10);
                        $sql = $db->query($select);
                       return  $rows = $sql->fetchAll();

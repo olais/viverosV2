@@ -332,18 +332,41 @@ input[type=text], input[type=password], input[type=email], input[type=nombre], i
     margin-bottom:50px;
     padding: 0;
 }
-
-@media (max-width: 767px)
-{
-/*    header
-    {
-        height: 200px;
-    }
     
-    #contenidobody
+.titulo_form
+{
+    color: #fff;
+    background-color: #337ab7;
+    border-radius: 10px 10px 0px 0px;
+    padding: 3px;
+}
+
+.titulo_form h3
+{
+    margin: 0 0 0 8px;
+}
+
+.contenido_from
+{
+    background: #f2f2f2;
+    margin-bottom: 30px;
+    padding: 8px 0;
+    text-align: right;
+}
+
+.ui-widget-header
+{
+    border: 1px solid #337ab7 !important;
+    background: #337ab7 !important;
+    color: #fff;
+}
+
+@media (max-width: 998px)
+{
+    .contenido_from
     {
-        padding-top: 200px;
-    }*/
+        text-align: left;
+    }
 }
 
 @media (min-width: 768px)
@@ -359,8 +382,6 @@ input[type=text], input[type=password], input[type=email], input[type=nombre], i
     }
 }
 
-
 /*---------*/
 /*CSS ISAAC*/
 /*---------*/
-
