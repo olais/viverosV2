@@ -88,7 +88,8 @@ $("#gridDirecciones").jqGrid({
                //deshabilitar inputs para editar
                $("#formDirecciones input").attr("disabled", true);
                $("#formDirecciones select").attr("disabled", true);
-               
+               $("textarea").attr("disabled", "disabled");
+               $("#nota").attr("disabled", true);
 
            //  }
 
@@ -109,6 +110,7 @@ $("#gridDirecciones").jqGrid({
 
       $("#btnNuevoDireccion").click(function(){
        $("#formDirecciones").show();
+
        $( "#dialog-direcciones" ).dialog({
                       modal: true,
                       width: '1200',
@@ -120,6 +122,7 @@ $("#gridDirecciones").jqGrid({
                      // $( this ).dialog( "close" );
                      },
                        Cancelar: function() {
+                         $("#nota").attr("disabled", false);
                       $("#cancelaClienteUno").trigger("click");
                       $("#gridDirecciones").trigger("reloadGrid");
                       $("#formDirecciones input").attr("disabled", false);

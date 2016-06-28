@@ -107,18 +107,20 @@ $(document).ready(function(){
                $("#clienteMaquina").submit(function(){
 
                     var datos=$(this).serialize();
-           /*  identificadorMaquinas=$("#identificadorMaquinas").val();
+             identificadorMaquinas=$("#identificadorMaquinas").val();
              if(identificadorMaquinas==1){
 
               urlGuardar="editar/actualizarmaquinas";
              }else{
               urlGuardar="editar/guardarmaquinas";
-             }*/
-                    $.post("editar/guardarmaquinas",datos,
+             }
+            
+                    $.post(urlGuardar,datos,
 
                          function(data){
                $("#gridMaquinas").trigger("reloadGrid");
                document.getElementById("clienteMaquina").reset();
+               // $("#clienteMaquina input:radio").removeAttr("checked");
                 $( "#dialog-maquinas" ).dialog("close");
              //  $("#clienteMaquina").hide();
                            //window.location="editar?id="+idCliente;
