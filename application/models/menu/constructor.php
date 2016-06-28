@@ -26,15 +26,17 @@ class Application_Model_Menu_Constructor {
     return $this->inicio;
     }
     
-      function getcatalogos($subpermiso){
-            $this->catalogos.="<li class='dropdown'>
+    function getcatalogos($subpermiso)
+    {
+        $this->catalogos.="<li class='dropdown'>
                                 <a class='dropdown-toggle' data-toggle='dropdown' href='#'>Catalogos <span class='caret'></span></a>
-                                 <ul class='dropdown-menu'>";
-                 if($subpermiso==1){
-            $this->catalogos.=" <li><a href='".$this->baseUrl."/consultas'>Clientes</a></li>";
-                                    }
+                                <ul class='dropdown-menu'>";
+            if($subpermiso==1)
+            {
+                $this->catalogos.=" <li><a href='".$this->baseUrl."/consultas'>Clientes</a></li>";
+            }
                                            
-            $this->catalogos.="<li><a hrfe='".$this->baseUrl."/usuarios'>Usuarios</a></li></ul>  </li> "; 
+            $this->catalogos.="<li><a href='".$this->baseUrl."/usuarios'>Usuarios</a></li></ul></li> "; 
         return $this->catalogos;
     }
          
