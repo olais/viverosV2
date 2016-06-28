@@ -366,7 +366,7 @@ input[type=text], input[type=password], input[type=email], input[type=nombre], i
     color: #fff;
 }
 
-#contactosG
+#contactosG, #contactosD, #clienteMaquina
 {
     text-align: right;
 }
@@ -378,7 +378,7 @@ input[type=text], input[type=password], input[type=email], input[type=nombre], i
         text-align: left;
     }
     
-    #contactosG
+    #contactosG, #contactosD, #clienteMaquina
     {
         text-align: left;
     }
