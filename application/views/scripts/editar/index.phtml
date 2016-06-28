@@ -49,6 +49,8 @@ $("#fornuevocontacto input").attr("disabled", false);
 $("#fornuevocontacto select").attr("disabled", false);
 $("#formMaquinas input").attr("disabled", false);
 $("#formMaquinas select").attr("disabled", false);
+      $("#nota").attr("disabled", false);
+
    
                
 }else{
@@ -58,6 +60,7 @@ $("#formMaquinas select").attr("disabled", false);
     $("#fornuevocontacto select").attr("disabled", true);
     $("#formMaquinas input").attr("disabled", true);
     $("#formMaquinas select").attr("disabled", true);
+      $("#nota").attr("disabled", true);
    
   
 }
@@ -340,7 +343,7 @@ $("#formMaquinas select").attr("disabled", false);
                 <li value="off"><span class="glyphicon glyphicon-pencil"></span>Editar</li>
              </ul>
             <form  name="clienteMaquina" id="clienteMaquina" method="POST" class="form-inline">
-            <input type="hidden" name="idCM" id='idCM'/>
+            <input type="hidden" name="idM" id='idM'/>
             <input type="hidden" id='identificadorMaquinas'/>
             <div class="form-group col-sm-4 col-lg-3">
                 <label class="control-label col-md-5" for="descM">Descripcion</label>
@@ -351,8 +354,8 @@ $("#formMaquinas select").attr("disabled", false);
             <div class="form-group col-sm-4 col-lg-3">
                 <label class="control-label col-md-5" for="perf">PerfEnPegue</label>
                 <div class="col-md-7">
-            SI<input type="radio" class="form-control" id="PerfEnPegue" name="PerfEnPegue" value='SI' required>
-             NO<input type="radio" class="form-control" id="PerfEnPegue" name="PerfEnPegue" value='NO' required> 
+            SI<input type="radio" class="form-control" id="PerfEnPegueS" name="PerfEnPegue" value='SI' required>
+             NO<input type="radio" class="form-control" id="PerfEnPegueN" name="PerfEnPegue" value='NO' required> 
               
                     
                 </div>
@@ -366,8 +369,8 @@ $("#formMaquinas select").attr("disabled", false);
             <div class="form-group col-sm-4 col-lg-3">
                 <label class="control-label col-md-5" for="rama">Rama</label>
                 <div class="col-md-7">
-                 SI<input type="radio" class="form-control" id="rama" name="rama" value='SI' required>
-             NO<input type="radio" class="form-control" id="rama" name="rama" value='NO' required> 
+                 SI<input type="radio" class="form-control" id="ramaS" name="rama" value='SI' required>
+             NO<input type="radio" class="form-control" id="ramaN" name="rama" value='NO' required> 
               
                 </div>
             </div>
@@ -380,8 +383,8 @@ $("#formMaquinas select").attr("disabled", false);
             <div class="form-group col-sm-4 col-lg-3">
                 <label class="control-label col-md-5" for="pinza">Pinza</label>
                 <div class="col-md-7">
-                SI<input type="radio" class="form-control" id="pinza" name="pinza" value='SI' required>
-             NO<input type="radio" class="form-control" id="pinza" name="pinza" value='NO' required> 
+                SI<input type="radio" class="form-control" id="pinzaS" name="pinza" value='SI' required>
+             NO<input type="radio" class="form-control" id="pinzaN" name="pinza" value='NO' required> 
               
                 </div>
             </div>
@@ -394,16 +397,16 @@ $("#formMaquinas select").attr("disabled", false);
             <div class="form-group col-sm-4 col-lg-3">
                 <label class="control-label col-md-5" for="perfo">Perforaciones</label>
                 <div class="col-md-7">
-             SI<input type="radio" class="form-control" id="perforaciones" name="perforaciones" value='SI' required>
-             NO<input type="radio" class="form-control" id="perforaciones" name="perforaciones" value='NO' required> 
+             SI<input type="radio" class="form-control" id="perforacionesS" name="perforaciones" value='SI' required>
+             NO<input type="radio" class="form-control" id="perforacionesN" name="perforaciones" value='NO' required> 
                
                 </div>
             </div>
             <div class="form-group col-sm-4 col-lg-3">
                 <label class="control-label col-md-5" for="centerline">Centerline</label>
                 <div class="col-md-7">
-                SI<input type="radio" class="form-control" id="centerline" name="centerline" value='SI' required>
-                 NO<input type="radio" class="form-control" id="centerline" name="centerline" value='NO' required>   
+                SI<input type="radio" class="form-control" id="centerlineS" name="centerline" value='SI' required>
+                 NO<input type="radio" class="form-control" id="centerlineN" name="centerline" value='NO' required>   
                 </div>
             </div>
             <div class="form-group col-sm-4 col-lg-3">
@@ -415,16 +418,16 @@ $("#formMaquinas select").attr("disabled", false);
             <div class="form-group col-sm-4 col-lg-3">
                 <label class="control-label col-md-5" for="desb">Desbarbe</label>
                 <div class="col-md-7">
-                 SI<input type="radio" class="form-control" id="desbarde" name="desbarde" value='SI' required>
-                 NO<input type="radio" class="form-control" id="desbarde" name="desbarde" value='NO' required> 
+                 SI<input type="radio" class="form-control" id="desbardeS" name="desbarde" value='SI' required>
+                 NO<input type="radio" class="form-control" id="desbardeN" name="desbarde" value='NO' required> 
                   
                 </div>
             </div>
             <div class="form-group col-sm-4 col-lg-3">
                 <label class="control-label col-md-5" for="Compensacion">Compensacion</label>
                 <div class="col-md-7">
-                SI<input type="radio" class="form-control" id="compensacion" name="compensacion" value='SI' required>
-                 NO<input type="radio" class="form-control" id="compensacion" name="compensacion" value='NO' required> 
+                SI<input type="radio" class="form-control" id="compensacionS" name="compensacion" value='SI' required>
+                 NO<input type="radio" class="form-control" id="compensacionN" name="compensacion" value='NO' required> 
                   
                     
                 </div>

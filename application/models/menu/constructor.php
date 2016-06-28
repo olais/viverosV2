@@ -34,7 +34,7 @@ class Application_Model_Menu_Constructor {
             $this->catalogos.=" <li><a href='".$this->baseUrl."/consultas'>Clientes</a></li>";
                                     }
                                            
-            $this->catalogos.="<li><a hrfe='#'>Usuarios</a></li></ul>  </li> "; 
+            $this->catalogos.="<li><a hrfe='".$this->baseUrl."/usuarios'>Usuarios</a></li></ul>  </li> "; 
         return $this->catalogos;
     }
          

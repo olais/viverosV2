@@ -333,6 +333,41 @@ class EditarController extends Zend_Controller_Action
 
    }
 
+   public function actualizarmaquinasAction(){
+       $this->_helper->layout->disableLayout();
+       $this->_helper->viewRenderer->setNoRender();
+       
+        
+               $maquinas=array(
+               
+                'Descripcion'=>$_REQUEST['descripcionM'],
+                'PerfEnPegue'=>$_REQUEST['PerfEnPegue'],
+                'DescPerfEnPegue'=>$_REQUEST['DescPerfEnPegue'],
+                'Rama'=>$_REQUEST['rama'],
+                'MedidaRama'=>$_REQUEST['MedidaRama'],
+                'Pinza'=>$_REQUEST['pinza'],
+                'Id_estatus'=>10,
+                'MedidaPinza'=>$_REQUEST['MedidaPinza'],
+                'Perforaciones'=>$_REQUEST['perforaciones'],
+                'Centerline'=>$_REQUEST['centerline'],
+                'MedidaCenterline'=>$_REQUEST['MedidaCenterline'],
+                'Desbarbe'=>$_REQUEST['desbarde'],
+                'Compensacion'=>$_REQUEST['compensacion'],
+                'NumPiezasCompensacion'=>$_REQUEST['NumPiezasCompensacion']
+
+                );
+
+        $con=new Application_Model_Maquinas();
+        $datos=  $con->actualizarMaquinas($maquinas,$_REQUEST['idM']);
+        $response=new stdClass();
+        $response->id=$datos;
+
+           echo json_encode($response);
+
+   }
+
+
+
 
 }
 
