@@ -151,8 +151,8 @@ $("#gridMaquinas").jqGrid({
                       width: '1200',
                       buttons: {
                         Guardar: function() {
-
-                      $("#guardaMaquina").trigger("click");
+                          alert("hola");
+                      //$("#guardaMaquina").trigger("click");
                      // $("#guardaDir").trigger("click");
                      // $( this ).dialog( "close" );
                      },
@@ -171,6 +171,22 @@ $("#gridMaquinas").jqGrid({
               });
 
    });
+
+$('#btnEditarMaquina').click(function () { //para el modo edición
+  
+       $("#btnEditarMaquina").removeClass("btn btn-primary");
+    if ($('#clienteMaquina input').attr('disabled')) {
+        $("#btnEditarMaquina").addClass("btn btn-default");
+      $("#clienteMaquina input").attr("disabled", false);
+      $("#clienteMaquina select").attr("disabled", false);
+    
+    } else {
+        $("#btnEditarMaquina").addClass("btn btn-primary");
+         $("#clienteMaquina input").attr("disabled", true);
+        $("#clienteMaquina select").attr("disabled", true);
+       
+       }
+    });
     
 
 })

@@ -115,8 +115,8 @@ $("#gridContactos").jqGrid({
                  $("#identificadorContactos").val(1);
                  //deshabilitar inputs para editar
                   $("#btnEditarContacto").show();
-               $("#fornuevocontacto input").attr("disabled", true);
-               $("#fornuevocontacto select").attr("disabled", true);
+               $("#contactosG input").attr("disabled", true);
+               $("#contactosG select").attr("disabled", true);
                 
               
            // });
@@ -132,6 +132,8 @@ $("#gridContactos").jqGrid({
 
        $("#btnNuevoContacto").click(function(){
        $("#fornuevocontacto").show();
+        $("#contactosG input").attr("disabled", false);
+      $("#contactosG select").attr("disabled", false);
        $( "#dialog-contacto" ).dialog({
                       modal: true,
                       width: '1200',
@@ -152,7 +154,21 @@ $("#gridContactos").jqGrid({
               });
 
    });
-    
+    $('#btnEditarContacto').click(function () { //para el modo edición
+  
+       $("#btnEditarContacto").removeClass("btn btn-primary");
+    if ($('#contactosG input').attr('disabled')) {
+        $("#btnEditarContacto").addClass("btn btn-default");
+      $("#contactosG input").attr("disabled", false);
+      $("#contactosG select").attr("disabled", false);
+      $("#nota").attr("disabled", false);
+    } else {
+        $("#btnEditarContacto").addClass("btn btn-primary");
+         $("#contactosG input").attr("disabled", true);
+        $("#contactosG select").attr("disabled", true);
+        $("#nota").attr("disabled", true);
+       }
+    });
   
   
 

@@ -1,9 +1,14 @@
 
-  <button type="button" class="btn btn-success" id="btnNuevoUsuario">+</button>
+<button type="button" class="btn btn-success" id="btnNuevoUsuario">+</button>
 <table id="gridUsuarios"></table>
  <div id="pgridUsuarios"></div>
 
 <div id="dialog-usuarios" title="Nuevo usuario">
+<br><br>
+<button type="button" id="btnEditarUsuario" class='btn btn-primary'><span class="glyphicon glyphicon-pencil"></span>Editar</button>
+  <!--ul class="checkbox-group" id="btnEditarUsuario">
+                <li value="off"><span class="glyphicon glyphicon-pencil"></span>Editar</li>
+             </ul-->
   <form class="form-horizontal" role="form" name="registraUsuarios" id="registraUsuarios" method="POST">
     <div class="form-group">
       <label class="control-label col-sm-2" for="email">Usuario:</label>
@@ -11,6 +16,7 @@
         <input type="text" class="form-control" id="usuario" name='usuario' placeholder="Introduce usuario" required>
       </div>
     </div>
+
     <div class="form-group">
       <label class="control-label col-sm-2" for="pwd">Password:</label>
       <div class="col-sm-2">

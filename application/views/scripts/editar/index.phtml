@@ -39,28 +39,28 @@ $("#checkbox-value").html("");
 $(".checkbox-group li").each(function(){
 //$("#checkbox-value").append($(this).text() + ":" + $(this).attr("value") + "");
 if($(this).attr("value")=='on'){
-   if($(".checkbox-group li").attr("id")=="btnEditarContacto"){
-    alert("hola");
-
-   }
-$("#formDirecciones input").attr("disabled", false);
-$("#formDirecciones select").attr("disabled", false);
-$("#fornuevocontacto input").attr("disabled", false);
-$("#fornuevocontacto select").attr("disabled", false);
-$("#formMaquinas input").attr("disabled", false);
+  
+/*$("#formDirecciones input").attr("disabled", false);
+$("#formDirecciones select").attr("disabled", false);*/
+/*$("#fornuevocontacto input").attr("disabled", false);
+$("#fornuevocontacto select").attr("disabled", false);*/
+/*$("#formMaquinas input").attr("disabled", false);
 $("#formMaquinas select").attr("disabled", false);
       $("#nota").attr("disabled", false);
-
+/*$("#registraUsuarios input").attr("disabled", false);
+$("#registraUsuarios select").attr("disabled", false);*/
    
                
 }else{
-   $("#formDirecciones input").attr("disabled", true);
-   $("#formDirecciones select").attr("disabled", true);
-    $("#fornuevocontacto input").attr("disabled", true);
-    $("#fornuevocontacto select").attr("disabled", true);
-    $("#formMaquinas input").attr("disabled", true);
+  /* $("#formDirecciones input").attr("disabled", true);
+   $("#formDirecciones select").attr("disabled", true);*/
+   /* $("#fornuevocontacto input").attr("disabled", true);
+    $("#fornuevocontacto select").attr("disabled", true);*/
+    /*$("#formMaquinas input").attr("disabled", true);
     $("#formMaquinas select").attr("disabled", true);
       $("#nota").attr("disabled", true);
+    /*  $("#registraUsuarios input").attr("disabled", true);
+$("#registraUsuarios select").attr("disabled", true);*/
    
   
 }
@@ -128,9 +128,10 @@ $("#formMaquinas select").attr("disabled", false);
     </form>
 <div id="dialog-contacto" title="Nuevo Contacto :: <?php echo @$this->clientes[0]['Nombre'];?>">
     <div id="fornuevocontacto">
-        <ul class="checkbox-group" id="btnEditarContacto">
+         <button type="button" id="btnEditarContacto" class='btn btn-primary'><span class="glyphicon glyphicon-pencil"></span>Editar</button>
+        <!--ul class="checkbox-group" id="btnEditarContacto">
             <li value="off"><span class="glyphicon glyphicon-pencil"></span>Editar</li>
-        </ul>
+        </ul-->
         <form id="contactosG" class="form-inline" name="contactosG" method="POST">
             <input type="hidden" name="idC" id='idC'/>
             <input type="hidden" id='identificadorContactos'/>
@@ -202,10 +203,10 @@ $("#formMaquinas select").attr("disabled", false);
       </div>
 <div id="dialog-direcciones" title="Nueva Dirección :: <?php echo @$this->clientes[0]['Nombre'];?>">
     <div id="formDirecciones">
-           
-            <ul class="checkbox-group" id="btnEditarDireccion">
+           <button type="button" id="btnEditarDireccion" class='btn btn-primary'><span class="glyphicon glyphicon-pencil"></span>Editar</button>
+            <!--ul class="checkbox-group" id="btnEditarDireccion">
                 <li value="off"><span class="glyphicon glyphicon-pencil"></span>Editar</li>
-             </ul>
+             </ul-->
         <form  name="contactosD" id="contactosD" method="POST" class="form-inline">
             <input type="hidden" name="idClienteDir" id='idClienteDir'></input>
             <input type="hidden" name="Id_direccion" id='Id_direccion'></input>

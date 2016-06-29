@@ -12,7 +12,7 @@ class Application_Model_Usuarios extends Zend_Db_Table_Abstract
     function consultaUsuarios(){
 
     	  $db = Zend_Db_Table_Abstract::getDefaultAdapter();
-          $select = $db->select()  ->from ('usuarios');
+          $select = $db->select()  ->from ('v_usuarios');
                         $sql = $db->query($select);
                         $rows = $sql->fetchAll();
 
