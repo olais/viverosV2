@@ -118,7 +118,7 @@ $("#gridDirecciones").jqGrid({
                       width: '1200',
                       buttons: {
                         Guardar: function() {
-                     $("#btnEditarDireccion").trigger("click");
+                     //$("#btnEditarDireccion").trigger("click");
                      $("#guardaDir").trigger("click");
 
                      // $( this ).dialog( "close" );
