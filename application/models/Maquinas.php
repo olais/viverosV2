@@ -1,7 +1,7 @@
 <?php
 class Application_Model_Maquinas extends Zend_Db_Table_Abstract
 {
-     protected $_name = 'maquinasclientes';
+     protected $_name = 'maquinas_clientes';
      protected $_primary = 'Id_MaquinaC';
      
    function guardarMaquinas($datos){

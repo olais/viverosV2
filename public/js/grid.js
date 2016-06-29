@@ -110,6 +110,7 @@ comprobarContactos= sessionStorage.getItem("comprobarContactos");
    $("#nuevoContacto").click(function(){
           //this.disabled = 'false';
          // $("#guardarConta").attr("disabled",true);
+                
                 $("#guardarConta").html("Guardar Contactos");
                 $("#guardaDir").html("Guardar Dirección");
     //sección de contactos
@@ -146,7 +147,7 @@ comprobarContactos= sessionStorage.getItem("comprobarContactos");
   });
 
    $("#nuevaDireccion").click(function(){
-     
+   
     $("#formDirecciones").show();
     $("#fornuevocontacto").hide();
     $("#formMaquinas").hide();

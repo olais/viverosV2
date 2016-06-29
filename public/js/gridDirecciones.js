@@ -77,19 +77,20 @@ $("#gridDirecciones").jqGrid({
                          // if(accionCambiosDir==1){
               // $("#formDirecciones").show();
               //abrir modal para actualizar
-              $("#btnEditarDireccion").show();
+               $("#btnEditarDireccion").show();
                $("#btnNuevoDireccion").trigger("click");
                $("#fornuevocontacto").hide();
                $("#guardaDir").html("Actualizar");
                $("#identificadorDirecciones").val(1);
                $("#identificadorContactos").val(0);
                $("#guardaCliente").html("Actualizar");
+               $("#nota").attr("disabled", true);
 
                //deshabilitar inputs para editar
                $("#formDirecciones input").attr("disabled", true);
                $("#formDirecciones select").attr("disabled", true);
-               $("textarea").attr("disabled", "disabled");
-               $("#nota").attr("disabled", true);
+               //$("textarea").attr("disabled", "disabled");
+               
 
            //  }
 
@@ -110,7 +111,8 @@ $("#gridDirecciones").jqGrid({
 
       $("#btnNuevoDireccion").click(function(){
        $("#formDirecciones").show();
-
+         $("#contactosD input").attr("disabled", false);
+      $("#contactosD select").attr("disabled", false);
        $( "#dialog-direcciones" ).dialog({
                       modal: true,
                       width: '1200',
@@ -125,8 +127,8 @@ $("#gridDirecciones").jqGrid({
                          $("#nota").attr("disabled", false);
                       $("#cancelaClienteUno").trigger("click");
                       $("#gridDirecciones").trigger("reloadGrid");
-                      $("#formDirecciones input").attr("disabled", false);
-                      $("#formDirecciones select").attr("disabled", false);
+                      /*$("#formDirecciones input").attr("disabled", false);
+                      $("#formDirecciones select").attr("disabled", false);*/
                       $("#btnEditarDireccion").hide();
                       
 
@@ -137,6 +139,25 @@ $("#gridDirecciones").jqGrid({
               });
 
    });
+
+
+//para el modo edición
+
+$('#btnEditarDireccion').click(function () { //para el modo edición
+
+       $("#btnEditarDireccion").removeClass("btn btn-primary");
+    if ($('#contactosD input').attr('disabled')) {
+        $("#btnEditarDireccion").addClass("btn btn-default");
+      $("#contactosD input").attr("disabled", false);
+      $("#contactosD select").attr("disabled", false);
+      $("#nota").attr("disabled", false);
+    } else {
+        $("#btnEditarDireccion").addClass("btn btn-primary");
+         $("#contactosD input").attr("disabled", true);
+        $("#contactosD select").attr("disabled", true);
+        $("#nota").attr("disabled", true);
+       }
+    });
     
     
 

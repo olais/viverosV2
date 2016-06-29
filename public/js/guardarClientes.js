@@ -105,7 +105,9 @@ $(document).ready(function(){
 
 
                $("#clienteMaquina").submit(function(){
+                  alert("hola");
 
+                  return false;
                     var datos=$(this).serialize();
              identificadorMaquinas=$("#identificadorMaquinas").val();
              if(identificadorMaquinas==1){
@@ -114,7 +116,7 @@ $(document).ready(function(){
              }else{
               urlGuardar="editar/guardarmaquinas";
              }
-            
+         
                     $.post(urlGuardar,datos,
 
                          function(data){
