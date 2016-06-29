@@ -1,33 +1,37 @@
-<div class="container">
-  <h2>Usuarios</h2>
+
+  <button type="button" class="btn btn-success" id="btnNuevoUsuario">+</button>
+<table id="gridUsuarios"></table>
+ <div id="pgridUsuarios"></div>
+
+<div id="dialog-usuarios" title="Nuevo usuario">
   <form class="form-horizontal" role="form" name="registraUsuarios" id="registraUsuarios" method="POST">
     <div class="form-group">
       <label class="control-label col-sm-2" for="email">Usuario:</label>
       <div class="col-sm-2">
-        <input type="text" class="form-control" id="usuario" name='usuario' placeholder="Introduce usuario">
+        <input type="text" class="form-control" id="usuario" name='usuario' placeholder="Introduce usuario" required>
       </div>
     </div>
     <div class="form-group">
       <label class="control-label col-sm-2" for="pwd">Password:</label>
       <div class="col-sm-2">
-        <input type="password" class="form-control" id="pwd" name='pwd' placeholder="Introduce password">
+        <input type="password" class="form-control" id="pwd" name='pwd' placeholder="Introduce password" required>
       </div>
     </div>
   <div class="form-group">
       <label class="control-label col-sm-2" for="desc">Descripción:</label>
       <div class="col-sm-2">
-        <input type="text" class="form-control" id="desc" name="desc" placeholder="Descripción">
+        <input type="text" class="form-control" id="desc" name="desc" placeholder="Descripción" required>
       </div>
     </div>
     <div class="form-group">
       <label class="control-label col-sm-2" for="tipo">Tipo:</label>
       <div class="col-sm-2">
-     <select class="form-control" id="tipoUser" name="tipoUser">
+     <select class="form-control" id="tipoUser" name="tipoUser" required>
         <option>Seleccionar</option>
        <?php print_r($this->datos); 
-        		foreach ($this->datos as $option) {
-        		echo " <option value='".$option['Id_tipousuario']."'>".$option['Descripcion']."</option>" ;
-        		}
+            foreach ($this->datos as $option) {
+            echo " <option value='".$option['Id_tipousuario']."'>".$option['Descripcion']."</option>" ;
+            }
 
         ?>
 
@@ -37,7 +41,7 @@
        <div class="form-group">
       <label class="control-label col-sm-2" for="tipo">Estatus:</label>
       <div class="col-sm-2">
-     <select class="form-control" id="estatusUser" name="estatusUser">
+     <select class="form-control" id="estatusUser" name="estatusUser" required>
         <option>Seleccionar</option>
         <option value="10">ACTIVO</option>
         <option value="20">INACTIVO</option>
@@ -47,8 +51,11 @@
      </div>
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-primary">Registrar</button>
+        <button type="submit" class="btn btn-primary" id="regUsuarios">Registrar</button>
       </div>
     </div>
   </form>
+
+
+
 </div>
