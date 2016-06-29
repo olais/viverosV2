@@ -3,33 +3,6 @@
     {
         display: none;
     }
-    
-    .titulo_form
-    {
-        color: #fff;
-        background-color: #337ab7;
-        border-radius: 10px 10px 0px 0px;
-        padding: 3px;
-    }
-    
-    .titulo_form h3
-    {
-        margin: 0 0 0 8px;
-    }
-    
-    .contenido_from
-    {
-        background: #f2f2f2;
-        margin-bottom: 30px;
-        padding: 8px 0;
-        text-align: right;
-    }
-    .ui-widget-header
-    {
-        border: 1px solid #337ab7 !important;
-        background: #337ab7 !important;
-        color: #fff;
-    }
 </style> 
 <script type="text/javascript">
     $(document).ready(function()
@@ -60,7 +33,7 @@
                     </select>
                     <br/>
                     <label class="control-label" for="estatus">Estatus:</label>
-                    <select id="estatus" class="form-control" name="estatus" required>
+                    <select id="Id_estatus" class="form-control" name="estatus" required>
                         <option>Seleccionar...</option>
                         <option value='10' <?php echo $selected=(@$this->clientes[0]['Id_estatus']==10)? 'selected':''; ?>>ACTIVO</option>
                         <option value="20" <?php echo $selected=(@$this->clientes[0]['Id_estatus']==20)? 'selected':''; ?>>INACTIVO</option>
@@ -70,11 +43,18 @@
                     <label class="control-label" for="nombre">Nombre</label>
                     <input id="nombre" class="form-control" name="nombre" type="nombre" value="<?php echo @$this->clientes[0]['Nombre'];?>" required>
                     <br/>
-                    <label class="control-label" for="rfc">RFC</label>
-                <input id="rfc" class="form-control" name="rfc" type="text" value="<?php echo @$this->clientes[0]['RFC'];?>" required>
+                    <label class="control-label" for="correo">Correo</label>
+                    <input id="correo" class="form-control" name="correo" type="email" value="<?php echo @$this->clientes[0]['Correo'];?>">
                 </div>
             </div>
             <div class="form-group col-sm-6">
+                <div class="col-sm-6">
+                    <label class="control-label" for="rfc">RFC</label>
+                    <input id="rfc" class="form-control" name="rfc" type="text" value="<?php echo @$this->clientes[0]['RFC'];?>" required>
+                    <br/>
+                    <label class="control-label" for="web">Web</label>
+                    <input id="web" class="form-control" name="web" type="text" value="<?php echo @$this->clientes[0]['Web'];?>">
+                </div>
                 <div class="col-sm-6">
                     <label class="control-label" for="tel1">Teléfono 1</label>
                     <input id="tel1" class="form-control" name="tel1" type="text" value="<?php echo @$this->clientes[0]['Telefono1'];?>">
@@ -84,13 +64,6 @@
                     <br/>
                     <label class="control-label" for="fax">Fax</label>
                     <input id="fax" class="form-control" name="fax" type="text" value="<?php echo @$this->clientes[0]['Fax'];?>">
-                </div>
-                <div class="col-sm-6">
-                    <label class="control-label" for="correo">Correo</label>
-                    <input id="correo" class="form-control" name="correo" type="email" value="<?php echo @$this->clientes[0]['Correo'];?>">
-                    <br/>
-                    <label class="control-label" for="web">Web</label>
-                    <input id="web" class="form-control" name="web" type="text" value="<?php echo @$this->clientes[0]['Web'];?>">
                 </div>
             </div>
         </div>

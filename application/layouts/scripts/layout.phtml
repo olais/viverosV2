@@ -140,11 +140,11 @@
             </div>
         </header>
         <section>
-            <div id="contenidobody">
+            <div id="headbody">
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-12">
-                            <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="30">
+                            <nav class="navbar navbar-inverse">
                                 <div class="container-fluid">
                                     <div class="navbar-header">
                                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -212,12 +212,14 @@
                        </div>
                     </div>
                 </div>
+            </div>
+            <div id="contenidobody">
                 <div class="container contenidodelbody">
                     <div class="row">
                         <div class="col-xs-12">
                             <?php //print_r($m);?>
                             <?= $this->layout()->content; ?>
-
+                        </div>
                     </div>
                 </div>
             </div>
