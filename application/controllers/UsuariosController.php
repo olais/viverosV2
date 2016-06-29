@@ -39,8 +39,17 @@ class UsuariosController extends Zend_Controller_Action
      
       echo json_encode($response);
 
+    }
 
-
+    public function consultausuariosAction(){
+      $this->_helper->layout->disableLayout();
+      $this->_helper->viewRenderer->setNoRender();
+      $con=new Application_Model_Usuarios();
+      $datos=  $con->consultaUsuarios();
+      $response=new stdClass();
+    
+     
+      echo json_encode($datos);
 
     }
    
