@@ -7,18 +7,19 @@ $("#regUsuarios").hide();
 $("#gridUsuarios").jqGrid({
     url:'usuarios/consultausuarios',
   datatype: "json",
-    colNames:['id','Descripcion','Usuario', 'Password', 'Id_tipousuario','Estatus','Id_estatus'],
+    colNames:['id','Descripcion','Usuario', 'Password', 'Id_tipousuario','Tipo','Estatus','Id_estatus'],
     colModel:[
-      {name:'Id_usuario',index:'Id_direccion', width:20},
+      {name:'Id_usuario',index:'Id_direccion', width:15},
       {name:'Descripcion',index:'Descripcion', width:200,editable:true},
       {name:'Usuario',index:'Usuario', width:55,editable:true},
       {name:'Password',index:'Password', width:50,hidden:true},
       {name:'Id_tipousuario',index:'Id_tipousuario', width:10,hidden:true},
+      {name:'tipousuario',index:'tipousuario', width:55,editable:true},
       {name:'estatus',index:'estatus', width:50},
       {name:'Id_estatus',index:'Id_estatus', width:50,hidden:true}   
    
     ],
-    rowNum:20,
+    rowNum:10000,
     rowList:[10,20,30,40,50],
     pager: '#pgridUsuarios',
     sortname: 'Id_direccion',
@@ -50,10 +51,14 @@ $("#gridUsuarios").jqGrid({
               $("#desc").val(Descripcion);
               $("#tipoUser").val(Id_tipousuario);
               $("#estatusUser").val(Id_estatus);
-
+               $('#btnEditarUsuario').show();
               //deshabilitamos solo los inputs de usuarios
               $("#registraUsuarios input").attr("disabled",true);
               $("#registraUsuarios select").attr("disabled", true);
+
+              $("#identificadorUsuarios").val(1);
+              $("#idUsuario").val(Id_usuario);
+              
 
            
           },
@@ -64,11 +69,24 @@ $("#gridUsuarios").jqGrid({
   
   $(".ui-search-oper").hide();
   $(".clearsearchclass").hide();
-  $("#gs_Id_direccion").hide();
+  $("#gs_Id_usuario").hide();
 
    $("#btnNuevoUsuario").click(function(){
       // $("#formDirecciones").show();
+      /*var idf=$("#identificadorUsuarios").val();
+     
+      if(idf==0){
+        $('#dialog-usuarios').attr('title', 'Actualizar usuario : '+Descripcion);
+      }else{
+        $('#dialog-usuarios').attr('title', 'Nuevo Usuario');
+      }*/
+  
 
+      $('#btnEditarUsuario').hide();
+       $("#registraUsuarios input").attr("disabled",false);
+        $("#registraUsuarios select").attr("disabled",false);
+
+      document.getElementById("registraUsuarios").reset();
        $( "#dialog-usuarios" ).dialog({
                       modal: true,
                       width: '1200',
@@ -77,10 +95,11 @@ $("#gridUsuarios").jqGrid({
                    
                      $("#regUsuarios").trigger("click");
 
-                     // $( this ).dialog( "close" );
+                      //$( this ).dialog( "close" );
                      },
                        Cancelar: function() {
-                       
+                        $("#gridUsuarios").trigger("reloadGrid");
+                        $("#identificadorUsuarios").val(0);
                           $( this ).dialog( "close" );
                       }
                 }

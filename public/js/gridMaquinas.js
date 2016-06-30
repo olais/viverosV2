@@ -23,7 +23,7 @@ $("#gridMaquinas").jqGrid({
       {name:'NumPiezasCompensacion',index:'NumPiezasCompensacion', width:280, sortable:false,editable:true}
 
     ],
-    rowNum:20,
+    rowNum:1000,
     rowList:[10,20,30,40,50],
     pager: '#pgridMaquinas',
     sortname: 'Descripcion',

@@ -22,6 +22,8 @@
             $this->headScript()->appendFile($this->baseUrl('js/jquery.jqGrid.min.js'), 'text/javascript');
             $this->headScript()->appendFile($this->baseUrl('js/guardarUsuarios.js'), 'text/javascript');
             $this->headScript()->appendFile($this->baseUrl('js/gridUsuarios.js'), 'text/javascript');
+            $this->headScript()->appendFile($this->baseUrl('js/modeloGrids.js'), 'text/javascript');
+            
             $this->headTitle()->append('Miapp/Suajes');
             echo $this->headMeta();
             echo $this->headTitle(); 
@@ -159,7 +161,7 @@
 
                                         <ul class="nav navbar-nav">
                                             
-                                            <li class="dropdown" id="nuevo">
+                                            <!--li class="dropdown" id="nuevo">
                                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" >Nuevo <span class="caret"></span></a>
                                                 <ul class="dropdown-menu">
                                                     <?php
@@ -201,9 +203,9 @@
                                                     <li><a href="#" id="nuevaDireccion">Dirección</a></li>
                                                     <li><a href="#" id="nuevaMaquina">Máquina</a></li-->
                                                    <?php // }?>
-                                               </ul>
+                                               <!--/ul>
                                             </li>
-                                            <li><a href="#" id="guardaCliente">Guardar</a></li>
+                                            <!--li><a href="#" id="guardaCliente">Guardar</a></li>
                                             <!--li><a href="#" id="guardaCliente">Actualizar</a></li-->
                                             <li><a href="<?php echo $this->baseUrl(); ?>/consultas" id="cancelaClienteUno">Cancelar</a></li>
                                         </ul>

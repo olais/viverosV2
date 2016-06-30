@@ -1,0 +1,381 @@
+<style type="text/css">
+    #nuevoCliente{
+        display: none;
+    }
+</style> 
+<?php
+    //print_r($this->clientes);
+    //echo $idCliente=$this->clientes[0]['Id_cliente'];
+?>
+<script type="text/javascript">
+    sessionStorage.setItem("id",<?php echo $this->clientes[0]['Id_cliente']?>);
+      sessionStorage.setItem('accionCambiosDir',0);
+</script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#nuevo").hide();
+      
+
+    });
+</script>
+<script>
+$(function(){
+$(".checkbox-group li").bind("click", function(){
+
+if($(this).hasClass("checkbox-group-active"))
+{
+$(this).removeClass("checkbox-group-active");
+$(this).attr("value", "off");
+
+}
+else
+{
+$(this).addClass("checkbox-group-active");
+$(this).attr("value", "on");
+
+}
+
+$("#checkbox-value").html("");
+$(".checkbox-group li").each(function(){
+//$("#checkbox-value").append($(this).text() + ":" + $(this).attr("value") + "");
+if($(this).attr("value")=='on'){
+  
+/*$("#formDirecciones input").attr("disabled", false);
+$("#formDirecciones select").attr("disabled", false);*/
+/*$("#fornuevocontacto input").attr("disabled", false);
+$("#fornuevocontacto select").attr("disabled", false);*/
+/*$("#formMaquinas input").attr("disabled", false);
+$("#formMaquinas select").attr("disabled", false);
+      $("#nota").attr("disabled", false);
+/*$("#registraUsuarios input").attr("disabled", false);
+$("#registraUsuarios select").attr("disabled", false);*/
+   
+               
+}else{
+  /* $("#formDirecciones input").attr("disabled", true);
+   $("#formDirecciones select").attr("disabled", true);*/
+   /* $("#fornuevocontacto input").attr("disabled", true);
+    $("#fornuevocontacto select").attr("disabled", true);*/
+    /*$("#formMaquinas input").attr("disabled", true);
+    $("#formMaquinas select").attr("disabled", true);
+      $("#nota").attr("disabled", true);
+    /*  $("#registraUsuarios input").attr("disabled", true);
+$("#registraUsuarios select").attr("disabled", true);*/
+   
+  
+}
+
+});
+});
+});
+</script>
+<div class="col-xs-12">
+    <form  name="clientesG" id="clientesG" class="form-inline" method="POST">
+        <div class="cos-sm-12">
+            <div class="titulo_form">
+                <h3>Cliente</h3>
+            </div>
+        </div>
+        <div class="col-sm-12 contenido_from">
+            <div class="form-group col-sm-6">
+                <div class="col-sm-6">
+                    <label class="control-label" for="tip">Tipo Cliente:</label>
+                    <select id="tipo" class="form-control" name="tipo" required>
+                        <option>Seleccionar...</option>
+                         <option value="10" <?php echo $selected=(@$this->clientes[0]['Id_tipocliente']==10)? 'selected':''; ?>>Crédito</option>
+                        <option value="11" <?php echo $selected=(@$this->clientes[0]['Id_tipocliente']==11)? 'selected':''; ?>>Contado</option>
+                         <option value="12" <?php echo $selected=(@$this->clientes[0]['Id_tipocliente']==12)? 'selected':''; ?>>Suspendido</option>
+                    </select>
+                    <br/>
+                    <label class="control-label" for="estatus">Estatus:</label>
+                    <select id="estatus" class="form-control" name="estatus" required>
+                        <option>Seleccionar...</option>
+                        <option value='10' <?php echo $selected=(@$this->clientes[0]['Id_estatus']==10)? 'selected':''; ?>>ACTIVO</option>
+                        <option value="20" <?php echo $selected=(@$this->clientes[0]['Id_estatus']==20)? 'selected':''; ?>>INACTIVO</option>
+                    </select>
+                </div>
+                <div class="col-sm-6">
+                    <label class="control-label" for="nombre">Nombre</label>
+                    <input id="nombre" class="form-control" name="nombre" type="nombre" value="<?php echo @$this->clientes[0]['Nombre'];?>" required>
+                    <br/>
+                    <label class="control-label" for="correo">Correo</label>
+                    <input id="correo" class="form-control" name="correo" type="email" value="<?php echo @$this->clientes[0]['Correo'];?>">
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <div class="col-sm-6">
+                    <label class="control-label" for="rfc">RFC</label>
+                    <input id="rfc" class="form-control" name="rfc" type="text" value="<?php echo @$this->clientes[0]['RFC'];?>" required>
+                    <br/>
+                    <label class="control-label" for="web">Web</label>
+                    <input id="web" class="form-control" name="web" type="text" value="<?php echo @$this->clientes[0]['Web'];?>">
+            </div>
+            <div class="form-group col-sm-3">
+                <div class="col-sm-6">
+                    <label class="control-label" for="tel1">Teléfono 1</label>
+                    <input id="tel1" class="form-control" name="tel1" type="text" value="<?php echo @$this->clientes[0]['Telefono1'];?>">
+                    <br/>
+                    <label class="control-label" for="tel2">Teléfono 2</label>
+                    <input id="tel2" class="form-control" name="tel2" type="text" value="<?php echo @$this->clientes[0]['Telefono2'];?>">
+                    <br/>
+                    <label class="control-label" for="fax">Fax</label>
+                    <input id="fax" class="form-control" name="fax" type="text" value="<?php echo @$this->clientes[0]['Fax'];?>">
+                </div>
+            </div>
+        </div>
+        <!--button class="btn btn-primary" type="submit">Guardar Clientes</button>
+        <button id="cancelaCliente" class="btn btn-primary">Cancelar</button-->
+    </form>
+<div id="dialog-contacto" title="Nuevo Contacto :: <?php echo @$this->clientes[0]['Nombre'];?>">
+    <div id="fornuevocontacto">
+         <button type="button" id="btnEditarContacto" class='btn btn-primary'><span class="glyphicon glyphicon-pencil"></span>Editar</button>
+        <!--ul class="checkbox-group" id="btnEditarContacto">
+            <li value="off"><span class="glyphicon glyphicon-pencil"></span>Editar</li>
+        </ul-->
+        <form id="contactosG" class="form-inline" name="contactosG" method="POST">
+            <input type="hidden" name="idC" id='idC'/>
+            <input type="hidden" id='identificadorContactos'/>
+            <input type="hidden" name="idContacto" id="idContacto"/>
+            <div class="form-group col-sm-3">
+                <label class="control-label" for="tipC">Tipo Contacto:</label>
+                <select class="form-control" id="tipoContacto" name="tipoContacto">
+                    <option>Seleccionar...</option>
+                    <?php 
+                        foreach ($this->datos as $option)
+                        {
+                            echo " <option value='".$option['Id_tipocontacto']."'>".$option['Descripcion']."</option>";
+                        }
+                    ?>
+                </select>
+                <br/>
+                <label class="control-label" for="estatus">Estatus:</label>
+                <select class="form-control" id="estatusC" name="estatusC">
+                    <option>Seleccionar...</option>
+                    <option value='10'>ACTIVO</option>
+                    <option value="20">INACTIVO</option>
+                </select>
+            </div>
+            <div class="form-group col-sm-3">
+                <label class="control-label" for="nombre">Nombre</label>
+                <input type="text" class="form-control" id="nombreC" name="nombreC" required>
+                <br/>
+                <label class="control-label" for="apellidos">Apellidos</label>
+                <input type="text" class="form-control" id="apellidosC" name="apellidosC" required>
+                <br/>
+                <label class="control-label" for="fechaN">Fecha de Nacimiento</label>
+                <input type="date" class="form-control" id="fechaN" name="fechaN">
+            </div>
+            <div class="form-group col-sm-3">
+                <label class="control-label" for="puesto">Puesto</label>
+                <input type="text" class="form-control" id="puestoC" name="puestoC">
+                <br/>
+                <label class="control-label" for="correo">Correo</label>
+                <input type="text" class="form-control" id="correoC" name="correoC">
+                <br/>
+                <label class="control-label" for="syk">Skype</label>
+                <input type="text" class="form-control" id="sky" name="sky">
+                <br/>
+                <label class="control-label" for="face">Facebook</label>
+                <input type="text" class="form-control" id="face" name="face">
+                <br/>
+                <label class="control-label" for="tw">Twitter</label>
+                <input type="text" class="form-control" id="tw" name="tw">
+            </div>
+            <div class="form-group col-sm-3">
+                <label class="control-label" for="celular">Celular</label>
+                <input type="text" class="form-control" id="celular" name="celular">
+                <BR/>
+                <label class="control-label" for="tel1">Teléfono 1</label>
+                <input type="text" class="form-control" id="tel1C" name="tel1C">
+                <br/>
+                <label class="control-label" for="exten1">Extensión 1</label>
+                <input type="text" class="form-control" id="exten1" name="exten1">
+                <BR/>
+                <label class="control-label" for="tel2">Teléfono 2</label>
+                <input type="text" class="form-control" id="tel2C" name="tel2C">
+                <BR/>
+                <label class="control-label" for="exten2">Extensión 2</label>
+                <input type="text" class="form-control" id="exten2" name="exten2">
+            </div>
+            <button type="submit" class="btn btn-primary" id="guardarConta">Guardar Contactos</button>
+        </form>
+    </div>
+      </div>
+<div id="dialog-direcciones" title="Nueva Dirección :: <?php echo @$this->clientes[0]['Nombre'];?>">
+    <div id="formDirecciones">
+           <button type="button" id="btnEditarDireccion" class='btn btn-primary'><span class="glyphicon glyphicon-pencil"></span>Editar</button>
+            <!--ul class="checkbox-group" id="btnEditarDireccion">
+                <li value="off"><span class="glyphicon glyphicon-pencil"></span>Editar</li>
+             </ul-->
+        <form  name="contactosD" id="contactosD" method="POST" class="form-inline">
+            <input type="hidden" name="idClienteDir" id='idClienteDir'></input>
+            <input type="hidden" name="Id_direccion" id='Id_direccion'></input>
+            <input type="hidden" id='identificadorDirecciones'>
+            <div class="form-group col-sm-3">
+                <label class="control-label" for="tipD">Tipo Dirección:</label>
+                <select class="form-control" id="tipoDireccion" name="tipoDireccion">
+                    <option>Seleccionar...</option>
+                        <?php 
+                            foreach ($this->tiposDir as $option)
+                            {
+                                echo " <option value='".$option['Id_tipodireccion']."'>".$option['Descripcion']."</option>";
+                            }
+                        ?>
+                </select>
+                <br/>
+                <label class="control-label" for="estatus">Estatus:</label>
+                <select class="form-control" id="estatusD" name="estatusD">
+                    <option>Seleccionar...</option>
+                    <option value='10'>ACTIVO</option>
+                    <option value="20">INACTIVO</option>
+                </select>
+            </div>
+            <div class="form-group col-sm-3">
+                <label class="control-label" for="calle">Calle</label>
+                <input type="text" class="form-control" id="calle" name="calle" required>
+                <br/>
+                <label class="control-label" for="colonia">Colonia</label>
+                <input type="text" class="form-control" id="colonia" name="colonia" required>
+            </div>
+            <div class="form-group col-sm-3">
+                <label class="control-label" for="ciudad">Ciudad</label>
+                <input type="text" class="form-control" id="ciudad" name="ciudad">
+                <br/>
+                <label class="control-label" for="muni">Municipio</label>
+                <input type="text" class="form-control" id="muni" name="muni">
+            </div>
+            <div class="form-group col-sm-3">
+                <label class="control-label" for="estado">Estado</label>
+                <input type="text" class="form-control" id="estado" name="estado">
+                <br/>
+                <label class="control-label" for="cp">CP</label>
+                <input type="text" class="form-control" id="cp" name="cp">
+            </div>
+            <div class="form-group col-sm-3">
+                <label class="control-label" for="nota">Nota:</label>
+                <textarea class="form-control" rows="5" id="nota" name="nota"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" id="guardaDir">Guardar Dirección</button>
+        </form>
+    </div>
+</div>
+<div id="dialog-maquinas" title="Nueva Máquina :: <?php echo @$this->clientes[0]['Nombre'];?>">
+    <div id='formMaquinas'>
+      <ul class="checkbox-group" id="btnEditarMaquina">
+                <li value="off"><span class="glyphicon glyphicon-pencil"></span>Editar</li>
+             </ul>
+            <form  name="clienteMaquina" id="clienteMaquina" method="POST" class="form-inline">
+            <input type="hidden" name="idM" id='idM'/>
+            <input type="hidden" id='identificadorMaquinas'/>
+            <div class="form-group col-sm-3">
+                <label class="control-label" for="descM">Descripcion</label>
+                <input type="text" class="form-control" id="descripcionM" name="descripcionM" required>
+                <br/>
+                <label class="control-label" for="descPegue">DescPerfEnPegue</label>
+                <input type="text" class="form-control" id="DescPerfEnPegue" name="DescPerfEnPegue">
+                <br/>
+                <label class="control-label" for="medcenterline">MedidaCenterline</label>
+                <input type="text" class="form-control" id="MedidaCenterline" name="MedidaCenterline">
+            </div>
+            <div class="form-group col-sm-3">
+                <label class="control-label" for="perf">PerfEnPegue</label>
+                <label><input id="PerfEnPegueS" class="form-control" type="radio" name="PerfEnPegue" value="si" required> Si</label>
+                <label><input id="PerfEnPegueN" class="form-control" type="radio" name="PerfEnPegue" value="no" required> No</label>
+                <br/>
+                <label class="control-label" for="rama">Rama</label>
+                <label><input id="ramaS" class="form-control" type="radio" name="rama" value="si" required> Si</label>
+                <label><input id="ramaN" class="form-control" type="radio" name="rama" value="no" required> No</label>
+                <br/>
+                <label class="control-label" for="pinza">Pinza</label> 
+                <label><input id="pinzaS" class="form-control" type="radio" name="pinza" value="si" required> Si</label>
+                <label><input id="pinzaN" class="form-control" type="radio" name="pinza" value="no" required> No</label>
+                <br/>
+                <label class="control-label" for="perfo">Perforaciones</label>
+                <label><input id="perforacionesS" class="form-control" type="radio" name="perforaciones" value="si" required> Si</label>
+                <label><input id="perforacionesN" class="form-control" type="radio" name="perforaciones" value="no" required> No</label>
+            </div>
+            <div class="form-group col-sm-3">
+                <label class="control-label" for="centerline">Centerline</label>
+                <label><input id="centerlineS" class="form-control" type="radio" name="centerline" value="si" required> Si</label>
+                <label><input id="centerlineN" class="form-control" type="radio" name="centerline" value="no" required> No</label>
+                <br/>
+                <label class="control-label" for="desb">Desbarbe</label>
+                <label><input id="desbardeS" class="form-control" type="radio" name="desbarde" value="si" required> Si</label>
+                <label><input id="desbardeN" class="form-control" type="radio" name="desbarde" value="no" required> No</label>
+                <br/>
+                <label class="control-label" for="Compensacion">Compensacion</label>
+                <label><input id="compensacionS" class="form-control" type="radio" name="compensacion" value="si" required> Si</label>
+                <label><input id="compensacionN" class="form-control" type="radio" name="compensacion" value="no" required> No</label>
+            </div>
+            <div class="form-group col-sm-3">
+                <label class="control-label" for="medRama">MedidaRama</label>
+                <input type="text" class="form-control" id="MedidaRama" name="MedidaRama">
+                <br/>
+                <label class="control-label" for="medPinza">MedidaPinza</label>
+                <input type="text" class="form-control" id="MedidaPinza" name="MedidaPinza">
+                <br/>
+                <label class="control-label" for="NumPiezasCompensacion">NumPiezas</label>
+                <input type="text" class="form-control" id="NumPiezasCompensacion" name="NumPiezasCompensacion">
+            </div>
+            <button type="submit" class="btn btn-primary" id="guardaMaquina">Guardar Maquina</button>
+        </form>
+        <!--form class="form-inline" role="form" method='POST' name='guardaMaquinas' id='guardaMaquinas'>
+            <div class="form-group">
+                <!--label for="cliente">Cliente</label>
+                <input type='text' class="form-control" id="clienteM" name='clienteM'-->
+            <!--/div>
+            <div class="form-group">
+                <label for="maq">Máquina</label>
+                <select class="form-control" id="maq" name='maq'>
+                         <option>Seleccionar...</option>
+                  <?php 
+                    //foreach ($this->tiposMaq as $key =>$option) {
+                      //echo " <option>".$key."</option>";
+                   // }
+
+
+
+                  ?>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-default">Guardar</button>
+        </form-->
+
+    </div>
+</div>
+
+
+</div>
+<br/>
+<br/>
+
+<ul class="nav nav-tabs class-clear">
+    <li class="active" ><a data-toggle="tab" href="#home" id='menuContacto'>Contactos</a></li>
+    <li ><a data-toggle="tab" href="#menu1" id='menuDir'>Direcciones</a></li>
+    <li ><a data-toggle="tab" href="#menu2" id='clickM'>Máquinas</a></li>
+</ul>
+
+<div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+        <div class="col-md-12"><br>
+           <button type="button" class="btn btn-success" id="btnNuevoContacto">+</button>
+        <table id="gridContactos"></table>
+            <div id="pgridContactos"></div>
+        </div>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+        <div class="col-md-12"><br>
+             <button type="button" class="btn btn-success" id="btnNuevoDireccion">+</button>
+
+            <table id="gridDirecciones"></table>
+            <div id="pgridDirecciones"></div>
+        </div>
+    </div>
+    <div id="menu2" class="tab-pane fade">
+         <div class="col-md-12"><br>
+         <button type="button" class="btn btn-success" id="btnNuevoMaquina">+</button>
+            <table id="gridMaquinas"></table>
+            <div id="pgridMaquinas"></div>
+        </div>
+    </div>
+</div>

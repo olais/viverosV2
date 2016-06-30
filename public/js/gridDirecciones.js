@@ -19,7 +19,7 @@ $("#gridDirecciones").jqGrid({
       {name:'Nota',index:'Nota', width:170, sortable:false,editable:true}
 
     ],
-    rowNum:20,
+    rowNum:1000,
     rowList:[10,20,30,40,50],
     pager: '#pgridDirecciones',
     sortname: 'Id_direccion',
