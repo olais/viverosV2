@@ -9,15 +9,17 @@
     {
         $("#clientesG input").attr("disabled", false);
         $("#clientesG select").attr("disabled", false);
+        $("#dialog-clientes").hide();
     });
 </script>
-<div id='formClientes'>
+<div id="dialog-clientes" title="Nuevo Cliente">
+
     <form  name="clientesG" id="clientesG" class="form-inline" method="POST">
-        <div class="cos-sm-12">
+        <!--div class="cos-sm-12">
             <div class="titulo_form">
                 <h3>Cliente</h3>
             </div>
-        </div>
+        </div-->
         <div class="col-sm-12 contenido_from">
             <div class="form-group col-sm-6">
                 <div class="col-sm-6">
@@ -72,5 +74,6 @@
 </div>
 <br/>
 <!-- grid de clientes -->
+<button type="button" class="btn btn-success" id="btnNuevoCliente">+</button>
 <table id="gridClientes"></table>
 <div id="pgridClientes"></div>
