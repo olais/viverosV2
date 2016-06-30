@@ -191,7 +191,30 @@ comprobarContactos= sessionStorage.getItem("comprobarContactos");
     $("#formMaquinas").hide();
   });
 
+  $("#btnNuevoCliente").click(function(){
+      /* $("#formDirecciones").show();
+         $("#contactosD input").attr("disabled", false);
+      $("#contactosD select").attr("disabled", false);*/
+       $( "#dialog-clientes" ).dialog({
+                      modal: true,
+                      width: '1200',
+                      buttons: {
+                        Guardar: function() {
+                     //$("#btnEditarDireccion").trigger("click");
+                    $("#gCliente").trigger("click");
 
+                     // $( this ).dialog( "close" );
+                     },
+                       Cancelar: function() {
+                       
+                          $("#gridClientes").trigger("reloadGrid");
+                       //window.location="editar?id="+sessionStorage.getItem("id");
+                          $( this ).dialog( "close" );
+                      }
+                }
+              });
+
+   });
  
 
 

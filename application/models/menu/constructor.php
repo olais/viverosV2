@@ -54,22 +54,22 @@ class Application_Model_Menu_Constructor {
                                 <a class='dropdown-toggle' data-toggle='dropdown' href='#'>Produccion<span class='caret'></span></a>
                                  <ul class='dropdown-menu'>";
         if($diseno==1){
-            $this->produccion.=" <li><a href='".$this->baseUrl."/consultas'>Diseño</a></li>";
+            $this->produccion.=" <li><a href='".$this->baseUrl."/produccion/diseno'>Diseño</a></li>";
         }
         if($corte==1){
-            $this->produccion.=" <li><a href='".$this->baseUrl."/consultas'>Corte</a></li>";
+            $this->produccion.=" <li><a href='".$this->baseUrl."/produccion/corte'>Corte</a></li>";
         }
         if($doblado==1){
-            $this->produccion.=" <li><a href='".$this->baseUrl."/consultas'>Doblado</a></li>";
+            $this->produccion.=" <li><a href='".$this->baseUrl."/produccion/doblado'>Doblado</a></li>";
         }
         if($armado==1){
-            $this->produccion.=" <li><a href='".$this->baseUrl."/consultas'>Armado</a></li>";
+            $this->produccion.=" <li><a href='".$this->baseUrl."/produccion/armado'>Armado</a></li>";
         }
         if($aulado==1){
-            $this->produccion.=" <li><a href='".$this->baseUrl."/consultas'>Aulado</a></li>";
+            $this->produccion.=" <li><a href='".$this->baseUrl."/produccion/anulado'>Aulado</a></li>";
         }      
         if($router==1){
-            $this->produccion.=" <li><a href='".$this->baseUrl."/consultas'>Router</a></li>"; 
+            $this->produccion.=" <li><a href='".$this->baseUrl."/produccion/router'>Router</a></li>"; 
         }
                                             
             $this->produccion.="<!--li><a href='".$this->baseUrl."/maquinas'>Maquinas</a></li--></ul>  </li> "; 

@@ -1,0 +1,13 @@
+SELECT
+usuarios.Id_usuario,
+usuarios.Descripcion,
+usuarios.Usuario,
+usuarios.`Password`,
+usuarios.Id_tipousuario,
+usuarios.Id_estatus,
+tipos_estatus.Descripcion AS estatus,
+tipos_usuarios.Descripcion as tipousuario
+FROM
+usuarios
+INNER JOIN tipos_estatus ON usuarios.Id_estatus = tipos_estatus.Id_estatus
+INNER JOIN tipos_usuarios ON usuarios.Id_tipousuario = tipos_usuarios.Id_tipousuario 
