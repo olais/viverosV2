@@ -60,67 +60,67 @@ $("#gridMaquinas").jqGrid({
       $("#idM").val(Id_MaquinaC);
       $("#descripcionM").val(Descripcion);
   
-      if(PerfEnPegue=="SI"){
+      if(PerfEnPegue=="si"){
         $("#PerfEnPegueS").attr('checked', 'checked');
       }
-      if(PerfEnPegue=="NO"){
+      if(PerfEnPegue=="no"){
         $("#PerfEnPegueN").attr('checked', 'checked');
       }
 
       $("#DescPerfEnPegue").val(DescPerfEnPegue);
 
-      if(Rama=="SI"){
+      if(Rama=="si"){
           $("#ramaS").attr('checked', 'checked');
 
       }
-      if(Rama=="NO"){
+      if(Rama=="no"){
           $("#ramaN").attr('checked', 'checked');
 
       }
       $("#MedidaRama").val(MedidaRama);
-      if(Pinza=="SI"){
+      if(Pinza=="si"){
 
          $("#pinzaS").attr('checked', 'checked');
       }
-      if(Pinza=="NO"){
+      if(Pinza=="no"){
 
          $("#pinzaN").attr('checked', 'checked');
       }
       $("#MedidaPinza").val(MedidaPinza);
 
-      if(Perforaciones=="SI"){
+      if(Perforaciones=="si"){
 
          $("#perforacionesS").attr('checked', 'checked');
         
       }
-      if(Perforaciones=="NO"){
+      if(Perforaciones=="no"){
         
          $("#perforacionesN").attr('checked', 'checked');
         
       }
-      if(Centerline=="SI"){
+      if(Centerline=="si"){
          $("#centerlineS").attr('checked', 'checked');
 
       }
-      if(Centerline=="NO"){
+      if(Centerline=="no"){
          $("#centerlineN").attr('checked', 'checked');
 
       }
       $("#MedidaCenterline").val(MedidaCenterline);
 
-      if(Desbarbe=="SI"){
+      if(Desbarbe=="si"){
          $("#desbardeS").attr('checked', 'checked');
 
       }
-       if(Desbarbe=="NO"){
+       if(Desbarbe=="no"){
          $("#desbardeN").attr('checked', 'checked');
         
       }
-      if(Compensacion=="SI"){
+      if(Compensacion=="si"){
          $("#compensacionS").attr('checked', 'checked');
 
       }
-       if(Compensacion=="NO"){
+       if(Compensacion=="no"){
          $("#compensacionN").attr('checked', 'checked');
 
       }
@@ -130,8 +130,8 @@ $("#gridMaquinas").jqGrid({
               $("#btnEditarMaquina").show();
               $("#btnNuevoMaquina").show();
                $("#btnNuevoMaquina").trigger("click")
-               $("#formMaquinas input").attr("disabled", true);
-              $("#formMaquinas select").attr("disabled", true);
+               $("#clienteMaquina input").attr("disabled", true);
+               $("#clienteMaquina select").attr("disabled", true);
               $("#identificadorMaquinas").val(1);
             //sessionStorage.setItem("botonForm",'guardaMaquina');
           },
@@ -143,16 +143,17 @@ $("#gridMaquinas").jqGrid({
   $(".ui-search-oper").hide();
   $(".clearsearchclass").hide();
   $("#gs_Id_MaquinaC").hide();
-
     $("#btnNuevoMaquina").click(function(){
        $("#formMaquinas").show();
+       $("#clienteMaquina input").attr("disabled", false);
+       $("#clienteMaquina select").attr("disabled", false);
        $( "#dialog-maquinas" ).dialog({
                       modal: true,
                       width: '1200',
                       buttons: {
                         Guardar: function() {
-                          alert("hola");
-                      //$("#guardaMaquina").trigger("click");
+                          
+                      $("#guardaMaquina").trigger("click");
                      // $("#guardaDir").trigger("click");
                      // $( this ).dialog( "close" );
                      },
@@ -161,8 +162,8 @@ $("#gridMaquinas").jqGrid({
                        $("#clienteMaquina input:radio").removeAttr("checked");
                       $("#cancelaClienteUno").trigger("click");
                       $("#gridMaquinas").trigger("reloadGrid");
-                      $("#formMaquinas input").attr("disabled", false);
-                      $("#formMaquinas select").attr("disabled", false);
+                      $("#clienteMaquina input").attr("disabled", false);
+                      $("#clienteMaquina select").attr("disabled", false);
                      $("#btnEditarMaquina").hide();
 
                           $( this ).dialog( "close" );

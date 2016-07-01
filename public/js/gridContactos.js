@@ -112,9 +112,9 @@ $("#gridContactos").jqGrid({
                 // $("#guardarConta").html("Actualizar");
                   $("#guardaCliente").html("Actualizar");
 
-                 $("#identificadorContactos").val(1);
+              $("#identificadorContactos").val(1);
                  //deshabilitar inputs para editar
-                  $("#btnEditarContacto").show();
+               $("#btnEditarContacto").show();
                $("#contactosG input").attr("disabled", true);
                $("#contactosG select").attr("disabled", true);
                 
@@ -130,11 +130,15 @@ $("#gridContactos").jqGrid({
    $(".clearsearchclass").hide();
    $("#gs_Id_contacto").hide();
 
-       $("#btnNuevoContacto").click(function(){
-       $("#fornuevocontacto").show();
-        $("#contactosG input").attr("disabled", false);
+      $("#btnNuevoContacto").click(function(){
+      $("#fornuevocontacto").show();
+
+      
+
+
+      $("#contactosG input").attr("disabled", false);
       $("#contactosG select").attr("disabled", false);
-       $( "#dialog-contacto" ).dialog({
+      $( "#dialog-contacto" ).dialog({
                       modal: true,
                       width: '1200',
                       buttons: {
@@ -155,12 +159,13 @@ $("#gridContactos").jqGrid({
 
    });
     $('#btnEditarContacto').click(function () { //para el modo edición
-  
+    
        $("#btnEditarContacto").removeClass("btn btn-primary");
     if ($('#contactosG input').attr('disabled')) {
         $("#btnEditarContacto").addClass("btn btn-default");
       $("#contactosG input").attr("disabled", false);
       $("#contactosG select").attr("disabled", false);
+     
       $("#nota").attr("disabled", false);
     } else {
         $("#btnEditarContacto").addClass("btn btn-primary");
