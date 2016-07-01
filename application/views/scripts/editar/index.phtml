@@ -261,11 +261,12 @@ $("#registraUsuarios select").attr("disabled", true);*/
 </div>
 <div id="dialog-maquinas" title="Nueva Máquina :: <?php echo @$this->clientes[0]['Nombre'];?>">
     <div id='formMaquinas'>
-      <ul class="checkbox-group" id="btnEditarMaquina">
-                <li value="off"><span class="glyphicon glyphicon-pencil"></span>Editar</li>
-             </ul>
+     <button type="button" id="btnEditarMaquina" class='btn btn-primary'><span class="glyphicon glyphicon-pencil"></span>Editar</button>
+     
             <form  name="clienteMaquina" id="clienteMaquina" method="POST" class="form-inline">
             <input type="hidden" name="idM" id='idM'/>
+            <input type="hidden" name="idCM" id='idCM'/>
+            
             <input type="hidden" id='identificadorMaquinas'/>
             <div class="form-group col-sm-3">
                 <label class="control-label" for="descM">Descripcion</label>
