@@ -214,8 +214,8 @@ input[type=text], input[type=password], input[type=email], input[type=nombre], i
     clear: left;
     padding: 40px 0;
 }
-#btnEditarDireccion,#btnEditarContacto,#btnEditarMaquina,#btnEditarUsuario{
-
+#btnEditarDireccion,#btnEditarContacto,#btnEditarMaquina,#btnEditarUsuario
+{
     float:right !important;
     margin-top: -30px;
 }
@@ -266,12 +266,12 @@ input[type=text], input[type=password], input[type=email], input[type=nombre], i
     background: -o-linear-gradient(top, #8A92AA, #A1A7BC) !important; 
 }
  
- #op table
+table
 {
     padding: 0;
 }
 
-#op table th
+table th
 {
     border: 1px solido #878787;
     border-radius: 10px 10px 0px 0px;
@@ -280,7 +280,7 @@ input[type=text], input[type=password], input[type=email], input[type=nombre], i
     color: white;
 }
 
-#op table tbody
+table tbody
 {
     background-color: white;
 }
@@ -288,6 +288,17 @@ input[type=text], input[type=password], input[type=email], input[type=nombre], i
 .td_right
 {
     text-align: right;
+}
+
+td
+{
+    -ms-display: flex;
+    display: flex;
+    /* alineacion vertical */
+    align-items: center;
+    /* alineacion horizontal */
+    justify-content: center;
+    vertical-align: middle;
 }
 
 .td_center
@@ -310,7 +321,7 @@ input[type=text], input[type=password], input[type=email], input[type=nombre], i
     -moz-outline-radius: 3px !important;
 }
 
-#op table select
+table select
 {
     width: 100% !important;
 }

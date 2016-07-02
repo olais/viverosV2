@@ -70,6 +70,48 @@ $("#registraUsuarios select").attr("disabled", true);*/
 });
 </script>
 <div class="col-xs-12">
+    <!--Clientes-->
+    <form  name="clientesG" id="clientesG" class="form-inline" method="POST">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th colspan="8">Cliente</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Id Cliente:</td>
+                    <td>
+                        <input id="id_cliente" class="form-control op_input" name="id_cliente" type="number" value="<?php echo @$this->clientes[0]['Id_cliente']?>" required>
+                    </td>
+                    <td class="td_right">Tipo Cliente:</td>
+                    <td>
+                        <select id="tipo" class="form-control" name="tipo" required>
+                            <option>Seleccionar...</option>
+                            <option value="10" <?php echo $selected=(@$this->clientes[0]['Id_tipocliente']==10)? 'selected':''; ?>>Crédito</option>
+                            <option value="11" <?php echo $selected=(@$this->clientes[0]['Id_tipocliente']==11)? 'selected':''; ?>>Contado</option>
+                            <option value="12" <?php echo $selected=(@$this->clientes[0]['Id_tipocliente']==12)? 'selected':''; ?>>Suspendido</option>
+                        </select>
+                    </td>
+                    <td class="td_right">Nombre:</td>
+                    <td>
+                        <input id="nombre" class="form-control op_input" name="nombre" type="text" value="<?php echo @$this->clientes[0]['Nombre'];?>" required>
+                    </td>
+                    <td class="td_right">Estatus:</td>
+                    <td>
+                        <select id="tipo" class="form-control" name="tipo" required>
+                            <option>Seleccionar...</option>
+                            <option value="10" <?php echo $selected=(@$this->clientes[0]['Id_tipocliente']==10)? 'selected':''; ?>>Crédito</option>
+                            <option value="11" <?php echo $selected=(@$this->clientes[0]['Id_tipocliente']==11)? 'selected':''; ?>>Contado</option>
+                            <option value="12" <?php echo $selected=(@$this->clientes[0]['Id_tipocliente']==12)? 'selected':''; ?>>Suspendido</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    <!--Clientes-->
+    <!--
     <form  name="clientesG" id="clientesG" class="form-inline" method="POST">
         <div class="cos-sm-12">
             <div class="titulo_form">
@@ -122,10 +164,10 @@ $("#registraUsuarios select").attr("disabled", true);*/
                     <input id="fax" class="form-control" name="fax" type="text" value="<?php echo @$this->clientes[0]['Fax'];?>">
                 </div>
             </div>
-        </div>
+        </div>-->
         <!--button class="btn btn-primary" type="submit">Guardar Clientes</button>
         <button id="cancelaCliente" class="btn btn-primary">Cancelar</button-->
-    </form>
+    <!--</form>-->
 <div id="dialog-contacto" title="Nuevo Contacto :: <?php echo @$this->clientes[0]['Nombre'];?>">
     <div id="fornuevocontacto">
          <button type="button" id="btnEditarContacto" class='btn btn-primary'><span class="glyphicon glyphicon-pencil"></span>Editar</button>
