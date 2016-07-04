@@ -35,4 +35,16 @@ class ProduccionController extends Zend_Controller_Action
     public function routerAction(){
         
     }
+
+    public function llenardisenopAction(){
+        $this->_helper->layout->disableLayout();
+        $this->_helper->viewRenderer->setNoRender();
+
+       $proceso=new Application_Model_Produccion();
+       $datos=  $proceso->disenoProceso();
+       
+       
+       echo json_encode($datos);
+
+    }
 }
