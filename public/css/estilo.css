@@ -128,8 +128,8 @@ body
 
 #contenidobody
 {
-    margin-top: 150px;
-    padding-top: 10px;
+    margin-top: 100px;
+    padding-top: 20px;
     margin-bottom: 50px;
     height: 100%;
 }
@@ -214,8 +214,8 @@ input[type=text], input[type=password], input[type=email], input[type=nombre], i
     clear: left;
     padding: 40px 0;
 }
-#btnEditarDireccion,#btnEditarContacto,#btnEditarMaquina,#btnEditarUsuario{
-
+#btnEditarDireccion,#btnEditarContacto,#btnEditarMaquina,#btnEditarUsuario
+{
     float:right !important;
     margin-top: -30px;
 }
@@ -266,12 +266,12 @@ input[type=text], input[type=password], input[type=email], input[type=nombre], i
     background: -o-linear-gradient(top, #8A92AA, #A1A7BC) !important; 
 }
  
- #op table
+table
 {
     padding: 0;
 }
 
-#op table th
+table th
 {
     border: 1px solido #878787;
     border-radius: 10px 10px 0px 0px;
@@ -280,19 +280,24 @@ input[type=text], input[type=password], input[type=email], input[type=nombre], i
     color: white;
 }
 
-#op table tbody
+table tbody
 {
     background-color: white;
 }
 
 .td_right
 {
-    text-align: right;
+    text-align: right !important;
 }
 
 .td_center
 {
     text-align: center;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th
+{
+    vertical-align: middle; 
 }
 
 .textarea
@@ -310,12 +315,12 @@ input[type=text], input[type=password], input[type=email], input[type=nombre], i
     -moz-outline-radius: 3px !important;
 }
 
-#op table select
+table select
 {
     width: 100% !important;
 }
 
-.op_input
+table tr td input, .op_input
 {
     margin: 0 !important;
     padding: 0 !important;
@@ -361,9 +366,16 @@ input[type=text], input[type=password], input[type=email], input[type=nombre], i
 
 .ui-widget-header
 {
-    border: 1px solid #337ab7 !important;
-    background: #337ab7 !important;
+    border: 1px solid #878787 !important;
+    background: #878787 !important;
     color: #fff;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    border: 1px solid #E4E3E3 !important;
+    background: #E4E3E3 url("images/ui-bg_glass_80_d7ebf9_1x400.png") 50% 50% repeat-x !important;
+    font-weight: normal !important;
+    color: #000  !important;
 }
 
 #contactosG, #contactosD, #clienteMaquina

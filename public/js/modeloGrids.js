@@ -50,18 +50,30 @@ construccion(nombreGrid,caption,url,Campo1,Campo2,Campo3,Campo4,Campo5);
              valores = s.toString().split(",");
 
              //aquí va la lógica
-           
-  
-                 },         
+            
+
+              $( "#dialog-produccion-pendiente" ).dialog({
+                      modal: true,
+                      width: '1200',
+                      buttons: {
+                        Regresar: function() {
+                     
+                      $( this ).dialog( "close" );
+                        }
+                     }
+                 });
+              
+              $( "#dialog-produccion-pendiente" ).dialog("open");
+      },         
                  
    })//fin de estructura de grid
 
 }
 //diseño
-var objeto1 = new grid('#diseno','diseño en pendiente','ruta diseno','aaaaa','bbbb','ccccc','ddddd','Cantidad','eeee');
+var objeto1 = new grid('#diseno','diseño en pendiente','llenardisenop','NombreTrabajo','Tipo','Folio','FechaProceso','Cantidad','eeee');
 construccion(objeto1.nombreGrid,objeto1.caption,objeto1.url,objeto1.Campo1,objeto1.Campo2,objeto1.Campo3,objeto1.Campo4,objeto1.Campo5);
 
-var objeto2 = new grid('#disenoProceso','diseño en proceso','ruta diseno','aaaaa','bbbb','ccccc','ddddd','Cantidad','eeee');
+var objeto2 = new grid('#disenoProceso','diseño en proceso','llenardisenop','NombreTrabajo','Tipo','Folio','FechaProceso','Cantidad','eeee');
 construccion(objeto2.nombreGrid,objeto2.caption,objeto2.url,objeto2.Campo1,objeto2.Campo2,objeto2.Campo3,objeto2.Campo4,objeto2.Campo5);
 
 //corte
