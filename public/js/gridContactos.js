@@ -115,7 +115,7 @@ $("#gridContactos").jqGrid({
               $("#identificadorContactos").val(1);
                  //deshabilitar inputs para editar
                $("#btnEditarContacto").show();
-               $("#contactosG input").attr("disabled", true);
+               $("#contactosG  input").attr("disabled", true);
                $("#contactosG select").attr("disabled", true);
                 
               
