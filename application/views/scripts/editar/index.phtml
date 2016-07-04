@@ -70,6 +70,48 @@ $("#registraUsuarios select").attr("disabled", true);*/
 });
 </script>
 <div class="col-xs-12">
+    <!--Clientes-->
+    <form id="clientesG" class="form-inline" name="clientesG" method="POST">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th colspan="9">Cliente</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="td_right">Id Cliente:</td>
+                    <td>
+                        <input id="id_cliente" class="form-control op_input" name="id_cliente" type="number" value="<?php echo @$this->clientes[0]['Id_cliente']?>" required>
+                    </td>
+                    <td class="td_right">Tipo Cliente:</td>
+                    <td>
+                        <select id="tipo" class="form-control" name="tipo" required>
+                            <option>Seleccionar...</option>
+                            <option value="10" <?php echo $selected=(@$this->clientes[0]['Id_tipocliente']==10)? 'selected':''; ?>>Crédito</option>
+                            <option value="11" <?php echo $selected=(@$this->clientes[0]['Id_tipocliente']==11)? 'selected':''; ?>>Contado</option>
+                            <option value="12" <?php echo $selected=(@$this->clientes[0]['Id_tipocliente']==12)? 'selected':''; ?>>Suspendido</option>
+                        </select>
+                    </td>
+                    <td class="td_right">Nombre:</td>
+                    <td>
+                        <input id="nombre" class="form-control op_input" name="nombre" type="text" value="<?php echo @$this->clientes[0]['Nombre'];?>" required>
+                    </td>
+                    <td class="td_right">Estatus:</td>
+                    <td>
+                        <select id="estatus" class="form-control" name='estatus' required>
+                            <option>Seleccionar...</option>
+                            <option value='10' <?php echo $selected=(@$this->clientes[0]['Id_estatus']==10)? 'selected':''; ?>>ACTIVO</option>
+                        <option value="20" <?php echo $selected=(@$this->clientes[0]['Id_estatus']==20)? 'selected':''; ?>>INACTIVO</option>
+                        </select>
+                    </td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    <!--Clientes-->
+    <!--
     <form  name="clientesG" id="clientesG" class="form-inline" method="POST">
         <div class="cos-sm-12">
             <div class="titulo_form">
@@ -122,10 +164,11 @@ $("#registraUsuarios select").attr("disabled", true);*/
                     <input id="fax" class="form-control" name="fax" type="text" value="<?php echo @$this->clientes[0]['Fax'];?>">
                 </div>
             </div>
-        </div>
+        </div>-->
         <!--button class="btn btn-primary" type="submit">Guardar Clientes</button>
         <button id="cancelaCliente" class="btn btn-primary">Cancelar</button-->
-    </form>
+    <!--</form>-->
+<!--Dialogo Contacto-->
 <div id="dialog-contacto" title="Nuevo Contacto :: <?php echo @$this->clientes[0]['Nombre'];?>">
     <div id="fornuevocontacto">
          <button type="button" id="btnEditarContacto" class='btn btn-primary'><span class="glyphicon glyphicon-pencil"></span>Editar</button>
@@ -136,71 +179,117 @@ $("#registraUsuarios select").attr("disabled", true);*/
             <input type="hidden" name="idC" id='idC'/>
             <input type="hidden" id='identificadorContactos'/>
             <input type="hidden" name="idContacto" id="idContacto"/>
-            <div class="form-group col-sm-3">
-                <label class="control-label" for="tipC">Tipo Contacto:</label>
-                <select class="form-control" id="tipoContacto" name="tipoContacto">
-                    <option>Seleccionar...</option>
-                    <?php 
-                        foreach ($this->datos as $option)
-                        {
-                            echo " <option value='".$option['Id_tipocontacto']."'>".$option['Descripcion']."</option>";
-                        }
-                    ?>
-                </select>
-                <br/>
-                <label class="control-label" for="estatus">Estatus:</label>
-                <select class="form-control" id="estatusC" name="estatusC">
-                    <option>Seleccionar...</option>
-                    <option value='10'>ACTIVO</option>
-                    <option value="20">INACTIVO</option>
-                </select>
-            </div>
-            <div class="form-group col-sm-3">
-                <label class="control-label" for="nombre">Nombre</label>
-                <input type="text" class="form-control" id="nombreC" name="nombreC" required>
-                <br/>
-                <label class="control-label" for="apellidos">Apellidos</label>
-                <input type="text" class="form-control" id="apellidosC" name="apellidosC" required>
-                <br/>
-                <label class="control-label" for="fechaN">Fecha de Nacimiento</label>
-                <input type="date" class="form-control" id="fechaN" name="fechaN">
-            </div>
-            <div class="form-group col-sm-3">
-                <label class="control-label" for="puesto">Puesto</label>
-                <input type="text" class="form-control" id="puestoC" name="puestoC">
-                <br/>
-                <label class="control-label" for="correo">Correo</label>
-                <input type="text" class="form-control" id="correoC" name="correoC">
-                <br/>
-                <label class="control-label" for="syk">Skype</label>
-                <input type="text" class="form-control" id="sky" name="sky">
-                <br/>
-                <label class="control-label" for="face">Facebook</label>
-                <input type="text" class="form-control" id="face" name="face">
-                <br/>
-                <label class="control-label" for="tw">Twitter</label>
-                <input type="text" class="form-control" id="tw" name="tw">
-            </div>
-            <div class="form-group col-sm-3">
-                <label class="control-label" for="celular">Celular</label>
-                <input type="text" class="form-control" id="celular" name="celular">
-                <BR/>
-                <label class="control-label" for="tel1">Teléfono 1</label>
-                <input type="text" class="form-control" id="tel1C" name="tel1C">
-                <br/>
-                <label class="control-label" for="exten1">Extensión 1</label>
-                <input type="text" class="form-control" id="exten1" name="exten1">
-                <BR/>
-                <label class="control-label" for="tel2">Teléfono 2</label>
-                <input type="text" class="form-control" id="tel2C" name="tel2C">
-                <BR/>
-                <label class="control-label" for="exten2">Extensión 2</label>
-                <input type="text" class="form-control" id="exten2" name="exten2">
-            </div>
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="td_right">Estatus:</td>
+                        <td>
+                            <select class="form-control" id="estatusC" name="estatusC">
+                                <option>Seleccionar...</option>
+                                <option value='10'>ACTIVO</option>
+                                <option value="20">INACTIVO</option>
+                            </select>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="td_right">Nombre:</td>
+                        <td colspan="2">
+                            <input type="text" class="form-control op_input" id="nombreC" name="nombreC" required>
+                        </td>
+                        <td class="td_right">Apellidos:</td>
+                        <td colspan="2">
+                            <input type="text" class="form-control op_input" id="apellidosC" name="apellidosC" required>
+                        </td>
+                        <td class="td_right">Tipo Contacto:</td>
+                        <td>
+                            <select class="form-control" id="tipoContacto" name="tipoContacto">
+                                <option>Seleccionar...</option>
+                                <?php 
+                                    foreach ($this->datos as $option)
+                                    {
+                                        echo " <option value='".$option['Id_tipocontacto']."'>".$option['Descripcion']."</option>";
+                                    }
+                                ?>
+                            </select>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="td_right">Teléfono 1:</td>
+                        <td>
+                            <input type="text" class="form-control" id="tel1C" name="tel1C">
+                        </td>
+                        <td class="td_right">Extensión 1:</td>
+                        <td>
+                            <input type="text" class="form-control" id="exten1" name="exten1">
+                        </td>
+                        <td class="td_right">Teléfono 2:</td>
+                        <td>
+                            <input type="text" class="form-control" id="tel2C" name="tel2C">
+                        </td>
+                        <td class="td_right">Extensión 2:</td>
+                        <td>
+                            <input type="text" class="form-control" id="exten2" name="exten2">
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="td_right">Celular:</td>
+                        <td>
+                            <input type="text" class="form-control" id="celular" name="celular">
+                        </td>
+                        <td class="td_right">Correo:</td>
+                        <td colspan="2">
+                            <input type="text" class="form-control" id="correoC" name="correoC">
+                        </td>
+                        <td></td>
+                        <td class="td_right">Fecha de Nacimiento:</td>
+                        <td>
+                            <input type="date" class="form-control" id="fechaN" name="fechaN">
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="td_right">Puesto:</td>
+                        <td colspan="2">
+                            <input type="text" class="form-control" id="puestoC" name="puestoC">
+                        </td>
+                        <td class="td_right">Facebook:</td>
+                        <td colspan="2">
+                            <input type="text" class="form-control" id="face" name="face">
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="td_right">Skype:</td>
+                        <td colspan="2">
+                            <input type="text" class="form-control" id="sky" name="sky">
+                        </td>
+                        <td class="td_right">Twitter:</td>
+                        <td colspan="2">
+                            <input type="text" class="form-control" id="tw" name="tw">
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
             <button type="submit" class="btn btn-primary" id="guardarConta">Guardar Contactos</button>
         </form>
     </div>
-      </div>
+</div>
+<!--Dialogo Contacto-->
+<!--Dialogo Direcciones-->
 <div id="dialog-direcciones" title="Nueva Dirección :: <?php echo @$this->clientes[0]['Nombre'];?>">
     <div id="formDirecciones">
            <button type="button" id="btnEditarDireccion" class='btn btn-primary'><span class="glyphicon glyphicon-pencil"></span>Editar</button>
@@ -211,54 +300,82 @@ $("#registraUsuarios select").attr("disabled", true);*/
             <input type="hidden" name="idClienteDir" id='idClienteDir'></input>
             <input type="hidden" name="Id_direccion" id='Id_direccion'></input>
             <input type="hidden" id='identificadorDirecciones'>
-            <div class="form-group col-sm-3">
-                <label class="control-label" for="tipD">Tipo Dirección:</label>
-                <select class="form-control" id="tipoDireccion" name="tipoDireccion">
-                    <option>Seleccionar...</option>
-                        <?php 
-                            foreach ($this->tiposDir as $option)
-                            {
-                                echo " <option value='".$option['Id_tipodireccion']."'>".$option['Descripcion']."</option>";
-                            }
-                        ?>
-                </select>
-                <br/>
-                <label class="control-label" for="estatus">Estatus:</label>
-                <select class="form-control" id="estatusD" name="estatusD">
-                    <option>Seleccionar...</option>
-                    <option value='10'>ACTIVO</option>
-                    <option value="20">INACTIVO</option>
-                </select>
-            </div>
-            <div class="form-group col-sm-3">
-                <label class="control-label" for="calle">Calle</label>
-                <input type="text" class="form-control" id="calle" name="calle" required>
-                <br/>
-                <label class="control-label" for="colonia">Colonia</label>
-                <input type="text" class="form-control" id="colonia" name="colonia" required>
-            </div>
-            <div class="form-group col-sm-3">
-                <label class="control-label" for="ciudad">Ciudad</label>
-                <input type="text" class="form-control" id="ciudad" name="ciudad">
-                <br/>
-                <label class="control-label" for="muni">Municipio</label>
-                <input type="text" class="form-control" id="muni" name="muni">
-            </div>
-            <div class="form-group col-sm-3">
-                <label class="control-label" for="estado">Estado</label>
-                <input type="text" class="form-control" id="estado" name="estado">
-                <br/>
-                <label class="control-label" for="cp">CP</label>
-                <input type="text" class="form-control" id="cp" name="cp">
-            </div>
-            <div class="form-group col-sm-3">
-                <label class="control-label" for="nota">Nota:</label>
-                <textarea class="form-control" rows="5" id="nota" name="nota"></textarea>
-            </div>
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="td_right">Estatus:</td>
+                        <td>
+                            <select class="form-control" id="estatusD" name="estatusD">
+                                <option>Seleccionar...</option>
+                                <option value='10'>ACTIVO</option>
+                                <option value="20">INACTIVO</option>
+                            </select>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="td_right">Calle:</td>
+                        <td colspan="3">
+                            <input type="text" class="form-control" id="calle" name="calle" required>
+                        </td>
+                        <td class="td_right">Tipo Dirección:</td>
+                        <td>
+                            <select class="form-control" id="tipoDireccion" name="tipoDireccion">
+                                <option>Seleccionar...</option>
+                                    <?php 
+                                        foreach ($this->tiposDir as $option)
+                                        {
+                                            echo " <option value='".$option['Id_tipodireccion']."'>".$option['Descripcion']."</option>";
+                                        }
+                                    ?>
+                            </select>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="td_right">Colonia:</td>
+                        <td colspan="2">
+                            <input type="text" class="form-control" id="colonia" name="colonia" required>
+                        </td>
+                        <td class="td_right">Ciudad:</td>
+                        <td colspan="2">
+                            <input type="text" class="form-control" id="ciudad" name="ciudad">
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="td_right">Municipio:</td>
+                        <td colspan="2">
+                            <input type="text" class="form-control" id="muni" name="muni">
+                        </td>
+                        <td class="td_right">Estado:</td>
+                        <td colspan="2">
+                            <input type="text" class="form-control" id="estado" name="estado">
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="td_right">CP:</td>
+                        <td>
+                            <input type="text" class="form-control" id="cp" name="cp">
+                        </td>
+                        <td class="td_right">Nota:</td>
+                        <td colspan="3">
+                            <textarea class="form-control textarea" rows="1" id="nota" name="nota"></textarea>
+                        </td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
             <button type="submit" class="btn btn-primary" id="guardaDir">Guardar Dirección</button>
         </form>
     </div>
 </div>
+<!--Dialogo Direcciones-->
 <div id="dialog-maquinas" title="Nueva Máquina :: <?php echo @$this->clientes[0]['Nombre'];?>">
     <div id='formMaquinas'>
      <button type="button" id="btnEditarMaquina" class='btn btn-primary'><span class="glyphicon glyphicon-pencil"></span>Editar</button>
@@ -268,6 +385,7 @@ $("#registraUsuarios select").attr("disabled", true);*/
             <input type="hidden" name="idCM" id='idCM'/>
             
             <input type="hidden" id='identificadorMaquinas'/>
+            
             <div class="form-group col-sm-3">
                 <label class="control-label" for="descM">Descripcion</label>
                 <input type="text" class="form-control" id="descripcionM" name="descripcionM" required>
