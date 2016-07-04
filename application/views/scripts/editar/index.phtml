@@ -99,11 +99,10 @@ $("#registraUsuarios select").attr("disabled", true);*/
                     </td>
                     <td class="td_right">Estatus:</td>
                     <td>
-                        <select id="tipo" class="form-control" name="tipo" required>
+                        <select id="estatus" class="form-control" name='estatus' required>
                             <option>Seleccionar...</option>
-                            <option value="10" <?php echo $selected=(@$this->clientes[0]['Id_tipocliente']==10)? 'selected':''; ?>>Crédito</option>
-                            <option value="11" <?php echo $selected=(@$this->clientes[0]['Id_tipocliente']==11)? 'selected':''; ?>>Contado</option>
-                            <option value="12" <?php echo $selected=(@$this->clientes[0]['Id_tipocliente']==12)? 'selected':''; ?>>Suspendido</option>
+                            <option value='10' <?php echo $selected=(@$this->clientes[0]['Id_estatus']==10)? 'selected':''; ?>>ACTIVO</option>
+                        <option value="20" <?php echo $selected=(@$this->clientes[0]['Id_estatus']==20)? 'selected':''; ?>>INACTIVO</option>
                         </select>
                     </td>
                     <td></td>
