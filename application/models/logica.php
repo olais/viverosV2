@@ -16,6 +16,14 @@ class Application_Model_Logica extends Zend_Db_Table_Abstract
         $this->delete($where);
         
     }
+
+    function actualizarCliente($datos,$idCliente){
+
+        $where = "Id_cliente = $idCliente";
+        $this->update($datos, $where);
+
+    }
+
     function consultarID($id){
         
         $q = $this->select()->where('id = ?', $id);
