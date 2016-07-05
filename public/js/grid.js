@@ -14,6 +14,7 @@ $("#guardaMaquina").hide();
 $("#btnEditarDireccion").hide();
 $("#btnEditarContacto").hide();
 $("#btnEditarMaquina").hide();
+$("#actualizarClientes").hide();
 //$("#guardaCliente").hide();
 accionCambiosDir= sessionStorage.getItem("accionCambiosDir");
 if(accionCambiosDir==1){
@@ -215,7 +216,52 @@ comprobarContactos= sessionStorage.getItem("comprobarContactos");
               });
 
    });
+
  
+              
+ 
+    $("#btnEditarCliente").click(function(){
+       $( "#dialog-editarClientes" ).dialog({
+                      modal: true,
+                      width: '1200',
+                      buttons: {
+                        Regresar: function() {
+                          $("#clientesG input").attr("disabled", true);
+                          $("#clientesG select").attr("disabled", true);
+                     
+                      $( this ).dialog( "close" );
+                        },
+                        Actualizar: function() {
+                     
+                  datos=$("#clientesGAc").serialize();
+
+                    $.post("editar/actualizarclientes",datos,
+                      function(data){
+                       $("#gridClientes").trigger("reloadGrid");
+                       id=sessionStorage.getItem("id_cliente");
+                       window.location="editar?id="+id;
+                      },'json'
+
+                      );
+                      return false;
+                     // $( this ).dialog( "close" );
+                        }
+                     },
+
+                 });
+      $("#clientesG input").attr("disabled", false);
+      $("#clientesG select").attr("disabled", false);
+      $( "#dialog-editarClientes" ).dialog("open");
+
+
+    });
+
+    $("#regresarClientes").click(function(){
+
+       window.location="consultas";
+
+    });
+    
 
 
 })

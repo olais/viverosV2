@@ -4,8 +4,11 @@ $(document).ready(function(){
      	 $("#idC").val(idCliente);
            $("#idCM").val(idCliente);
      	 $("#idClienteDir").val(idCliente);
+
+
 		$("#clientesG").submit(function(){
 			var clientes=$(this).serialize();
+    
 			$.post("editar/guardarcliente",clientes,
 				function(data){
 					 
@@ -23,8 +26,8 @@ $(document).ready(function(){
 			return false;
 
 		});
-			
-		  
+
+    
 
 	
 		

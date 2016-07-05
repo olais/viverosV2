@@ -105,7 +105,7 @@ $("#registraUsuarios select").attr("disabled", true);*/
                         <option value="20" <?php echo $selected=(@$this->clientes[0]['Id_estatus']==20)? 'selected':''; ?>>INACTIVO</option>
                         </select>
                     </td>
-                    <td></td>
+                    <td> <button type="button" id="btnEditarCliente" class='btn btn-primary'><span class="glyphicon glyphicon-pencil"></span>Editar</button></td>
                 </tr>
             </tbody>
         </table>
@@ -467,13 +467,13 @@ $("#registraUsuarios select").attr("disabled", true);*/
 </div>
 <br/>
 <br/>
-
+<button type="button" class="btn btn-info" id="regresarClientes" style="float:right !important;margin-right: 18px;">Regresar</button>
 <ul class="nav nav-tabs class-clear">
     <li class="active" ><a data-toggle="tab" href="#home" id='menuContacto'>Contactos</a></li>
     <li ><a data-toggle="tab" href="#menu1" id='menuDir'>Direcciones</a></li>
     <li ><a data-toggle="tab" href="#menu2" id='clickM'>Máquinas</a></li>
 </ul>
-
+ 
 <div class="tab-content">
     <div id="home" class="tab-pane fade in active">
         <div class="col-md-12"><br>
@@ -497,4 +497,65 @@ $("#registraUsuarios select").attr("disabled", true);*/
             <div id="pgridMaquinas"></div>
         </div>
     </div>
+
+    <div id="dialog-editarClientes" title="Actualizar Cliente :: <?php echo $this->clientes[0]['Nombre'];?>">
+         <form  name="clientesGAc" id="clientesGAc" class="form-inline" method="POST">
+       <input type="hidden" name="idCliente" id="idCliente" value="<?php echo $this->clientes[0]['Id_cliente']?>">
+        <div class="col-sm-12 contenido_from">
+            <div class="form-group col-sm-6">
+                <div class="col-sm-6">
+                    <label class="control-label" for="tip">Tipo Cliente:</label>
+                    <select id="tipo" class="form-control" name="tipo" required>
+                        <option>Seleccionar...</option>
+                         <option value="10" <?php echo $selected=(@$this->clientes[0]['Id_tipocliente']==10)? 'selected':''; ?>>Crédito</option>
+                        <option value="11" <?php echo $selected=(@$this->clientes[0]['Id_tipocliente']==11)? 'selected':''; ?>>Contado</option>
+                         <option value="12" <?php echo $selected=(@$this->clientes[0]['Id_tipocliente']==12)? 'selected':''; ?>>Suspendido</option>
+                    </select>
+                    <br/>
+                    <label class="control-label" for="estatus">Estatus:</label>
+                    <select id="estatus" class="form-control" name="estatus" required>
+                        <option>Seleccionar...</option>
+                        <option value='10' <?php echo $selected=(@$this->clientes[0]['Id_estatus']==10)? 'selected':''; ?>>ACTIVO</option>
+                        <option value="20" <?php echo $selected=(@$this->clientes[0]['Id_estatus']==20)? 'selected':''; ?>>INACTIVO</option>
+                    </select>
+                </div>
+                <div class="col-sm-6">
+                    <label class="control-label" for="nombre">Nombre</label>
+                    <input id="nombre" class="form-control" name="nombre" type="nombre" value="<?php echo @$this->clientes[0]['Nombre'];?>" required>
+                    <br/>
+                    <label class="control-label" for="correo">Correo</label>
+                    <input id="correo" class="form-control" name="correo" type="email" value="<?php echo @$this->clientes[0]['Correo'];?>">
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <div class="col-sm-6">
+                    <label class="control-label" for="rfc">RFC</label>
+                    <input id="rfc" class="form-control" name="rfc" type="text" value="<?php echo @$this->clientes[0]['RFC'];?>" required>
+                    <br/>
+                    <label class="control-label" for="web">Web</label>
+                    <input id="web" class="form-control" name="web" type="text" value="<?php echo @$this->clientes[0]['Web'];?>">
+            </div>
+            <div class="form-group col-sm-3">
+                <div class="col-sm-6">
+                    <label class="control-label" for="tel1">Teléfono 1</label>
+                    <input id="tel1" class="form-control" name="tel1" type="text" value="<?php echo @$this->clientes[0]['Telefono1'];?>">
+                    <br/>
+                    <label class="control-label" for="tel2">Teléfono 2</label>
+                    <input id="tel2" class="form-control" name="tel2" type="text" value="<?php echo @$this->clientes[0]['Telefono2'];?>">
+                    <br/>
+                    <label class="control-label" for="fax">Fax</label>
+                    <input id="fax" class="form-control" name="fax" type="text" value="<?php echo @$this->clientes[0]['Fax'];?>">
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit" id="actualizarClientes">Actualizar Clientes</button>
+       
+        </form>
+
+
+
+
+
+    </div>
 </div>
+
