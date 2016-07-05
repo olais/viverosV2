@@ -134,7 +134,7 @@ body
     height: 100%;
 }
 
-#contenidobody, .contenidodelbody, input, select, .contenidodelbody li 
+#contenidobody, .contenidodelbody, input, select, .contenidodelbody li, .ui-dialog-content, .ui-widget-content, .ui-dialog-title
 {
     font-family: Arial !important;
     font-size: 10.5px !important;
