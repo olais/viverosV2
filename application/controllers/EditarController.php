@@ -98,7 +98,8 @@ class EditarController extends Zend_Controller_Action
         "Telefono2"=>$tel2,
         "Fax"=>$fax,
         "Correo"=>$correo,
-        "Web"=>$web
+        "Web"=>$web,
+        "ContactoPri"=>''
 
         );
 
@@ -365,6 +366,49 @@ class EditarController extends Zend_Controller_Action
            echo json_encode($response);
 
    }
+   public function actualizarclientesAction(){
+      $this->_helper->layout->disableLayout();
+      $this->_helper->viewRenderer->setNoRender();
+      $tipo=$_REQUEST['tipo'];
+      $estatus=$_REQUEST['estatus'];
+      $nombre=$_REQUEST['nombre'];
+      $rfc=$_REQUEST['rfc'];
+      $tel1=$_REQUEST['tel1'];
+      $tel2=$_REQUEST['tel2'];
+      $fax=$_REQUEST['fax'];
+      $correo=$_REQUEST['correo'];
+      $web=$_REQUEST['web'];
+
+      $id_cliente=$_REQUEST['idCliente'];
+
+      $datos=array(
+        
+        "Id_tipoCliente"=>$tipo,
+        "Id_estatus"=>$estatus,
+        "Nombre"=>$nombre,
+        "RFC"=>$rfc,
+        "Telefono1"=>$tel1,
+        "Telefono2"=>$tel2,
+        "Fax"=>$fax,
+        "Correo"=>$correo,
+        "Web"=>$web,
+        "ContactoPri"=>''
+
+        );
+
+      $con=new Application_Model_Logica();
+      $datos=  $con->actualizarCliente($datos,$id_cliente);
+      $response=new stdClass();
+      $response->id=$datos;
+
+      echo json_encode($response);
+
+
+
+
+   }
+
+
 
 
 
