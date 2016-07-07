@@ -28,8 +28,8 @@ class IndexController extends Zend_Controller_Action
         
         $this->_helper->layout->disableLayout();
         $this->_helper->viewRenderer->setNoRender();
-        $_search=$_REQUEST['_search'];
-        if($_search=="true"){
+        @$_search=$_REQUEST['_search'];
+        if(@$_search=="true"){
  
          $estatus=(isset($_REQUEST['estatus']))? $_REQUEST['estatus'] : '';
          $nombre=(isset($_REQUEST['Nombre']))? $_REQUEST['Nombre'] : '';

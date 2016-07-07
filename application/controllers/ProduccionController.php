@@ -17,6 +17,32 @@ class ProduccionController extends Zend_Controller_Action
      
 
     }
+
+    public function consultaclienteopAction(){
+        $this->_helper->layout->disableLayout();
+        $this->_helper->viewRenderer->setNoRender();
+        $proceso=new Application_Model_Produccion();
+        return  $datos=  $proceso->consultarClienteOP();
+    
+    }
+     public function consultamaquinasopAction(){
+        $this->_helper->layout->disableLayout();
+        $this->_helper->viewRenderer->setNoRender();
+        $idCliente=$_REQUEST['idCliente'];
+        $proceso=new Application_Model_Produccion();
+        return  $datos=  $proceso->consultarMaquinaOP($idCliente);
+    
+    }
+    public function consultaradiosopAction(){
+        $this->_helper->layout->disableLayout();
+        $this->_helper->viewRenderer->setNoRender();
+        $idMaquina=$_REQUEST['idMaquina'];
+        $proceso=new Application_Model_Produccion();
+        return  $datos=  $proceso->consultarRadiosMaquinaOP($idMaquina);
+    
+    }
+
+
     public function disenoAction(){
         
     }
