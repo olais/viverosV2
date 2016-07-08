@@ -308,8 +308,8 @@ class EditarController extends Zend_Controller_Action
                 'Id_MaquinaC'=>'',
                 'Id_Cliente'=>$_REQUEST['idCM'],
                 'Descripcion'=>$_REQUEST['descripcionM'],
-                'PerfEnPegue'=>$_REQUEST['PerfEnPegue'],
-                'DescPerfEnPegue'=>$_REQUEST['DescPerfEnPegue'],
+                /*'PerfEnPegue'=>$_REQUEST['PerfEnPegue'],
+                'DescPerfEnPegue'=>$_REQUEST['DescPerfEnPegue'],*/
                 'Rama'=>$_REQUEST['rama'],
                 'MedidaRama'=>$_REQUEST['MedidaRama'],
                 'Pinza'=>$_REQUEST['pinza'],
@@ -320,7 +320,8 @@ class EditarController extends Zend_Controller_Action
                 'MedidaCenterline'=>$_REQUEST['MedidaCenterline'],
                 'Desbarbe'=>$_REQUEST['desbarde'],
                 'Compensacion'=>$_REQUEST['compensacion'],
-                'NumPiezasCompensacion'=>$_REQUEST['NumPiezasCompensacion']
+                 'Madera'=>'',
+                 'Id_estatus'=>'' 
 
                 );
 
@@ -342,8 +343,8 @@ class EditarController extends Zend_Controller_Action
                $maquinas=array(
                
                 'Descripcion'=>$_REQUEST['descripcionM'],
-                'PerfEnPegue'=>$_REQUEST['PerfEnPegue'],
-                'DescPerfEnPegue'=>$_REQUEST['DescPerfEnPegue'],
+               /* 'PerfEnPegue'=>$_REQUEST['PerfEnPegue'],
+                'DescPerfEnPegue'=>$_REQUEST['DescPerfEnPegue'],*/
                 'Rama'=>$_REQUEST['rama'],
                 'MedidaRama'=>$_REQUEST['MedidaRama'],
                 'Pinza'=>$_REQUEST['pinza'],
@@ -354,7 +355,8 @@ class EditarController extends Zend_Controller_Action
                 'MedidaCenterline'=>$_REQUEST['MedidaCenterline'],
                 'Desbarbe'=>$_REQUEST['desbarde'],
                 'Compensacion'=>$_REQUEST['compensacion'],
-                'NumPiezasCompensacion'=>$_REQUEST['NumPiezasCompensacion']
+                'Madera'=>'',
+                'Id_estatus'=>''
 
                 );
 

@@ -497,8 +497,7 @@ $("#registraUsuarios select").attr("disabled", true);*/
             <div id="pgridMaquinas"></div>
         </div>
     </div>
-
-    <div id="dialog-editarClientes" title="Actualizar Cliente :: <?php echo $this->clientes[0]['Nombre'];?>">
+<div id="dialog-editarClientes" title="Actualizar Cliente :: <?php echo $this->clientes[0]['Nombre'];?>" style='display: none;'>
          <form  name="clientesGAc" id="clientesGAc" class="form-inline" method="POST">
        <input type="hidden" name="idCliente" id="idCliente" value="<?php echo $this->clientes[0]['Id_cliente']?>">
         <div class="col-sm-12 contenido_from">
