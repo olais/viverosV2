@@ -223,6 +223,7 @@ comprobarContactos= sessionStorage.getItem("comprobarContactos");
     $("#btnEditarCliente").click(function(){
        $( "#dialog-editarClientes" ).dialog({
                       modal: true,
+                     
                       width: '1200',
                       buttons: {
                         Regresar: function() {
