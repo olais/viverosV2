@@ -14,7 +14,7 @@ $("#gridUsuarios").jqGrid({
       {name:'Usuario',index:'Usuario', width:55,editable:true},
       {name:'Password',index:'Password', width:50,hidden:true},
       {name:'Id_tipousuario',index:'Id_tipousuario', width:10,hidden:true},
-      {name:'tipousuario',index:'tipousuario', width:55,editable:true},
+      {name:'Tipousuario',index:'Tipousuario', width:55,editable:true},
       {name:'estatus',index:'estatus', width:50},
       {name:'Id_estatus',index:'Id_estatus', width:50,hidden:true}   
    
