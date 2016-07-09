@@ -52,12 +52,13 @@
     <!--Cliente-->
     <!--Indicaciones elaboracios suajes-->
     <table class="table table-striped">
+        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">collapsible</button>
         <thead>
             <tr>
                 <th colspan="7">INDICACIONES ELABORACION SUAJE</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="demo" class="collapse in">
             <tr>
                 <td class="td_right">Máquina:</td>
                 <td>
@@ -227,7 +228,7 @@
             </tr>
         </tbody>
     </table>
-    <div class="col-xs-12 observaciones">Observaciones: <textarea id="observaciones_1" class="form-control textarea" name="observaciones_1" rows="1"></textarea></div>
+    <div id="demo" class="collapse in col-xs-12 observaciones">Observaciones: <textarea id="observaciones_1" class="form-control textarea" name="observaciones_1" rows="1"></textarea></div>
     <!--Indicaciones elaboracios suajes-->
     <!--Indicaciones elaboracion de trablas limpiadoras-->
     <table class="table table-striped">
