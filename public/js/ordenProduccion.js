@@ -4,6 +4,18 @@ $(document).ready(function()
     {
         $(location).attr('href',"registros");
     });
+    
+    $("#btn_collapse_in").click(function()
+    {
+        $("#btn_collapse_in").addClass("display_none");
+        $("#btn_collapse").removeClass("display_none");
+    });
+    
+    $("#btn_collapse").click(function()
+    {
+        $("#btn_collapse_in").removeClass("display_none");
+        $("#btn_collapse").addClass("display_none");
+    });
 		//llenar combo clientes
 		$.post("../produccion/consultaclienteop", 
 				function(data){

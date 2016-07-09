@@ -16,6 +16,16 @@ header
     z-index: 99;
 }
 
+.display_none
+{
+    display: none;
+}
+
+.btn_collapse_img
+{
+    width: 10px;
+}
+
 #headbody
 {
     top:100px;
