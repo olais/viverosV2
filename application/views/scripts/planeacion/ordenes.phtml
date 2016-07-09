@@ -3,6 +3,12 @@
     <table class="table table-striped">
         <tbody>
             <tr>
+                <td class="td_right" colspan="6">
+                    <button type="button" class="btn btn-sm btn-success" id="btnRegresarOrdenes">Regresar</button>
+                    <button type="button" class="btn btn-sm btn-success" id="btnLiberarOrdenes">Liberar</button>
+                </td>
+            </tr>
+            <tr>
                 <td class="td_right">Cliente:</td>
                 <td>
                     <select id="op_suajes_cliente" class="form-control" name="op_suajes_cliente">
@@ -13,6 +19,14 @@
                 <td><input id="op_suajes_fecha" class="form-control op_input" type="text"/></td>
                 <td class="td_right">OP:</td>
                 <td><input id="op_suajes_op" class="form-control op_input" type="text"/></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td class="td_right">Fecha entrega</td>
+                <td><input id="op_fecha_entrega" class="form-control op_input" type="text"/></td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td class="td_right">Elaboración de:</td>
@@ -33,7 +47,6 @@
                 <td class="td_right">Nombre suaje:</td>
                 <td colspan="5"><input id="op_suajes_nom_suaje" class="form-control op_input" type="text"/></td>
             </tr>
-            <tr><td></td><td></td><td></td><td></td><td> <button type="button" class="btn btn-success" id="btnRegresarOrdenes">Regresar</button></td><td><button type="button" class="btn btn-success" id="btnLiberarOrdenes">Liberar</button></td></tr>
         </tbody>
     </table>
     <!--Cliente-->
@@ -422,8 +435,8 @@
             <tr>
                 <td class="td_right">Supervisó</td>
                 <td><input id="op_superviso" class="form-control op_input" type="text"/></td>
-                <td class="td_right">Fecha entrega</td>
-                <td><input id="op_fecha_entrega" class="form-control op_input" type="text"/></td>
+                <td></td>
+                <td></td>
                 <td colspan="2"></td>
             </tr>
             <tr>
