@@ -32,7 +32,7 @@ construccion(nombreGrid,caption,url,Campo1,Campo2,Campo3,Campo4,Campo5);
                                 
                 ],
     
-                   rowNum:500,
+                   rowNum:1,
                    rowList:[10,20,30,1000],
                    pager:nombreGrid+"p",
                    sortname: Campo1,
