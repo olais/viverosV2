@@ -185,6 +185,8 @@ $('#btnEditarMaquina').click(function () { //para el modo edición
         $("#btnEditarMaquina").addClass("btn btn-primary");
          $("#clienteMaquina input").attr("disabled", true);
         $("#clienteMaquina select").attr("disabled", true);
+
+        
        
        }
     });
