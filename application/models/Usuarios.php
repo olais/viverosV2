@@ -18,7 +18,7 @@ class Application_Model_Usuarios extends Zend_Db_Table_Abstract
 		   return $rows;
 
     }
-    function consultaUsuariosFiltros($_search,$Descripcion,$Usuario,$tipo,$estatus){
+    function consultaUsuariosFiltros($_search,$Id_usuario,$Descripcion,$Usuario,$tipo,$estatus){
 
     	if($_search=="true"){ //buscadores
             $response=new stdClass();
@@ -52,6 +52,9 @@ class Application_Model_Usuarios extends Zend_Db_Table_Abstract
                     if ($page > $total_pages) $page=$total_pages;
                         $start = $limit*$page - $limit;
 
+                      if(isset($Id_usuario) && $Id_usuario !=""){
+                      $select = $db->select() ->from ('v_usuarios')->where('Id_usuario like ?','%'.$Id_usuario.'%');
+                        }
                         if(isset($Descripcion) && $Descripcion !=""){
                       $select = $db->select() ->from ('v_usuarios')->where('Descripcion like ?','%'.$Descripcion.'%');
                         }

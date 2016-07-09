@@ -9,7 +9,7 @@ $("#gridUsuarios").jqGrid({
   datatype: "json",
     colNames:['id','Descripcion','Usuario', 'Password', 'Id_tipousuario','Tipo','Estatus','Id_estatus'],
     colModel:[
-      {name:'Id_usuario',index:'Id_direccion', width:15},
+      {name:'Id_usuario',index:'Id_usuario', width:15},
       {name:'Descripcion',index:'Descripcion', width:200,editable:true},
       {name:'Usuario',index:'Usuario', width:55,editable:true},
       {name:'Password',index:'Password', width:50,hidden:true},
@@ -22,7 +22,7 @@ $("#gridUsuarios").jqGrid({
     rowNum:10000,
     rowList:[10,20,30,40,50],
     pager: '#pgridUsuarios',
-    sortname: 'Id_direccion',
+    sortname: 'Id_usuario',
     viewrecords: true,
     sortorder: "desc",
     multiselect:false,
@@ -69,7 +69,7 @@ $("#gridUsuarios").jqGrid({
   
   $(".ui-search-oper").hide();
   $(".clearsearchclass").hide();
-  $("#gs_Id_usuario").hide();
+ // $("#gs_Id_usuario").hide();
 
    $("#btnNuevoUsuario").click(function(){
       // $("#formDirecciones").show();
