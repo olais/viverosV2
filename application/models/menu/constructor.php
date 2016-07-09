@@ -44,7 +44,7 @@ class Application_Model_Menu_Constructor {
             $this->planeacion="<li class='dropdown'>
                                 <a class='dropdown-toggle' data-toggle='dropdown' href='".$this->baseUrl."/planeacion'>Planeación<span class='caret'></span></a>
                                   <ul class='dropdown-menu'>
-                            <li><a href='".$this->baseUrl."/planeacion/ordenes'>Ordenes</a></li></ul></li>"; 
+                            <li><a href='".$this->baseUrl."/planeacion/registros'>Ordenes</a></li></ul></li>"; 
                                  
                                 
         return $this->planeacion;
