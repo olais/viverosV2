@@ -47,12 +47,13 @@ class UsuariosController extends Zend_Controller_Action
       $con=new Application_Model_Usuarios();
        $_search=$_REQUEST['_search'];
         if($_search=="true"){
+          $Id_usuario=(isset($_REQUEST['Id_usuario']))? $_REQUEST['Id_usuario'] : '';
              $Descripcion=(isset($_REQUEST['Descripcion']))? $_REQUEST['Descripcion'] : '';
               $Usuario=(isset($_REQUEST['Usuario']))? $_REQUEST['Usuario'] : '';
                $tipo=(isset($_REQUEST['tipousuario']))? $_REQUEST['tipousuario'] : '';
                  $estatus=(isset($_REQUEST['estatus']))? $_REQUEST['estatus'] : '';
 
-     return $datos=  $con->consultaUsuariosFiltros($_search,$Descripcion,$Usuario,$tipo,$estatus);
+     return $datos=  $con->consultaUsuariosFiltros($_search,$Id_usuario,$Descripcion,$Usuario,$tipo,$estatus);
       
 
         }else{
