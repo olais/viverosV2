@@ -1,4 +1,9 @@
-$(document).ready(function(){
+$(document).ready(function()
+{
+    $("#btnRegresarOrdenes").click(function()
+    {
+        $(location).attr('href',"registros");
+    });
 		//llenar combo clientes
 		$.post("../produccion/consultaclienteop", 
 				function(data){
