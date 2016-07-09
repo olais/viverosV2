@@ -26,7 +26,7 @@ $("#gridContactos").jqGrid({
   datatype: "json",
    colNames:['id','idTipo','Id_estatus','Nombre', 'Apellidos','Puesto','Teléfono1','Extension1','Telefono2','Extension2','Celular','Correo','Fecha de Nac','Facebook','Twitter','Skype'],
     colModel:[
-      {name:'Id_contacto',index:'Id_contacto', width:55},
+      {name:'Id_contacto',index:'Id_contacto', width:150},
       {name:'Id_tipocontacto',index:'Id_tipocontacto', width:55,hidden:true},
       {name:'Id_estatus',index:'Id_estatus', width:55,hidden:true},
       {name:'Nombre',index:'Nombre', width:280,editable:true},
@@ -128,7 +128,7 @@ $("#gridContactos").jqGrid({
    $("#gridContactos").jqGrid('filterToolbar', { searchOnEnter: false, enableClear:true});
    $(".ui-search-oper").hide();
    $(".clearsearchclass").hide();
-   $("#gs_Id_contacto").hide();
+  // $("#gs_Id_contacto").hide();
 
       $("#btnNuevoContacto").click(function(){
       $("#fornuevocontacto").show();
