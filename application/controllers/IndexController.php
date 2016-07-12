@@ -30,7 +30,7 @@ class IndexController extends Zend_Controller_Action
         $this->_helper->viewRenderer->setNoRender();
         @$_search=$_REQUEST['_search'];
         if(@$_search=="true"){
- 
+         $id_cliente=(isset($_REQUEST['Id_cliente']))? $_REQUEST['Id_cliente'] : '';
          $estatus=(isset($_REQUEST['estatus']))? $_REQUEST['estatus'] : '';
          $nombre=(isset($_REQUEST['Nombre']))? $_REQUEST['Nombre'] : '';
          $rfc=(isset($_REQUEST['RFC']))? $_REQUEST['RFC'] : '';
@@ -40,7 +40,7 @@ class IndexController extends Zend_Controller_Action
          $web=(isset($_REQUEST['Web']))? $_REQUEST['Web'] : '';
          $correo=(isset($_REQUEST['Correo']))? $_REQUEST['Correo'] : '';
          $con=new Application_Model_Logica();
-         $datos=  $con->consultarFiltro($_search,$estatus,$nombre,$rfc,$tel1,$tel2, $fax,$correo,$web);
+         $datos=  $con->consultarFiltro($_search,$id_cliente,$estatus,$nombre,$rfc,$tel1,$tel2, $fax,$correo,$web);
        
        return $datos;
      }
@@ -64,7 +64,7 @@ class IndexController extends Zend_Controller_Action
          $_search=$_REQUEST['_search'];
         if($_search=="true"){
        
-                                
+            $Id_contacto=(isset($_REQUEST['Id_contacto']))? $_REQUEST['Id_contacto'] : '';                    
             $nombre=(isset($_REQUEST['Nombre']))? $_REQUEST['Nombre'] : '';
             $apellido=(isset($_REQUEST['Apellidos']))? $_REQUEST['Apellidos'] : '';
             $puesto=(isset($_REQUEST['Puesto']))?  $_REQUEST['Puesto'] : '';
@@ -81,7 +81,7 @@ class IndexController extends Zend_Controller_Action
 
 
         $con=new Application_Model_Logica();
-        $datos=  $con->consultarContactosFiltros($_search,$nombre,$apellido,$puesto,$tel1,$ext1,$tel2,$ext2,$celular,$correo,$Fec_Nac,$fb,$tw,$sky);
+        $datos=  $con->consultarContactosFiltros($_search,$Id_contacto,$nombre,$apellido,$puesto,$tel1,$ext1,$tel2,$ext2,$celular,$correo,$Fec_Nac,$fb,$tw,$sky);
             return $datos;
 
          }else{

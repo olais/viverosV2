@@ -36,7 +36,7 @@ class Application_Model_Logica extends Zend_Db_Table_Abstract
         $this->update($data, $where);
     }
     
-    function consultarFiltro($_search,$Id_estatus,$Nombre,$RFC,$Telefono1,$Telefono2, $Fax,$Correo,$Web){
+    function consultarFiltro($_search,$id_cliente,$Id_estatus,$Nombre,$RFC,$Telefono1,$Telefono2, $Fax,$Correo,$Web){
          if($_search=="true"){ //buscadores
             $response=new stdClass();
          $db = Zend_Db_Table_Abstract::getDefaultAdapter();
@@ -68,6 +68,11 @@ class Application_Model_Logica extends Zend_Db_Table_Abstract
 
                     if ($page > $total_pages) $page=$total_pages;
                         $start = $limit*$page - $limit;
+
+
+                        if(isset($id_cliente) && $id_cliente !=""){
+                      $select = $db->select() ->from ('v_clientes')->where('Id_cliente like ?','%'.$id_cliente.'%');
+                        }
 
                         if(isset($Id_estatus) && $Id_estatus !=""){
                       $select = $db->select() ->from ('v_clientes')->where('estatus like ?','%'.$Id_estatus.'%');
@@ -135,7 +140,7 @@ class Application_Model_Logica extends Zend_Db_Table_Abstract
 
     }
 
-    function consultarContactosFiltros($_search,$nombre,$apellido,$puesto,$tel1,$ext1,$tel2,$ext2,$celular,$correo,$Fec_Nac,$fb,$tw,$sky){
+    function consultarContactosFiltros($_search,$Id_contacto,$nombre,$apellido,$puesto,$tel1,$ext1,$tel2,$ext2,$celular,$correo,$Fec_Nac,$fb,$tw,$sky){
 
           if($_search=="true"){
             $response=new stdClass();
@@ -170,6 +175,9 @@ class Application_Model_Logica extends Zend_Db_Table_Abstract
                         $start = $limit*$page - $limit;
 
                         
+                          if(isset($Id_contacto) && $Id_contacto !=""){
+                      $select = $db->select() ->from ('contactos')->where('Id_contacto like ?', '%'.$Id_contacto.'%');
+                        }
                           if(isset($nombre) && $nombre !=""){
                       $select = $db->select() ->from ('contactos')->where('Nombre like ?', '%'.$nombre.'%');
                         }

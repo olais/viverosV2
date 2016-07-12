@@ -105,7 +105,7 @@ $("#registraUsuarios select").attr("disabled", true);*/
                         <option value="20" <?php echo $selected=(@$this->clientes[0]['Id_estatus']==20)? 'selected':''; ?>>INACTIVO</option>
                         </select>
                     </td>
-                    <td> <button type="button" id="btnEditarCliente" class='btn btn-primary'><span class="glyphicon glyphicon-pencil"></span>Editar</button></td>
+                    <td> <button type="button" id="btnEditarCliente" class='btn btn-sm btn-primary'><span class="glyphicon glyphicon-pencil"></span>Editar</button></td>
                 </tr>
             </tbody>
         </table>
@@ -165,13 +165,13 @@ $("#registraUsuarios select").attr("disabled", true);*/
                 </div>
             </div>
         </div>-->
-        <!--button class="btn btn-primary" type="submit">Guardar Clientes</button>
-        <button id="cancelaCliente" class="btn btn-primary">Cancelar</button-->
+        <!--button class="btn btn-sm btn-primary" type="submit">Guardar Clientes</button>
+        <button id="cancelaCliente" class="btn btn-sm btn-primary">Cancelar</button-->
     <!--</form>-->
 <!--Dialogo Contacto-->
 <div id="dialog-contacto" title="Nuevo Contacto :: <?php echo @$this->clientes[0]['Nombre'];?>">
     <div id="fornuevocontacto">
-         <button type="button" id="btnEditarContacto" class='btn btn-primary'><span class="glyphicon glyphicon-pencil"></span>Editar</button>
+         <button type="button" id="btnEditarContacto" class='btn btn-sm btn-primary'><span class="glyphicon glyphicon-pencil"></span>Editar</button>
         <!--ul class="checkbox-group" id="btnEditarContacto">
             <li value="off"><span class="glyphicon glyphicon-pencil"></span>Editar</li>
         </ul-->
@@ -284,7 +284,7 @@ $("#registraUsuarios select").attr("disabled", true);*/
                     </tr>
                 </tbody>
             </table>
-            <button type="submit" class="btn btn-primary" id="guardarConta">Guardar Contactos</button>
+            <button type="submit" class="btn btn-sm btn-primary" id="guardarConta">Guardar Contactos</button>
         </form>
     </div>
 </div>
@@ -292,7 +292,7 @@ $("#registraUsuarios select").attr("disabled", true);*/
 <!--Dialogo Direcciones-->
 <div id="dialog-direcciones" title="Nueva Dirección :: <?php echo @$this->clientes[0]['Nombre'];?>">
     <div id="formDirecciones">
-           <button type="button" id="btnEditarDireccion" class='btn btn-primary'><span class="glyphicon glyphicon-pencil"></span>Editar</button>
+           <button type="button" id="btnEditarDireccion" class='btn btn-sm btn-primary'><span class="glyphicon glyphicon-pencil"></span>Editar</button>
             <!--ul class="checkbox-group" id="btnEditarDireccion">
                 <li value="off"><span class="glyphicon glyphicon-pencil"></span>Editar</li>
              </ul-->
@@ -324,7 +324,7 @@ $("#registraUsuarios select").attr("disabled", true);*/
                         </td>
                         <td class="td_right">Tipo Dirección:</td>
                         <td>
-                            <select class="form-control" id="tipoDireccion" name="tipoDireccion">
+                            <select class="form-control" id="tipoDireccion" name="tipoDirección">
                                 <option>Seleccionar...</option>
                                     <?php 
                                         foreach ($this->tiposDir as $option)
@@ -371,72 +371,84 @@ $("#registraUsuarios select").attr("disabled", true);*/
                     </tr>
                 </tbody>
             </table>
-            <button type="submit" class="btn btn-primary" id="guardaDir">Guardar Dirección</button>
+            <button type="submit" class="btn btn-sm btn-primary" id="guardaDir">Guardar Dirección</button>
         </form>
     </div>
 </div>
 <!--Dialogo Direcciones-->
 <div id="dialog-maquinas" title="Nueva Máquina :: <?php echo @$this->clientes[0]['Nombre'];?>">
     <div id='formMaquinas'>
-     <button type="button" id="btnEditarMaquina" class='btn btn-primary'><span class="glyphicon glyphicon-pencil"></span>Editar</button>
-     
-            <form  name="clienteMaquina" id="clienteMaquina" method="POST" class="form-inline">
+     <button type="button" id="btnEditarMaquina" class='btn btn-sm btn-primary'><span class="glyphicon glyphicon-pencil"></span>Editar</button>
+        <form  name="clienteMaquina" id="clienteMaquina" method="POST" class="form-inline">
             <input type="hidden" name="idM" id='idM'/>
             <input type="hidden" name="idCM" id='idCM'/>
-            
             <input type="hidden" id='identificadorMaquinas'/>
             
-            <div class="form-group col-sm-3">
-                <label class="control-label" for="descM">Descripcion</label>
-                <input type="text" class="form-control" id="descripcionM" name="descripcionM" required>
-                <br/>
-                <label class="control-label" for="descPegue">DescPerfEnPegue</label>
-                <input type="text" class="form-control" id="DescPerfEnPegue" name="DescPerfEnPegue">
-                <br/>
-                <label class="control-label" for="medcenterline">MedidaCenterline</label>
-                <input type="text" class="form-control" id="MedidaCenterline" name="MedidaCenterline">
-            </div>
-            <div class="form-group col-sm-3">
-                <label class="control-label" for="perf">PerfEnPegue</label>
-                <label><input id="PerfEnPegueS" class="form-control" type="radio" name="PerfEnPegue" value="si" required> Si</label>
-                <label><input id="PerfEnPegueN" class="form-control" type="radio" name="PerfEnPegue" value="no" required> No</label>
-                <br/>
-                <label class="control-label" for="rama">Rama</label>
-                <label><input id="ramaS" class="form-control" type="radio" name="rama" value="si" required> Si</label>
-                <label><input id="ramaN" class="form-control" type="radio" name="rama" value="no" required> No</label>
-                <br/>
-                <label class="control-label" for="pinza">Pinza</label> 
-                <label><input id="pinzaS" class="form-control" type="radio" name="pinza" value="si" required> Si</label>
-                <label><input id="pinzaN" class="form-control" type="radio" name="pinza" value="no" required> No</label>
-                <br/>
-                <label class="control-label" for="perfo">Perforaciones</label>
-                <label><input id="perforacionesS" class="form-control" type="radio" name="perforaciones" value="si" required> Si</label>
-                <label><input id="perforacionesN" class="form-control" type="radio" name="perforaciones" value="no" required> No</label>
-            </div>
-            <div class="form-group col-sm-3">
-                <label class="control-label" for="centerline">Centerline</label>
-                <label><input id="centerlineS" class="form-control" type="radio" name="centerline" value="si" required> Si</label>
-                <label><input id="centerlineN" class="form-control" type="radio" name="centerline" value="no" required> No</label>
-                <br/>
-                <label class="control-label" for="desb">Desbarbe</label>
-                <label><input id="desbardeS" class="form-control" type="radio" name="desbarde" value="si" required> Si</label>
-                <label><input id="desbardeN" class="form-control" type="radio" name="desbarde" value="no" required> No</label>
-                <br/>
-                <label class="control-label" for="Compensacion">Compensacion</label>
-                <label><input id="compensacionS" class="form-control" type="radio" name="compensacion" value="si" required> Si</label>
-                <label><input id="compensacionN" class="form-control" type="radio" name="compensacion" value="no" required> No</label>
-            </div>
-            <div class="form-group col-sm-3">
-                <label class="control-label" for="medRama">MedidaRama</label>
-                <input type="text" class="form-control" id="MedidaRama" name="MedidaRama">
-                <br/>
-                <label class="control-label" for="medPinza">MedidaPinza</label>
-                <input type="text" class="form-control" id="MedidaPinza" name="MedidaPinza">
-                <br/>
-                <label class="control-label" for="NumPiezasCompensacion">NumPiezas</label>
-                <input type="text" class="form-control" id="NumPiezasCompensacion" name="NumPiezasCompensacion">
-            </div>
-            <button type="submit" class="btn btn-primary" id="guardaMaquina">Guardar Maquina</button>
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td class="td_right">Descripción</td>
+                        <td colspan="3">
+                            <input type="text" class="form-control" id="descripcionM" name="descripcionM" required>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="td_right">Centerline</td>
+                        <td>
+                            <label><input id="centerlineS" class="form-control" type="radio" name="centerline" value="si" required> Si</label>
+                            <label><input id="centerlineN" class="form-control" type="radio" name="centerline" value="no" required> No</label>
+                        </td>
+                        <td class="td_right">MedidaCenterline:</td>
+                        <td>
+                            <input type="text" class="form-control" id="MedidaCenterline" name="MedidaCenterline">
+                        </td>
+                        <td class="td_rght">Perforaciones</td>
+                        <td>
+                            <label><input id="perforacionesS" class="form-control" type="radio" name="perforaciones" value="si" required> Si</label>
+                            <label><input id="perforacionesN" class="form-control" type="radio" name="perforaciones" value="no" required> No</label>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="td_right">Rama</td>
+                        <td>
+                            <label><input id="ramaS" class="form-control" type="radio" name="rama" value="si" required> Si</label>
+                            <label><input id="ramaN" class="form-control" type="radio" name="rama" value="no" required> No</label>
+                        </td>
+                        <td class="td_right">MedidaRama:</td>
+                        <td>
+                            <input type="text" class="form-control" id="MedidaRama" name="MedidaRama">
+                        </td>
+                        <td class="td_rght">Desbarbe</td>
+                        <td>
+                            <label><input id="desbardeS" class="form-control" type="radio" name="desbarde" value="si" required> Si</label>
+                            <label><input id="desbardeN" class="form-control" type="radio" name="desbarde" value="no" required> No</label>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="td_right">Pinza</td>
+                        <td>
+                            <label><input id="pinzaS" class="form-control" type="radio" name="pinza" value="si" required> Si</label>
+                            <label><input id="pinzaN" class="form-control" type="radio" name="pinza" value="no" required> No</label>
+                        </td>
+                        <td class="td_right">MedidaPinza:</td>
+                        <td>
+                            <input type="text" class="form-control" id="MedidaPinza" name="MedidaPinza">
+                        </td>
+                        <td class="td_rght">Compensación</td>
+                        <td>
+                            <label><input id="compensacionS" class="form-control" type="radio" name="compensacion" value="si" required> Si</label>
+                            <label><input id="compensacionN" class="form-control" type="radio" name="compensacion" value="no" required> No</label>
+                        </td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="submit" class="btn btn-sm btn-primary" id="guardaMaquina">Guardar Maquina</button>
         </form>
         <!--form class="form-inline" role="form" method='POST' name='guardaMaquinas' id='guardaMaquinas'>
             <div class="form-group">
@@ -467,7 +479,7 @@ $("#registraUsuarios select").attr("disabled", true);*/
 </div>
 <br/>
 <br/>
-<button type="button" class="btn btn-info" id="regresarClientes" style="float:right !important;margin-right: 18px;">Regresar</button>
+<button type="button" class="btn btn-sm btn-info" id="regresarClientes" style="float:right !important;margin-right: 18px;">Regresar</button>
 <ul class="nav nav-tabs class-clear">
     <li class="active" ><a data-toggle="tab" href="#home" id='menuContacto'>Contactos</a></li>
     <li ><a data-toggle="tab" href="#menu1" id='menuDir'>Direcciones</a></li>
@@ -547,7 +559,7 @@ $("#registraUsuarios select").attr("disabled", true);*/
                 </div>
             </div>
         </div>
-        <button class="btn btn-primary" type="submit" id="actualizarClientes">Actualizar Clientes</button>
+        <button class="btn btn-sm btn-primary" type="submit" id="actualizarClientes">Actualizar Clientes</button>
        
         </form>
 

@@ -35,10 +35,10 @@ $("#selecDir").removeClass("active");
 $("#gridClientes").jqGrid({
    	url:'index/consultar',
 	datatype: "json",
-   	colNames:['id','Id_estatus','Estatus', 'Nombre', 'RFC','Teléfono 1','Teléfono 2','Fax','Correo','web'],
+   	colNames:['id','Estatus', 'Nombre', 'RFC','Teléfono 1','Teléfono 2','Fax','Correo','web'],
    	colModel:[
-   		{name:'Id_cliente',index:'Id_cliente', width:55},
-      {name:'Id_estatus',index:'Id_estatus', width:280,editable:true,hidden:true},
+   		{name:'Id_cliente',index:'Id_cliente', width:100,editable:true},
+     
    		{name:'estatus',index:'estatus', width:90, editable:true},
    		{name:'Nombre',index:'Nombre', width:280,editable:true},
    		{name:'RFC',index:'RFC', width:200, align:"left",editable:true},
@@ -81,8 +81,8 @@ $("#gridClientes").jqGrid({
  
     $(".ui-search-oper").hide();
     $(".clearsearchclass").hide(); 
-    $("#gs_id_cliente").hide();
-    $("#gs_Id_cliente").hide();
+    //$("#gs_id_cliente").hide();
+    //$("#gs_Id_cliente").hide();
   
 
   //controles de grid clientes

@@ -5,12 +5,12 @@ var id_cliente;
 $("#gridMaquinas").jqGrid({
     url:'index/maquinas?id='+idCli,
   datatype: "json",
-    colNames:['id','Descripcion','PerfEnPegue','DescPerfEnPegue', 'Rama', 'MedidaRama','Pinza','MedidaPinza','Perforaciones','Centerline','MedidaCenterline','Desbarbe','Compensacion','NumPiezasCompensacion'],
+    colNames:['id','Descripcion',/*'PerfEnPegue','DescPerfEnPegue',*/ 'Rama', 'MedidaRama','Pinza','MedidaPinza','Perforaciones','Centerline','MedidaCenterline','Desbarbe','Compensacion','NumPiezasCompensacion'],
     colModel:[
       {name:'Id_MaquinaC',index:'Id_MaquinaC', width:50},
       {name:'Descripcion',index:'Descripcion', width:300,editable:true},
-      {name:'PerfEnPegue',index:'PerfEnPegue', width:50,editable:true},
-      {name:'DescPerfEnPegue',index:'DescPerfEnPegue', width:200, align:"left",editable:true},
+     /* {name:'PerfEnPegue',index:'PerfEnPegue', width:50,editable:true},
+      {name:'DescPerfEnPegue',index:'DescPerfEnPegue', width:200, align:"left",editable:true},*/
       {name:'Rama',index:'Rama', width:170, align:"left",editable:true},    
       {name:'MedidaRama',index:'MedidaRama', width:170,align:"left",editable:true},   
       {name:'Pinza',index:'Pinza', width:50, sortable:false,editable:true},
@@ -185,6 +185,8 @@ $('#btnEditarMaquina').click(function () { //para el modo edición
         $("#btnEditarMaquina").addClass("btn btn-primary");
          $("#clienteMaquina input").attr("disabled", true);
         $("#clienteMaquina select").attr("disabled", true);
+
+        
        
        }
     });

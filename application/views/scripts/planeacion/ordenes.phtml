@@ -3,6 +3,12 @@
     <table class="table table-striped">
         <tbody>
             <tr>
+                <td class="td_right" colspan="6">
+                    <button type="button" class="btn btn-sm btn-success" id="btnRegresarOrdenes">Regresar</button>
+                    <button type="button" class="btn btn-sm btn-success" id="btnLiberarOrdenes">Liberar</button>
+                </td>
+            </tr>
+            <tr>
                 <td class="td_right">Cliente:</td>
                 <td>
                     <select id="op_suajes_cliente" class="form-control" name="op_suajes_cliente">
@@ -13,6 +19,14 @@
                 <td><input id="op_suajes_fecha" class="form-control op_input" type="text"/></td>
                 <td class="td_right">OP:</td>
                 <td><input id="op_suajes_op" class="form-control op_input" type="text"/></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td class="td_right">Fecha entrega</td>
+                <td><input id="op_fecha_entrega" class="form-control op_input" type="text"/></td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td class="td_right">Elaboración de:</td>
@@ -38,12 +52,14 @@
     <!--Cliente-->
     <!--Indicaciones elaboracios suajes-->
     <table class="table table-striped">
+        <button id="btn_collapse_in" class="btn btn-sm btn-info" type="button" data-toggle="collapse" data-target="#demo"><img id="btn_collapse_img_in" class="btn_collapse_img" src="<?php echo $this->baseUrl(); ?>/images/collapse_in.png"/></button>
+        <button id="btn_collapse" class="btn btn-sm btn-info display_none" type="button" data-toggle="collapse" data-target="#demo"><img id="btn_collapse_img" class="btn_collapse_img" src="<?php echo $this->baseUrl(); ?>/images/collapse.png"/></button>
         <thead>
             <tr>
                 <th colspan="7">INDICACIONES ELABORACION SUAJE</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="demo" class="collapse in">
             <tr>
                 <td class="td_right">Máquina:</td>
                 <td>
@@ -211,9 +227,13 @@
                 <td class="td_right">Placa:</td>
                 <td colspan="4"><input id="" class="form-control op_input" type="text"/></td>
             </tr>
+            <tr>
+                <td>Observaciones:</td>
+                <td colspan="6"><textarea id="observaciones_1" class="form-control textarea" name="observaciones_1" rows="1"></textarea></td>
+            </tr>
         </tbody>
     </table>
-    <div class="col-xs-12 observaciones">Observaciones: <textarea id="observaciones_1" class="form-control textarea" name="observaciones_1" rows="1"></textarea></div>
+    <!--<div class="col-xs-12 observaciones">Observaciones: <textarea id="observaciones_1" class="form-control textarea" name="observaciones_1" rows="1"></textarea></div>-->
     <!--Indicaciones elaboracios suajes-->
     <!--Indicaciones elaboracion de trablas limpiadoras-->
     <table class="table table-striped">
@@ -421,8 +441,8 @@
             <tr>
                 <td class="td_right">Supervisó</td>
                 <td><input id="op_superviso" class="form-control op_input" type="text"/></td>
-                <td class="td_right">Fecha entrega</td>
-                <td><input id="op_fecha_entrega" class="form-control op_input" type="text"/></td>
+                <td></td>
+                <td></td>
                 <td colspan="2"></td>
             </tr>
             <tr>
