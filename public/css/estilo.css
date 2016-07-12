@@ -345,6 +345,14 @@ table tr td input, .op_input
     -moz-outline-radius: 3px !important;
 }
 
+table tr td input[type=radio]
+{
+    margin: 0 3px !important;
+    padding: 0 !important;
+    width: inherit !important;
+    height: inherit !important;
+}
+
 .observaciones
 {
     clear: left;
