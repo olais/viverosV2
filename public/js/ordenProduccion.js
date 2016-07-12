@@ -4,6 +4,7 @@ $(document).ready(function()
     {
         $(location).attr('href',"registros");
     });
+    
     $("#btn_collapse_ig_in").click(function()
     {
         $("#btn_collapse_ig_in").addClass("display_none");
@@ -15,17 +16,19 @@ $(document).ready(function()
         $("#btn_collapse_ig_in").removeClass("display_none");
         $("#btn_collapse_ig").addClass("display_none");
     });
-    $("#btn_collapse_in").click(function()
+    
+    $("#btn_collapse_ipes_in").click(function()
     {
-        $("#btn_collapse_in").addClass("display_none");
-        $("#btn_collapse").removeClass("display_none");
+        $("#btn_collapse_ipes_in").addClass("display_none");
+        $("#btn_collapse_ipes").removeClass("display_none");
     });
     
-    $("#btn_collapse").click(function()
+    $("#btn_collapse_ipes").click(function()
     {
-        $("#btn_collapse_in").removeClass("display_none");
-        $("#btn_collapse").addClass("display_none");
+        $("#btn_collapse_ipes_in").removeClass("display_none");
+        $("#btn_collapse_ipes").addClass("display_none");
     });
+    
 		//llenar combo clientes
 		$.post("../produccion/consultaclienteop", 
 				function(data){
