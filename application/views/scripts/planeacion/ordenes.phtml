@@ -1,51 +1,79 @@
 <form id="op" class="form-inline" name="op" method="POST">
-    <!--Clinete-->
+    <!--Indicaciones generales-->
     <table class="table table-striped">
-        <tbody>
+        <button id="btn_collapse_ig_in" class="btn btn-sm btn-info" type="button" data-toggle="collapse" data-target="#indicaciones_generales"><img class="btn_collapse_img" src="<?php echo $this->baseUrl(); ?>/images/collapse_in.png"/></button>
+        <button id="btn_collapse_ig" class="btn btn-sm btn-info display_none" type="button" data-toggle="collapse" data-target="#indicaciones_generales"><img class="btn_collapse_img" src="<?php echo $this->baseUrl(); ?>/images/collapse.png"/></button>
+        <thead>
+            
             <tr>
-                <td class="td_right" colspan="6">
-                    <button type="button" class="btn btn-sm btn-success" id="btnRegresarOrdenes">Regresar</button>
-                    <button type="button" class="btn btn-sm btn-success" id="btnLiberarOrdenes">Liberar</button>
-                </td>
+                <th colspan="8">INDICACIONES GENERALES</th>
             </tr>
+        </thead>
+        <tbody id="indicaciones_generales" class="collapse in">
             <tr>
                 <td class="td_right">Cliente:</td>
-                <td>
-                    <select id="op_suajes_cliente" class="form-control" name="op_suajes_cliente">
+                <td colspan="3">
+                    
+                    <select id="op_ig_cliente" class="form-control" name="op_ig_cliente">
                         <option>Seleccionar ...</option>
                     </select>
                 </td>
-                <td class="td_right">fecha:</td>
-                <td><input id="op_suajes_fecha" class="form-control op_input" type="text"/></td>
-                <td class="td_right">OP:</td>
-                <td><input id="op_suajes_op" class="form-control op_input" type="text"/></td>
+                <td class="td_right">Fecha Orden:</td>
+                <td><input id="op_ig_fecha_orden" class="form-control op_input" type="date" name="op_ig_fecha_orden"/></td>
+                <td class="td_right">id Orden:</td>
+                <td><input id="op_ig_id_orden" class="form-control op_input" type="text" name="op_ig_id_orden"/></td>
             </tr>
             <tr>
-                <td></td>
-                <td></td>
+                <td class="td_right">Nombre Trabajo</td>
+                <td colspan="3"><input id="op_ig_nombre_trabajo" class="form-control op_input" type="text" name="op_ig_nombre_trabajo"/></td>
                 <td class="td_right">Fecha entrega</td>
-                <td><input id="op_fecha_entrega" class="form-control op_input" type="text"/></td>
-                <td></td>
-                <td></td>
+                <td><input id="op_ig_fecha_entrega" class="form-control op_input" type="date" name="op_ig_fecha_entrega"/></td>
+                <td class="td_right">Prioridad</td>
+                <td>
+                    <select id="op_ig_prioridad" class="form-control" name="op_ig_prioridad">
+                        <option>Seleccionar ...</option>
+                    </select>
+                </td>
             </tr>
             <tr>
-                <td class="td_right">Elaboración de:</td>
-                <td>
-                    <select id="op_suajes_elaboracion" class="form-control">
+                <td class="td_right">Tipo Trabajo:</td>
+                <td colspan="3">
+                    <select id="op_ig_tipo_trabajo" class="form-control" name="op_ig_tipo_trabajo">
                         <option>Seleccionar ...</option>
                     </select>
                 </td>
                 <td class="td_right">Desarrollo con:</td>
-                <td>
-                    <select id="op_suajes_desarrollo_1" class="form-control">
+                <td colspan="3">
+                    <select id="op_ig_desarrollo_con" class="form-control" name="op_ig_desarrollo_con">
                         <option>Seleccionar ...</option>
                     </select>
                 </td>
-                <td colspan="2"><input id="op_suajes_desarrollo_2" class="form-control op_input" type="text"/></td>
             </tr>
             <tr>
-                <td class="td_right">Nombre suaje:</td>
-                <td colspan="5"><input id="op_suajes_nom_suaje" class="form-control op_input" type="text"/></td>
+                <td class="td_right">Material:</td>
+                <td colspan="3">
+                    <select id="op_ig_material" class="form-control" name="op_ig_material">
+                        <option>Seleccionar ...</option>
+                    </select>
+                </td>
+                <td class="td_right">Sustrato:</td>
+                <td colspan="3">
+                    <select id="op_ig_sustrato" class="form-control" name="op_ig_sustrato">
+                        <option>Seleccionar ...</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_right">Complejidad:</td>
+                <td colspan="3">
+                    <select id="op_ig_complejidad" class="form-control" name="op_ig_complejidad">
+                        <option>Seleccionar ...</option>
+                    </select>
+                </td>
+                <td class="td_right" colspan="4">
+                    <button type="button" class="btn btn-sm btn-success" id="btnRegresarOrdenes">Regresar</button>
+                    <button type="button" class="btn btn-sm btn-success" id="btnLiberarOrdenes">Liberar</button>
+                </td>
             </tr>
         </tbody>
     </table>
