@@ -29,6 +29,18 @@ $(document).ready(function()
         $("#btn_collapse_ipes").addClass("display_none");
     });
     
+    $("#btn_collapse_epetl_in").click(function()
+    {
+        $("#btn_collapse_epetl_in").addClass("display_none");
+        $("#btn_collapse_epetl").removeClass("display_none");
+    });
+    
+    $("#btn_collapse_epetl").click(function()
+    {
+        $("#btn_collapse_epetl_in").removeClass("display_none");
+        $("#btn_collapse_epetl").addClass("display_none");
+    });
+    
 		//llenar combo clientes
 		$.post("../produccion/consultaclienteop", 
 				function(data){

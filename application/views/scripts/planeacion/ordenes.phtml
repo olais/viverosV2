@@ -239,86 +239,88 @@
         </tbody>
     </table>
     <!--Indicaciones para elaborar suajes-->
-    <!--Indicaciones elaboracion de trablas limpiadoras-->
+    <!--ESPECIFICACIONES PARA ELABORAR TABLAS LIMPIADORAS-->
     <table class="table table-striped">
+        <button id="btn_collapse_epetl_in" class="btn btn-sm btn-info" type="button" data-toggle="collapse" data-target="#especificacion_para_elaborar_tablas_limpiadoras"><img class="btn_collapse_img" src="<?php echo $this->baseUrl(); ?>/images/collapse_in.png"/></button>
+        <button id="btn_collapse_epetl" class="btn btn-sm btn-info display_none" type="button" data-toggle="collapse" data-target="#especificacion_para_elaborar_tablas_limpiadoras"><img class="btn_collapse_img" src="<?php echo $this->baseUrl(); ?>/images/collapse.png"/></button>
         <thead>
             <tr>
-                <th colspan="7">INDICACIONES ELABORACION DE TABLAS LIMPIADORAS</th>
+                <th colspan="10">ESPECIFICACIONES PARA ELABORAR TABLAS LIMPIADORAS</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="especificacion_para_elaborar_tablas_limpiadoras" class="collapse in">
             <tr>
-                <td class="td_center" colspan="7">Tabla Hembra</td>
+                <td colspan="5">Tabla Hembra</td>
+                <td colspan="5">Tabla Macho</td>
             </tr>
             <tr>
                 <td class="td_right">Madera:</td>
                 <td>
-                    <select id="op_tablimp_madera_1" class="form-control">
+                    <select id="op_tablimp_hembra_madera" class="form-control" name="op_tablimp_hembra_madera">
                         <option>Seleccionar ...</option>
                     </select>
                 </td>
-                <td><input id="op_tablimp_madera_2" class="form-control op_input" type="text"/></td>
-                <td class="td_right">Fte. Tabla:</td>
-                <td>
-                    <label><input id="op_tablimp_ftetab_si" class="form-control" type="radio" name="compensación" value="si" checked> Si</label>
-                    <label><input id="op_tablimp_ftetab_no" class="form-control" type="radio" name="compensación" value="no"> No</label>
-                </td>
-                <td colspan="2"><input id="op_tablimp_ftetab" class="form-control op_input" type="text"/></td>
-            </tr>
-            <tr>
                 <td class="td_right">Tipo:</td>
                 <td>
-                    <select id="op_tablimp_madera_1" class="form-control">
+                    <select id="op_tablimp_hembra_madera" class="form-control" name="op_tablimp_hembra_madera">
                         <option>Seleccionar ...</option>
                     </select>
                 </td>
-                <td><input id="op_tablimp_madera_2" class="form-control op_input" type="text"/></td>
-                <td class="td_right">Rama</td>
+                <td></td>
+                <td class="td_right">Madera:</td>
                 <td>
-                    <label><input id="op_tablimp_rama_si" class="form-control" type="radio" name="compensación" value="si" checked> Si</label>
-                    <label><input id="op_tablimp_rama_no" class="form-control" type="radio" name="compensación" value="no"> No</label>
-                </td>
-                <td colspan="2"><input id="op_tablimp_rama" class="form-control op_input" type="text"/></td>
-            </tr>
-            <tr>
-                <td class="td_center" colspan="7">Tabla Macho</td>
-            </tr>
-            <tr>
-                <td class="td_right">Fte de suaje:</td>
-                <td>
-                    <select id="op_tablimp_ftesuaje_1" class="form-control">
+                    <select id="op_tablimp_macho_madera" class="form-control" name="op_tablimp_macho_madera">
                         <option>Seleccionar ...</option>
                     </select>
                 </td>
-                <td><input id="op_tablimp_ftesuaje_2" class="form-control op_input" type="text"/></td>
-                <td class="td_right">Pinza</td>
+                <td class="td_right">Tipo:</td>
                 <td>
-                    <label><input id="op_tablimp_pinza_si" class="form-control" type="radio" name="compensación" value="si" checked> Si</label>
-                    <label><input id="op_tablimp_pinza_no" class="form-control" type="radio" name="compensación" value="no"> No</label>
-                </td>
-                <td><input id="op_tablimp_pinza_1" class="form-control op_input" type="text"/></td>
-                <td><input id="op_tablimp_pinza_2" class="form-control op_input" type="text"/></td>
-            </tr>
-            <tr>
-                <td class="td_right">Corte:</td>
-                <td>
-                    <select id="op_tablimp_corte_1" class="form-control">
+                    <select id="op_tablimp_macho_madera" class="form-control" name="op_tablimp_macho_madera">
                         <option>Seleccionar ...</option>
                     </select>
                 </td>
-                <td><input id="op_tablimp_corte_2" class="form-control op_input" type="text"/></td>
-                <td class="td_right">Perforaciones</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="td_right">Frente de tabla:</td>
                 <td>
-                    <label><input id="op_tablimp_perforaciones_si" class="form-control" type="radio" name="compensación" value="si" checked> Si</label>
-                    <label><input id="op_tablimp_perforaciones_no" class="form-control" type="radio" name="compensación" value="no"> No</label>
+                    <label><input id="op_tablimp_hembra_frente_tabla_si" type="radio" name="op_tablimp_hembra_frente_tabla" value="si">Si</label>
+                    <label><input id="op_tablimp_hembra_frente_tabla_no" type="radio" name="op_tablimp_hembra_frente_tabla" value="no">No</label>
                 </td>
-                <td><input id="op_tablimp_perforaciones_1" class="form-control op_input" type="text"/></td>
-                <td><input id="op_tablimp_perforaciones_2" class="form-control op_input" type="text"/></td>
+                <td colspan="2"><input id="op_tablimp_hembra_frente_tabla_input" class="form-control op_input" type="text" name="op_tablimp_hembra_frente_tabla_input"/></td>
+                <td></td>
+                <td class="td_right">Pines:</td>
+                <td>
+                    <label><input id="op_tablimp_macho_pines_si" type="radio" name="op_tablimp_macho_pines" value="si">Si</label>
+                    <label><input id="op_tablimp_macho_pines_no" type="radio" name="op_tablimp_macho_pines" value="no">No</label>
+                </td>
+                <td colspan="2"><input id="op_tablimp_macho_pines_input" class="form-control op_input" type="text" name="op_tablimp_macho_pines_input"/></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="td_right">Avellanado:</td>
+                <td>
+                    <label><input id="op_tablimp_hembra_avellanado_si" type="radio" name="op_tablimp_hembra_avellanado" value="si">Si</label>
+                    <label><input id="op_tablimp_hembra_avellanado_no" type="radio" name="op_tablimp_hembra_avellanado" value="no">No</label>
+                </td>
+                <td colspan="2"><input id="op_tablimp_hembra_avellanado_input" class="form-control op_input" type="text" name="op_tablimp_hembra_avellanado_input"/></td>
+                <td></td>
+                <td class="td_right">Plecas:</td>
+                <td>
+                    <label><input id="op_tablimp_macho_plecas_si" type="radio" name="op_tablimp_macho_plecas" value="si">Si</label>
+                    <label><input id="op_tablimp_macho_plecas_no" type="radio" name="op_tablimp_macho_plecas" value="no">No</label>
+                </td>
+                <td colspan="2"><input id="op_tablimp_macho_plecas_input" class="form-control op_input" type="text" name="op_tablimp_macho_plecas_input"/></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="td_right">Nota:</td>
+                <td colspan="8"><textarea id="op_suajes_nota" class="form-control textarea" name="op_suajes_nota" rows="2"></textarea></td>
+                <td></td>
             </tr>
         </tbody>
     </table>
-    <div class="col-xs-12 observaciones">Observaciones: <textarea id="observaciones_2" class="form-control textarea" name="observaciones_2" rows="1"></textarea></div>
-    <!--Indicaciones elaboracion de trablas limpiadoras-->
+    <!--ESPECIFICACIONES PARA ELABORAR TABLAS LIMPIADORAS-->
     <!--INDICACIONES ELABORACION DE  PERTINAX-->
     <table class="table table-striped">
         <thead>
