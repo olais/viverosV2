@@ -46,13 +46,69 @@ $(document).ready(function()
 				function(data){
 				
 
-				if(data.rows[0].Rama=="SI"){
-               $("#op_suajes_rama_si").attr('checked', 'checked');
+				if(data.rows[0].Rama=="SI")
+				     {
+                  $("#op_suajes_rama_si").attr('checked', 'checked');
 				      }
-      if(data.rows[0].Rama=="NO"){
-          $("#op_suajes_rama_no").attr('checked', 'checked');
+		          if(data.rows[0].Rama=="NO")
+		          {
+		          $("#op_suajes_rama_no").attr('checked', 'checked');
 
-         }
+		           }
+		           	if(data.rows[0].Pinza=="SI")
+				     {
+                  $("#op_suajes_pinza_si").attr('checked', 'checked');
+				      }
+				      if(data.rows[0].Pinza=="NO")
+				     {
+                  $("#op_suajes_pinza_no").attr('checked', 'checked');
+				      }
+				      //perforaciones
+				      	if(data.rows[0].Perforaciones=="SI")
+				     {
+                  $("#perforaciones_si").attr('checked', 'checked');
+				      }
+				      if(data.rows[0].Perforaciones=="NO")
+				     {
+                  $("#perforaciones_no").attr('checked', 'checked');
+				      }
+
+				      //centerline
+				      	if(data.rows[0].Centerline=="SI")
+				     {
+                  $("#op_suajes_centerline_si").attr('checked', 'checked');
+				      }
+				      if(data.rows[0].Centerline=="NO")
+				     {
+                  $("#op_suajes_centerline_no").attr('checked', 'checked');
+				      }
+
+				    //desbarbe
+
+				     	if(data.rows[0].Desbarbe=="SI")
+				     {
+                  $("#op_suajes_desbarbes_si").attr('checked', 'checked');
+				      }
+				      if(data.rows[0].Desbarbe=="NO")
+				     {
+                  $("#op_suajes_desbarbes_no").attr('checked', 'checked');
+				      }
+		           
+		           //compensación
+
+				     	if(data.rows[0].Compensacion=="SI")
+				     {
+                  $("#op_suajes_compensación_si").attr('checked', 'checked');
+				      }
+				      if(data.rows[0].Compensacion=="NO")
+				     {
+                  $("#op_suajes_compensación_no").attr('checked', 'checked');
+				      }
+
+				     $("#op_suajes_rama_1").val(data.rows[0].MedidaRama);
+				     $("#op_suajes_pinza_1").val(data.rows[0].MedidaPinza);
+
+				     $("#op_suajes_centerline_1").val(data.rows[0].MedidaCenterline);
 			},'json');
 
 
