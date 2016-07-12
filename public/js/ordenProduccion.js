@@ -4,7 +4,17 @@ $(document).ready(function()
     {
         $(location).attr('href',"registros");
     });
+    $("#btn_collapse_ig_in").click(function()
+    {
+        $("#btn_collapse_ig_in").addClass("display_none");
+        $("#btn_collapse_ig").removeClass("display_none");
+    });
     
+    $("#btn_collapse_ig").click(function()
+    {
+        $("#btn_collapse_ig_in").removeClass("display_none");
+        $("#btn_collapse_ig").addClass("display_none");
+    });
     $("#btn_collapse_in").click(function()
     {
         $("#btn_collapse_in").addClass("display_none");
