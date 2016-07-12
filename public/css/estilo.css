@@ -419,6 +419,12 @@ table tr td input, .op_input
     }
 }
 
+/*@media print
+{
+  .visible-print  { display: inherit !important; }
+  .hidden-print   { display: none !important; }
+}*/
+
 /*---------*/
 /*CSS ISAAC*/
 /*---------*/
