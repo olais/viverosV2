@@ -41,6 +41,42 @@ $(document).ready(function()
         $("#btn_collapse_epetl").addClass("display_none");
     });
     
+    $("#btn_collapse_ipep_in").click(function()
+    {
+        $("#btn_collapse_ipep_in").addClass("display_none");
+        $("#btn_collapse_ipep").removeClass("display_none");
+    });
+    
+    $("#btn_collapse_ipep").click(function()
+    {
+        $("#btn_collapse_ipep_in").removeClass("display_none");
+        $("#btn_collapse_ipep").addClass("display_none");
+    });
+    
+    $("#btn_collapse_ipedlr_in").click(function()
+    {
+        $("#btn_collapse_ipedlr_in").addClass("display_none");
+        $("#btn_collapse_ipedlr").removeClass("display_none");
+    });
+    
+    $("#btn_collapse_ipedlr").click(function()
+    {
+        $("#btn_collapse_ipedlr_in").removeClass("display_none");
+        $("#btn_collapse_ipedlr").addClass("display_none");
+    });
+    
+    $("#btn_collapse_edl_in").click(function()
+    {
+        $("#btn_collapse_edl_in").addClass("display_none");
+        $("#btn_collapse_edl").removeClass("display_none");
+    });
+    
+    $("#btn_collapse_ipedlr").click(function()
+    {
+        $("#btn_collapse_edl_in").removeClass("display_none");
+        $("#btn_collapse_edl").addClass("display_none");
+    });
+    
 		//llenar combo clientes
 		$.post("../produccion/consultaclienteop", 
 				function(data){

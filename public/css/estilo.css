@@ -353,6 +353,16 @@ table tr td input[type=radio]
     height: inherit !important;
 }
 
+.td_border_bottom
+{
+    border-bottom: #878787 2px solid;
+}
+
+.td_border_rigth
+{
+    border-right: #878787 2px solid;
+}
+
 .observaciones
 {
     clear: left;
