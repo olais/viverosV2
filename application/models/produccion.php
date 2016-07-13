@@ -55,8 +55,20 @@ class Application_Model_Produccion extends Zend_Db_Table_Abstract
 
     }
 
+    function selectores($tabla){
+    	$response=new stdClass();
+    	 $db = Zend_Db_Table_Abstract::getDefaultAdapter();
+          $select = $db->select()  ->from ($tabla);
+                        $sql = $db->query($select);
+                        $rows = $sql->fetchAll();
+                         $response->rows=$rows;
+		   echo json_encode($response);
 
-    
+
+
+    }
+
+   
    
 }
 
