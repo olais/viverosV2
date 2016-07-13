@@ -89,7 +89,7 @@ $("#gridUsuarios").jqGrid({
       document.getElementById("registraUsuarios").reset();
        $( "#dialog-usuarios" ).dialog({
                       modal: true,
-                      width: '1200',
+                      width: '80%',
                       buttons: {
                         Guardar: function() {
                    

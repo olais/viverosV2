@@ -55,7 +55,7 @@ construccion(nombreGrid,height,caption,url,Campo1,Campo2,Campo3,Campo4,Campo5);
 
               $( "#dialog-produccion-pendiente" ).dialog({
                       modal: true,
-                      width: '1200',
+                      width: '80%',
                       buttons: {
                         Regresar: function() {
                      

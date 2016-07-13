@@ -6,9 +6,10 @@ class ProduccionController extends Zend_Controller_Action
     public function init()
     {
         $auth = Zend_Auth::getInstance(); 
-        if (!$auth->hasIdentity()) { 
-        $this->_redirect('login'); 
-        } 
+        if (!$auth->hasIdentity())
+        { 
+            $this->_redirect('login'); 
+        }
     }
 
     public function indexAction()
@@ -41,7 +42,14 @@ class ProduccionController extends Zend_Controller_Action
         return  $datos=  $proceso->consultarRadiosMaquinaOP($idMaquina);
     
     }
+    public function llenarcombosAction(){
+        $this->_helper->layout->disableLayout();
+        $this->_helper->viewRenderer->setNoRender();
 
+        $tabla=$_REQUEST['tabla'];
+        $proceso=new Application_Model_Produccion();
+        return  $datos=  $proceso->selectores($tabla);
+    }
 
     public function disenoAction(){
         
