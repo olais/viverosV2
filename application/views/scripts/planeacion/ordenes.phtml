@@ -1,8 +1,20 @@
+<div style="margin: 0 0 20px 0;">
+    <button id="btn_collapse_in" class="btn btn-sm btn-info" type="button" data-toggle="tooltip" data-placement="top" title="Contraer Todo">
+        <img class="btn_collapse_img" src="<?php echo $this->baseUrl(); ?>/images/collapse_in.png"/>
+    </button>
+    <button id="btn_collapse" class="btn btn-sm btn-info" type="button" data-toggle="tooltip" data-placement="right" title="Expandir Todo">
+        <img class="btn_collapse_img" src="<?php echo $this->baseUrl(); ?>/images/collapse.png"/>
+    </button>
+</div>
 <form id="op" class="form-inline" name="op" method="POST">
     <!--Indicaciones generales-->
     <table class="table table-striped">
-        <button id="btn_collapse_ig_in" class="btn btn-sm btn-info" type="button" data-toggle="collapse" data-target="#indicaciones_generales"><img class="btn_collapse_img" src="<?php echo $this->baseUrl(); ?>/images/collapse_in.png"/></button>
-        <button id="btn_collapse_ig" class="btn btn-sm btn-info display_none" type="button" data-toggle="collapse" data-target="#indicaciones_generales"><img class="btn_collapse_img" src="<?php echo $this->baseUrl(); ?>/images/collapse.png"/></button>
+        <button id="btn_collapse_ig_in" class="btn btn-sm btn-info" type="button" data-toggle="collapse" data-placement="right" title="Contraer" data-target="#indicaciones_generales">
+            <img class="btn_collapse_img" src="<?php echo $this->baseUrl(); ?>/images/collapse_in.png"/>
+        </button>
+        <button id="btn_collapse_ig" class="btn btn-sm btn-info display_none" type="button" data-toggle="collapse" data-placement="right" title="Expandir" data-target="#indicaciones_generales">
+            <img class="btn_collapse_img" src="<?php echo $this->baseUrl(); ?>/images/collapse.png"/>
+        </button>
         <thead>
             <tr>
                 <th colspan="10">INDICACIONES GENERALES</th>
@@ -85,8 +97,12 @@
     <!--Indicaciones generales-->
     <!--Indicaciones para elaborar suajes-->
     <table class="table table-striped">
-        <button id="btn_collapse_ipes_in" class="btn btn-sm btn-info" type="button" data-toggle="collapse" data-target="#indicaciones_para_elaborar_suajes"><img class="btn_collapse_img" src="<?php echo $this->baseUrl(); ?>/images/collapse_in.png"/></button>
-        <button id="btn_collapse_ipes" class="btn btn-sm btn-info display_none" type="button" data-toggle="collapse" data-target="#indicaciones_para_elaborar_suajes"><img class="btn_collapse_img" src="<?php echo $this->baseUrl(); ?>/images/collapse.png"/></button>
+        <button id="btn_collapse_ipes_in" class="btn btn-sm btn-info" type="button" data-toggle="collapse" data-placement="right" title="Contraer" data-target="#indicaciones_para_elaborar_suajes">
+            <img class="btn_collapse_img" src="<?php echo $this->baseUrl(); ?>/images/collapse_in.png"/>
+        </button>
+        <button id="btn_collapse_ipes" class="btn btn-sm btn-info display_none" type="button" data-toggle="collapse" data-placement="right" title="Expandir" data-target="#indicaciones_para_elaborar_suajes">
+            <img class="btn_collapse_img" src="<?php echo $this->baseUrl(); ?>/images/collapse.png"/>
+        </button>
         <thead>
             <tr>
                 <th colspan="10">INDICACIONES PARA ELABORAR SUAJE</th>
@@ -162,9 +178,6 @@
                 <td class="td_border_bottom"><input id="op_suajes_centerline_input" class="form-control op_input" type="text" name="op_suajes_centerline_input"/></td>
                 <td class="td_border_bottom"></td>
             </tr>
-<!--            <tr>
-                <td colspan="10"></td>
-            </tr>-->
             <tr>
                 <td class="td_right">Frente de suaje:</td>
                 <td>
@@ -244,8 +257,12 @@
     <!--Indicaciones para elaborar suajes-->
     <!--ESPECIFICACIONES PARA ELABORAR TABLAS LIMPIADORAS-->
     <table class="table table-striped">
-        <button id="btn_collapse_epetl_in" class="btn btn-sm btn-info" type="button" data-toggle="collapse" data-target="#especificacion_para_elaborar_tablas_limpiadoras"><img class="btn_collapse_img" src="<?php echo $this->baseUrl(); ?>/images/collapse_in.png"/></button>
-        <button id="btn_collapse_epetl" class="btn btn-sm btn-info display_none" type="button" data-toggle="collapse" data-target="#especificacion_para_elaborar_tablas_limpiadoras"><img class="btn_collapse_img" src="<?php echo $this->baseUrl(); ?>/images/collapse.png"/></button>
+        <button id="btn_collapse_epetl_in" class="btn btn-sm btn-info" type="button" data-toggle="collapse" data-placement="right" title="Contraer" data-target="#especificacion_para_elaborar_tablas_limpiadoras">
+            <img class="btn_collapse_img" src="<?php echo $this->baseUrl(); ?>/images/collapse_in.png"/>
+        </button>
+        <button id="btn_collapse_epetl" class="btn btn-sm btn-info display_none" type="button" data-toggle="collapse" data-placement="right" title="Expandir" data-target="#especificacion_para_elaborar_tablas_limpiadoras">
+            <img class="btn_collapse_img" src="<?php echo $this->baseUrl(); ?>/images/collapse.png"/>
+        </button>
         <thead>
             <tr>
                 <th colspan="10">ESPECIFICACIONES PARA ELABORAR TABLAS LIMPIADORAS</th>
@@ -326,8 +343,12 @@
     <!--ESPECIFICACIONES PARA ELABORAR TABLAS LIMPIADORAS-->
     <!--INDICACIONES PARA ELABORAR PERTINAX-->
     <table class="table table-striped">
-        <button id="btn_collapse_ipep_in" class="btn btn-sm btn-info" type="button" data-toggle="collapse" data-target="#indicaciones_para_elaborar_pertinax"><img class="btn_collapse_img" src="<?php echo $this->baseUrl(); ?>/images/collapse_in.png"/></button>
-        <button id="btn_collapse_ipep" class="btn btn-sm btn-info display_none" type="button" data-toggle="collapse" data-target="#indicaciones_para_elaborar_pertinax"><img class="btn_collapse_img" src="<?php echo $this->baseUrl(); ?>/images/collapse.png"/></button>
+        <button id="btn_collapse_ipep_in" class="btn btn-sm btn-info" type="button" data-toggle="collapse" data-placement="right" title="Contraer" data-target="#indicaciones_para_elaborar_pertinax">
+            <img class="btn_collapse_img" src="<?php echo $this->baseUrl(); ?>/images/collapse_in.png"/>
+        </button>
+        <button id="btn_collapse_ipep" class="btn btn-sm btn-info display_none" type="button" data-toggle="collapse" data-placement="right" title="Expandir" data-target="#indicaciones_para_elaborar_pertinax">
+            <img class="btn_collapse_img" src="<?php echo $this->baseUrl(); ?>/images/collapse.png"/>
+        </button>
         <thead>
             <tr>
                 <th colspan="9">INDICACIONES PARA ELABORAR PERTINAX</th>
@@ -371,8 +392,12 @@
     <!--INDICACIONES PARA ELABORAR PERTINAX-->
     <!--INDICACIONES PARA ELABORAR LAMINAS RAYADAS-->
     <table class="table table-striped">
-        <button id="btn_collapse_ipedlr_in" class="btn btn-sm btn-info" type="button" data-toggle="collapse" data-target="#indicaciones_para_elaborar_laminas_rayadas"><img class="btn_collapse_img" src="<?php echo $this->baseUrl(); ?>/images/collapse_in.png"/></button>
-        <button id="btn_collapse_ipedlr" class="btn btn-sm btn-info display_none" type="button" data-toggle="collapse" data-target="#indicaciones_para_elaborar_laminas_rayadas"><img class="btn_collapse_img" src="<?php echo $this->baseUrl(); ?>/images/collapse.png"/></button>
+        <button id="btn_collapse_ipedlr_in" class="btn btn-sm btn-info" type="button" data-toggle="collapse" data-placement="right" title="Contraer" data-target="#indicaciones_para_elaborar_laminas_rayadas">
+            <img class="btn_collapse_img" src="<?php echo $this->baseUrl(); ?>/images/collapse_in.png"/>
+        </button>
+        <button id="btn_collapse_ipedlr" class="btn btn-sm btn-info display_none" type="button" data-toggle="collapse" data-placement="right" title="Expandir" data-target="#indicaciones_para_elaborar_laminas_rayadas">
+            <img class="btn_collapse_img" src="<?php echo $this->baseUrl(); ?>/images/collapse.png"/>
+        </button>
         <thead>
             <tr>
                 <th colspan="9">INDICACIONES PARA ELABORAR LAMINAS RAYADAS</th>
@@ -416,8 +441,12 @@
     <!--INDICACIONES PARA ELABORAR LAMINAS RAYADAS-->
     <!--ESPECIFICACIONES DE LOGISTICA-->
     <table class="table table-striped">
-        <button id="btn_collapse_edl_in" class="btn btn-sm btn-info" type="button" data-toggle="collapse" data-target="#especificaciones_de_logistica"><img class="btn_collapse_img" src="<?php echo $this->baseUrl(); ?>/images/collapse_in.png"/></button>
-        <button id="btn_collapse_edl" class="btn btn-sm btn-info display_none" type="button" data-toggle="collapse" data-target="#especificaciones_de_logistica"><img class="btn_collapse_img" src="<?php echo $this->baseUrl(); ?>/images/collapse.png"/></button>
+        <button id="btn_collapse_edl_in" class="btn btn-sm btn-info" type="button" data-toggle="collapse" data-placement="right" title="Contraer" data-target="#especificaciones_de_logistica">
+            <img class="btn_collapse_img" src="<?php echo $this->baseUrl(); ?>/images/collapse_in.png"/>
+        </button>
+        <button id="btn_collapse_edl" class="btn btn-sm btn-info display_none" type="button" data-toggle="collapse" data-placement="right" title="Expandir" data-target="#especificaciones_de_logistica">
+            <img class="btn_collapse_img" src="<?php echo $this->baseUrl(); ?>/images/collapse.png"/>
+        </button>
         <thead>
             <tr>
                 <th colspan="4">ESPECIFICACIONES DE LOGISTICA</th>
