@@ -5,6 +5,30 @@ $(document).ready(function()
         $(location).attr('href',"registros");
     });
     
+    $('[data-toggle="collapse"], [data-toggle="tooltip"]').tooltip();
+    
+    $("#btn_collapse_in").click(function()
+    {
+        $(".collapse").addClass("in");
+        $("#btn_collapse_ig_in").click();
+        $("#btn_collapse_ipes_in").click();
+        $("#btn_collapse_epetl_in").click();
+        $("#btn_collapse_ipep_in").click();
+        $("#btn_collapse_ipedlr_in").click();
+        $("#btn_collapse_edl_in").click();
+    });
+    
+    $("#btn_collapse").click(function()
+    {
+        $(".collapse").removeClass("in");
+        $("#btn_collapse_ig").click();
+        $("#btn_collapse_ipes").click();
+        $("#btn_collapse_epetl").click();
+        $("#btn_collapse_ipep").click();
+        $("#btn_collapse_ipedlr").click();
+        $("#btn_collapse_edl").click();
+    });
+    
     $("#btn_collapse_ig_in").click(function()
     {
         $("#btn_collapse_ig_in").addClass("display_none");
