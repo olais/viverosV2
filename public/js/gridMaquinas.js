@@ -149,7 +149,7 @@ $("#gridMaquinas").jqGrid({
        $("#clienteMaquina select").attr("disabled", false);
        $( "#dialog-maquinas" ).dialog({
                       modal: true,
-                      width: '1200',
+                      width: '80%',
                       buttons: {
                         Guardar: function() {
                           

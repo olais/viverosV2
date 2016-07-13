@@ -115,7 +115,7 @@ $("#gridDirecciones").jqGrid({
       $("#contactosD select").attr("disabled", false);
        $( "#dialog-direcciones" ).dialog({
                       modal: true,
-                      width: '1200',
+                      width: '80%',
                       buttons: {
                         Guardar: function() {
                      //$("#btnEditarDireccion").trigger("click");

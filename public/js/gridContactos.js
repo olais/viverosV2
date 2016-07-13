@@ -140,7 +140,7 @@ $("#gridContactos").jqGrid({
       $("#contactosG select").attr("disabled", false);
       $( "#dialog-contacto" ).dialog({
                       modal: true,
-                      width: '1200',
+                      width: '80%',
                       buttons: {
                         Guardar: function() {
                       $("#guardarConta").trigger("click");

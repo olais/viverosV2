@@ -198,7 +198,7 @@ comprobarContactos= sessionStorage.getItem("comprobarContactos");
       $("#contactosD select").attr("disabled", false);*/
        $( "#dialog-clientes" ).dialog({
                       modal: true,
-                      width: '1200',
+                      width: '80%',
                       buttons: {
                         Guardar: function() {
                      //$("#btnEditarDireccion").trigger("click");
@@ -224,7 +224,7 @@ comprobarContactos= sessionStorage.getItem("comprobarContactos");
        $( "#dialog-editarClientes" ).dialog({
                       modal: true,
                      
-                      width: '1200',
+                      width: '80%',
                       buttons: {
                         Regresar: function() {
                           $("#clientesG input").attr("disabled", true);
