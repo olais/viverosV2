@@ -5,6 +5,30 @@ $(document).ready(function()
         $(location).attr('href',"registros");
     });
     
+    $('[data-toggle="collapse"], [data-toggle="tooltip"]').tooltip();
+    
+    $("#btn_collapse_in").click(function()
+    {
+        $(".collapse").addClass("in");
+        $("#btn_collapse_ig_in").click();
+        $("#btn_collapse_ipes_in").click();
+        $("#btn_collapse_epetl_in").click();
+        $("#btn_collapse_ipep_in").click();
+        $("#btn_collapse_ipedlr_in").click();
+        $("#btn_collapse_edl_in").click();
+    });
+    
+    $("#btn_collapse").click(function()
+    {
+        $(".collapse").removeClass("in");
+        $("#btn_collapse_ig").click();
+        $("#btn_collapse_ipes").click();
+        $("#btn_collapse_epetl").click();
+        $("#btn_collapse_ipep").click();
+        $("#btn_collapse_ipedlr").click();
+        $("#btn_collapse_edl").click();
+    });
+    
     $("#btn_collapse_ig_in").click(function()
     {
         $("#btn_collapse_ig_in").addClass("display_none");
@@ -39,6 +63,42 @@ $(document).ready(function()
     {
         $("#btn_collapse_epetl_in").removeClass("display_none");
         $("#btn_collapse_epetl").addClass("display_none");
+    });
+    
+    $("#btn_collapse_ipep_in").click(function()
+    {
+        $("#btn_collapse_ipep_in").addClass("display_none");
+        $("#btn_collapse_ipep").removeClass("display_none");
+    });
+    
+    $("#btn_collapse_ipep").click(function()
+    {
+        $("#btn_collapse_ipep_in").removeClass("display_none");
+        $("#btn_collapse_ipep").addClass("display_none");
+    });
+    
+    $("#btn_collapse_ipedlr_in").click(function()
+    {
+        $("#btn_collapse_ipedlr_in").addClass("display_none");
+        $("#btn_collapse_ipedlr").removeClass("display_none");
+    });
+    
+    $("#btn_collapse_ipedlr").click(function()
+    {
+        $("#btn_collapse_ipedlr_in").removeClass("display_none");
+        $("#btn_collapse_ipedlr").addClass("display_none");
+    });
+    
+    $("#btn_collapse_edl_in").click(function()
+    {
+        $("#btn_collapse_edl_in").addClass("display_none");
+        $("#btn_collapse_edl").removeClass("display_none");
+    });
+    
+    $("#btn_collapse_ipedlr").click(function()
+    {
+        $("#btn_collapse_edl_in").removeClass("display_none");
+        $("#btn_collapse_edl").addClass("display_none");
     });
     
 		//llenar combo clientes
